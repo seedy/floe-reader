@@ -11,6 +11,13 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@radix-ui/react-accessible-icon": "^1.0.0",
+    "@radix-ui/react-alert-dialog": "^1.0.0",
+    "@radix-ui/react-avatar": "^1.0.0",
+    "@radix-ui/react-label": "^1.0.0",
+    "@radix-ui/react-select": "^1.0.0",
+    "@radix-ui/react-toast": "^1.0.0",
+    "@stitches/react": "^1.2.8",
     "next": "12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
