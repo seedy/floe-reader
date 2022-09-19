@@ -1,25 +1,15 @@
-import React from "react";
-
-interface ButtonProps {
-  /**
-   * Button contents
-   */
-  label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
+import { VariantProps } from "@stitches/react";
+import { ReactNode } from "react";
+import { Root } from "./styled";
+interface BookProps extends VariantProps<typeof Root> {
+  children?: ReactNode;
 }
 
 /**
  * Primary UI component for user interaction
  */
-const Button = ({ label, ...props }: ButtonProps) => {
-  return (
-    <button type="button" {...props}>
-      {label}
-    </button>
-  );
+const Book = ({ children, ...props }: BookProps) => {
+  return <Root {...props}>{children}</Root>;
 };
 
-export default Button;
+export default Book;
