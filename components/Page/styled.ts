@@ -4,7 +4,7 @@ import { styled } from "stitches.config";
 export const Root = styled('div', {
   position: 'absolute',
   top: '1%',
-  left: '6%',
+  left: '13%',
   height: '98%',
   width: '100%',
   boxSizing: 'border-box',
@@ -12,4 +12,6 @@ export const Root = styled('div', {
   br: pxToRem(3),
   boxShadow: `${pxToRem(9)} ${pxToRem(4)} ${pxToRem(10)} ${pxToRem(3)} #CCCCCC`,
   transformOrigin: 'left center',
+  transformStyle: 'preserve-3d',
+  padding: pxToRem(16)
 });
