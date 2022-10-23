@@ -1,21 +1,58 @@
 import pxToRem from "helpers/pxToRem";
 import { styled } from "stitches.config";
+import { keyframes } from "@stitches/react";
 import Cover from "components/Cover";
 import Page from "components/Page";
+
+const rotatePage = keyframes({
+  '0%': {
+    transform: 'rotateY(0deg)',
+  },
+  '50%': {
+    color: 'transparent',
+    transform: 'rotateY(90deg)'
+  },
+  '100%': {
+    transform: 'rotateY(180deg)',
+    color: 'transparent'
+  }
+})
+
+const openDuration = '1.3s';
 
 export const Root = styled('div', {
   position: 'relative',
   height: pxToRem(500),
   width: pxToRem(300),
   transition: 'transform 2s',
+  '&:hover': {
+    boxShadow: `${pxToRem(-17)} 0 ${pxToRem(15)} ${pxToRem(-8)} hsla(0, 0%, 0%, 0.7)`,
+    [`${Cover}:first-child`]: {
+      zIndex: 0,
+      transition: `z-index ${openDuration}`,
+      animation: `${rotatePage} ${openDuration}`,
+      animationFillMode: 'forwards',
+    '& > *': {
+        display: 'none'
+      },
+      [`& + ${Page}`]: {
+        zIndex: 20,
+        animation: `${rotatePage} ${openDuration}`,
+        animationFillMode: 'forwards',
+      },
+      [`& + ${Page} + ${Page}`]: {
+        zIndex: 21,
+        transition: `z-index ${openDuration} ${openDuration}`,
+        animation: `${rotatePage} 2s 2s`,
+        animationFillMode: 'forwards',
+      }
+    },
+  },
   [`& ${Cover}`]: {
     '&:first-child': {
       zIndex: 100,
       transform: `rotateY(-20deg) translateZ(${pxToRem(8)})`,
-      '&.turned': {
-        zIndex: 0,
-        transform: 'rotateY(172deg)',
-      }
+      
     },
     '&:last-child': {
       width: `calc(100% + ${pxToRem(32)})`,
@@ -23,43 +60,23 @@ export const Root = styled('div', {
     },  
   },
   [`& ${Page}`]: {
-    transform: 'rotateY(-34deg)',
+    transform: 'rotateY(-24deg)',
     zIndex: 10,
-    '&.turned': {
-      transform: 'rotateY(156deg)',
-      zIndex: 1,
-    },
     [`& ~ ${Page}`]: {
-      transform: 'rotateY(-32deg)',
+      transform: 'rotateY(-22deg)',
       zIndex: 9,
-      '&.turned': {
-      transform: 'rotateY(158deg)',
-      zIndex: 2,
-      },
     },
     [`& ~ ${Page} ~ ${Page}`]: {
-      transform: 'rotateY(-30deg)',
+      transform: 'rotateY(-20deg)',
       zIndex: 8,
-      '&.turned': {
-      transform: 'rotateY(160deg)',
-        zIndex: 3,
-      },
   },
     [`& ~ ${Page} ~ ${Page} ~ ${Page}`]: {
-      transform: 'rotateY(-28deg)',
+      transform: 'rotateY(-18deg)',
       zIndex: 7,
-      '&.turned': {
-      transform: 'rotateY(162deg)',
-        zIndex: 4,
-      },
   },
     [`& ~ ${Page} ~ ${Page} ~ ${Page} ~ ${Page}`]: {
-          transform: 'rotateY(-28deg)',
+          transform: 'rotateY(-18deg)',
       zIndex: 7,
-      '&.turned': {
-      transform: 'rotateY(164deg)',
-        zIndex: 5,
-      },
     },
   }
   

@@ -8,6 +8,8 @@ import Button from "components/Button";
 import Flex from "components/Flex";
 import CornerButton from "components/CornerButton";
 import { EnterIcon } from "@radix-ui/react-icons";
+import pxToRem from "helpers/pxToRem";
+import TextPlaceholder from "components/Text/Placeholder";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -21,28 +23,24 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Book> = (args) => (
-  <Book {...args}>
-    <Cover>
-      <Button variant="contained">Ouvrir</Button>
-    </Cover>
-    <Page>
-      <Flex
-        direction="column"
-        grow
-        align="end"
-        justify="end"
-        css={{ height: "100%" }}
-      >
-        <CornerButton>
-          <EnterIcon />
-        </CornerButton>
-      </Flex>
-    </Page>
-    <Page></Page>
-    <Page></Page>
-    <Page></Page>
-    <Cover />
-  </Book>
+  <Flex align="center" justify="center" css={{ height: "100%", width: "100%" }}>
+    <Book {...args}>
+      <Cover>
+        <Button variant="contained">Ouvrir</Button>
+      </Cover>
+      <Page></Page>
+      <Page>
+        <Flex css={{ marginTop: pxToRem(50) }} align="center" justify="center">
+          C&apos;BEN CORREC&apos;
+        </Flex>
+      </Page>
+      <Page>
+        <TextPlaceholder words={200} />
+      </Page>
+      <Page></Page>
+      <Cover />
+    </Book>
+  </Flex>
 );
 
 export const Default = Template.bind({});
