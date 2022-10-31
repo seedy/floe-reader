@@ -1,7 +1,9 @@
 import { VariantProps } from "@stitches/react";
-import { ReactNode } from "react";
+import { ReactNode, ComponentProps } from "react";
 import { Root } from "./styled";
-interface BookProps extends VariantProps<typeof Root> {
+interface BookProps
+  extends VariantProps<typeof Root>,
+    ComponentProps<typeof Root> {
   children?: ReactNode;
 }
 

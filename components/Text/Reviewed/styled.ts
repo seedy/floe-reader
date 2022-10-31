@@ -1,22 +1,31 @@
+import Appear from "components/Animate/Appear";
+import Flex from "components/Flex";
 import TextPlaceholder from "components/Text/Placeholder";
+import pxToRem from "helpers/pxToRem";
 import { styled } from "stitches.config";
 
-export const Layer = styled('div', {
-  position: 'absolute',
-  width: '100%',
+
+export const Correction = styled(Appear, {
+  color: 'red',
+  position: 'relative',
+})
+
+export const LineNote = styled(Appear, {
+  fontFamily: 'cursive',
+  position: 'relative'
 });
 
-export const Review = styled('p', {
-  overflow: 'hidden',
-  overflowWrap: 'break-word',
+export const Content = styled('p', {
+  margin: 0,
+  paddingRight: pxToRem(8),
+  fontFamily: 'monospace',
+});
+
+export const Root = styled(Flex, {
+  position: 'relative',
+});
+
+export const CorrectionTextPlaceholder = styled(TextPlaceholder, {
+  textDecorationColor: 'red',
   color: 'transparent'
 })
-
-export const Correction = styled('span', {
-  color: 'red'
-})
-
-
-export const Content = styled(TextPlaceholder, {
-  position: 'absolute'
-});

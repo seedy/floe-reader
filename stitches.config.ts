@@ -38,7 +38,7 @@ export const { styled, getCssText } = createStitches({
       minWidth: value,
       minHeight: value,
     }),
-    br: (value: Stitches.PropertyValue<'borderRadius'>) => ({borderRadius: value})
+    br: (value: Stitches.PropertyValue<'borderRadius'>) => ({borderRadius: value}),
   }
 });
 

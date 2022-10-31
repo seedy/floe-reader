@@ -4,6 +4,13 @@ import { keyframes } from "@stitches/react";
 import Cover from "components/Cover";
 import Page from "components/Page";
 
+// CONSTANTS
+export const OPEN_DURATION = {
+  ms: 1300,
+  string: '1.3s'
+};
+
+// KEYFRAMES
 const rotatePage = keyframes({
   '0%': {
     transform: 'rotateY(0deg)',
@@ -18,8 +25,7 @@ const rotatePage = keyframes({
   }
 })
 
-const openDuration = '1.3s';
-
+// COMPONENTS
 export const Root = styled('div', {
   position: 'relative',
   height: pxToRem(500),
@@ -29,20 +35,20 @@ export const Root = styled('div', {
     boxShadow: `${pxToRem(-17)} 0 ${pxToRem(15)} ${pxToRem(-8)} hsla(0, 0%, 0%, 0.7)`,
     [`${Cover}:first-child`]: {
       zIndex: 0,
-      transition: `z-index ${openDuration}`,
-      animation: `${rotatePage} ${openDuration}`,
+      transition: `z-index ${OPEN_DURATION.string}`,
+      animation: `${rotatePage} ${OPEN_DURATION.string}`,
       animationFillMode: 'forwards',
     '& > *': {
         display: 'none'
       },
       [`& + ${Page}`]: {
         zIndex: 20,
-        animation: `${rotatePage} ${openDuration}`,
+        animation: `${rotatePage} ${OPEN_DURATION.string}`,
         animationFillMode: 'forwards',
       },
       [`& + ${Page} + ${Page}`]: {
         zIndex: 21,
-        transition: `z-index ${openDuration} ${openDuration}`,
+        transition: `z-index ${OPEN_DURATION.string} ${OPEN_DURATION.string}`,
         animation: `${rotatePage} 2s 2s`,
         animationFillMode: 'forwards',
       }
