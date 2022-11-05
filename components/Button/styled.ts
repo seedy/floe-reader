@@ -11,7 +11,7 @@ export const Root = styled('button', {
   height: pxToRem(30),
   br: pxToRem(6),
   textTransform: 'uppercase',
-  fontSize: pxToRem(16),
+  fontSize: '$button',
   fontWeight: '700',
   border: 'none',
   background: 'none',

@@ -11,14 +11,14 @@ export const Correction = styled(Appear, {
 })
 
 export const LineNote = styled(Appear, {
-  fontFamily: 'cursive',
+  fontFamily: '$cursive',
   position: 'relative'
 });
 
 export const Content = styled('p', {
   margin: 0,
   paddingRight: pxToRem(8),
-  fontFamily: 'monospace',
+  fontFamily: '$mono',
 });
 
 export const Root = styled(Flex, {
