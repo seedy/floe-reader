@@ -1,19 +1,30 @@
 import { createStitches } from '@stitches/react';
 import type * as Stitches from '@stitches/react';
+import pxToRem from 'helpers/pxToRem';
 
 export const { styled, getCssText } = createStitches({
   theme: {
     fonts: {
       system: 'system-ui',
+      cursive: 'cursive',
+      mono: 'monospace',
     },
     colors: {
       hiContrast: 'hsl(206,10%,5%)',
       loContrast: 'white',
     },
     fontSizes: {
-      1: '13px',
-      2: '15px',
-      3: '17px',
+      button: pxToRem(16),
+      1: pxToRem(24),
+      2: pxToRem(20),
+      3: pxToRem(18),
+    },
+    fontWeights: {
+      light: 300,
+      regular: 400,
+      medium: 500,
+      semiBold: 600,
+      bold: 700,
     },
     radii: {
       round: '50%',
