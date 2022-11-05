@@ -16,6 +16,8 @@ import floe from "public/floe.jpg";
 import Avatar, { AvatarProps } from "components/Avatar";
 import H2 from "components/Typography/H2";
 import H3 from "components/Typography/H3";
+import IconButton from "components/IconButton";
+import { InstagramLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 
 interface BookProps
   extends VariantProps<typeof Root>,
@@ -51,15 +53,28 @@ const Book = ({ children, avatarProps, ...props }: BookProps) => {
           C&apos;BEN CORREC&apos;
         </Flex>
         <Box>
-          <Flex grow direction="column" justify="spaceBetween">
+          <Flex
+            css={{ gap: pxToRem(16) }}
+            grow
+            direction="column"
+            justify="spaceBetween"
+          >
             <Flex direction="column" align="center">
               <Avatar src={floe} alt="Floé" {...(avatarProps || {})} />
               <H2>Floé Gaubert</H2>
             </Flex>
-            <Box css={{ marginTop: pxToRem(16) }}>
+            <Box>
               <H3>Correctrice diplômée du CEC promotion 2021</H3>
               <H3>Freelance Lectrice-correctrice & Rédactrice Web</H3>
             </Box>
+            <Flex css={{ gap: pxToRem(8) }} grow justify="center">
+              <IconButton>
+                <InstagramLogoIcon />
+              </IconButton>
+              <IconButton>
+                <LinkedInLogoIcon />
+              </IconButton>
+            </Flex>
           </Flex>
         </Box>
       </Page>
