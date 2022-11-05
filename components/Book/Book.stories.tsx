@@ -22,7 +22,10 @@ const Template: ComponentStory<typeof Book> = (args) => {
       justify="center"
       css={{ height: "100%", width: "100%" }}
     >
-      <Book {...args} />
+      <Book
+        {...args}
+        avatarProps={{ unoptimized: true, placeholder: "empty" }}
+      />
     </Flex>
   );
 };

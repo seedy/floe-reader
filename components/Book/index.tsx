@@ -12,11 +12,16 @@ import { OPEN_DURATION } from "components/Book/styled";
 import TextReviewed from "components/Text/Reviewed";
 import Box from "components/Box";
 import Flex from "components/Flex";
+import floe from "public/floe.jpg";
+import Avatar, { AvatarProps } from "components/Avatar";
+import H2 from "components/Typography/H2";
+import H3 from "components/Typography/H3";
 
 interface BookProps
   extends VariantProps<typeof Root>,
     ComponentProps<typeof Root> {
   children?: ReactNode;
+  avatarProps?: Partial<AvatarProps>;
 }
 
 const APPEAR_DELAY = OPEN_DURATION.ms * 3;
@@ -25,7 +30,7 @@ const SECOND_APPEAR_DELAY = OPEN_DURATION.ms * 4;
 /**
  * Primary UI component for user interaction
  */
-const Book = ({ children, ...props }: BookProps) => {
+const Book = ({ children, avatarProps, ...props }: BookProps) => {
   const [appearOn, setAppearOn] = useState(false);
 
   const onMouseEnter = () => {
@@ -45,7 +50,18 @@ const Book = ({ children, ...props }: BookProps) => {
         <Flex css={{ marginTop: pxToRem(50) }} align="center" justify="center">
           C&apos;BEN CORREC&apos;
         </Flex>
-        <Box></Box>
+        <Box>
+          <Flex grow direction="column" justify="spaceBetween">
+            <Flex direction="column" align="center">
+              <Avatar src={floe} alt="Floé" {...(avatarProps || {})} />
+              <H2>Floé Gaubert</H2>
+            </Flex>
+            <Box css={{ marginTop: pxToRem(16) }}>
+              <H3>Correctrice diplômée du CEC promotion 2021</H3>
+              <H3>Freelance Lectrice-correctrice & Rédactrice Web</H3>
+            </Box>
+          </Flex>
+        </Box>
       </Page>
       <Page>
         <Box>
