@@ -10,16 +10,19 @@ interface PageProps
     ComponentProps<typeof Root> {
   children?: ReactNode;
 }
-const Page = ({ children, ...props }: PageProps) => (
-  <Root className={CLASS_NAME} {...props}>
-    {Children.map(children, (child, index) => (
-      <>
-        {index === 0 && <FrontSide>{child}</FrontSide>}
-        {index === 1 && <BackSide>{child}</BackSide>}
-      </>
-    ))}
-  </Root>
-);
+const Page = ({ children, ...props }: PageProps) => {
+  const hasChildren = Children.count(children) > 0;
+  return (
+    <Root className={CLASS_NAME} {...props}>
+      {Children.map(children, (child, index) => (
+        <>
+          {index === 0 && <FrontSide>{child}</FrontSide>}
+          {index === 1 && <BackSide>{child}</BackSide>}
+        </>
+      ))}
+    </Root>
+  );
+};
 
 Page.toString = () => `.${CLASS_NAME}`;
 

@@ -14,12 +14,12 @@ export const Root = styled('div', {
   boxShadow: `${pxToRem(9)} ${pxToRem(2)} ${pxToRem(10)} ${pxToRem(3)} #CCCCCC`,
   transformOrigin: 'left center',
   transformStyle: 'preserve-3d',
-  padding: pxToRem(16),
 });
 
 const Side = styled(Box, {
-  width: '100%',
-  height: '100%',
+  inset: 0,
+  padding: pxToRem(16),
+  position: 'absolute'
 })
 
 export const FrontSide = styled(Side, {
