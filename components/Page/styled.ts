@@ -1,6 +1,6 @@
+import Box from "components/Box";
 import pxToRem from "helpers/pxToRem";
 import { styled } from "stitches.config";
-import Flex from 'components/Flex';
 
 export const Root = styled('div', {
   position: 'absolute',
@@ -14,5 +14,20 @@ export const Root = styled('div', {
   boxShadow: `${pxToRem(9)} ${pxToRem(2)} ${pxToRem(10)} ${pxToRem(3)} #CCCCCC`,
   transformOrigin: 'left center',
   transformStyle: 'preserve-3d',
-  padding: pxToRem(16)
+  padding: pxToRem(16),
 });
+
+const Side = styled(Box, {
+  width: '100%',
+  height: '100%',
+})
+
+export const FrontSide = styled(Side, {
+  backfaceVisibility: 'hidden'
+});
+
+export const BackSide = styled(Side, {
+  transformOrigin: 'center',
+  transform: 'rotate(180deg)',
+  backfaceVisibility: 'hidden',
+})

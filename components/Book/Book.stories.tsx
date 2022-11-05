@@ -56,17 +56,22 @@ const Template: ComponentStory<typeof Book> = (args) => {
           >
             C&apos;BEN CORREC&apos;
           </Flex>
+          <Box></Box>
         </Page>
         <Page>
-          <TextReviewed
-            words={52}
-            height={pxToRem(200)}
-            width="calc(100% - 18px)"
-          on={appearOn} delay={APPEAR_DELAY}/>
-          <Box css={{marginTop: pxToRem(32)}}>
-          <Appear on={appearOn} delay={SECOND_APPEAR_DELAY}>
-            <TextPlaceholder words={200} />
-          </Appear>
+          <Box>
+            <TextReviewed
+              words={52}
+              height={pxToRem(200)}
+              width="calc(100% - 18px)"
+              on={appearOn}
+              delay={APPEAR_DELAY}
+            />
+            <Box css={{ marginTop: pxToRem(32) }}>
+              <Appear on={appearOn} delay={SECOND_APPEAR_DELAY}>
+                <TextPlaceholder words={200} />
+              </Appear>
+            </Box>
           </Box>
         </Page>
         <Page></Page>

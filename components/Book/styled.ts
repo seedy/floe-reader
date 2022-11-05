@@ -16,12 +16,10 @@ const rotatePage = keyframes({
     transform: 'rotateY(0deg)',
   },
   '50%': {
-    color: 'transparent',
     transform: 'rotateY(90deg)'
   },
   '100%': {
     transform: 'rotateY(180deg)',
-    color: 'transparent'
   }
 })
 

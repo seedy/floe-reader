@@ -15,6 +15,10 @@ export const { styled, getCssText } = createStitches({
       2: '15px',
       3: '17px',
     },
+    radii: {
+      round: '50%',
+      pill: '9999px',
+    }
   },
   media: {
     bp1: '(min-width: 480px)'
