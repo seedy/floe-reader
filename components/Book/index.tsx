@@ -16,7 +16,7 @@ import floe from "public/floe.jpg";
 import Avatar, { AvatarProps } from "components/Avatar";
 import H2 from "components/Typography/H2";
 import H3 from "components/Typography/H3";
-import IconButton from "components/IconButton";
+import IconLink from "components/IconLink";
 import { InstagramLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 
 interface BookProps
@@ -68,12 +68,18 @@ const Book = ({ children, avatarProps, ...props }: BookProps) => {
               <H3>Freelance Lectrice-correctrice & Rédactrice Web</H3>
             </Box>
             <Flex css={{ gap: pxToRem(8) }} grow justify="center">
-              <IconButton>
+              <IconLink
+                href="https://www.instagram.com/c_ben_correc/"
+                target="_blank"
+              >
                 <InstagramLogoIcon />
-              </IconButton>
-              <IconButton>
+              </IconLink>
+              <IconLink
+                href="https://www.linkedin.com/in/flo%C3%A9-gaubert-327565123/"
+                target="_blank"
+              >
                 <LinkedInLogoIcon />
-              </IconButton>
+              </IconLink>
             </Flex>
           </Flex>
         </Box>
