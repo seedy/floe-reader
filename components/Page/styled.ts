@@ -28,6 +28,6 @@ export const FrontSide = styled(Side, {
 
 export const BackSide = styled(Side, {
   transformOrigin: 'center',
-  transform: 'rotate(180deg)',
+  transform: 'rotateY(180deg)',
   backfaceVisibility: 'hidden',
 })
