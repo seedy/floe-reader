@@ -1,6 +1,6 @@
 import { VariantProps } from "@stitches/react";
-import { BackSide, FrontSide, Root } from "components/Page/styled";
-import { ComponentProps, ReactNode, Children } from "react";
+import { Root } from "components/Page/styled";
+import { ComponentProps, ReactNode } from "react";
 
 // CONSTANTS
 const CLASS_NAME = "page";
@@ -11,15 +11,9 @@ interface PageProps
   children?: ReactNode;
 }
 const Page = ({ children, ...props }: PageProps) => {
-  const hasChildren = Children.count(children) > 0;
   return (
     <Root className={CLASS_NAME} {...props}>
-      {Children.map(children, (child, index) => (
-        <>
-          {index === 0 && <FrontSide>{child}</FrontSide>}
-          {index === 1 && <BackSide>{child}</BackSide>}
-        </>
-      ))}
+      {children}
     </Root>
   );
 };

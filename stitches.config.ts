@@ -2,7 +2,7 @@ import { createStitches } from '@stitches/react';
 import type * as Stitches from '@stitches/react';
 import pxToRem from 'helpers/pxToRem';
 
-export const { styled, getCssText } = createStitches({
+export const { styled, getCssText, createTheme } = createStitches({
   theme: {
     fonts: {
       system: 'system-ui',
@@ -10,8 +10,8 @@ export const { styled, getCssText } = createStitches({
       mono: 'monospace',
     },
     colors: {
-      hiContrast: 'hsl(206,10%,5%)',
-      loContrast: 'white',
+      default: 'hsl(0, 0%, 0%)',
+      background: 'hsl(0, 0%, 100%)',
     },
     fontSizes: {
       button: pxToRem(16),
@@ -57,3 +57,10 @@ export const { styled, getCssText } = createStitches({
   }
 });
 
+export const reader = createTheme({
+  colors: {
+    default: 'hsl(0, 0%, 0%)',
+    background: 'hsl(42, 54%, 88%)',
+
+  }
+})

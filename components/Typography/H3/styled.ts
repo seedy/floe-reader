@@ -4,7 +4,7 @@ import { styled } from "stitches.config";
 export const Root = styled('h3', {
   fontSize: '$3',
   fontFamily: '$system',
-  color: 'hsl(0, 0%, 0%)',
+  color: '$default',
   fontWeight: '$light',
   margin: `${pxToRem(8)} 0`,
 });

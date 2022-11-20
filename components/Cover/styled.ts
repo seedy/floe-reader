@@ -4,7 +4,7 @@ import { styled } from "stitches.config";
 export const Root = styled('div', {
   position: 'absolute',
   boxSizing: 'border-box',
-  backgroundColor: 'hsl(229, 20%, 52%)',
+  backgroundColor: '$default',
   size: '100%',
   transformOrigin: '0% 100%',
   transformStyle: 'preserve-3d',

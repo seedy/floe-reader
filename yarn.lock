@@ -8392,6 +8392,11 @@ junk@^3.1.0:
   resolved "https://registry.yarnpkg.com/junk/-/junk-3.1.0.tgz#31499098d902b7e98c5d9b9c80f43457a88abfa1"
   integrity sha512-pBxcB3LFc8QVgdggvZWyeys+hnrNWg4OcZIU/1X59k5jQdLBlCsYGRQaz234SqoRLTCgMH00fY0xRJH+F9METQ==
 
+keen-slider@^6.8.3:
+  version "6.8.3"
+  resolved "https://registry.yarnpkg.com/keen-slider/-/keen-slider-6.8.3.tgz#c42b27fb1afca0a2eb722676410cdd3af80f2e0f"
+  integrity sha512-tJFokyUiHAtbGGQHnNMm3MLCpOm+z1JZsaOOMVnzTYAfAqLDT/zI/cE1mf82Bxmp1uHSIeUUkH+EZGzRQrSO/w==
+
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"

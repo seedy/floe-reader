@@ -1,8 +1,10 @@
-import React from "react";
+import React, { ComponentProps } from "react";
 import { Root } from "components/Text/Placeholder/styled";
 import { VariantProps } from "@stitches/react";
 
-interface TextPlaceholderProps extends VariantProps<typeof Root> {
+interface TextPlaceholderProps
+  extends VariantProps<typeof Root>,
+    ComponentProps<typeof Root> {
   words: number;
 }
 

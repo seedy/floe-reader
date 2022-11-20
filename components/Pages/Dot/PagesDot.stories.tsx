@@ -1,35 +1,38 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import Book from ".";
-import Flex from "components/Flex";
+import PagesDot from ".";
+import Box from "components/Box";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Book",
-  component: Book,
+  title: "Components/PagesDot",
+  component: PagesDot,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: "color" },
   },
-} as ComponentMeta<typeof Book>;
+} as ComponentMeta<typeof PagesDot>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Book> = (args) => {
-  return (
-    <Flex
-      align="center"
-      justify="center"
-      css={{ height: "100%", width: "100%" }}
-    >
-      <Book
-        {...args}
-        avatarProps={{ unoptimized: true, placeholder: "empty" }}
-      />
-    </Flex>
-  );
-};
+const Template: ComponentStory<typeof PagesDot> = (args) => (
+  <Box
+    css={{
+      position: "relative",
+      width: 500,
+      height: 500,
+      backgroundColor: "white",
+    }}
+  >
+    <PagesDot {...args} />
+  </Box>
+);
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {};
+
+export const Active = Template.bind({});
+Active.args = {
+  active: true,
+};
