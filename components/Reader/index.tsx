@@ -105,14 +105,14 @@ const Reader = ({
               justify="spaceBetween"
             >
               <TextReviewed
-                words={49}
+                words={51}
                 height={pxToRem(200)}
                 width="calc(100% - 18px)"
                 on
                 delay={APPEAR_DELAY}
               />
               <Appear on delay={SECOND_APPEAR_DELAY}>
-                <TextPlaceholder words={100} />
+                <TextPlaceholder words={150} />
               </Appear>
             </Flex>
           </Page>
