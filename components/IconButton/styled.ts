@@ -6,6 +6,8 @@ export const Root = styled('button', {
   alignItems: 'center',
   justifyContent: 'center',
   boxSizing: 'border-box',
+  padding: 0,
+  margin: 0,
   br: '$round',
   textTransform: 'uppercase',
   fontSize: '$button',
