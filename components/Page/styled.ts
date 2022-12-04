@@ -9,5 +9,5 @@ export const Root = styled(Box, {
   color: '$default',
   br: pxToRem(3),
   // ARROWS + DOTS + PLAYPAUSE
-  padding: `${pxToRem(16)} ${pxToRem(24)} ${pxToRem(80)}`,
+  padding: `${pxToRem(16)} ${pxToRem(40)} ${pxToRem(80)}`,
 });
