@@ -11,6 +11,7 @@ import { OPEN_DURATION } from "components/Reader/styled";
 import TextReviewed from "components/Text/Reviewed";
 import Box from "components/Box";
 import Flex from "components/Flex";
+import cbcLogo from "public/CBC_Logo_full.png";
 import floe from "public/floe.jpg";
 import Avatar, { AvatarProps } from "components/Avatar";
 import H2 from "components/Typography/H2";
@@ -20,6 +21,7 @@ import { InstagramLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import Pages from "components/Pages";
 import { reader } from "stitches.config";
 import TiktokIcon from "components/icons/Tiktok";
+import Logo from "components/Logo";
 
 interface ReaderProps
   extends VariantProps<typeof Root>,
@@ -52,7 +54,13 @@ const Reader = ({
               align="center"
               justify="center"
             >
-              C&apos;BEN CORREC&apos;
+              <Logo
+                src={cbcLogo}
+                alt="C'BEN CORREC'"
+                width={264}
+                height={257}
+                {...(avatarProps || {})}
+              />
             </Flex>
           </Page>
           <Page data-keen-slider-clickable>
