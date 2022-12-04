@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import IconLink from ".";
-import { CheckIcon } from "@radix-ui/react-icons";
+import { CheckIcon, InstagramLogoIcon } from "@radix-ui/react-icons";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -20,11 +20,20 @@ const Template: ComponentStory<typeof IconLink> = (args) => (
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
+  href: "#",
   children: <CheckIcon />,
 };
 
 export const Small = Template.bind({});
 Small.args = {
+  href: "#",
   variant: "small",
   children: <CheckIcon />,
+};
+
+export const Linkedin = Template.bind({});
+Linkedin.args = {
+  href: "https://www.instagram.com/c_ben_correc/",
+  target: "_blank",
+  children: <InstagramLogoIcon />,
 };
