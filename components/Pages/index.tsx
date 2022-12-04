@@ -7,6 +7,8 @@ import "keen-slider/keen-slider.min.css";
 import PagesArrow from "components/Pages/Arrow";
 import Flex from "components/Flex";
 import PagesDot from "components/Pages/Dot";
+import keenSliderCarousel from "helpers/keenSlider/plugins/carousel";
+import PlayPause from "components/Pages/PlayPause";
 
 interface PagesProps {
   children: ReactNode;
@@ -14,6 +16,7 @@ interface PagesProps {
 }
 const Pages = ({ children, delay = 2000 }: PagesProps) => {
   const [loaded, setLoaded] = useState(false);
+  const [playing, setPlaying] = useState(true);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const slides = Children.count(children);
   const dotKeys = useMemo(() => Array.from(Array(slides).keys()), [slides]);
@@ -24,6 +27,7 @@ const Pages = ({ children, delay = 2000 }: PagesProps) => {
     {
       slides,
       loop: true,
+      drag: false,
       slideChanged(slider) {
         setCurrentSlide(slider.track.details.rel);
       },
@@ -37,36 +41,7 @@ const Pages = ({ children, delay = 2000 }: PagesProps) => {
         setLoaded(true);
       },
     },
-    [
-      (slider) => {
-        let timeout: ReturnType<typeof setTimeout>;
-        let mouseOver = false;
-        function clearNextTimeout() {
-          clearTimeout(timeout);
-        }
-        function nextTimeout() {
-          clearTimeout(timeout);
-          if (mouseOver) return;
-          timeout = setTimeout(() => {
-            slider.next();
-          }, delay);
-        }
-        slider.on("created", () => {
-          slider.container.addEventListener("mouseover", () => {
-            mouseOver = true;
-            clearNextTimeout();
-          });
-          slider.container.addEventListener("mouseout", () => {
-            mouseOver = false;
-            nextTimeout();
-          });
-          nextTimeout();
-        });
-        slider.on("dragStarted", clearNextTimeout);
-        slider.on("animationEnded", nextTimeout);
-        slider.on("updated", nextTimeout);
-      },
-    ]
+    [keenSliderCarousel(delay)]
   );
 
   const onPrev = (e: MouseEvent) => {
@@ -79,36 +54,65 @@ const Pages = ({ children, delay = 2000 }: PagesProps) => {
     instanceRef.current?.next();
   };
 
+  const onPause = (e: MouseEvent) => {
+    e.stopPropagation();
+    setPlaying(false);
+    (instanceRef.current?.emit as any)("stopped");
+  };
+
+  const onResume = (e: MouseEvent) => {
+    e.stopPropagation();
+    setPlaying(true);
+    (instanceRef.current?.emit as any)("resumed");
+  };
+
   return (
     <Root>
-      <Slides ref={sliderRef}>
+      <Slides className="keen-slider" ref={sliderRef}>
         {loaded && instanceRef.current && (
           <>
-            <PagesArrow onClick={onPrev} left disabled={currentSlide === 0} />
+            <PagesArrow
+              onClick={onPrev}
+              variant="small"
+              left
+              disabled={currentSlide === 0}
+            />
             <PagesArrow
               onClick={onNext}
+              variant="small"
               disabled={currentSlide === slides - 1}
             />
           </>
         )}
         {Children.map(children, (child, index) => (
-          <Slide key={index} css={{ opacity: opacities[index] }}>
+          <Slide
+            className="keen-slider__slide"
+            key={index}
+            css={{ opacity: opacities[index] }}
+          >
             {child}
           </Slide>
         ))}
       </Slides>
       {loaded && instanceRef.current && (
         <Flex css={{ position: "absolute", bottom: 0 }}>
-          {dotKeys.map((key) => (
-            <PagesDot
-              key={key}
-              active={currentSlide === key}
-              onClick={() => {
-                console.log("hey");
-                instanceRef.current?.moveToIdx(key);
-              }}
+          <Flex direction="column" align="center">
+            <PlayPause
+              playing={playing}
+              onClick={playing ? onPause : onResume}
             />
-          ))}
+            <Flex>
+              {dotKeys.map((key) => (
+                <PagesDot
+                  key={key}
+                  active={currentSlide === key}
+                  onClick={() => {
+                    instanceRef.current?.moveToIdx(key);
+                  }}
+                />
+              ))}
+            </Flex>
+          </Flex>
         </Flex>
       )}
     </Root>

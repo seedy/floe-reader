@@ -5,21 +5,20 @@ import {
   Content,
   Correction,
   LineNote,
-  CorrectionTextPlaceholder
+  CorrectionTextPlaceholder,
 } from "components/Text/Reviewed/styled";
 import { LOREM } from "constants/lorem";
-import pxToRem from "helpers/pxToRem";
-import { ComponentProps, Fragment } from "react";
+import { ComponentProps, Fragment, useRef } from "react";
 import useRefs from "hooks/useRefs";
 
 interface TextReviewedProps
   extends VariantProps<typeof Root>,
     ComponentProps<typeof Root> {
   words: number;
-  on: ComponentProps<typeof Correction>['on'];
+  on: ComponentProps<typeof Correction>["on"];
   delay: ComponentProps<typeof Correction>["delay"];
-  width: string;
-  height: string;
+  width: string | number;
+  height: string | number;
 }
 
 const TextReviewed = ({
@@ -30,6 +29,7 @@ const TextReviewed = ({
   height,
   ...props
 }: TextReviewedProps) => {
+  const parentRef = useRef<HTMLDivElement>(null);
   const [refs, onRef] = useRefs();
   const text = LOREM.split(" ")
     .slice(0, words)
@@ -41,7 +41,12 @@ const TextReviewed = ({
               <Fragment key={`${index}-${charIndex}`}>
                 {char}
                 {charIndex % 6 === 3 && (
-                  <Correction key={`${index}-${charIndex}`} ref={onRef} on={on} delay={delay}>
+                  <Correction
+                    key={`${index}-${charIndex}`}
+                    ref={onRef}
+                    on={on}
+                    delay={delay}
+                  >
                     /
                   </Correction>
                 )}
@@ -54,11 +59,11 @@ const TextReviewed = ({
       return `${word} `;
     });
   return (
-    <Root css={{ width, height }} {...props}>
+    <Root ref={parentRef} css={{ width, height }} {...props}>
       <Content>{text}</Content>
       <LineNote on={on} delay={delay}>
         {refs.map((ref, index) => (
-          <TextParallel key={index} target={ref}>
+          <TextParallel key={index} target={ref} parent={parentRef.current}>
             <CorrectionTextPlaceholder words={1} />
           </TextParallel>
         ))}

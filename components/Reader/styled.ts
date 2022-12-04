@@ -26,15 +26,13 @@ const rotatePage = keyframes({
 export const Root = styled('div', {
   position: 'relative',
   height: pxToRem(500),
-  width: pxToRem(300),
+  aspectRatio: '3 / 5',
   transition: 'transform 2s',
+  backgroundColor: 'black',
   [`${Cover}`]: {
-    zIndex: 0,
+    zIndex: 100,      
     transition: `z-index ${OPEN_DURATION.string}`,
     animation: `${rotatePage} ${OPEN_DURATION.string}`,
     animationFillMode: 'forwards',
   },
-  [`& ${Cover}`]: {
-    zIndex: 100,      
-  },  
 });

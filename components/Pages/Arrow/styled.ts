@@ -5,6 +5,7 @@ const ARROW_POSITION = {
   position: 'absolute',
   top: '50%',
   transform: 'translateY(-50%)',
+  zIndex: 1,
 }
 
 export const Left = styled(IconButton, {

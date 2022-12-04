@@ -16,6 +16,7 @@ export const LineNote = styled(Appear, {
 });
 
 export const Content = styled('p', {
+  display: 'block',
   margin: 0,
   paddingRight: pxToRem(8),
   fontFamily: '$mono',

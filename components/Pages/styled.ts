@@ -18,8 +18,6 @@ export const Slides = styled(Box, {
 })
 
 export const Slide = styled(Box, {
-  padding: pxToRem(8),
-  backgroundColor: 'black',
   width: '100%',
   height: '100%',
   position: 'absolute',

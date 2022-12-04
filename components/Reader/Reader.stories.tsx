@@ -32,4 +32,6 @@ const Template: ComponentStory<typeof Reader> = (args) => {
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Default.args = {};
+Default.args = {
+  height: 600,
+};

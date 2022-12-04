@@ -2,6 +2,7 @@ import pxToRem from "helpers/pxToRem";
 import { styled } from "stitches.config";
 
 export const Root = styled('h1', {
+  display: 'block',
   fontSize: '$1',
   fontFamily: '$system',
   color: '$default',
