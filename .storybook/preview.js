@@ -1,3 +1,5 @@
+import Root from "../components/Root";
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -6,4 +8,12 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+};
+
+export const decorators = [
+  (Story) => (
+    <Root>
+      <Story />
+    </Root>
+  ),
+];
