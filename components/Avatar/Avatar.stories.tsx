@@ -1,23 +1,32 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import floeLower from "public/floe-lower.jpg";
 
-import Book from ".";
+import Avatar from ".";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Book",
-  component: Book,
+  title: "Components/Avatar",
+  component: Avatar,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
-} as ComponentMeta<typeof Book>;
+  argTypes: {},
+} as ComponentMeta<typeof Avatar>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Book> = (args) => <Book {...args} />;
+const Template: ComponentStory<typeof Avatar> = (args) => (
+  // compatibility with storybook: unoptimized + placeholder="empty"
+  <Avatar unoptimized placeholder="empty" {...args} />
+);
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
-  label: "Book",
+  alt: "AvatarDefault",
+};
+
+export const Image = Template.bind({});
+
+Image.args = {
+  src: floeLower,
+  alt: "AvatarImage",
 };
