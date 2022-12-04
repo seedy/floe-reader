@@ -2,6 +2,7 @@ import pxToRem from "helpers/pxToRem";
 import { styled } from "stitches.config";
 import { keyframes } from "@stitches/react";
 import Cover from "components/Cover";
+import Box from "components/Box";
 
 // CONSTANTS
 export const OPEN_DURATION = {
@@ -23,12 +24,13 @@ const rotatePage = keyframes({
 })
 
 // COMPONENTS
-export const Root = styled('div', {
+export const Root = styled(Box, { 
   position: 'relative',
   height: pxToRem(500),
   aspectRatio: '3 / 5',
   transition: 'transform 2s',
-  backgroundColor: 'black',
+  backgroundColor: '$default',
+  br: pxToRem(3),
   [`${Cover}`]: {
     zIndex: 100,      
     transition: `z-index ${OPEN_DURATION.string}`,
