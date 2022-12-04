@@ -14,14 +14,14 @@ export const Root = styled('button', {
   fontWeight: '$bold',
   border: 'none',
   background: 'none',
-  '&:hover': {
+  '&:hover:not(:disabled)': {
     cursor: 'pointer',
     color: 'hsl(261, 100%, 42%)',
   },
   '&:focus': {
     backgroundColor: 'hsla(261, 100%, 42%, 0.04)',
   },
-  '&:active': {
+  '&:active:not(:disabled)': {
     boxShadow: `0 0 ${pxToRem(10)} ${pxToRem(1)} hsla(0, 0%, 0%, 0.13)`,
   },
   variants: {
