@@ -1,0 +1,8 @@
+.root {
+  display: block;
+  font-size: var(--fontsizes-2);
+  font-family: var(--fonts-system);
+  color: var(--colors-default);
+  font-weight: var(--fontweights-medium);
+  margin: 0.75rem 0;
+}

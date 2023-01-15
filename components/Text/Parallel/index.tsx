@@ -1,7 +1,6 @@
-import { FloatingParagraph } from "components/Text/Parallel/styled";
 import { ComponentProps, useCallback, useEffect, useRef } from "react";
-
-interface TextParallelProps extends ComponentProps<typeof FloatingParagraph> {
+import styles from "components/Text/Parallel/Parallel.module.css";
+interface TextParallelProps extends ComponentProps<"div"> {
   target: HTMLElement;
   parent: HTMLElement | null;
 }
@@ -36,7 +35,11 @@ const TextParallel = ({ target, parent, children }: TextParallelProps) => {
     }
   }, [parent, observer]);
 
-  return <FloatingParagraph ref={ref}>{children}</FloatingParagraph>;
+  return (
+    <div className={styles.floating} ref={ref}>
+      {children}
+    </div>
+  );
 };
 
 export default TextParallel;

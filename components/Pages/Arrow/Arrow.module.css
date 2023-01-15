@@ -1,0 +1,14 @@
+.root {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.left-true {
+  left: 0;
+}
+
+.left-false {
+  right: 0;
+}
