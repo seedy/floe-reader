@@ -1,24 +1,18 @@
-import { VariantProps } from "@stitches/react";
 import TextParallel from "components/Text/Parallel";
-import {
-  Root,
-  Content,
-  Correction,
-  LineNote,
-  CorrectionTextPlaceholder,
-} from "components/Text/Reviewed/styled";
 import { LOREM } from "constants/lorem";
 import { ComponentProps, Fragment, useRef } from "react";
 import useRefs from "hooks/useRefs";
+import Appear from "components/Animate/Appear";
+import styles from "components/Text/Reviewed/Reviewed.module.css";
+import Flex from "components/Flex";
+import TextPlaceholder from "components/Text/Placeholder";
 
-interface TextReviewedProps
-  extends VariantProps<typeof Root>,
-    ComponentProps<typeof Root> {
+interface TextReviewedProps extends ComponentProps<typeof Flex> {
   words: number;
-  on: ComponentProps<typeof Correction>["on"];
-  delay: ComponentProps<typeof Correction>["delay"];
-  width: string | number;
-  height: string | number;
+  on: ComponentProps<typeof Appear>["on"];
+  delay: ComponentProps<typeof Appear>["delay"];
+  width: string;
+  height: string;
 }
 
 const TextReviewed = ({
@@ -41,14 +35,15 @@ const TextReviewed = ({
               <Fragment key={`${index}-${charIndex}`}>
                 {char}
                 {charIndex % 6 === 3 && (
-                  <Correction
+                  <Appear
+                    className={styles.correction}
                     key={`${index}-${charIndex}`}
                     ref={onRef}
                     on={on}
                     delay={delay}
                   >
                     /
-                  </Correction>
+                  </Appear>
                 )}
                 {charIndex === word.length - 1 && " "}
               </Fragment>
@@ -59,16 +54,24 @@ const TextReviewed = ({
       return `${word} `;
     });
   return (
-    <Root ref={parentRef} css={{ width, height }} {...props}>
-      <Content>{text}</Content>
-      <LineNote on={on} delay={delay}>
+    <Flex
+      ref={parentRef}
+      className={styles.root}
+      style={{ width, height }}
+      {...props}
+    >
+      <p className={styles.content}>{text}</p>
+      <Appear className={styles.lineNote} on={on} delay={delay}>
         {refs.map((ref, index) => (
           <TextParallel key={index} target={ref} parent={parentRef.current}>
-            <CorrectionTextPlaceholder words={1} />
+            <TextPlaceholder
+              className={styles.correctionTextPlaceholder}
+              words={1}
+            />
           </TextParallel>
         ))}
-      </LineNote>
-    </Root>
+      </Appear>
+    </Flex>
   );
 };
 

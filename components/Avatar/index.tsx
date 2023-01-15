@@ -1,17 +1,16 @@
-import { VariantProps } from "@stitches/react";
-import { Root } from "components/Avatar/styled";
+import Image from "next/image";
 import { ComponentProps } from "react";
+import styles from "components/Avatar/Avatar.module.css";
 
 // CONSTANTS
 const SIZE = 160;
 
 // COMPONENTS
-export interface AvatarProps
-  extends VariantProps<typeof Root>,
-    ComponentProps<typeof Root> {}
+export interface AvatarProps extends ComponentProps<typeof Image> {}
 
 const Avatar = ({ src, alt, ...props }: AvatarProps) => (
-  <Root
+  <Image
+    className={styles.root}
     width={SIZE}
     height={SIZE}
     src={src || `https://picsum.photos/${SIZE}`}

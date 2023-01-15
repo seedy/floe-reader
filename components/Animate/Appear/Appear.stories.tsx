@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import Appear from ".";
-import { styled } from "stitches.config";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -27,12 +26,6 @@ Delayed.args = {
   delay: 700,
 };
 
-const HoverMe = styled("div", {
-  height: 50,
-  width: 100,
-  border: "1px dotted yellow",
-});
-
 export const OnHover: ComponentStory<typeof Appear> = (args) => {
   const [appearOn, setAppearOn] = useState(false);
 
@@ -43,9 +36,13 @@ export const OnHover: ComponentStory<typeof Appear> = (args) => {
     setAppearOn(false);
   };
   return (
-    <HoverMe onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+    <div
+      style={{ height: 50, width: 100, border: "1px dotted yellow" }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <Appear on={appearOn} {...args} />
-    </HoverMe>
+    </div>
   );
 };
 OnHover.args = {

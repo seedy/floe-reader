@@ -1,0 +1,8 @@
+.root {
+  position: relative;
+  height: 31.25rem;
+  aspect-ratio: 3 / 5;
+  transition: transform 2s;
+  background-color: var(--colors-default);
+  border-radius: 0.1875rem;
+}

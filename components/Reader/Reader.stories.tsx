@@ -20,7 +20,7 @@ const Template: ComponentStory<typeof Reader> = (args) => {
     <Flex
       align="center"
       justify="center"
-      css={{ height: "100%", width: "100%" }}
+      style={{ height: "100%", width: "100%" }}
     >
       <Reader
         {...args}

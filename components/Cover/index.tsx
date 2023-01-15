@@ -1,19 +1,13 @@
-import { ReactNode } from "react";
-import { VariantProps } from "@stitches/react";
-import { Content, Root } from "./styled";
+import { ComponentProps, ReactNode } from "react";
+import styles from "components/Cover/Cover.module.css";
 
-// CONSTANTS
-const CLASS_NAME = "cover";
-
-interface CoverProps extends VariantProps<typeof Root> {
+interface CoverProps extends ComponentProps<"div"> {
   children?: ReactNode;
 }
 const Cover = ({ children, ...props }: CoverProps) => (
-  <Root className={CLASS_NAME} {...props}>
-    <Content>{children}</Content>
-  </Root>
+  <div className={styles.root} {...props}>
+    <div className={styles.content}>{children}</div>
+  </div>
 );
-
-Cover.toString = () => `.${CLASS_NAME}`;
 
 export default Cover;

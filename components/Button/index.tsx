@@ -1,12 +1,18 @@
-import { VariantProps } from "@stitches/react";
-import { ReactNode } from "react";
-import { Root } from "./styled";
+import { ComponentProps, ReactNode } from "react";
+import styles from "components/Button/Button.module.css";
+import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
 
-interface ButtonProps extends VariantProps<typeof Root> {
+interface ButtonProps extends ComponentProps<"button"> {
   children?: ReactNode;
+  variant?: "contained" | "outlined" | "text";
 }
-const Button = ({ children, ...props }: ButtonProps) => {
-  return <Root {...props}>{children}</Root>;
+const Button = ({ children, variant = "outlined", ...props }: ButtonProps) => {
+  const className = variantsToClassNameStyles({ variant }, styles);
+  return (
+    <button className={`${styles.root} ${className}`} {...props}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;

@@ -1,13 +1,10 @@
-import { VariantProps } from "@stitches/react";
 import { ReactNode, ComponentProps } from "react";
-import { Root } from "./styled";
 
 import Page from "components/Page";
 import Cover from "components/Cover";
 import pxToRem from "helpers/pxToRem";
 import TextPlaceholder from "components/Text/Placeholder";
 import Appear from "components/Animate/Appear";
-import { OPEN_DURATION } from "components/Reader/styled";
 import TextReviewed from "components/Text/Reviewed";
 import Box from "components/Box";
 import Flex from "components/Flex";
@@ -19,20 +16,19 @@ import H3 from "components/Typography/H3";
 import IconLink from "components/IconLink";
 import { InstagramLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import Pages from "components/Pages";
-import { reader } from "stitches.config";
 import TiktokIcon from "components/icons/Tiktok";
 import Logo from "components/Logo";
+import styles from "components/Reader/Reader.module.css";
 
-interface ReaderProps
-  extends VariantProps<typeof Root>,
-    ComponentProps<typeof Root> {
+interface ReaderProps extends ComponentProps<typeof Box> {
   children?: ReactNode;
   avatarProps?: Partial<AvatarProps>;
   height?: number;
 }
 
-const APPEAR_DELAY = OPEN_DURATION.ms * 3;
-const SECOND_APPEAR_DELAY = OPEN_DURATION.ms * 4;
+const OPEN_DURATION = 1300;
+const APPEAR_DELAY = OPEN_DURATION * 3;
+const SECOND_APPEAR_DELAY = OPEN_DURATION * 4;
 
 /**
  * Primary UI component for user interaction
@@ -44,13 +40,13 @@ const Reader = ({
   ...props
 }: ReaderProps) => {
   return (
-    <Root className={reader} css={{ height: pxToRem(height) }} {...props}>
+    <Box className={styles.root} style={{ height: pxToRem(height) }} {...props}>
       <Cover />
-      <Box css={{ padding: pxToRem(8), width: "100%", height: "100%" }}>
+      <Box style={{ padding: pxToRem(8), width: "100%", height: "100%" }}>
         <Pages>
           <Page data-keen-slider-clickable>
             <Flex
-              css={{ marginTop: pxToRem(50) }}
+              style={{ marginTop: pxToRem(50) }}
               align="center"
               justify="center"
             >
@@ -65,10 +61,10 @@ const Reader = ({
           </Page>
           <Page data-keen-slider-clickable>
             <Flex
-              css={{ gap: pxToRem(16), overflow: "hidden", height: "100%" }}
+              style={{ gap: pxToRem(16), overflow: "hidden", height: "100%" }}
               grow
               direction="column"
-              justify="spaceBetween"
+              justify="space-between"
             >
               <Flex direction="column" align="center">
                 <Avatar src={floe} alt="Floé" {...(avatarProps || {})} />
@@ -79,7 +75,7 @@ const Reader = ({
                 <H3>Freelance Lectrice-correctrice & Rédactrice Web</H3>
               </Box>
               <Flex
-                css={{ gap: pxToRem(16), marginBottom: pxToRem(16) }}
+                style={{ gap: pxToRem(16), marginBottom: pxToRem(16) }}
                 justify="center"
               >
                 <IconLink
@@ -108,9 +104,9 @@ const Reader = ({
           </Page>
           <Page data-keen-slider-clickable>
             <Flex
-              css={{ height: "100%" }}
+              style={{ height: "100%" }}
               direction="column"
-              justify="spaceBetween"
+              justify="space-between"
             >
               <TextReviewed
                 words={51}
@@ -126,7 +122,7 @@ const Reader = ({
           </Page>
         </Pages>
       </Box>
-    </Root>
+    </Box>
   );
 };
 

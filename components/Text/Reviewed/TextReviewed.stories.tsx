@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import TextReviewed from ".";
 import Box from "components/Box";
+import pxToRem from "helpers/pxToRem";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -19,7 +20,7 @@ const Template: ComponentStory<typeof TextReviewed> = (args) => {
   const [width, setWidth] = useState(args.width);
 
   const onClick = () => {
-    setWidth(600);
+    setWidth(pxToRem(600));
   };
 
   return (
@@ -34,6 +35,6 @@ export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
   words: 100,
-  width: 300,
-  height: 300,
+  width: pxToRem(300),
+  height: pxToRem(300),
 };
