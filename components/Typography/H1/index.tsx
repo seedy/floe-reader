@@ -1,13 +1,12 @@
-import { VariantProps } from "@stitches/react";
-import { Root } from "components/Typography/H1/styled";
+import styles from "components/Typography/H1/H1.module.css";
 import { ComponentProps } from "react";
 
-interface H1Props
-  extends VariantProps<typeof Root>,
-    ComponentProps<typeof Root> {}
+interface H1Props extends ComponentProps<"h1"> {}
 
 const H1 = ({ children, ...props }: H1Props) => (
-  <Root {...props}>{children}</Root>
+  <h1 className={styles.root} {...props}>
+    {children}
+  </h1>
 );
 
 export default H1;

@@ -1,14 +1,22 @@
-import { VariantProps } from "@stitches/react";
 import { ComponentProps, ReactNode } from "react";
-import { Root } from "./styled";
+import styles from "components/IconLink/IconLink.module.css";
+import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
 
-interface IconLinkProps
-  extends VariantProps<typeof Root>,
-    ComponentProps<typeof Root> {
+interface IconLinkProps extends ComponentProps<"a"> {
   children?: ReactNode;
+  variant?: "small" | "medium";
 }
-const IconLink = ({ children, ...props }: IconLinkProps) => {
-  return <Root {...props}>{children}</Root>;
+const IconLink = ({
+  children,
+  variant = "medium",
+  ...props
+}: IconLinkProps) => {
+  const variantsClassName = variantsToClassNameStyles({ variant }, styles);
+  return (
+    <a className={`${styles.root} ${variantsClassName}`} {...props}>
+      {children}
+    </a>
+  );
 };
 
 export default IconLink;

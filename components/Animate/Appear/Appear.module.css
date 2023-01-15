@@ -1,0 +1,13 @@
+.root {
+  transform: translateY(-0.625rem);
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.variant-true {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.variant-false {
+  opacity: 0;
+}

@@ -1,16 +1,21 @@
 import React, { ComponentProps } from "react";
-import { Root } from "components/Text/Placeholder/styled";
-import { VariantProps } from "@stitches/react";
+import styles from "components/Text/Placeholder/Placeholder.module.css";
 
-interface TextPlaceholderProps
-  extends VariantProps<typeof Root>,
-    ComponentProps<typeof Root> {
+interface TextPlaceholderProps extends ComponentProps<"p"> {
   words: number;
 }
 
-const TextPlaceholder = ({ words, ...props }: TextPlaceholderProps) => {
+const TextPlaceholder = ({
+  words,
+  className,
+  ...props
+}: TextPlaceholderProps) => {
   const text = Array(words).fill("···");
-  return <Root {...props}>{text}</Root>;
+  return (
+    <p className={`${styles.root} ${className}`} {...props}>
+      {text}
+    </p>
+  );
 };
 
 export default TextPlaceholder;

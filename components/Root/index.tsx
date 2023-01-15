@@ -1,12 +1,13 @@
-import { VariantProps } from "@stitches/react";
-import { ReactNode } from "react";
-import { Root as StyledRoot } from "./styled";
+import { ComponentProps, ReactNode } from "react";
+import styles from "components/Root/Root.module.css";
 
-interface RootProps extends VariantProps<typeof StyledRoot> {
+interface RootProps extends ComponentProps<"div"> {
   children?: ReactNode;
 }
 const Root = ({ children, ...props }: RootProps) => (
-  <StyledRoot {...props}>{children}</StyledRoot>
+  <div className={styles.root} {...props}>
+    {children}
+  </div>
 );
 
 export default Root;

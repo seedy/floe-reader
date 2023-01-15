@@ -1,35 +1,53 @@
-import { VariantProps } from "@stitches/react";
-import { ComponentProps, ElementRef, forwardRef, ReactNode, useEffect, useState } from "react";
-import { Root } from "./styled";
+import {
+  ComponentProps,
+  ElementRef,
+  forwardRef,
+  ReactNode,
+  useEffect,
+  useState,
+} from "react";
+import styles from "components/Animate/Appear/Appear.module.css";
+import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
 
-interface AppearProps
-  extends VariantProps<typeof Root>,
-    ComponentProps<typeof Root> {
+interface AppearProps extends ComponentProps<"span"> {
   children?: ReactNode;
   on?: boolean;
   delay?: number;
 }
 
-const Appear = forwardRef<ElementRef<typeof Root>, AppearProps>(({ children, on = true, delay = 0, ...props }: AppearProps, forwardedRef) => {
-  const [isAppear, setAppear] = useState(false);
-  useEffect(() => {
-    if (on) {
-      const timeout = setTimeout(() => {
-        setAppear(true);
-      }, delay);
-      return () => {
-        clearTimeout(timeout);
-      };
-    }
-    setAppear(false);
-  }, [setAppear, delay, on]);
-  return (
-    <Root ref={forwardedRef} variant={isAppear} {...props}>
-      {children}
-    </Root>
-  );
-});
+const Appear = forwardRef<ElementRef<"span">, AppearProps>(
+  (
+    { className, children, on = true, delay = 0, ...props }: AppearProps,
+    forwardedRef
+  ) => {
+    const [isAppear, setAppear] = useState(false);
+    useEffect(() => {
+      if (on) {
+        const timeout = setTimeout(() => {
+          setAppear(true);
+        }, delay);
+        return () => {
+          clearTimeout(timeout);
+        };
+      }
+      setAppear(false);
+    }, [setAppear, delay, on]);
+    const variantsClassName = variantsToClassNameStyles(
+      { variant: isAppear },
+      styles
+    );
+    return (
+      <span
+        className={`${styles.root} ${className} ${variantsClassName}`}
+        ref={forwardedRef}
+        {...props}
+      >
+        {children}
+      </span>
+    );
+  }
+);
 
-Appear.displayName = 'Appear';
+Appear.displayName = "Appear";
 
 export default Appear;

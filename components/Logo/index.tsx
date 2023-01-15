@@ -1,14 +1,18 @@
-import { VariantProps } from "@stitches/react";
-import { Root } from "components/Logo/styled";
+import styles from "components/Logo/Logo.module.css";
+import Image from "next/image";
 import { ComponentProps } from "react";
 
 // COMPONENTS
-export interface LogoProps
-  extends VariantProps<typeof Root>,
-    ComponentProps<typeof Root> {}
+export interface LogoProps extends ComponentProps<typeof Image> {}
 
 const Logo = ({ src, alt, ...props }: LogoProps) => (
-  <Root src={src} alt={alt} placeholder="blur" {...props} />
+  <Image
+    className={styles.root}
+    src={src}
+    alt={alt}
+    placeholder="blur"
+    {...props}
+  />
 );
 
 export default Logo;
