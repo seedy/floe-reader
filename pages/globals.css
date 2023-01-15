@@ -1,0 +1,31 @@
+:root {
+  --fonts-system: system-ui;
+  --fonts-cursive: cursive;
+  --fonts-mono: monospace;
+  
+  --colors-default: hsl(0, 0%, 0%);
+  --colors-background: hsl(0, 0%, 100%);
+  --colors-page: hsl(42, 54%, 88%);
+
+  --fontsizes-button: 1rem;
+  --fontsizes-1: 1.5rem;
+  --fontsizes-2: 1.25rem;
+  --fontsizes-3: 1.125rem;
+
+
+  --fontweights-light: 300;
+  --fontweights-regular: 400;
+  --fontweights-medium: 500;
+  --fontweights-semiBold: 600;
+  --fontweights-bold: 700;
+
+  --radii-round: 50%;
+  --radii-pill: 9999px;
+
+  --shadows-light: 0 0 0.625rem 0.0625rem hsla(0, 0%, 0%, 0.13);
+  --shadows-medium: 0 0 0.625rem 0.0625rem hsla(0, 0%, 0%, 0.26);
+}
+
+body {
+  font-family: var(--fonts-system);
+}

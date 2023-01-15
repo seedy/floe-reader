@@ -1,7 +1,5 @@
 import { Children, MouseEvent, ReactNode, useMemo, useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
-import { Root, Slide, Slides } from "components/Pages/styled";
-
 // STYLES
 import "keen-slider/keen-slider.min.css";
 import PagesArrow from "components/Pages/Arrow";
@@ -9,6 +7,8 @@ import Flex from "components/Flex";
 import PagesDot from "components/Pages/Dot";
 import keenSliderCarousel from "helpers/keenSlider/plugins/carousel";
 import PlayPause from "components/Pages/PlayPause";
+import styles from "components/Pages/Pages.module.css";
+import Box from "components/Box";
 
 interface PagesProps {
   children: ReactNode;
@@ -67,8 +67,8 @@ const Pages = ({ children, delay = 2000 }: PagesProps) => {
   };
 
   return (
-    <Root>
-      <Slides className="keen-slider" ref={sliderRef}>
+    <Box className={styles.root}>
+      <Box className={`${styles.slides} keen-slider`} ref={sliderRef}>
         {loaded && instanceRef.current && (
           <>
             <PagesArrow
@@ -85,17 +85,17 @@ const Pages = ({ children, delay = 2000 }: PagesProps) => {
           </>
         )}
         {Children.map(children, (child, index) => (
-          <Slide
-            className="keen-slider__slide"
+          <Box
+            className={`${styles.slide} keen-slider__slide`}
             key={index}
-            css={{ opacity: opacities[index] }}
+            style={{ opacity: opacities[index] }}
           >
             {child}
-          </Slide>
+          </Box>
         ))}
-      </Slides>
+      </Box>
       {loaded && instanceRef.current && (
-        <Flex css={{ position: "absolute", bottom: 0 }}>
+        <Flex style={{ position: "absolute", bottom: 0 }}>
           <Flex direction="column" align="center">
             <PlayPause
               playing={playing}
@@ -115,7 +115,7 @@ const Pages = ({ children, delay = 2000 }: PagesProps) => {
           </Flex>
         </Flex>
       )}
-    </Root>
+    </Box>
   );
 };
 

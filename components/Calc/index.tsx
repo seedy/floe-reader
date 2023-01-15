@@ -1,11 +1,12 @@
-import { VariantProps } from "@stitches/react";
-import { Root } from "components/Calc/styled";
+import styles from "components/Calc/Calc.module.css";
 import { ReactNode } from "react";
 
-interface CalcProps extends VariantProps<typeof Root> {
+interface CalcProps {
   children?: ReactNode;
 }
 
-const Calc = ({ children }: CalcProps) => <Root>{children}</Root>;
+const Calc = ({ children }: CalcProps) => (
+  <div className={styles.root}>{children}</div>
+);
 
 export default Calc;

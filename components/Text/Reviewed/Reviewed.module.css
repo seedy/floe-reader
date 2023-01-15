@@ -1,0 +1,25 @@
+.correction {
+  color: red;
+  position: relative;
+}
+
+.lineNote {
+  font-family: var(--fonts-cursive);
+  position: relative;
+}
+
+.content {
+  display: block;
+  margin: 0;
+  padding-right: 0.5rem;
+  font-family: var(--fonts-mono);
+}
+
+.root {
+  position: relative;
+}
+
+.correctionTextPlaceholder {
+  text-decoration-color: red;
+  color: transparent;
+}
