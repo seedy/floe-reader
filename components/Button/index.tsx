@@ -1,6 +1,7 @@
 import { ComponentProps, ReactNode } from "react";
 import styles from "components/Button/Button.module.css";
 import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
+import classNames from "helpers/classNames";
 
 interface ButtonProps extends ComponentProps<"button"> {
   children?: ReactNode;
@@ -9,7 +10,7 @@ interface ButtonProps extends ComponentProps<"button"> {
 const Button = ({ children, variant = "outlined", className, ...props }: ButtonProps) => {
   const variantsClassName = variantsToClassNameStyles({ variant }, styles);
   return (
-    <button className={`${styles.root} ${className} ${variantsClassName}`} {...props}>
+    <button className={classNames(styles.root, className, variantsClassName)} {...props}>
       {children}
     </button>
   );
