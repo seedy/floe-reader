@@ -31,8 +31,8 @@ Small.args = {
   children: <CheckIcon />,
 };
 
-export const Linkedin = Template.bind({});
-Linkedin.args = {
+export const Instagram = Template.bind({});
+Instagram.args = {
   href: "https://www.instagram.com/c_ben_correc/",
   target: "_blank",
   children: <InstagramLogoIcon />,
