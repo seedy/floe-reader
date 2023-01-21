@@ -9,11 +9,12 @@ interface IconLinkProps extends ComponentProps<"a"> {
 const IconLink = ({
   children,
   variant = "medium",
+  className,
   ...props
 }: IconLinkProps) => {
   const variantsClassName = variantsToClassNameStyles({ variant }, styles);
   return (
-    <a className={`${styles.root} ${variantsClassName}`} {...props}>
+    <a className={`${styles.root} ${className} ${variantsClassName}`} {...props}>
       {children}
     </a>
   );

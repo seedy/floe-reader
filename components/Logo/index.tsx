@@ -5,9 +5,9 @@ import { ComponentProps } from "react";
 // COMPONENTS
 export interface LogoProps extends ComponentProps<typeof Image> {}
 
-const Logo = ({ src, alt, ...props }: LogoProps) => (
+const Logo = ({ src, alt, className, ...props }: LogoProps) => (
   <Image
-    className={styles.root}
+    className={`${styles.root} ${className}`}
     src={src}
     alt={alt}
     placeholder="blur"

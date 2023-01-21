@@ -6,10 +6,10 @@ interface ButtonProps extends ComponentProps<"button"> {
   children?: ReactNode;
   variant?: "contained" | "outlined" | "text";
 }
-const Button = ({ children, variant = "outlined", ...props }: ButtonProps) => {
-  const className = variantsToClassNameStyles({ variant }, styles);
+const Button = ({ children, variant = "outlined", className, ...props }: ButtonProps) => {
+  const variantsClassName = variantsToClassNameStyles({ variant }, styles);
   return (
-    <button className={`${styles.root} ${className}`} {...props}>
+    <button className={`${styles.root} ${className} ${variantsClassName}`} {...props}>
       {children}
     </button>
   );

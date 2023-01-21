@@ -10,14 +10,14 @@ interface FlexProps extends ComponentProps<"div"> {
 }
 
 const Flex = forwardRef<HTMLDivElement, FlexProps>(
-  ({ children, direction, align, justify, grow, ...props }, forwardedRef) => {
-    const className = variantsToClassNameStyles(
+  ({ children, direction, align, justify, grow, className, ...props }, forwardedRef) => {
+    const variantsClassName = variantsToClassNameStyles(
       { direction, align, justify, grow },
       styles
     );
     return (
       <div
-        className={`${styles.root} ${className}`}
+        className={`${styles.root} ${className} ${variantsClassName}`}
         ref={forwardedRef}
         {...props}
       >
