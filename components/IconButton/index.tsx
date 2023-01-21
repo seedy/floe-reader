@@ -9,11 +9,12 @@ interface IconButtonProps extends ComponentProps<"button"> {
 const IconButton = ({
   children,
   variant = "medium",
+  className,
   ...props
 }: IconButtonProps) => {
-  const className = variantsToClassNameStyles({ variant }, styles);
+  const variantsClassName = variantsToClassNameStyles({ variant }, styles);
   return (
-    <button className={`${styles.root} ${className}`} {...props}>
+    <button className={`${styles.root} ${className} ${variantsClassName}`} {...props}>
       {children}
     </button>
   );

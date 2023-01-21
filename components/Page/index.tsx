@@ -6,9 +6,9 @@ import Box from "components/Box";
 interface PageProps extends ComponentProps<typeof Box> {
   children?: ReactNode;
 }
-const Page = ({ children, ...props }: PageProps) => {
+const Page = ({ children, className, ...props }: PageProps) => {
   return (
-    <Box className={styles.root} {...props}>
+    <Box className={`${styles.root} ${className}`} {...props}>
       {children}
     </Box>
   );
