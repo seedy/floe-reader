@@ -1,6 +1,7 @@
 import { ComponentProps, ReactNode } from "react";
 import styles from "components/IconLink/IconLink.module.css";
 import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
+import classNames from "helpers/classNames";
 
 interface IconLinkProps extends ComponentProps<"a"> {
   children?: ReactNode;
@@ -14,7 +15,7 @@ const IconLink = ({
 }: IconLinkProps) => {
   const variantsClassName = variantsToClassNameStyles({ variant }, styles);
   return (
-    <a className={`${styles.root} ${className} ${variantsClassName}`} {...props}>
+    <a className={classNames(styles.root, className, variantsClassName)} {...props}>
       {children}
     </a>
   );

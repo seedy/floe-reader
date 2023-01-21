@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ComponentProps } from "react";
 import styles from "components/Avatar/Avatar.module.css";
+import classNames from "helpers/classNames";
 
 // CONSTANTS
 const SIZE = 160;
@@ -10,7 +11,7 @@ export interface AvatarProps extends ComponentProps<typeof Image> {}
 
 const Avatar = ({ src, alt, className, ...props }: AvatarProps) => (
   <Image
-    className={`${styles.root} ${className}`}
+    className={classNames(styles.root, className)}
     width={SIZE}
     height={SIZE}
     src={src || `https://picsum.photos/${SIZE}`}
