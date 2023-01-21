@@ -1,6 +1,7 @@
 import { ComponentProps, forwardRef } from "react";
 import styles from "components/Flex/Flex.module.css";
 import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
+import classNames from "helpers/classNames";
 
 interface FlexProps extends ComponentProps<"div"> {
   direction?: "row" | "column";
@@ -17,7 +18,7 @@ const Flex = forwardRef<HTMLDivElement, FlexProps>(
     );
     return (
       <div
-        className={`${styles.root} ${className} ${variantsClassName}`}
+        className={classNames(styles.root, className, variantsClassName)}
         ref={forwardedRef}
         {...props}
       >

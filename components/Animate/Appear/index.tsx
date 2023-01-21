@@ -8,6 +8,7 @@ import {
 } from "react";
 import styles from "components/Animate/Appear/Appear.module.css";
 import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
+import classNames from "helpers/classNames";
 
 interface AppearProps extends ComponentProps<"span"> {
   children?: ReactNode;
@@ -38,7 +39,7 @@ const Appear = forwardRef<ElementRef<"span">, AppearProps>(
     );
     return (
       <span
-        className={`${styles.root} ${className} ${variantsClassName}`}
+        className={classNames(styles.root, className, variantsClassName)}
         ref={forwardedRef}
         {...props}
       >
