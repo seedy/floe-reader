@@ -19,6 +19,7 @@ import Pages from "components/Pages";
 import TiktokIcon from "components/icons/Tiktok";
 import Logo from "components/Logo";
 import styles from "components/Reader/Reader.module.css";
+import classNames from "helpers/classNames";
 
 interface ReaderProps extends ComponentProps<typeof Box> {
   children?: ReactNode;
@@ -27,8 +28,8 @@ interface ReaderProps extends ComponentProps<typeof Box> {
 }
 
 const OPEN_DURATION = 1300;
-const APPEAR_DELAY = OPEN_DURATION * 3;
-const SECOND_APPEAR_DELAY = OPEN_DURATION * 4;
+const APPEAR_DELAY = OPEN_DURATION * 4;
+const SECOND_APPEAR_DELAY = OPEN_DURATION * 5;
 
 /**
  * Primary UI component for user interaction
@@ -41,7 +42,7 @@ const Reader = ({
   ...props
 }: ReaderProps) => {
   return (
-    <Box className={`${styles.root} ${className}`} style={{ height: pxToRem(height) }} {...props}>
+    <Box className={classNames(styles.root, className)} style={{ height: pxToRem(height) }} {...props}>
       <Cover />
       <Box style={{ padding: pxToRem(8), width: "100%", height: "100%" }}>
         <Pages>
