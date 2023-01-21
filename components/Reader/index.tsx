@@ -37,10 +37,11 @@ const Reader = ({
   children,
   avatarProps,
   height = 500,
+  className,
   ...props
 }: ReaderProps) => {
   return (
-    <Box className={styles.root} style={{ height: pxToRem(height) }} {...props}>
+    <Box className={`${styles.root} ${className}`} style={{ height: pxToRem(height) }} {...props}>
       <Cover />
       <Box style={{ padding: pxToRem(8), width: "100%", height: "100%" }}>
         <Pages>

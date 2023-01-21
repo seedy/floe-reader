@@ -7,10 +7,10 @@ import styles from "components/Pages/Arrow/Arrow.module.css";
 interface PagesArrowProps extends ComponentProps<typeof IconButton> {
   left?: boolean;
 }
-const PagesArrow = ({ left = false, ...props }: PagesArrowProps) => {
-  const className = variantsToClassNameStyles({ left }, styles);
+const PagesArrow = ({ left = false, className, ...props }: PagesArrowProps) => {
+  const variantsClassName = variantsToClassNameStyles({ left }, styles);
   return (
-    <IconButton className={`${styles.root} ${className}`} {...props}>
+    <IconButton className={`${styles.root} ${className} ${variantsClassName}`} {...props}>
       {left ? <ChevronLeftIcon /> : <ChevronRightIcon />}
     </IconButton>
   );
