@@ -3,8 +3,8 @@ import { ComponentProps } from "react";
 
 interface H1Props extends ComponentProps<"h1"> {}
 
-const H1 = ({ children, ...props }: H1Props) => (
-  <h1 className={styles.root} {...props}>
+const H1 = ({ children, className, ...props }: H1Props) => (
+  <h1 className={`${styles.root} ${className}`} {...props}>
     {children}
   </h1>
 );
