@@ -4,7 +4,7 @@ import styles from "components/Avatar/Avatar.module.css";
 import classNames from "helpers/classNames";
 
 // CONSTANTS
-const SIZE = 160;
+export const SIZE = 160;
 
 // COMPONENTS
 export interface AvatarProps extends ComponentProps<typeof Image> {}
