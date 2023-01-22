@@ -1,0 +1,12 @@
+.root {
+  display: block;
+  margin: 1rem 0;
+}
+
+.align-start {
+  text-align: start;
+}
+
+.align-end {
+  text-align: end;
+}
