@@ -9,11 +9,14 @@ import keenSliderCarousel from "helpers/keenSlider/plugins/carousel";
 import PlayPause from "components/Pages/PlayPause";
 import styles from "components/Pages/Pages.module.css";
 import Box from "components/Box";
+import CurrentPageContextProvider from "components/Context/CurrentPageContext";
 
+// COMPONENTS
 interface PagesProps {
   children: ReactNode;
   delay?: number;
 }
+
 const Pages = ({ children, delay = 2000 }: PagesProps) => {
   const [loaded, setLoaded] = useState(false);
   const [playing, setPlaying] = useState(true);
@@ -75,23 +78,23 @@ const Pages = ({ children, delay = 2000 }: PagesProps) => {
               onClick={onPrev}
               variant="small"
               left
-              disabled={currentSlide === 0}
             />
             <PagesArrow
               onClick={onNext}
               variant="small"
-              disabled={currentSlide === slides - 1}
             />
           </>
         )}
         {Children.map(children, (child, index) => (
-          <Box
-            className={`${styles.slide} keen-slider__slide`}
-            key={index}
-            style={{ opacity: opacities[index] }}
-          >
-            {child}
-          </Box>
+          <CurrentPageContextProvider value={currentSlide === index}>
+            <Box
+              className={`${styles.slide} keen-slider__slide`}
+              key={index}
+              style={{ opacity: opacities[index] }}
+            >
+              {child}
+            </Box>
+          </CurrentPageContextProvider>
         ))}
       </Box>
       {loaded && instanceRef.current && (

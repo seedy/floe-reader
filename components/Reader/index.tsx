@@ -4,7 +4,6 @@ import Page from "components/Page";
 import Cover from "components/Cover";
 import pxToRem from "helpers/pxToRem";
 import TextPlaceholder from "components/Text/Placeholder";
-import Appear from "components/Animate/Appear";
 import TextReviewed from "components/Text/Reviewed";
 import Box from "components/Box";
 import Flex from "components/Flex";
@@ -20,6 +19,7 @@ import TiktokIcon from "components/icons/Tiktok";
 import Logo from "components/Logo";
 import styles from "components/Reader/Reader.module.css";
 import classNames from "helpers/classNames";
+import AppearOnCurrent from "components/Pages/AppearOnCurrent";
 
 interface ReaderProps extends ComponentProps<typeof Box> {
   children?: ReactNode;
@@ -28,8 +28,7 @@ interface ReaderProps extends ComponentProps<typeof Box> {
 }
 
 const OPEN_DURATION = 1300;
-const APPEAR_DELAY = OPEN_DURATION * 4;
-const SECOND_APPEAR_DELAY = OPEN_DURATION * 5;
+const APPEAR_DELAY = OPEN_DURATION / 2;
 
 /**
  * Primary UI component for user interaction
@@ -114,12 +113,11 @@ const Reader = ({
                 words={51}
                 height={pxToRem(200)}
                 width="calc(100% - 18px)"
-                on
                 delay={APPEAR_DELAY}
               />
-              <Appear on delay={SECOND_APPEAR_DELAY}>
+              <AppearOnCurrent delay={APPEAR_DELAY}>
                 <TextPlaceholder words={150} />
-              </Appear>
+              </AppearOnCurrent>
             </Flex>
           </Page>
         </Pages>

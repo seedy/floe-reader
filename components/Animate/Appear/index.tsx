@@ -17,10 +17,7 @@ interface AppearProps extends ComponentProps<"span"> {
 }
 
 const Appear = forwardRef<ElementRef<"span">, AppearProps>(
-  (
-    { className, children, on = true, delay = 0, ...props }: AppearProps,
-    forwardedRef
-  ) => {
+  ({ className, children, on = true, delay = 0, ...props }, forwardedRef) => {
     const [isAppear, setAppear] = useState(false);
     useEffect(() => {
       if (on) {
