@@ -6,10 +6,10 @@ import Appear from "components/Animate/Appear";
 import styles from "components/Text/Reviewed/Reviewed.module.css";
 import Flex from "components/Flex";
 import TextPlaceholder from "components/Text/Placeholder";
+import AppearOnCurrent from "components/Pages/AppearOnCurrent";
 
 interface TextReviewedProps extends ComponentProps<typeof Flex> {
   words: number;
-  on: ComponentProps<typeof Appear>["on"];
   delay: ComponentProps<typeof Appear>["delay"];
   width: string;
   height: string;
@@ -17,7 +17,6 @@ interface TextReviewedProps extends ComponentProps<typeof Flex> {
 
 const TextReviewed = ({
   words,
-  on,
   delay,
   width,
   height,
@@ -35,15 +34,14 @@ const TextReviewed = ({
               <Fragment key={`${index}-${charIndex}`}>
                 {char}
                 {charIndex % 6 === 3 && (
-                  <Appear
+                  <AppearOnCurrent
                     className={styles.correction}
                     key={`${index}-${charIndex}`}
                     ref={onRef}
-                    on={on}
                     delay={delay}
                   >
                     /
-                  </Appear>
+                  </AppearOnCurrent>
                 )}
                 {charIndex === word.length - 1 && " "}
               </Fragment>
@@ -61,7 +59,7 @@ const TextReviewed = ({
       {...props}
     >
       <p className={styles.content}>{text}</p>
-      <Appear className={styles.lineNote} on={on} delay={delay}>
+      <AppearOnCurrent className={styles.lineNote} delay={delay}>
         {refs.map((ref, index) => (
           <TextParallel key={index} target={ref} parent={parentRef.current}>
             <TextPlaceholder
@@ -70,7 +68,7 @@ const TextReviewed = ({
             />
           </TextParallel>
         ))}
-      </Appear>
+      </AppearOnCurrent>
     </Flex>
   );
 };
