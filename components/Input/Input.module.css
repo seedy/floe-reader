@@ -1,0 +1,23 @@
+.root {
+  text-align: start;
+  text-shadow: none;
+  text-indent: 0;
+  font-family: var(--fonts-system);
+  font-size: var(--fontsizes-input);
+  font-weight: var(--fontweights-regular);
+  display: inline-block;
+  margin: 0;
+  padding: 0.5rem;
+  border: 0.0625rem solid var(--colors-grey);
+  border-radius: var(--radii-input);
+  background: var(--colors-background);
+  color: var(--colors-default);
+  min-width: 12rem;
+}
+.root::placeholder {
+  color: var(--colors-grey);
+}
+
+.root:focus {
+  outline: 0.25rem solid var(--colors-primary-alpha4);
+}
