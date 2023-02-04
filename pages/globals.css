@@ -6,7 +6,13 @@
   --colors-default: hsl(0, 0%, 0%);
   --colors-background: hsl(0, 0%, 100%);
   --colors-page: hsl(42, 54%, 88%);
+  --colors-grey: hsl(0, 1%, 31%);
+  --colors-primary: hsl(261, 100%, 42%);
+  --colors-primary-alpha90: hsla(261, 100%, 42%, 0.9);
+  --colors-primary-alpha10: hsla(261, 100%, 42%, 0.1); 
+  --colors-primary-alpha4: hsla(261, 100%, 42%, 0.04);
 
+  --fontsizes-input: 0.75rem;
   --fontsizes-button: 1rem;
   --fontsizes-1: 1.5rem;
   --fontsizes-2: 1.25rem;
@@ -19,6 +25,7 @@
   --fontweights-semiBold: 600;
   --fontweights-bold: 700;
 
+  --radii-input: 0.5rem;
   --radii-round: 50%;
   --radii-pill: 9999px;
 
