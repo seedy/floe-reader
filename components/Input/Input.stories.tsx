@@ -17,5 +17,11 @@ const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
+  label: "Email de contact",
+};
+
+export const Placeholder = Template.bind({});
+Placeholder.args = {
+  label: "Email de contact",
   placeholder: "Entrez votre adresse email",
 };
