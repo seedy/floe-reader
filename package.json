@@ -46,6 +46,8 @@
     "eslint": "8.23.1",
     "eslint-config-next": "13.0.2",
     "eslint-plugin-storybook": "^0.6.4",
+    "sass": "^1.58.0",
+    "storybook-addon-next": "^1.7.1",
     "typescript": "4.8.3"
   }
 }

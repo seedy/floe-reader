@@ -18,32 +18,32 @@
 }
 
 .variant-contained {
-  background-color: hsl(261, 100%, 42%);
-  color: hsl(0, 100%, 100%);
+  background-color: var(--colors-primary);
+  color: var(--colors-background);
 }
 .variant-contained:focus {
-  outline: 0.125rem solid hsla(0, 100%, 100%);
+  outline: 0.125rem solid var(--colors-background);
 }
 .variant-contained:active {
   box-shadow: var(--shadows-medium);
 }
 
 .variant-outlined {
-  border: 0.125rem solid hsl(261, 100%, 42%);
-  color: hsla(261, 100%, 42%, 0.9);
+  border: 0.125rem solid var(--colors-primary);
+  color: var(--colors-primary-alpha90);
 }
 .variant-outlined:focus {
-  outline: 0.1875rem solid hsla(261, 100%, 42%, 0.1);
+  outline: 0.1875rem solid var(--colors-primary-alpha10);
 }
 .variant-outlined:active {
-  background-color: hsla(261, 100%, 42%, 0.04);
+  background-color: var(--colors-primary-alpha4);
 }
 
 .variant-text {
-  color: hsl(261, 100%, 42%);
+  color: var(--colors-primary);
 }
 .variant-text:focus {
-  background-color: hsla(261, 100%, 42%, 0.04);
+  background-color: var(--colors-primary-alpha4);
 }
 .variant-text:active {
   box-shadow: var(--shadows-light);
