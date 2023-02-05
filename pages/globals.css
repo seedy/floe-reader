@@ -4,7 +4,10 @@
   --fonts-mono: monospace;
   
   --colors-default: hsl(0, 0%, 0%);
-  --colors-background: hsl(0, 0%, 100%);
+  --colors-background: hsl(0, 0%, 94%);
+  --colors-overlay: hsl(0, 0%, 100%);
+  --colors-outline: hsla(0, 0%, 100%, 0.4);
+  --colors-backdrop: hsla(0, 0%, 0%, 0.44);
   --colors-page: hsl(42, 54%, 88%);
   --colors-input: hsl(275, 24%, 90%);
   --colors-grey: hsl(0, 1%, 31%);
