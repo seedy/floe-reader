@@ -12,6 +12,7 @@
   font-weight: var(--fontweights-bold);
   border: none;
   background: none;
+  outline-offset: -0.125rem;
 }
 .root:hover {
   cursor: pointer;
@@ -22,7 +23,7 @@
   color: var(--colors-background);
 }
 .variant-contained:focus {
-  outline: 0.125rem solid var(--colors-background);
+  outline: 0.125rem solid var(--colors-outline);
 }
 .variant-contained:active {
   box-shadow: var(--shadows-medium);
