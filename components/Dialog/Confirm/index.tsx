@@ -12,6 +12,8 @@ import {
   Action,
 } from "@radix-ui/react-alert-dialog";
 import Button from "components/Button";
+import H2 from "components/Typography/H2";
+import Flex from "components/Flex";
 
 interface DialogConfirmProps {
   children?: ReactNode;
@@ -31,16 +33,20 @@ const DialogConfirm = ({
       <Trigger asChild>{children}</Trigger>
       <Portal>
         <Overlay className={styles.overlay} />
-        <Content tabIndex={-1} className={styles.content}>
-          <Title>{title}</Title>
+        <Content className={styles.content}>
+          <Title className={styles.title} asChild>
+            <H2>{title}</H2>
+          </Title>
           {description && (
-            <Description asChild>
+            <Description className={styles.description} asChild>
               <div>{description}</div>
             </Description>
           )}
-          <Action asChild>
-            <Button variant="contained">OK</Button>
-          </Action>
+          <Flex className={styles.actions}>
+            <Action className={styles.action} asChild>
+              <Button variant="contained">OK</Button>
+            </Action>
+          </Flex>
         </Content>
       </Portal>
     </Root>
