@@ -6,12 +6,13 @@
   padding: 0 0.75rem;
   min-width: 5rem;
   height: 1.875rem;
-  border-radius: 0.375rem;
+  border-radius: var(--radii-rounded);
   text-transform: uppercase;
   font-size: var(--fontsizes-button);
   font-weight: var(--fontweights-bold);
   border: none;
   background: none;
+  outline-offset: -0.125rem;
 }
 .root:hover {
   cursor: pointer;
@@ -22,7 +23,7 @@
   color: var(--colors-background);
 }
 .variant-contained:focus {
-  outline: 0.125rem solid var(--colors-background);
+  outline: 0.125rem solid var(--colors-outline);
 }
 .variant-contained:active {
   box-shadow: var(--shadows-medium);
