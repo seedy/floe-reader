@@ -20,11 +20,13 @@ import Logo from "components/Logo";
 import styles from "components/Reader/Reader.module.css";
 import classNames from "helpers/classNames";
 import AppearOnCurrent from "components/Pages/AppearOnCurrent";
+import isString from "helpers/isString";
+import isUndefined from "helpers/isUndefined";
 
 interface ReaderProps extends ComponentProps<typeof Box> {
   children?: ReactNode;
   avatarProps?: Partial<AvatarProps>;
-  height?: number;
+  height?: number | string;
 }
 
 const OPEN_DURATION = 1300;
@@ -36,12 +38,11 @@ const APPEAR_DELAY = OPEN_DURATION / 2;
 const Reader = ({
   children,
   avatarProps,
-  height = 500,
   className,
   ...props
 }: ReaderProps) => {
   return (
-    <Box className={classNames(styles.root, className)} style={{ height: pxToRem(height) }} {...props}>
+    <Box className={classNames(styles.root, className)} {...props}>
       <Cover />
       <Box style={{ padding: pxToRem(8), width: "100%", height: "100%" }}>
         <Pages>
