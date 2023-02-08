@@ -20,8 +20,8 @@
   --fontsizes-label: 0.75rem;
   --fontsizes-body: 1rem;
   --fontsizes-button: 1rem;
-  --fontsizes-1: 1.5rem;
-  --fontsizes-2: 1.25rem;
+  --fontsizes-1: 3.5rem;
+  --fontsizes-2: 2rem;
   --fontsizes-3: 1.125rem;
 
 
@@ -41,5 +41,10 @@
 }
 
 body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
   font-family: var(--fonts-system);
 }
