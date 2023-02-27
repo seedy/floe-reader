@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  padding-left: 3rem;
+  outline: 1px solid var(--colors-overlay);
+}
+
+.arrow {
+  position: absolute;
+  left: 0;
+  opacity: 0.6;
+}
