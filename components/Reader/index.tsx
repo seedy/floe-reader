@@ -20,8 +20,6 @@ import Logo from "components/Logo";
 import styles from "components/Reader/Reader.module.css";
 import classNames from "helpers/classNames";
 import AppearOnCurrent from "components/Pages/AppearOnCurrent";
-import isString from "helpers/isString";
-import isUndefined from "helpers/isUndefined";
 
 interface ReaderProps extends ComponentProps<typeof Box> {
   children?: ReactNode;
@@ -33,9 +31,6 @@ interface ReaderProps extends ComponentProps<typeof Box> {
 const OPEN_DURATION = 1300;
 const APPEAR_DELAY = OPEN_DURATION / 2;
 
-/**
- * Primary UI component for user interaction
- */
 const Reader = ({
   children,
   avatarProps,
