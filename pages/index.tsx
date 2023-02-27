@@ -21,7 +21,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <ScreenHero />
+        <ScreenHero next="#presentation" />
         <ScreenPresentation />
       </main>
     </div>
