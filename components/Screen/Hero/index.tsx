@@ -8,8 +8,14 @@ import P from "components/Typography/P";
 import Subtitle from "components/Typography/Subtitle";
 import styles from "components/Screen/Hero/Hero.module.css";
 import { useState } from "react";
+import IconLinkScrollDown from "components/IconLink/ScrollDown";
+import Box from "components/Box";
 
-const ScreenHero = () => {
+interface ScreenHeroProps {
+  next: string;
+}
+
+const ScreenHero = ({ next }: ScreenHeroProps) => {
   const [scrollDownVisible, setScrollDownVisible] = useState(false);
 
   const onReadEnd = () => setScrollDownVisible(true);
@@ -38,10 +44,12 @@ const ScreenHero = () => {
         <Flex grow justify="center">
           <Reader onReadEnd={onReadEnd} />
         </Flex>
+        {scrollDownVisible && (
+          <Box className={styles.floating}>
+            <IconLinkScrollDown href={next} />
+          </Box>
+        )}
       </Flex>
-      {scrollDownVisible && (
-        <div>scroll down</div>
-      )}
     </Screen>
   );
 }
