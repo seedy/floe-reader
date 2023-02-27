@@ -5,7 +5,7 @@ import classNames from "helpers/classNames";
 
 interface IconLinkProps extends ComponentProps<"a"> {
   children?: ReactNode;
-  variant?: "small" | "medium";
+  variant?: "small" | "medium" | "large";
 }
 const IconLink = ({
   children,
