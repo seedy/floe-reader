@@ -22,7 +22,7 @@ const ScreenPresentation = ({
       {...props}
     >
       <Flex justify="center">
-        <H1>Présentation</H1>
+        <H1 id="presentation">Présentation</H1>
       </Flex>
       <Flex direction="column" align="start">
         <H2>Rédaction Web & SEO</H2>
