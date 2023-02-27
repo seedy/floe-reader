@@ -1,15 +1,22 @@
 import { KeenSliderInstance } from "keen-slider/react";
 
-interface Slider {
-  next: Function
-  on: Function
-  container: HTMLElement
+interface CustomKeenSliderInstance extends KeenSliderInstance {
+  on: (name: string, cb: Function, remove?: boolean) => void
+  emit: (name: string) => void
 }
 
-const keenSliderCarousel = (delay: number, onDoneOnce?: Function) => (slider: Slider) => {
+const keenSliderCarousel = (delay: number, onDoneOnce?: Function) => (slider: KeenSliderInstance) => {
   let timeout: ReturnType<typeof setTimeout>;
   let mouseOver = false;
   let doneOnce: boolean | undefined = false;
+
+  const observer = new IntersectionObserver((entries) => {
+    const entry = entries[0];
+    if (entry.isIntersecting) {
+      return (slider as CustomKeenSliderInstance).emit("in")
+    }
+    (slider as CustomKeenSliderInstance).emit("out");
+  })
 
   const clearNextTimeout = () => {
     clearTimeout(timeout);
@@ -34,26 +41,42 @@ const keenSliderCarousel = (delay: number, onDoneOnce?: Function) => (slider: Sl
     nextTimeout()
   }
 
-  const onStart = () => {
-    slider.container.addEventListener("mouseover", onMouseOver);
-    slider.container.addEventListener("mouseout", onMouseOut);
-    slider.on("animationEnded", nextTimeout);
+  const onCreated = (instance: KeenSliderInstance) => {
+    observer.observe(instance.container)
+  }
+
+  const onIn = (instance: KeenSliderInstance) => {
+    instance.container.addEventListener("mouseover", onMouseOver);
+    instance.container.addEventListener("mouseout", onMouseOut);
+    instance.on("animationEnded", nextTimeout);
     nextTimeout();
   }
 
-  const onStop = () => {
-    slider.container.removeEventListener("mouseover", onMouseOver);
-    slider.container.removeEventListener("mouseout", onMouseOut)
-    slider.on("animationEnded", nextTimeout, true);
+  const onOut = (instance: KeenSliderInstance) => {
+    instance.container.removeEventListener("mouseover", onMouseOver);
+    instance.container.removeEventListener("mouseout", onMouseOut)
+    instance.on("animationEnded", nextTimeout, true);
     clearNextTimeout();
   }
 
-  slider.on("created", onStart);
-  slider.on("destroyed", onStop);
-  slider.on("stopped", onStop);
-  slider.on("resumed", onStart);
+  const onResume = (instance: KeenSliderInstance) => {
+    onIn(instance);
+    observer.observe(instance.container);
+  }
 
-  const onSlideChanged = (slider: KeenSliderInstance) => {
+  const onStop = (instance: KeenSliderInstance) => {
+    onOut(instance);
+    observer.unobserve(slider.container)
+  }
+
+  slider.on("created", onCreated);
+  slider.on("destroyed", onStop);
+  (slider as CustomKeenSliderInstance).on("in", onIn);
+  (slider as CustomKeenSliderInstance).on("out", onOut);
+  (slider as CustomKeenSliderInstance).on("stopped", onStop);
+  (slider as CustomKeenSliderInstance).on("resumed", onResume);
+
+  const onSlideChanged = () => {
     if (doneOnce === true && onDoneOnce) {
       onDoneOnce();
       doneOnce = undefined;
