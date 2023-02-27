@@ -6,7 +6,7 @@ interface DotProps extends ComponentProps<typeof IconButton> {
   active?: boolean;
 }
 const Dot = ({ active, ...props }: DotProps) => (
-  <IconButton variant="small" {...props}>
+  <IconButton type="button" variant="small" {...props}>
     {active ? <DotFilledIcon /> : <DotIcon />}
   </IconButton>
 );
