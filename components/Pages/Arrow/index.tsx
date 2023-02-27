@@ -11,7 +11,7 @@ interface PagesArrowProps extends ComponentProps<typeof IconButton> {
 const PagesArrow = ({ left = false, className, ...props }: PagesArrowProps) => {
   const variantsClassName = variantsToClassNameStyles({ left }, styles);
   return (
-    <IconButton className={classNames(styles.root, className, variantsClassName)} {...props}>
+    <IconButton type="button" className={classNames(styles.root, className, variantsClassName)} {...props}>
       {left ? <ChevronLeftIcon /> : <ChevronRightIcon />}
     </IconButton>
   );
