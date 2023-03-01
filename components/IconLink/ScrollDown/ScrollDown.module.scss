@@ -4,7 +4,7 @@
   }
 
   50% {
-    transform: translateY(5%);
+    transform: translateY(10%);
   }
 
   100% {
@@ -19,6 +19,11 @@
   position: relative;
   padding-left: 3rem;
   outline: 1px solid var(--colors-overlay);
+
+  &:hover .arrow,
+  &:focus .arrow {
+    animation-play-state: paused;
+  }
 }
 
 .arrow {

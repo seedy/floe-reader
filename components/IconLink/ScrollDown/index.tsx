@@ -1,5 +1,5 @@
 import { ComponentProps } from "react";
-import styles from "components/IconLink/ScrollDown/ScrollDown.module.css";
+import styles from "components/IconLink/ScrollDown/ScrollDown.module.scss";
 import classNames from "helpers/classNames";
 import IconLink from "components/IconLink";
 import LongArrowDownIcon from "components/icons/LongArrowDown";
