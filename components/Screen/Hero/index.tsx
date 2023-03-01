@@ -30,16 +30,18 @@ const ScreenHero = ({ next }: ScreenHeroProps) => {
               La promesse de contenus pertinents, originaux et optimisés SEO
             </Subtitle>
           </H1>
-          <Input
-            label="Email de contact"
-            placeholder="Entrez votre adresse email"
-            type="text"
-            name="email"
-          />
-          <Button type="submit" variant="contained">
-            Prendre contact
-          </Button>
-          <P>Un mail de prise de contact vous sera automatiquement envoyé</P>
+          <Flex direction="column" className={styles.form}>
+            <Input
+              label="Email de contact"
+              placeholder="Entrez votre adresse email"
+              type="text"
+              name="email"
+            />
+            <Button type="submit" variant="contained">
+              Prendre contact
+            </Button>
+            <P>Un mail de prise de contact vous sera automatiquement envoyé</P>
+          </Flex>
         </Flex>
         <Flex grow justify="center">
           <Reader onReadEnd={onReadEnd} />
