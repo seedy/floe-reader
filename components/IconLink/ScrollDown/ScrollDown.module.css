@@ -1,3 +1,17 @@
+@keyframes down {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .root {
   display: flex;
   flex-direction: row;
@@ -11,4 +25,5 @@
   position: absolute;
   left: 0;
   opacity: 0.6;
+  animation: 1s ease-in-out 0s infinite down;
 }
