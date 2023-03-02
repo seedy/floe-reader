@@ -1,27 +1,14 @@
 const path = require("path");
-
 module.exports = {
-  stories: [
-    "../stories/**/*.stories.mdx",
-    "../components/**/*.stories.mdx",
-    "../components/**/*.stories.@(js|jsx|ts|tsx)",
-  ],
-  addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
-    "storybook-addon-next",
-  ],
-  framework: "@storybook/react",
-  core: {
-    builder: "@storybook/builder-webpack5",
+  stories: ["../stories/**/*.mdx", "../components/**/*.mdx", "../components/**/*.stories.@(js|jsx|ts|tsx)"],
+  framework: {
+    name: "@storybook/nextjs",
+    options: {
+      nextConfigPath: path.resolve(__dirname, '../next.config.js')
+    }
   },
-  webpackFinal: async (config) => {
-    config.resolve.modules = [
-      ...(config.resolve.modules || []),
-      path.resolve(__dirname, "../"),
-    ];
-
-    return config;
-  },
+  addons: ["@storybook/addon-essentials"],
+  docs: {
+    autodocs: true
+  }
 };
