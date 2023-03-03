@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import TextPlaceholder from ".";
 
@@ -11,10 +11,10 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
   },
-} as ComponentMeta<typeof TextPlaceholder>;
+} as Meta<typeof TextPlaceholder>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof TextPlaceholder> = (args) => (
+const Template: StoryFn<typeof TextPlaceholder> = (args) => (
   <TextPlaceholder {...args} />
 );
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import DialogConfirm from ".";
 import Button from "components/Button";
@@ -11,10 +11,10 @@ export default {
   component: DialogConfirm,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} as ComponentMeta<typeof DialogConfirm>;
+} as Meta<typeof DialogConfirm>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof DialogConfirm> = (args) => (
+const Template: StoryFn<typeof DialogConfirm> = (args) => (
   <DialogConfirm {...args} />
 );
 

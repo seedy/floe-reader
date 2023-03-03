@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import IconButton from ".";
 import { CheckIcon } from "@radix-ui/react-icons";
@@ -10,10 +10,10 @@ export default {
   component: IconButton,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} as ComponentMeta<typeof IconButton>;
+} as Meta<typeof IconButton>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof IconButton> = (args) => (
+const Template: StoryFn<typeof IconButton> = (args) => (
   <IconButton {...args} />
 );
 
