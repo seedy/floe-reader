@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import Appear from ".";
 
@@ -9,10 +9,10 @@ export default {
   component: Appear,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} as ComponentMeta<typeof Appear>;
+} as Meta<typeof Appear>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Appear> = (args) => <Appear {...args} />;
+const Template: StoryFn<typeof Appear> = (args) => <Appear {...args} />;
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
@@ -26,7 +26,7 @@ Delayed.args = {
   delay: 700,
 };
 
-export const OnHover: ComponentStory<typeof Appear> = (args) => {
+export const OnHover: StoryFn<typeof Appear> = (args) => {
   const [appearOn, setAppearOn] = useState(false);
 
   const onMouseEnter = () => {

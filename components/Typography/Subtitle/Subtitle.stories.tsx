@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import H1 from "components/Typography/H1";
 import Subtitle from "components/Typography/Subtitle";
@@ -11,10 +11,10 @@ export default {
   component: Subtitle,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} as ComponentMeta<typeof Subtitle>;
+} as Meta<typeof Subtitle>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Subtitle> = (args) => (
+const Template: StoryFn<typeof Subtitle> = (args) => (
   <Subtitle {...args} />
 );
 
@@ -24,7 +24,7 @@ Default.args = {
   children: "La promesse de contenus pertinents, originaux et optimisés SEO",
 };
 
-export const WithTitle: ComponentStory<typeof Subtitle> = (args) => (
+export const WithTitle: StoryFn<typeof Subtitle> = (args) => (
   <Flex direction="column">
     <H1>
       Propulsez vos idées sur le devant de la scène

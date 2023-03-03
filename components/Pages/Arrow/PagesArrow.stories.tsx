@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import PagesArrow from ".";
 import Box from "components/Box";
@@ -12,10 +12,10 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
   },
-} as ComponentMeta<typeof PagesArrow>;
+} as Meta<typeof PagesArrow>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof PagesArrow> = (args) => (
+const Template: StoryFn<typeof PagesArrow> = (args) => (
   <Box
     style={{
       position: "relative",
