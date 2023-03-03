@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import ToastProvider from ".";
 import Button from "components/Button";
@@ -12,10 +12,10 @@ export default {
   subcomponents: { Toast },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} as ComponentMeta<typeof ToastProvider>;
+} as Meta<typeof ToastProvider>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof ToastProvider> = (args) => (
+const Template: StoryFn<typeof ToastProvider> = (args) => (
   <ToastProvider {...args} />
 );
 

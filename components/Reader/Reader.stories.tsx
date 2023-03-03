@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import Reader from ".";
 import Flex from "components/Flex";
@@ -12,10 +12,10 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
   },
-} as ComponentMeta<typeof Reader>;
+} as Meta<typeof Reader>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Reader> = (args) => {
+const Template: StoryFn<typeof Reader> = (args) => {
   return (
     <Flex
       align="center"

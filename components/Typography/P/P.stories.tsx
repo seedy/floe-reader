@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { LOREM } from "constants/lorem";
 import P from "components/Typography/P";
@@ -10,10 +10,10 @@ export default {
   component: P,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} as ComponentMeta<typeof P>;
+} as Meta<typeof P>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof P> = (args) => <P {...args} />;
+const Template: StoryFn<typeof P> = (args) => <P {...args} />;
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

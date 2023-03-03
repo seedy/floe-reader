@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import TextReviewed from ".";
 import Box from "components/Box";
@@ -13,10 +13,10 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
   },
-} as ComponentMeta<typeof TextReviewed>;
+} as Meta<typeof TextReviewed>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof TextReviewed> = (args) => {
+const Template: StoryFn<typeof TextReviewed> = (args) => {
   const [width, setWidth] = useState(args.width);
 
   const onClick = () => {

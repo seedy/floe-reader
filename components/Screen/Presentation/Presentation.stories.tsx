@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 import floeLower from "public/floe-lower.jpg";
 
 import Presentation from ".";
@@ -10,10 +10,10 @@ export default {
   component: Presentation,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} as ComponentMeta<typeof Presentation>;
+} as Meta<typeof Presentation>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Presentation> = (args) => (
+const Template: StoryFn<typeof Presentation> = (args) => (
   // compatibility with storybook: unoptimized + placeholder="empty"
   <Presentation
     avatarProps={{ unoptimized: true, placeholder: "empty" }}

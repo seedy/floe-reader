@@ -1,18 +1,18 @@
 import React from "react";
 import { StoryFn, Meta } from "@storybook/react";
 
-import Button from ".";
+import Link from ".";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Button",
-  component: Button,
+  title: "Components/Button/Link",
+  component: Link,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} as Meta<typeof Button>;
+} as Meta<typeof Link>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
+const Template: StoryFn<typeof Link> = (args) => <Link {...args} />;
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
