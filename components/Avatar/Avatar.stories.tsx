@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 import floeLower from "public/floe-lower.jpg";
 
 import Avatar from ".";
@@ -10,10 +10,10 @@ export default {
   component: Avatar,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} as ComponentMeta<typeof Avatar>;
+} as Meta<typeof Avatar>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Avatar> = (args) => (
+const Template: StoryFn<typeof Avatar> = (args) => (
   // compatibility with storybook: unoptimized + placeholder="empty"
   <Avatar unoptimized placeholder="empty" {...args} />
 );

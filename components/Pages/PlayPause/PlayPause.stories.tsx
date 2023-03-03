@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import PlayPause from ".";
 import Box from "components/Box";
@@ -12,10 +12,10 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
   },
-} as ComponentMeta<typeof PlayPause>;
+} as Meta<typeof PlayPause>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof PlayPause> = (args) => (
+const Template: StoryFn<typeof PlayPause> = (args) => (
   <Box
     style={{
       position: "relative",
