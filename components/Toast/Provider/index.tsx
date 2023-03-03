@@ -11,12 +11,27 @@ const ToastProvider = ({ children }: ToastProviderProps) => {
 
   const addToast = (toast: string) => setToasts((prev) => [...prev, toast]);
 
-  const onSubmit = (e: SyntheticEvent) => {
+  const onSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
     const target = e.target as typeof e.target & {
       email: { value: string };
     };
-    addToast(target.email.value);
+    const email = target.email.value;
+    try {
+      await fetch('/api/email', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email
+        })
+      })
+      addToast(email);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
