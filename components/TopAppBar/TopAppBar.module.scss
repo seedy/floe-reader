@@ -2,11 +2,12 @@
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 3rem;
     height: 4rem;
     padding: 0 1rem;
     width: 100%;
     overflow: hidden;
+    background-color: var(--colors-background);
 }
 
 .headline {
@@ -18,10 +19,10 @@
 
 .navGroup {
     font-size: var(--fontsizes-button);
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .ctaLink {
     margin-left: auto;
-    font-size: var(--fontsizes-2);
+    gap: 0.5rem;
 }

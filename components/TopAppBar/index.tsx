@@ -2,6 +2,8 @@ import { ComponentProps, ElementRef, forwardRef } from "react";
 import styles from "components/TopAppBar/TopAppBar.module.scss";
 import classNames from "helpers/classNames";
 import Flex from "components/Flex";
+import { Pencil2Icon } from "@radix-ui/react-icons";
+import ButtonLink from "components/Button/Link";
 
 interface TopAppBarProps extends ComponentProps<"nav"> {
 }
@@ -12,11 +14,14 @@ const TopAppBar = forwardRef<ElementRef<"nav">, TopAppBarProps>(
             <nav ref={forwardedRef} className={classNames(styles.root, className)} {...props}>
                 <span className={styles.headline}>Floé Gaubert</span>
                 <Flex className={styles.navGroup}>
-                    <a href="#intro">Intro</a>
-                    <a href="#presentation">Présentation</a>
-                    <a href="#portfolio">Portfolio</a>
+                    <ButtonLink variant="text" href="#intro">Intro</ButtonLink>
+                    <ButtonLink variant="text" href="#presentation">Présentation</ButtonLink>
+                    <ButtonLink variant="text" href="#portfolio">Portfolio</ButtonLink>
                 </Flex>
-                <a href="#email" className={styles.ctaLink}>Prendre contact</a>
+                <ButtonLink variant="contained" href="#email" className={styles.ctaLink}>
+                    <Pencil2Icon />
+                    Contacter
+                </ButtonLink>
             </nav>
         );
     }

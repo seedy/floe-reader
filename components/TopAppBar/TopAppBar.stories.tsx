@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import TopAppBar from ".";
 
@@ -9,9 +9,9 @@ export default {
     component: TopAppBar,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {},
-} as ComponentMeta<typeof TopAppBar>;
+} as Meta<typeof TopAppBar>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof TopAppBar> = (args) => <TopAppBar {...args} />;
+const Template: StoryFn<typeof TopAppBar> = (args) => <TopAppBar {...args} />;
 
 export const Default = Template.bind({});
