@@ -4,15 +4,19 @@ import { ElementRef, forwardRef, ReactNode } from "react";
 import IconButton from "components/IconButton";
 import styles from "components/Toast/Toast.module.scss";
 import Flex from "components/Flex";
+import classNames from "helpers/classNames";
+import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
 
 interface ToastProps {
   title: string;
   children?: ReactNode;
+  variant?: 'success' | 'error';
 }
 const Toast = forwardRef<ElementRef<typeof Root>, ToastProps>(
-  ({ title, children, ...props }, forwardedRef) => {
+  ({ title, children, variant = 'success', ...props }, forwardedRef) => {
+    const variantsClassName = variantsToClassNameStyles({ variant }, styles);
     return (
-      <Root className={styles.root} ref={forwardedRef} {...props}>
+      <Root className={classNames(styles.root, variantsClassName)} ref={forwardedRef} {...props}>
         <Flex direction="column">
           <Title className={styles.title}>{title}</Title>
           <Description className={styles.description}>{children}</Description>
