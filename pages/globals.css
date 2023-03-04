@@ -2,7 +2,7 @@
   --fonts-system: system-ui;
   --fonts-cursive: cursive;
   --fonts-mono: monospace;
-  
+
   --colors-default: hsl(0, 0%, 0%);
   --colors-background: hsl(0, 0%, 94%);
   --colors-overlay: hsl(0, 0%, 100%);
@@ -12,8 +12,9 @@
   --colors-input: hsl(275, 24%, 90%);
   --colors-grey: hsl(0, 1%, 31%);
   --colors-primary: hsl(261, 100%, 42%);
+  --colors-error: hsl(0, 65%, 51%);
   --colors-primary-alpha90: hsla(261, 100%, 42%, 0.9);
-  --colors-primary-alpha10: hsla(261, 100%, 42%, 0.1); 
+  --colors-primary-alpha10: hsla(261, 100%, 42%, 0.1);
   --colors-primary-alpha4: hsla(261, 100%, 42%, 0.04);
 
   --fontsizes-label: 0.75rem;
