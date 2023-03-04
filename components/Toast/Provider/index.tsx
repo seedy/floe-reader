@@ -2,14 +2,18 @@ import { Provider, Viewport } from "@radix-ui/react-toast";
 import Toast from "components/Toast";
 import { ReactNode, SyntheticEvent, useState } from "react";
 import styles from "components/Toast/Provider/Provider.module.css";
+import { Data } from "pages/api/email";
 
 interface ToastProviderProps {
   children?: ReactNode;
 }
-const ToastProvider = ({ children }: ToastProviderProps) => {
-  const [toasts, setToasts] = useState<string[]>([]);
 
-  const addToast = (toast: string) => setToasts((prev) => [...prev, toast]);
+type ToastData = { title: string, children: ReactNode, variant: 'success' | 'error' }
+
+const ToastProvider = ({ children }: ToastProviderProps) => {
+  const [toasts, setToasts] = useState<ToastData[]>([]);
+
+  const addToast = (toast: ToastData) => setToasts((prev) => [...prev, toast]);
 
   const onSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
@@ -18,7 +22,7 @@ const ToastProvider = ({ children }: ToastProviderProps) => {
     };
     const email = target.email.value;
     try {
-      await fetch('/api/email', {
+      const response = await fetch('/api/email', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -27,8 +31,12 @@ const ToastProvider = ({ children }: ToastProviderProps) => {
         body: JSON.stringify({
           email
         })
-      })
-      addToast(email);
+      });
+      const result = await response.json() as Data;
+      const [variant, title] = Object.entries(result)?.[0];
+      if (variant === 'success' || variant === 'error') {
+        addToast({ variant, title, children: email });
+      }
     } catch (e) {
       console.log(e);
     }
@@ -37,9 +45,9 @@ const ToastProvider = ({ children }: ToastProviderProps) => {
   return (
     <Provider swipeDirection="right">
       <form onSubmit={onSubmit}>{children}</form>
-      {toasts.map((email, index) => (
-        <Toast title="Email envoyé à" key={index}>
-          {email}
+      {toasts.map(({ title, variant, children }, index) => (
+        <Toast title={title} variant={variant} key={index}>
+          {children}
         </Toast>
       ))}
       <Viewport className={styles.viewport} />
