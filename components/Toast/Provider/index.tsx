@@ -2,7 +2,8 @@ import { Provider, Viewport } from "@radix-ui/react-toast";
 import Toast from "components/Toast";
 import { ReactNode, SyntheticEvent, useState } from "react";
 import styles from "components/Toast/Provider/Provider.module.css";
-import { Data } from "pages/api/email";
+import trpc from "helpers/trpc";
+import isTRPCClientError from "helpers/isTRPCClientError";
 
 interface ToastProviderProps {
   children?: ReactNode;
@@ -12,6 +13,7 @@ type ToastData = { title: string, children: ReactNode, variant: 'success' | 'err
 
 const ToastProvider = ({ children }: ToastProviderProps) => {
   const [toasts, setToasts] = useState<ToastData[]>([]);
+  const contactMutation = trpc.contact.useMutation();
 
   const addToast = (toast: ToastData) => setToasts((prev) => [...prev, toast]);
 
@@ -22,23 +24,12 @@ const ToastProvider = ({ children }: ToastProviderProps) => {
     };
     const email = target.email.value;
     try {
-      const response = await fetch('/api/email', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email
-        })
-      });
-      const result = await response.json() as Data;
-      const [variant, title] = Object.entries(result)?.[0];
-      if (variant === 'success' || variant === 'error') {
-        addToast({ variant, title, children: email });
+      const { success } = await contactMutation.mutateAsync({ email });
+      addToast({ variant: 'success', title: success, children: email });
+    } catch (error) {
+      if (isTRPCClientError(error)) {
+        addToast({ variant: 'error', title: 'An error has occurred', children: error.message });
       }
-    } catch (e) {
-      console.log(e);
     }
   };
 

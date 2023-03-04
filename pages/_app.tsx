@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { AppProps } from "next/app";
 import SWRConfigProvider from "components/Context/SWRConfigProvider";
+import trpc from "helpers/trpc";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -10,4 +11,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default trpc.withTRPC(MyApp);
