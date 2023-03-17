@@ -5,7 +5,6 @@ import Screen from 'components/Screen'
 import P from "components/Typography/P";
 import Subtitle from "components/Typography/Subtitle";
 import styles from "components/Screen/Hero/Hero.module.scss";
-import IconLinkScrollDown from "components/IconLink/ScrollDown";
 import Box from "components/Box";
 import H2 from "components/Typography/H2";
 import H3 from "components/Typography/H3";
@@ -14,6 +13,8 @@ import Image from "components/Image";
 import seoOptimization from 'public/seo-optimization.jpg';
 import calendly from 'public/calendly.jpg';
 import classNames from "helpers/classNames";
+import ButtonLink from "components/Button/Link";
+import IconLinkScrollDown from "components/IconLink/ScrollDown";
 interface ScreenHeroProps {
   next: string;
 }
@@ -50,7 +51,7 @@ const ScreenHero = ({ next }: ScreenHeroProps) => {
             </H3>
             <Image width={384} height={335} src={calendly} alt="RDV Calendly" className={classNames(styles.image, styles.mobile)} />
             <Flex direction="column" className={styles.form}>
-              <Button type="button" variant="outlined">Planifier un premier rdv</Button>
+              <ButtonLink href="https://calendly.com/cbencorrec/first" type="button" variant="outlined">Planifier un premier rdv</ButtonLink>
               <P>Mon calendrier vous est ouvert !</P>
             </Flex>
           </Flex>
@@ -61,6 +62,9 @@ const ScreenHero = ({ next }: ScreenHeroProps) => {
             <Image width={384} height={335} src={calendly} alt="RDV Calendly" className={styles.image} />
           </Flex>
         </Flex>
+      </Box>
+      <Box className={classNames(styles.floating, styles.desktop)}>
+        <IconLinkScrollDown href={next} />
       </Box>
     </Screen>
   );
