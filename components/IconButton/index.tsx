@@ -5,7 +5,7 @@ import classNames from "helpers/classNames";
 
 interface IconButtonProps extends ComponentProps<"button"> {
   children?: ReactNode;
-  variant?: "small" | "medium";
+  variant?: "small" | "medium" | "large";
 }
 const IconButton = ({
   children,

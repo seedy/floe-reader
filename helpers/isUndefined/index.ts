@@ -1,3 +1,3 @@
-const isUndefined = (value: unknown) => value === undefined
+const isUndefined = (value: unknown): value is undefined => value === undefined
 
 export default isUndefined

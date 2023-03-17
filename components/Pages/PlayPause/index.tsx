@@ -7,7 +7,7 @@ interface PlayPauseProps extends ComponentProps<typeof IconButton> {
 }
 const PlayPause = ({ playing, ...props }: PlayPauseProps) => {
   return (
-    <IconButton variant="small" {...props}>
+    <IconButton type="button" variant="small" {...props}>
       {playing ? <PauseIcon /> : <ResumeIcon />}
     </IconButton>
   );

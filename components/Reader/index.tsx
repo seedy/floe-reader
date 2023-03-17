@@ -24,27 +24,25 @@ import AppearOnCurrent from "components/Pages/AppearOnCurrent";
 interface ReaderProps extends ComponentProps<typeof Box> {
   children?: ReactNode;
   avatarProps?: Partial<AvatarProps>;
-  height?: number;
+  height?: number | string;
+  onReadEnd?: Function;
 }
 
 const OPEN_DURATION = 1300;
 const APPEAR_DELAY = OPEN_DURATION / 2;
 
-/**
- * Primary UI component for user interaction
- */
 const Reader = ({
   children,
   avatarProps,
-  height = 500,
   className,
+  onReadEnd,
   ...props
 }: ReaderProps) => {
   return (
-    <Box className={classNames(styles.root, className)} style={{ height: pxToRem(height) }} {...props}>
+    <Box className={classNames(styles.root, className)} {...props}>
       <Cover />
       <Box style={{ padding: pxToRem(8), width: "100%", height: "100%" }}>
-        <Pages>
+        <Pages onReadEnd={onReadEnd}>
           <Page data-keen-slider-clickable>
             <Flex
               style={{ marginTop: pxToRem(50) }}
