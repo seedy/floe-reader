@@ -1,0 +1,79 @@
+.heroes {
+    overflow: hidden;
+    gap: 4rem;
+}
+
+.hero {
+    padding: 1.5rem 0;
+    justify-content: space-between;
+
+    gap: 3rem;
+}
+
+.image {
+    align-self: center;
+}
+
+.illustration {
+    padding: 1.5rem 0;
+    gap: 10rem;
+    justify-content: center;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.root {
+    padding: 3rem;
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+}
+
+.mobile {
+    display: none;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .root {
+        flex-direction: column;
+    }
+
+    .hero {
+        height: 100vh;
+        margin: 0;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 1fr;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .desktop {
+        display: none;
+    }
+}
+
+.form {
+    gap: 1rem;
+    width: 100%;
+}
+
+.floating {
+    position: fixed;
+    bottom: 0;
+    left: 1.5rem;
+}

@@ -27,7 +27,7 @@ Default.args = {
 export const WithTitle: StoryFn<typeof Subtitle> = (args) => (
   <Flex direction="column">
     <H1>
-      Propulsez vos idées sur le devant de la scène
+      Je raconte vos projets avec intensité et authenticité
       <Subtitle {...args}>
         La promesse de contenus pertinents, originaux et optimisés SEO
       </Subtitle>
