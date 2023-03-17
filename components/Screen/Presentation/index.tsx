@@ -34,7 +34,6 @@ const ScreenPresentation = ({
           Lorem
           <Avatar
             className={styles.floatingAvatar}
-            style={{ left: `calc(${-SIZE}px - 1rem)` }}
             src={floe}
             alt="Floé"
             {...avatarProps}
@@ -52,7 +51,6 @@ const ScreenPresentation = ({
           Ipsum
           <Avatar
             className={styles.floatingAvatar}
-            style={{ right: `calc(${-SIZE}px - 1rem)` }}
             src={floe}
             alt="Floé"
             {...avatarProps}
