@@ -22,7 +22,7 @@ const ScreenPresentation = ({
       {...props}
     >
       <Flex justify="center">
-        <H1>Présentation</H1>
+        <H1 id="presentation">Présentation</H1>
       </Flex>
       <Flex direction="column" align="start">
         <H2>Rédaction Web & SEO</H2>
@@ -34,7 +34,6 @@ const ScreenPresentation = ({
           Lorem
           <Avatar
             className={styles.floatingAvatar}
-            style={{ left: `calc(${-SIZE}px - 1rem)` }}
             src={floe}
             alt="Floé"
             {...avatarProps}
@@ -52,7 +51,6 @@ const ScreenPresentation = ({
           Ipsum
           <Avatar
             className={styles.floatingAvatar}
-            style={{ right: `calc(${-SIZE}px - 1rem)` }}
             src={floe}
             alt="Floé"
             {...avatarProps}

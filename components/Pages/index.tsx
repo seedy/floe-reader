@@ -14,10 +14,11 @@ import CurrentPageContextProvider from "components/Context/CurrentPageContext";
 // COMPONENTS
 interface PagesProps {
   children: ReactNode;
+  onReadEnd?: Function;
   delay?: number;
 }
 
-const Pages = ({ children, delay = 2000 }: PagesProps) => {
+const Pages = ({ children, onReadEnd, delay = 2000 }: PagesProps) => {
   const [loaded, setLoaded] = useState(false);
   const [playing, setPlaying] = useState(true);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
@@ -32,7 +33,8 @@ const Pages = ({ children, delay = 2000 }: PagesProps) => {
       loop: true,
       drag: false,
       slideChanged(slider) {
-        setCurrentSlide(slider.track.details.rel);
+        const current = slider.track.details.rel;
+        setCurrentSlide(current);
       },
       detailsChanged(s) {
         const nextOpacities = s.track.details.slides.map(
@@ -44,7 +46,7 @@ const Pages = ({ children, delay = 2000 }: PagesProps) => {
         setLoaded(true);
       },
     },
-    [keenSliderCarousel(delay)]
+    [keenSliderCarousel(delay, onReadEnd)]
   );
 
   const onPrev = (e: MouseEvent) => {

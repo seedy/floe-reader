@@ -1,16 +1,16 @@
-import Image from "next/image";
+import NextImage from "next/image";
 import { ComponentProps } from "react";
-import styles from "components/Avatar/Avatar.module.css";
+import styles from "components/Image/Image.module.css";
 import classNames from "helpers/classNames";
 
 // CONSTANTS
 export const SIZE = 160;
 
 // COMPONENTS
-export interface AvatarProps extends ComponentProps<typeof Image> { }
+export interface ImageProps extends ComponentProps<typeof NextImage> { }
 
-const Avatar = ({ src, alt, className, ...props }: AvatarProps) => (
-  <Image
+const Image = ({ src, alt, className, ...props }: ImageProps) => (
+  <NextImage
     className={classNames(className, styles.root)}
     width={SIZE}
     height={SIZE}
@@ -21,4 +21,4 @@ const Avatar = ({ src, alt, className, ...props }: AvatarProps) => (
   />
 );
 
-export default Avatar;
+export default Image;
