@@ -1,0 +1,32 @@
+.videoBlock {
+    position: relative;
+}
+
+.videoWrapper {
+    overflow: hidden;
+}
+
+.videoPlayer {
+    min-height: 25rem;
+    min-width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.logo {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.heading {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    color: var(--colors-overlay)
+}
+
+.character {
+    position: absolute;
+    right: 0;
+    bottom: -1rem;
+}
