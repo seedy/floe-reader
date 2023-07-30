@@ -1,4 +1,5 @@
 import ScreenHero from "components/Screen/Hero";
+import ScreenLanding from "components/Screen/Landing";
 import ScreenPresentation from "components/Screen/Presentation";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <ScreenLanding />
         <ScreenHero next="#presentation" />
         <ScreenPresentation />
       </main>
