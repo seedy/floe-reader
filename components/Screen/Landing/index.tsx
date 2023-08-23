@@ -19,8 +19,8 @@ const ScreenLanding = () => {
             frameBorder="0"
             allowFullScreen></iframe>
         </Box>
-        <Logo alt="CBenCorrec'" src={cbcLogo} width={96} className={styles.logo} />
-        <Image alt="Floé Gaubert" src={floeDetouree} height={178} className={styles.character} />
+        <Logo alt="CBenCorrec'" src={cbcLogo} className={styles.logo} />
+        <Image alt="Floé Gaubert" src={floeDetouree} className={styles.character} />
       </Box>
 
     </Screen>
