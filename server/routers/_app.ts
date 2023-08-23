@@ -19,7 +19,7 @@ export const appRouter = router({
     contact: procedure
         .input(
             z.object({
-                email: z.string(),
+                email: z.string().email(),
             }),
         )
         .mutation(async ({ input: { email } }) => {
