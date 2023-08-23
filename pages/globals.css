@@ -1,5 +1,4 @@
 :root {
-  --fonts-system: system-ui;
   --fonts-cursive: cursive;
   --fonts-mono: monospace;
 
@@ -45,5 +44,5 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: var(--fonts-system);
+  font-family: inherit;
 }

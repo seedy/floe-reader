@@ -1,7 +1,7 @@
 .root {
   display: block;
   font-size: var(--fontsizes-2);
-  font-family: var(--fonts-system);
+  font-family: inherit;
   color: var(--colors-default);
   font-weight: var(--fontweights-semiBold);
   margin: 1rem 0;
