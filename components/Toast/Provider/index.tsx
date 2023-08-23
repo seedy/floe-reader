@@ -23,13 +23,17 @@ const ToastProvider = ({ children }: ToastProviderProps) => {
       email: { value: string };
     };
     const email = target.email.value;
+    if (email.trim().length === 0) {
+      throw new Error('test')
+    }
     try {
       const { success } = await contactMutation.mutateAsync({ email });
       addToast({ variant: 'success', title: success, children: email });
     } catch (error) {
       if (isTRPCClientError(error)) {
-        addToast({ variant: 'error', title: 'An error has occurred', children: error.message });
+        return addToast({ variant: 'error', title: 'An error has occurred', children: error.message });
       }
+      throw error
     }
   };
 

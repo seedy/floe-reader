@@ -1,6 +1,11 @@
 import "./env.mjs"
-import { withHighlightConfig } from "@highlight-run/next";
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+import { withHighlightConfig } from "@highlight-run/next/server";
 import nextBuildId from "next-build-id"
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -22,4 +27,4 @@ const nextConfig = {
   productionBrowserSourceMaps: true,
 };
 
-module.exports = withHighlightConfig(nextConfig);
+export default withHighlightConfig(nextConfig);
