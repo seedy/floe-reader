@@ -2,25 +2,29 @@ import { z } from 'zod';
 import { procedure, router } from 'server/trpc';
 import { createTransport } from 'nodemailer';
 import { TRPCError } from '@trpc/server';
+import { env } from 'env.mjs';
+import SMTPTransport from 'nodemailer/lib/smtp-transport';
+
+const TRANSPORT: SMTPTransport.Options = {
+    host: env.MAILER_HOST,
+    port: Number(env.MAILER_PORT),
+    secure: true,
+    auth: {
+        user: env.MAILER_USER,
+        pass: env.MAILER_PASSWORD,
+    },
+}
 
 export const appRouter = router({
     contact: procedure
         .input(
             z.object({
-                email: z.string(),
+                email: z.string().email(),
             }),
         )
         .mutation(async ({ input: { email } }) => {
             try {
-                const transporter = await createTransport({
-                    host: process.env.MAILER_HOST,
-                    port: process.env.MAILER_PORT,
-                    secure: true,
-                    auth: {
-                        user: process.env.MAILER_USER,
-                        pass: process.env.MAILER_PASSWORD,
-                    },
-                });
+                const transporter = await createTransport(TRANSPORT);
                 const info = await transporter.sendMail({
                     from: '"C\' ben Correc\'" <cbencorrec@gmail.com>',
                     to: email,
