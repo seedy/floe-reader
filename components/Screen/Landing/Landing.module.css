@@ -8,7 +8,7 @@
 
 .videoPlayer {
     min-height: 25rem;
-    min-width: 100%;
+    min-width: 200%;
     aspect-ratio: 16/9;
     display: block;
 }
@@ -27,6 +27,7 @@
     text-align: center;
     color: var(--colors-overlay);
     padding: 0 1.25rem;
+    margin-top: 1.5rem;
 }
 
 .character {
@@ -35,6 +36,19 @@
     bottom: 0;
     height: 178px;
     width: auto;
+}
+
+.author {
+    margin-left: 1rem;
+    margin-top: 1.25rem;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.sign {
+    width: 192px;
+    height: auto;
+    margin-bottom: 0.5rem;
 }
 
 @media (min-width: 1024px) {
