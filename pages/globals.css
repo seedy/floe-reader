@@ -17,13 +17,12 @@
   --colors-primary-alpha4: hsla(261, 100%, 42%, 0.04);
 
   --fontsizes-label: 0.75rem;
-  --fontsizes-body: 1rem;
+  --fontsizes-body: 1.125rem;
   --fontsizes-button: 1rem;
-  --fontsizes-1: 3.5rem;
-  --fontsizes-2: 2.25rem;
-  --fontsizes-3: 1.75rem;
-  --fontsizes-subtitle: 65%;
-
+  --fontsizes-1: 1.75rem;
+  --fontsizes-2: 1.25rem;
+  --fontsizes-3: 1.25rem;
+  --fontsizes-subtitle: 60%;
 
   --fontweights-light: 300;
   --fontweights-regular: 400;
@@ -38,6 +37,18 @@
 
   --shadows-light: 0 0 0.625rem 0.0625rem hsla(0, 0%, 0%, 0.13);
   --shadows-medium: 0 0 0.625rem 0.0625rem hsla(0, 0%, 0%, 0.26);
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --fontsizes-label: 0.875rem;
+    --fontsizes-body: 1.25rem;
+    --fontsizes-button: 1.125rem;
+    --fontsizes-1: 2rem;
+    --fontsizes-2: 1.5rem;
+    --fontsizes-3: 1.5rem;
+    --fontsizes-subtitle: 65%;
+  }
 }
 
 body {
