@@ -3,7 +3,7 @@ import Screen from "components/Screen"
 import H1 from "components/Typography/H1"
 import styles from "components/Screen/Landing/Landing.module.css"
 import Box from "components/Box"
-import floeDetouree from "public/FloeDetouree-300-400.png"
+import floeDetouree from "public/FloeDetouree.png"
 import cbcLogo from "public/CBC_LOGO_96.svg"
 import Logo from "components/Logo"
 
