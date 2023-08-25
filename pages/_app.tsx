@@ -5,13 +5,13 @@ import trpc from "helpers/trpc";
 import ToastProvider from "components/Toast/Provider";
 import { HighlightInit } from "@highlight-run/next/client";
 import { env } from "env.mjs"
-import { Frank_Ruhl_Libre } from "next/font/google"
+import { Lora } from "next/font/google"
 
-const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ['latin'] })
+const lora = Lora({ subsets: ['latin'], style: ['normal'] })
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className={frankRuhlLibre.className}>
+    <div className={lora.className}>
       <SWRConfigProvider>
         <ToastProvider>
           <HighlightInit
