@@ -11,6 +11,7 @@ import Flex from "components/Flex"
 import H2 from "components/Typography/H2"
 import Socials from "components/Socials"
 import Button from "components/Button"
+import Video from "components/Video"
 
 const ScreenLanding = () => {
   return (
@@ -18,9 +19,10 @@ const ScreenLanding = () => {
       <Box className={styles.videoBlock}>
         <H1 className={styles.heading}>Ensemble, réalisons les contenus qui feront parler de toi</H1>
         <Box className={styles.videoWrapper}>
-          <iframe
-            className={styles.videoPlayer}
-            src="https://player.vimeo.com/video/857902922?background=1&dnt=1&keyboard=0" frameBorder="0" title="Ensemble, réalisons les contenus qui feront parler de toi" />
+          <Video
+            src="https://player.vimeo.com/video/857902922?background=1&dnt=1&keyboard=0"
+            title="Ensemble, réalisons les contenus qui feront parler de toi"
+          />
         </Box>
         <Logo alt="CBenCorrec'" src={cbcLogo} className={styles.logo} />
         <Image alt="Floé Gaubert" src={floeDetouree} className={styles.character} />

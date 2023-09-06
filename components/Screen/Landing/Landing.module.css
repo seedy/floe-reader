@@ -6,13 +6,6 @@
     overflow: hidden;
 }
 
-.videoPlayer {
-    min-height: 25rem;
-    min-width: 200%;
-    aspect-ratio: 16/9;
-    display: block;
-}
-
 .logo {
     position: absolute;
     left: 1.25rem;
