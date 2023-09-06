@@ -18,7 +18,7 @@
     position: absolute;
     top: 0;
     text-align: center;
-    color: var(--colors-overlay);
+    color: var(--colors-white);
     padding: 0 1.25rem;
     margin-top: 1.5rem;
 }
