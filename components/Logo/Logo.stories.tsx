@@ -1,6 +1,6 @@
 import React from "react";
 import { StoryFn, Meta } from "@storybook/react";
-import cbcLogo from "public/CBC_Logo_full.png";
+import cbcLogo from "public/CBC_LOGO.svg";
 
 import Logo from ".";
 
