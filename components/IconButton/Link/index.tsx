@@ -1,18 +1,18 @@
 import { ComponentProps, ReactNode } from "react";
-import styles from "components/IconLink/IconLink.module.css";
+import styles from "components/IconButton/IconButton.module.scss";
 import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
 import classNames from "helpers/classNames";
 
-interface IconLinkProps extends ComponentProps<"a"> {
+interface IconButtonLinkProps extends ComponentProps<"a"> {
   children?: ReactNode;
   variant?: "small" | "medium" | "large";
 }
-const IconLink = ({
+const IconButtonLink = ({
   children,
   variant = "medium",
   className,
   ...props
-}: IconLinkProps) => {
+}: IconButtonLinkProps) => {
   const variantsClassName = variantsToClassNameStyles({ variant }, styles);
   return (
     <a className={classNames(styles.root, className, variantsClassName)} {...props}>
@@ -21,4 +21,4 @@ const IconLink = ({
   );
 };
 
-export default IconLink;
+export default IconButtonLink;

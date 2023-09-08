@@ -1,5 +1,5 @@
 .root {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -7,6 +7,7 @@
   margin: 0;
   border-radius: var(--radii-round);
   text-transform: uppercase;
+  text-decoration: none;
   font-family: inherit;
   font-size: var(--fontsizes-button);
   font-weight: var(--fontweights-bold);
