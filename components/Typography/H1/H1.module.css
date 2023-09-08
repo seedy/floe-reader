@@ -3,7 +3,7 @@
   font-size: var(--fontsizes-1);
   line-height: 1.1875;
   font-family: inherit;
-  color: var(--colors-default);
+  color: var(--colors-text);
   font-weight: var(--fontweights-bold);
   margin: 0;
 }

@@ -12,7 +12,7 @@ export default {
 } as Meta<typeof Share>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof Share> = (args) => <Share {...args} />;
+const Template: StoryFn<typeof Share> = () => <Share />;
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

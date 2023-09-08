@@ -2,28 +2,27 @@ import { CopyIcon, EnvelopeClosedIcon, MixIcon, Share1Icon } from "@radix-ui/rea
 import IconButton from "components/IconButton"
 import { Root, Trigger, Portal, Content, Label, Item, Group } from "@radix-ui/react-dropdown-menu"
 import styles from "components/Share/Share.module.scss"
-import Box from "components/Box"
-import H2 from "components/Typography/H2"
-import Flex from "components/Flex"
 import Button from "components/Button"
-import { SyntheticEvent, useState } from "react"
-import trpc from "helpers/trpc";
+import { useState } from "react"
 import getBaseUrl from "helpers/getBaseUrl"
+import H2 from "components/Typography/H2"
+import DialogQRCode from "components/Dialog/QRCode"
+import Flex from "components/Flex"
 
 const Share = () => {
-    const [QRCodeOpen, setQRCodeOpen] = useState(false);
-    const shareMutation = trpc.share.useMutation();
+    const [qrCodeOpen, setqrCodeOpen] = useState(false);
 
-    const onQRCodeOpen = () => {
-        setQRCodeOpen(true);
+    const onQrCodeOpen = (e: Event) => {
+        e.preventDefault();
+        setqrCodeOpen(true);
     }
 
     const onShareMail = () => {
 
     }
 
-    const onCopyLink = () => {
-        navigator.clipboard.writeText(getBaseUrl())
+    const onCopyLink = async () => {
+        await navigator.clipboard.writeText(getBaseUrl() || "toto")
     }
 
     return (
@@ -33,32 +32,35 @@ const Share = () => {
                     <Share1Icon />
                 </IconButton>
             </Trigger>
-            <Portal>
-                <Content>
-                    <Label className={styles.label}>Partager mon site vitrine</Label>
-                    <Group>
-                        <Item asChild>
-                            <Button variant="link" onClick={onQRCodeOpen}>
+            <Content className={styles.content} collisionPadding={20}>
+                <Label asChild>
+                    <H2 className={styles.label}>Partager mon site vitrine</H2>
+                </Label>
+                <Group asChild>
+                    <Flex align="start" direction="column">
+                        <Item asChild onSelect={onQrCodeOpen}>
+                            <Button className={styles.item} type="button" variant="link">
                                 <MixIcon />
                                 QR code
                             </Button>
                         </Item>
-                        <Item asChild>
-                            <Button variant="link" onClick={onShareMail}>
+                        <Item asChild onSelect={onShareMail}>
+                            <Button className={styles.item} type="button" variant="link">
                                 <EnvelopeClosedIcon />
                                 Mail automatique
                             </Button>
                         </Item>
-                        <Item asChild>
-                            <Button variant="link" onClick={onCopyLink}>
+                        <Item asChild onSelect={onCopyLink}>
+                            <Button className={styles.item} type="button" variant="link">
                                 <CopyIcon />
                                 Copier le lien
                             </Button>
                         </Item>
 
-                    </Group>
-                </Content>
-            </Portal>
+                    </Flex>
+                </Group>
+            </Content>
+            <DialogQRCode open={qrCodeOpen} onOpenChange={setqrCodeOpen} />
         </Root>
     )
 }

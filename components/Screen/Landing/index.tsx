@@ -13,6 +13,7 @@ import Socials from "components/Socials"
 import Button from "components/Button"
 import Video from "components/Video"
 import Input from "components/Input"
+import Share from "components/Share"
 
 const ScreenLanding = () => {
   return (
@@ -28,9 +29,12 @@ const ScreenLanding = () => {
         <Logo alt="CBenCorrec'" src={cbcLogo} className={styles.logo} />
         <Image alt="Floé Gaubert" src={floeDetouree} className={styles.character} />
       </Box>
-      <Flex className={styles.author} direction="column">
-        <H2>Floé Gaubert</H2>
-        <H2>Conceptrice rédactrice</H2>
+      <Flex className={styles.card}>
+        <Flex className={styles.author} direction="column">
+          <H2>Floé Gaubert</H2>
+          <H2>Conceptrice rédactrice</H2>
+        </Flex>
+        <Share />
       </Flex>
       <Flex direction="column" align="center">
         <Logo alt="CBenCorrec" src={cbcSign} className={styles.sign} />
