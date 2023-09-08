@@ -21,7 +21,10 @@ const Template: StoryFn<typeof Avatar> = (args) => (
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
+  src: "https://picsum.photos/160",
   alt: "AvatarDefault",
+  width: 160,
+  height: 160,
 };
 
 export const Image = Template.bind({});
