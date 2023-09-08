@@ -1,5 +1,5 @@
 import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
-import styles from "components/IconButton/IconButton.module.css";
+import styles from "components/IconButton/IconButton.module.scss";
 import { ComponentProps, ReactNode } from "react";
 import classNames from "helpers/classNames";
 
