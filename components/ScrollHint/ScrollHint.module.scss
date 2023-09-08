@@ -13,22 +13,54 @@
 }
 
 .root {
-  display: flex;
-  flex-direction: row;
+  display: inline-flex;
+  padding: .125rem 0;
   align-items: center;
+  justify-content: center;
   position: relative;
-  padding-left: 3rem;
-  outline: 1px solid var(--colors-overlay);
 
-  &:hover .arrow,
-  &:focus .arrow {
+  &:hover .wheel,
+  &:focus .wheel {
     animation-play-state: paused;
   }
 }
 
-.arrow {
+.variant-desktop {
+  .mouse {
+    width: 4rem;
+    height: 10rem;
+  }
+
+  .wheel {
+    top: 1.375rem;
+  }
+}
+
+.variant-mobile {
+  .mouse {
+    width: 2rem;
+    height: 5rem;
+  }
+
+  .wheel {
+    top: 0.6875rem;
+  }
+}
+
+.mouse {
+  display: inline-flex;
+  justify-content: center;
+  border-radius: var(--radii-pill);
+  border: 0.125rem solid var(--colors-primary);
+}
+
+
+.wheel {
   position: absolute;
-  left: 0;
-  opacity: 0.6;
+  color: var(--colors-secondary-background);
   animation: 1s ease-in-out 0s infinite down;
+}
+
+.link {
+  padding: 0.25rem 1rem;
 }

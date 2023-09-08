@@ -1,22 +1,34 @@
 import { ComponentProps } from "react";
 import styles from "components/ScrollHint/ScrollHint.module.scss";
 import classNames from "helpers/classNames";
-import IconButtonLink from "components/IconButton/Link";
-import LongArrowDownIcon from "components/icons/LongArrowDown";
+import DesktopWheelIcon from "components/icons/DesktopWheel";
+import MobileWheelIcon from "components/icons/MobileWheel";
+import ButtonLink from "components/Button/Link";
+import Box from "components/Box";
+import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
 
-interface ScrollHintProps extends ComponentProps<typeof IconButtonLink> {
+interface ScrollHintProps extends ComponentProps<typeof Box> {
+    variant?: "mobile" | "desktop"
+    href?: string
 }
 const ScrollHint = (
-    ({ children, className, ...props }: ScrollHintProps) => {
+    ({ className, variant, href, ...props }: ScrollHintProps) => {
+        const variantsClassName = variantsToClassNameStyles(
+            { variant },
+            styles
+        );
         return (
-            <IconButtonLink
-                variant="large"
-                className={classNames(className, styles.root)}
+            <Box
+                className={classNames(styles.root, className, variantsClassName)}
                 {...props}
             >
-                <LongArrowDownIcon className={styles.arrow} />
-                Scroll down
-            </IconButtonLink>
+                <Box className={styles.mouse}>
+                    {variant === "mobile" ? <MobileWheelIcon className={styles.wheel} /> : <DesktopWheelIcon className={styles.wheel} />}
+                </Box>
+                <ButtonLink href={href} className={styles.link} variant="link" color="primary" mobile={variant === "mobile"}>
+                    En savoir plus
+                </ButtonLink>
+            </Box>
         );
     }
 );
