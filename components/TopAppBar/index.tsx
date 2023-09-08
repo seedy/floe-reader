@@ -20,9 +20,9 @@ const TopAppBar = forwardRef<ElementRef<"nav">, TopAppBarProps>(
             <nav ref={innerRef} className={classNames(styles.root, className)} {...props}>
                 <span className={styles.headline}>Floé Gaubert</span>
                 <Flex className={styles.navGroup}>
-                    <ButtonLink variant="text" href="#intro">Intro</ButtonLink>
-                    <ButtonLink variant="text" href="#presentation">Présentation</ButtonLink>
-                    <ButtonLink variant="text" href="#portfolio">Portfolio</ButtonLink>
+                    <ButtonLink variant="link" href="#intro">Intro</ButtonLink>
+                    <ButtonLink variant="link" href="#presentation">Présentation</ButtonLink>
+                    <ButtonLink variant="link" href="#portfolio">Portfolio</ButtonLink>
                 </Flex>
                 <ButtonLink variant="contained" href="#email" className={styles.ctaLink}>
                     <Pencil2Icon />
