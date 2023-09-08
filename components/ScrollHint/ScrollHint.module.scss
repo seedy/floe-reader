@@ -17,7 +17,6 @@
   padding: .125rem 0;
   align-items: center;
   justify-content: center;
-  position: relative;
 
   &:hover .wheel,
   &:focus .wheel {
@@ -52,6 +51,7 @@
   justify-content: center;
   border-radius: var(--radii-pill);
   border: 0.125rem solid var(--colors-primary);
+  position: relative;
 }
 
 

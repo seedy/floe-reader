@@ -12,7 +12,7 @@ interface ScrollHintProps extends ComponentProps<typeof Box> {
     href?: string
 }
 const ScrollHint = (
-    ({ className, variant, href, ...props }: ScrollHintProps) => {
+    ({ className, variant = "desktop", href, ...props }: ScrollHintProps) => {
         const variantsClassName = variantsToClassNameStyles(
             { variant },
             styles
