@@ -8,8 +8,8 @@ const lora = Lora({ subsets: ['latin'], style: ['normal'] })
 interface RootProps extends ComponentProps<"div"> {
   children?: ReactNode;
 }
-const Root = ({ children, ...props }: RootProps) => (
-  <div className={classNames(styles.root, lora.className)} {...props}>
+const Root = ({ children, className, ...props }: RootProps) => (
+  <div className={classNames(styles.root, lora.className, className)} {...props}>
     {children}
   </div>
 );
