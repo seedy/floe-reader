@@ -12,6 +12,7 @@ import H2 from "components/Typography/H2"
 import Socials from "components/Socials"
 import Button from "components/Button"
 import Video from "components/Video"
+import Input from "components/Input"
 
 const ScreenLanding = () => {
   return (
@@ -35,7 +36,7 @@ const ScreenLanding = () => {
         <Logo alt="CBenCorrec" src={cbcSign} className={styles.sign} />
         <Socials />
       </Flex>
-      <Button>Prendre contact</Button>
+      <Button name="contact" variant="contained" type="submit">Prendre contact</Button>
     </Screen>
   )
 }
