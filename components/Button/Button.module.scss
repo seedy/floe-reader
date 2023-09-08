@@ -9,10 +9,13 @@
   border-radius: var(--radii-rounded);
   text-transform: uppercase;
   text-decoration: none;
+  text-align: center;
+  font-family: inherit;
   font-size: var(--fontsizes-button);
   font-weight: var(--fontweights-bold);
   border: none;
   background: none;
+  margin: 0;
 
   &:hover {
     cursor: pointer;
