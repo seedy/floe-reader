@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 import floeLower from "public/floe-lower.jpg";
 
 import Image from ".";
@@ -10,12 +10,12 @@ export default {
   component: Image,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} as ComponentMeta<typeof Image>;
+} as Meta<typeof Image>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Image> = (args) => (
+const Template: StoryFn<typeof Image> = (args) => (
   // compatibility with storybook: unoptimized + placeholder="empty"
-  <Image unoptimized placeholder="empty" {...args} />
+  <Image unoptimized placeholder="empty" {...args} /> // eslint-disable-line jsx-a11y/alt-text
 );
 
 export const Default = Template.bind({});
