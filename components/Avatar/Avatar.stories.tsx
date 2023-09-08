@@ -1,6 +1,6 @@
 import React from "react";
 import { StoryFn, Meta } from "@storybook/react";
-import floeLower from "public/floe-lower.jpg";
+import image from "public/CBC_QR_CODE.png";
 
 import Avatar from ".";
 
@@ -30,6 +30,6 @@ Default.args = {
 export const Image = Template.bind({});
 
 Image.args = {
-  src: floeLower,
+  src: image,
   alt: "AvatarImage",
 };

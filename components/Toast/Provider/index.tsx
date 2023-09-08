@@ -14,20 +14,23 @@ type ToastData = { title: string, children: ReactNode, variant: 'success' | 'err
 const ToastProvider = ({ children }: ToastProviderProps) => {
   const [toasts, setToasts] = useState<ToastData[]>([]);
   const contactMutation = trpc.contact.useMutation();
+  const shareMutation = trpc.share.useMutation();
 
   const addToast = (toast: ToastData) => setToasts((prev) => [...prev, toast]);
 
-  const onSubmit = async (e: SyntheticEvent) => {
+  const onSubmit = async (e: SyntheticEvent<HTMLFormElement, SubmitEvent>) => {
     e.preventDefault();
     const target = e.target as typeof e.target & {
       email: { value: string };
     };
-    const email = target.email.value;
+    const email = target?.email?.value ?? "";
     if (email.trim().length === 0) {
       throw new Error('test')
     }
+    const submitter = e?.nativeEvent?.submitter
+    const mutation = (submitter as { name?: string })?.name === "contact" ? contactMutation : shareMutation
     try {
-      const { success } = await contactMutation.mutateAsync({ email });
+      const { success } = await mutation.mutateAsync({ email });
       addToast({ variant: 'success', title: success, children: email });
     } catch (error) {
       if (isTRPCClientError(error)) {
