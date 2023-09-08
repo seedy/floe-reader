@@ -2,7 +2,7 @@
   display: inline-block;
   font-size: var(--fontsizes-subtitle);
   font-family: inherit;
-  color: var(--colors-default);
+  color: var(--colors-text);
   font-weight: var(--fontweights-regular);
   margin: 0.75rem 0;
 }

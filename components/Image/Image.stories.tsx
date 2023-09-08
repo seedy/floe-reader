@@ -22,6 +22,9 @@ export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
   alt: "ImageDefault",
+  width: 160,
+  height: 160,
+  src: "https://picsum.photos/160"
 };
 
 export const SRC = Template.bind({});
