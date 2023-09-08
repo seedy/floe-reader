@@ -22,6 +22,16 @@
   }
 }
 
+.color-primary {
+  color: var(--colors-primary);
+  border-color: var(--colors-primary);
+}
+
+.color-secondary {
+  color: var(--colors-secondary-background);
+  border-color: var(--colors-secondary-background);
+}
+
 .variant-contained {
   color: var(--colors-background);
 
@@ -65,14 +75,6 @@
 
 .variant-outlined {
   border: 0.125rem solid;
-
-  &.color-primary {
-    color: var(--colors-primary);
-  }
-
-  &.color-secondary {
-    color: var(--colors-secondary-background)
-  }
 
   &:hover {
     background-color: var(--colors-white);
@@ -127,15 +129,6 @@
     text-decoration: underline;
     box-shadow: var(--shadows-active-large);
   }
-}
-
-
-.color-primary {
-  border-color: var(--colors-primary);
-}
-
-.color-secondary {
-  border-color: var(--colors-secondary-background);
 }
 
 .mobile-true {
