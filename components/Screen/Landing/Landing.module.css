@@ -10,7 +10,7 @@
     position: absolute;
     left: 1.25rem;
     bottom: 0;
-    width: 96px;
+    width: 6rem;
     height: auto;
 }
 
@@ -27,7 +27,7 @@
     position: absolute;
     right: 1.25rem;
     bottom: 0;
-    height: 178px;
+    height: 11.125rem;
     width: auto;
 }
 
@@ -39,17 +39,17 @@
 }
 
 .sign {
-    width: 192px;
+    width: 12rem;
     height: auto;
     margin-bottom: 0.5rem;
 }
 
 @media (min-width: 1024px) {
     .character {
-        height: 320px;
+        height: 20rem;
     }
 
     .logo {
-        width: 192px;
+        width: 12rem;
     }
 }

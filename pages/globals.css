@@ -40,7 +40,7 @@
   --radii-input: .375rem .375rem 0 0;
   --radii-rounded: .375rem;
   --radii-round: 50%;
-  --radii-pill: 9999px;
+  --radii-pill: 999rem;
 
   --shadows-focus: 0 0 .375rem .125rem var(--colors-black-alpha26);
   --shadows-focus-large: 0 0 .75rem .25rem var(--colors-black-alpha26);

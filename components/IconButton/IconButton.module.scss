@@ -11,24 +11,24 @@
   font-family: inherit;
   font-size: var(--fontsizes-button);
   font-weight: var(--fontweights-bold);
-  border: 2px solid transparent;
+  border: 0.125rem solid transparent;
   background: none;
   color: var(--colors-secondary-background);
 
   &:hover {
     cursor: pointer;
-    border: 2px solid var(--colors-primary);
+    border: 0.125rem solid var(--colors-primary);
     background-color: var(--colors-white);
   }
 
   &:focus {
-    border: 2px solid var(--colors-primary);
+    border: 0.125rem solid var(--colors-primary);
     background-color: var(--colors-white);
     box-shadow: var(--shadows-focus);
   }
 
   &:focus-visible {
-    border: 2px solid var(--colors-primary);
+    border: 0.125rem solid var(--colors-primary);
     background-color: var(--colors-white);
     box-shadow: var(--shadows-focus);
     outline-style: solid;
