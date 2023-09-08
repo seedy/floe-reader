@@ -5,7 +5,7 @@ import classNames from "helpers/classNames";
 
 interface ButtonProps extends ComponentProps<"button"> {
   children?: ReactNode;
-  variant?: "contained" | "outlined" | "text";
+  variant?: "contained" | "outlined" | "link";
   color?: 'primary' | "secondary"
   mobile?: boolean
 }
