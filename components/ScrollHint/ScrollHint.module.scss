@@ -4,7 +4,11 @@
   }
 
   50% {
-    transform: translateY(10%);
+    transform: translateY(200%);
+  }
+
+  75% {
+    opacity: 0;
   }
 
   100% {
