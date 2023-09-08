@@ -18,3 +18,9 @@ export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
 };
+
+export const Mobile = Template.bind({});
+
+Mobile.args = {
+    variant: "mobile"
+}
