@@ -1,4 +1,4 @@
-import { ComponentProps, ElementRef, forwardRef, RefObject, useImperativeHandle, useRef, useState } from "react";
+import { ComponentProps, ElementRef, forwardRef, useImperativeHandle, useRef } from "react";
 import styles from "components/Navbar/Navbar.module.scss";
 import classNames from "helpers/classNames";
 import Flex from "components/Flex";
@@ -14,7 +14,7 @@ import useAnimateOnScroll from "components/Navbar/useAnimateOnScroll";
 interface NavbarProps extends ComponentProps<"nav"> {
 }
 const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
-    ({ children, className, ...props }, forwardedRef) => {
+    ({ className, ...props }, forwardedRef) => {
 
         const innerRef = useRef(null);
         useImperativeHandle(forwardedRef, () => innerRef?.current!, [innerRef])

@@ -2,7 +2,6 @@ import { EnterIcon } from "@radix-ui/react-icons";
 import Flex from "components/Flex";
 import IconButton from "components/IconButton";
 import InputPassword from "components/Input/Password"
-import { useToast } from "components/Toast/Provider";
 import isTRPCClientError from "helpers/isTRPCClientError";
 import trpc from "helpers/trpc";
 import { SyntheticEvent } from "react";

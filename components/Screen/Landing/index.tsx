@@ -12,8 +12,7 @@ import H2 from "components/Typography/H2"
 import Socials from "components/Socials"
 import Button from "components/Button"
 import Video from "components/Video"
-import Input from "components/Input"
-import Share from "components/Share"
+import ScrollHint from "components/ScrollHint"
 
 const ScreenLanding = () => {
   return (
@@ -36,8 +35,9 @@ const ScreenLanding = () => {
       <Flex direction="column" align="center">
         <Logo alt="CBenCorrec" src={cbcSign} className={styles.sign} />
         <Socials />
+        <Button name="contact" variant="contained" type="submit" className={styles.cta}>Prendre contact</Button>
+        <ScrollHint variant="mobile" className={styles.hint} />
       </Flex>
-      <Button name="contact" variant="contained" type="submit">Prendre contact</Button>
     </Screen>
   )
 }

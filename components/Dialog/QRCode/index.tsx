@@ -1,4 +1,4 @@
-import { Root, Portal, Overlay, Content, Title, Description, Cancel } from "@radix-ui/react-alert-dialog"
+import { Root, Overlay, Content, Title, Description, Cancel } from "@radix-ui/react-alert-dialog"
 import Button from "components/Button"
 import Flex from "components/Flex"
 import Image from "components/Image"
