@@ -7,6 +7,7 @@ export const env = createEnv({
         MAILER_HOST: z.string().min(1),
         MAILER_USER: z.string().email(),
         MAILER_PASSWORD: z.string().min(1),
+        SHARE_PASSWORD: z.string().min(1),
     },
     client: {
         NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID: z.string().min(1)

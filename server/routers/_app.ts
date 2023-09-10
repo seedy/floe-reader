@@ -43,7 +43,7 @@ export const appRouter = router({
             } catch (e) {
                 throw new TRPCError({
                     code: 'INTERNAL_SERVER_ERROR',
-                    message: 'An unexpected error occurred, please try again later.',
+                    message: 'Une erreur inconnue est survenue, veuillez réessayer plus tard.',
                     cause: e
                 });
             }
@@ -67,11 +67,24 @@ export const appRouter = router({
             } catch (e) {
                 throw new TRPCError({
                     code: 'INTERNAL_SERVER_ERROR',
-                    message: 'An unexpected error occurred, please try again later.',
+                    message: 'Une erreur inconnue est survenue, veuillez réessayer plus tard.',
                     cause: e
                 });
             }
+        }),
+    unlock: procedure.input(z.object({
+        password: z.string().min(1),
+    })).mutation(async ({ input: { password } }) => {
+        if (password === env.SHARE_PASSWORD) {
+            return {
+                success: true
+            }
+        }
+        throw new TRPCError({
+            code: "UNAUTHORIZED",
+            message: "Mot de passe incorrect",
         })
+    })
 });
 // export type definition of API
 export type AppRouter = typeof appRouter;

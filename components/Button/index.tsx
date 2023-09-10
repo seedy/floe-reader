@@ -14,6 +14,7 @@ const Button = forwardRef<ElementRef<"button">, ButtonProps>(
     const variantsClassName = variantsToClassNameStyles({ variant, color, mobile }, styles);
     return (
       <button
+        type="button"
         ref={forwardedRef}
         className={classNames(styles.root, className, variantsClassName)}
         {...props}
