@@ -31,13 +31,8 @@
     width: auto;
 }
 
-.card {
-    margin: 1.25rem 1.25rem 2rem 1.25rem;
-    justify-content: space-between;
-}
-
 .author {
-
+    margin: 1.25rem 1.25rem 2rem 1.25rem;
     gap: 1rem;
 }
 

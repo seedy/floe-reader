@@ -29,12 +29,9 @@ const ScreenLanding = () => {
         <Logo alt="CBenCorrec'" src={cbcLogo} className={styles.logo} />
         <Image alt="Floé Gaubert" src={floeDetouree} className={styles.character} />
       </Box>
-      <Flex className={styles.card}>
-        <Flex className={styles.author} direction="column">
-          <H2>Floé Gaubert</H2>
-          <H2>Conceptrice rédactrice</H2>
-        </Flex>
-        <Share />
+      <Flex className={styles.author} direction="column">
+        <H2>Floé Gaubert</H2>
+        <H2>Conceptrice rédactrice</H2>
       </Flex>
       <Flex direction="column" align="center">
         <Logo alt="CBenCorrec" src={cbcSign} className={styles.sign} />

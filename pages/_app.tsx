@@ -6,6 +6,7 @@ import ToastProvider from "components/Toast/Provider";
 import { HighlightInit } from "@highlight-run/next/client";
 import { env } from "env.mjs"
 import { Lora } from "next/font/google"
+import Navbar from "components/Navbar";
 
 const lora = Lora({ subsets: ['latin'], style: ['normal'] })
 
@@ -23,6 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             }}
           />
           <Component {...pageProps} />
+          <Navbar />
         </ToastProvider>
       </SWRConfigProvider>
     </div>
