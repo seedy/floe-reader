@@ -1,6 +1,5 @@
 import styles from "components/Video/Video.module.css";
 import { UpdateIcon } from "@radix-ui/react-icons";
-import Box from "components/Box";
 
 interface VideoProps {
     src: string

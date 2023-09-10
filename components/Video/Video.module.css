@@ -27,8 +27,15 @@
 }
 
 .player {
-    min-height: 25rem;
-    min-width: 200%;
+    min-height: 22.5rem;
+    height: 22.5rem;
     aspect-ratio: 16/9;
     display: block;
+}
+
+@media (min-width: 1024px) {
+    .player {
+        height: auto;
+        min-width: 200%;
+    }
 }

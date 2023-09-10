@@ -42,6 +42,17 @@
     margin-bottom: 0.5rem;
 }
 
+.cta {
+    margin-top: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.hint {
+    align-self: flex-end;
+    margin-right: 1rem;
+    margin-bottom: 1.25rem;
+}
+
 @media (min-width: 1024px) {
     .character {
         height: 20rem;
