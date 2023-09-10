@@ -1,5 +1,18 @@
+.buttonLocked {
+    position: relative;
+}
+
+.lock {
+    position: absolute;
+    right: 0.75rem;
+    bottom: 1rem;
+    width: 1rem;
+    height: 1rem;
+    color: var(--colors-primary);
+}
+
 .label {
-    color: var(--colors-secondary-background) !important;
+    color: var(--colors-secondary-background);
 }
 
 .content {

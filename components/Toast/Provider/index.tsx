@@ -1,6 +1,6 @@
 import { Provider, Viewport } from "@radix-ui/react-toast";
 import Toast from "components/Toast";
-import { ReactNode, SyntheticEvent, useState } from "react";
+import { ReactNode, SyntheticEvent, createContext, useContext, useState } from "react";
 import styles from "components/Toast/Provider/Provider.module.css";
 import trpc from "helpers/trpc";
 import isTRPCClientError from "helpers/isTRPCClientError";
@@ -10,6 +10,16 @@ interface ToastProviderProps {
 }
 
 type ToastData = { title: string, children: ReactNode, variant: 'success' | 'error' }
+
+const ToastContext = createContext<((toast: ToastData) => void) | undefined>(undefined);
+
+export const useToast = () => {
+  const addToast = useContext(ToastContext);
+  if (addToast === undefined) {
+    throw new Error("useToast should be used within ToastProvider Context")
+  }
+  return addToast
+}
 
 const ToastProvider = ({ children }: ToastProviderProps) => {
   const [toasts, setToasts] = useState<ToastData[]>([]);
@@ -34,7 +44,7 @@ const ToastProvider = ({ children }: ToastProviderProps) => {
       addToast({ variant: 'success', title: success, children: email });
     } catch (error) {
       if (isTRPCClientError(error)) {
-        return addToast({ variant: 'error', title: 'An error has occurred', children: error.message });
+        return addToast({ variant: 'error', title: 'Une erreur est survenue', children: error.message });
       }
       throw error
     }
@@ -42,7 +52,9 @@ const ToastProvider = ({ children }: ToastProviderProps) => {
 
   return (
     <Provider swipeDirection="right">
-      <form onSubmit={onSubmit}>{children}</form>
+      <ToastContext.Provider value={addToast}>
+        {children}
+      </ToastContext.Provider>
       {toasts.map(({ title, variant, children }, index) => (
         <Toast title={title} variant={variant} key={index}>
           {children}

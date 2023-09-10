@@ -15,19 +15,23 @@
   background: none;
   color: var(--colors-secondary-background);
 
-  &:hover {
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:hover:not(:disabled) {
     cursor: pointer;
     border: 0.125rem solid var(--colors-primary);
     background-color: var(--colors-white);
   }
 
-  &:focus {
+  &:focus:not(:disabled) {
     border: 0.125rem solid var(--colors-primary);
     background-color: var(--colors-white);
     box-shadow: var(--shadows-focus);
   }
 
-  &:focus-visible {
+  &:focus-visible:not(:disabled) {
     border: 0.125rem solid var(--colors-primary);
     background-color: var(--colors-white);
     box-shadow: var(--shadows-focus);
@@ -47,7 +51,7 @@
     }
   }
 
-  &:active {
+  &:active:not(:disabled) {
     &.variant-small {
       box-shadow: var(--shadows-active);
     }
