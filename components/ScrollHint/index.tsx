@@ -5,27 +5,26 @@ import DesktopWheelIcon from "components/icons/DesktopWheel";
 import MobileWheelIcon from "components/icons/MobileWheel";
 import ButtonLink from "components/Button/Link";
 import Box from "components/Box";
-import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
+import matchDesktop from "helpers/matchDesktop";
 
 interface ScrollHintProps extends ComponentProps<typeof Box> {
-    variant?: "mobile" | "desktop"
     href?: string
 }
 const ScrollHint = (
-    ({ className, variant = "desktop", href, ...props }: ScrollHintProps) => {
-        const variantsClassName = variantsToClassNameStyles(
-            { variant },
-            styles
-        );
+    ({ className, href, ...props }: ScrollHintProps) => {
         return (
             <Box
-                className={classNames(styles.root, className, variantsClassName)}
+                className={classNames(styles.root, className)}
                 {...props}
             >
                 <Box className={styles.mouse}>
-                    {variant === "mobile" ? <MobileWheelIcon className={styles.wheel} /> : <DesktopWheelIcon className={styles.wheel} />}
+                    {matchDesktop() ? (
+                        <DesktopWheelIcon className={styles.wheel} />
+                    ) : (
+                        <MobileWheelIcon className={styles.wheel} />
+                    )}
                 </Box>
-                <ButtonLink href={href} className={styles.link} variant="link" color="primary" mobile={variant === "mobile"}>
+                <ButtonLink href={href} className={styles.link} variant="link" color="primary">
                     En savoir plus
                 </ButtonLink>
             </Box>

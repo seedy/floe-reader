@@ -18,7 +18,7 @@ const SwipeHint = (
                 <Box className={styles.mouse}>
                     <SwipeWheel className={styles.wheel} />
                 </Box>
-                <Button onClick={onClick} className={styles.link} variant="link" color="primary" mobile>
+                <Button onClick={onClick} className={styles.link} variant="link" color="primary">
                     Glisser pour défiler
                 </Button>
             </Box>

@@ -7,11 +7,10 @@ interface ButtonLinkProps extends ComponentProps<"a"> {
   children?: ReactNode;
   variant?: "contained" | "outlined" | "link";
   color?: 'primary' | "secondary"
-  mobile?: boolean
 }
 const ButtonLink = forwardRef<ElementRef<"a">, ButtonLinkProps>(
-  ({ children, variant = "outlined", color = "primary", mobile, className, ...props }, forwardedRef) => {
-    const variantsClassName = variantsToClassNameStyles({ variant, color, mobile }, styles);
+  ({ children, variant = "outlined", color = "primary", className, ...props }, forwardedRef) => {
+    const variantsClassName = variantsToClassNameStyles({ variant, color }, styles);
     return (
       <a
         ref={forwardedRef}
