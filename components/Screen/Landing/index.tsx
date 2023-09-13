@@ -36,7 +36,7 @@ const ScreenLanding = () => {
         <Logo alt="CBenCorrec" src={cbcSign} className={styles.sign} />
         <Socials />
         <Button name="contact" variant="contained" type="submit" className={styles.cta}>Prendre contact</Button>
-        <ScrollHint variant="mobile" className={styles.hint} />
+        <ScrollHint className={styles.hint} />
       </Flex>
     </Screen>
   )
