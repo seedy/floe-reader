@@ -1,5 +1,22 @@
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(0.625rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.appear {
+    animation: appear 400ms ease-in;
+}
+
 .videoBlock {
     position: relative;
+    overflow: hidden;
 }
 
 .videoWrapper {
@@ -51,6 +68,9 @@
     align-self: flex-end;
     margin-right: 1rem;
     margin-bottom: 1.25rem;
+    opacity: 0;
+    animation: 400ms ease-in 2s appear forwards;
+
 }
 
 @media (min-width: 1024px) {

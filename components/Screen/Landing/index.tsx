@@ -13,20 +13,21 @@ import Socials from "components/Socials"
 import Button from "components/Button"
 import Video from "components/Video"
 import ScrollHint from "components/ScrollHint"
+import classNames from "helpers/classNames"
 
 const ScreenLanding = () => {
   return (
     <Screen>
       <Box className={styles.videoBlock}>
-        <H1 className={styles.heading}>Ensemble, réalisons les contenus qui feront parler de toi</H1>
+        <H1 className={classNames(styles.heading, styles.appear)}>Ensemble, réalisons les contenus qui feront parler de toi</H1>
         <Box className={styles.videoWrapper}>
           <Video
             src="https://player.vimeo.com/video/857902922?background=1&dnt=1&keyboard=0"
             title="Ensemble, réalisons les contenus qui feront parler de toi"
           />
         </Box>
-        <Logo alt="CBenCorrec'" src={cbcLogo} className={styles.logo} />
-        <Image alt="Floé Gaubert" src={floeDetouree} className={styles.character} />
+        <Logo alt="CBenCorrec'" src={cbcLogo} className={classNames(styles.logo, styles.appear)} />
+        <Image alt="Floé Gaubert" src={floeDetouree} className={classNames(styles.character, styles.appear)} />
       </Box>
       <Flex className={styles.author} direction="column">
         <H2>Floé Gaubert</H2>
