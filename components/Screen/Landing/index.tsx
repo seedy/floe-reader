@@ -22,7 +22,6 @@ const ScreenLanding = () => {
         <H1 className={classNames(styles.heading, styles.appear)}>Ensemble, réalisons les contenus qui feront parler de toi</H1>
         <Box className={styles.videoWrapper}>
           <Video
-            clipperClassName={styles.bgVideoClipper}
             className={styles.bgVideo}
             src={"https://player.vimeo.com/video/857902922?background=1&dnt=1&keyboard=0"}
             title="Ensemble, réalisons les contenus qui feront parler de toi"

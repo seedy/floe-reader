@@ -29,14 +29,4 @@
 .player {
     aspect-ratio: 16/9;
     display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.clipper {
-    position: relative;
-    overflow: hidden;
-    z-index: -1;
 }
