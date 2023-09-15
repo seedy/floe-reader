@@ -3,17 +3,22 @@
     transform: translateY(0);
   }
 
-  50% {
+  10% {
     transform: translateY(200%);
   }
 
-  75% {
+  15% {
     opacity: 0;
   }
 
-  100% {
+  30% {
     transform: translateY(0);
   }
+
+  40% {
+    opacity: 1;
+  }
+
 }
 
 .root {
@@ -49,7 +54,7 @@
 .wheel {
   position: absolute;
   color: var(--colors-secondary-background);
-  animation: 1s ease-in-out 0s infinite down;
+  animation: 3s ease-in-out 0s infinite down;
 }
 
 .link {
