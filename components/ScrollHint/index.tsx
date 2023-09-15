@@ -5,8 +5,6 @@ import DesktopWheelIcon from "components/icons/DesktopWheel";
 import MobileWheelIcon from "components/icons/MobileWheel";
 import ButtonLink from "components/Button/Link";
 import Box from "components/Box";
-import matchDesktop from "helpers/matchDesktop";
-
 interface ScrollHintProps extends ComponentProps<typeof Box> {
     href?: string
 }
@@ -18,11 +16,8 @@ const ScrollHint = (
                 {...props}
             >
                 <Box className={styles.mouse}>
-                    {matchDesktop() ? (
-                        <DesktopWheelIcon className={styles.wheel} />
-                    ) : (
-                        <MobileWheelIcon className={styles.wheel} />
-                    )}
+                    <DesktopWheelIcon className={classNames(styles.wheel, styles.desktop)} />
+                    <MobileWheelIcon className={classNames(styles.wheel, styles.mobile)} />
                 </Box>
                 <ButtonLink href={href} className={styles.link} variant="link" color="primary">
                     En savoir plus
