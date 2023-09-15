@@ -6,19 +6,16 @@ import { ComponentProps } from "react";
 interface VideoProps extends ComponentProps<"iframe"> {
     src: string
     title: string
-    clipperClassName?: string
 }
-const Video = ({ src, title, className, clipperClassName, ...props }: VideoProps) => {
+const Video = ({ src, title, className, ...props }: VideoProps) => {
     return (
         <>
             <div className={styles.skeleton}>
                 <UpdateIcon className={styles.skeletonIcon} />
             </div>
-            <div className={classNames(styles.clipper, clipperClassName)}>
-                <iframe
-                    className={classNames(styles.player, className)}
-                    src={src} frameBorder="0" title={title} {...props} />
-            </div>
+            <iframe
+                className={classNames(styles.player, className)}
+                src={src} frameBorder="0" title={title} {...props} />
         </>
     )
 }
