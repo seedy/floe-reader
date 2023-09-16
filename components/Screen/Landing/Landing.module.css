@@ -17,6 +17,8 @@
 .videoBlock {
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .videoWrapper {
@@ -48,14 +50,20 @@
     width: auto;
 }
 
+.presentation {
+    padding: 1.25rem;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
 .author {
-    margin: 1.25rem;
     gap: clamp(1rem, 2vw, 1.25rem);
 }
 
 .sign {
     width: 12rem;
-    height: auto;
+    height: 4.73581rem;
     margin-bottom: 0.5rem;
 }
 
@@ -66,8 +74,6 @@
 
 .hint {
     align-self: flex-end;
-    margin-right: 1rem;
-    margin-bottom: 1.25rem;
     opacity: 0;
     animation: 400ms ease-in 2s appear forwards;
 }
@@ -76,8 +82,48 @@
     min-width: 130vw;
 }
 
+.links {
+    margin: 0 1rem;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+
+@media (max-width: 1023px) {
+    .desktop {
+        display: none;
+    }
+}
+
 @media (min-width: 1024px) {
     .bgVideo {
         height: auto;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .cta {
+        position: absolute;
+        bottom: 6rem;
+        align-self: center;
+    }
+
+    .hint {
+        align-self: center;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+
+    .presentation {
+        padding: 2rem 2.5rem 0.75rem 2.5rem;
+    }
+
+    .links {
+        flex-direction: row;
     }
 }
