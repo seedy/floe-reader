@@ -10,10 +10,11 @@ import Logo from "components/Logo"
 import Flex from "components/Flex"
 import H2 from "components/Typography/H2"
 import Socials from "components/Socials"
-import Button from "components/Button"
 import Video from "components/Video"
 import ScrollHint from "components/ScrollHint"
 import classNames from "helpers/classNames"
+import { CALENDLY } from "constants/links"
+import ButtonLink from "components/Button/Link"
 
 const ScreenLanding = () => {
   return (
@@ -27,17 +28,21 @@ const ScreenLanding = () => {
             title="Ensemble, réalisons les contenus qui feront parler de toi"
           />
         </Box>
+        <ButtonLink variant="contained" href={CALENDLY} className={classNames(styles.cta, styles.desktop, styles.appear)}>Planifier un RDV</ButtonLink>
         <Logo alt="CBenCorrec'" src={cbcLogo} className={classNames(styles.logo, styles.appear)} />
         <Image alt="Floé Gaubert" src={floeDetouree} className={classNames(styles.character, styles.appear)} />
       </Box>
-      <Flex className={styles.author} direction="column">
-        <H2>Floé Gaubert</H2>
-        <H2>Conceptrice rédactrice</H2>
+      <Flex className={styles.presentation}>
+        <Flex className={styles.author} direction="column">
+          <H2>Floé Gaubert</H2>
+          <H2>Conceptrice rédactrice</H2>
+        </Flex>
+        <Logo alt="CBenCorrec" src={cbcSign} className={classNames(styles.sign, styles.desktop)} />
       </Flex>
-      <Flex direction="column" align="center">
-        <Logo alt="CBenCorrec" src={cbcSign} className={styles.sign} />
+      <Flex className={styles.links}>
+        <Logo alt="CBenCorrec" src={cbcSign} className={classNames(styles.sign, styles.mobile)} />
         <Socials />
-        <Button name="contact" variant="contained" type="submit" className={styles.cta}>Prendre contact</Button>
+        <ButtonLink variant="contained" href={CALENDLY} className={classNames(styles.cta, styles.mobile)}>Planifier un RDV</ButtonLink>
         <ScrollHint className={styles.hint} />
       </Flex>
     </Screen>

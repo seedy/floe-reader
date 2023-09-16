@@ -28,15 +28,13 @@
     gap: 1.25rem;
 }
 
-.desktop {
-    display: none;
+@media (max-width: 1023px) {
+    .desktop {
+        display: none;
+    }
 }
 
 @media (min-width: 1024px) {
-    .desktop {
-        display: unset;
-    }
-
     .mobile {
         display: none;
     }
