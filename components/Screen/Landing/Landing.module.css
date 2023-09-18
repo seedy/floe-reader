@@ -79,7 +79,8 @@
 }
 
 .bgVideo {
-    min-width: 130vw;
+    height: clamp(22.5rem, 56vw, 72vh);
+    min-width: 100vw;
 }
 
 .links {
@@ -89,7 +90,6 @@
     position: relative;
 }
 
-
 @media (max-width: 1023px) {
     .desktop {
         display: none;
@@ -97,10 +97,6 @@
 }
 
 @media (min-width: 1024px) {
-    .bgVideo {
-        height: auto;
-    }
-
     .mobile {
         display: none;
     }
