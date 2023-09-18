@@ -1,8 +1,8 @@
 .root {
   display: inline-block;
   font-size: var(--fontsizes-subtitle);
-  font-family: var(--fonts-system);
-  color: var(--colors-default);
+  font-family: inherit;
+  color: var(--colors-text);
   font-weight: var(--fontweights-regular);
   margin: 0.75rem 0;
 }
