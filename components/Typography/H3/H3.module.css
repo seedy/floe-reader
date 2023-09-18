@@ -1,8 +1,9 @@
 .root {
   display: block;
-  font-size: var(--fontsizes-3);
-  font-family: var(--fonts-system);
-  color: var(--colors-default);
-  font-weight: var(--fontweights-semiBold);
-  margin: 1rem 0;
+  font-size: var(--fontsizes-2);
+  line-height: 1.1875;
+  font-family: inherit;
+  color: var(--colors-text);
+  font-weight: var(--fontweights-medium);
+  margin: 0;
 }

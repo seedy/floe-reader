@@ -30,7 +30,7 @@
 
 .root {
   background-color: var(--colors-background);
-  outline: 0.125rem solid var(--colors-primary);
+  outline: 0.125rem solid var(--colors-secondary-background);
   border-radius: var(--radii-rounded);
   box-shadow: var(--shadows-medium);
   padding: 1rem;
@@ -68,11 +68,11 @@
 .title {
   margin-bottom: 1rem;
   font-weight: var(--fontweights-medium);
-  color: var(--colors-default);
+  color: var(--colors-text);
   font-size: var(--fontsizes-body);
 }
 
 .description {
   margin: 0;
-  color: var(--colors-default);
+  color: var(--colors-text);
 }

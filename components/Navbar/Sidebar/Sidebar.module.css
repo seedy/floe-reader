@@ -1,0 +1,37 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: var(--colors-background);
+}
+
+.content {
+    position: fixed;
+    inset: 0;
+    background-color: var(--colors-navbar);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.adminRow {
+    padding: 0 1.25rem;
+    width: 100%;
+    margin-bottom: auto;
+}
+
+.linkColumn {
+    padding: 0 1.25rem;
+}
+
+.titleRow {
+    max-height: 4rem;
+    padding: 0 1.25rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.actions {
+    align-items: center;
+    gap: 1.25rem;
+}

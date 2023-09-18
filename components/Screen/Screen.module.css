@@ -1,12 +1,5 @@
 .root {
-  height: 100svh;
-  height: 100vh;
   position: relative;
   box-sizing: border-box;
-}
-
-@media (max-aspect-ratio: 1/1) {
-  .root {
-    height: auto;
-  }
+  margin-bottom: 4rem;
 }

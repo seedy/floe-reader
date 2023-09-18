@@ -31,5 +31,5 @@ export const Text = Template.bind({});
 
 Text.args = {
   children: "Ouvrir",
-  variant: "text",
+  variant: "link",
 };
