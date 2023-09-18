@@ -1,6 +1,6 @@
 import React from "react";
 import { StoryFn, Meta } from "@storybook/react";
-import floeLower from "public/floe-lower.jpg";
+import image from "public/CBC_QR_CODE.png";
 
 import Avatar from ".";
 
@@ -21,12 +21,15 @@ const Template: StoryFn<typeof Avatar> = (args) => (
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
+  src: "https://picsum.photos/160",
   alt: "AvatarDefault",
+  width: 160,
+  height: 160,
 };
 
 export const Image = Template.bind({});
 
 Image.args = {
-  src: floeLower,
+  src: image,
   alt: "AvatarImage",
 };

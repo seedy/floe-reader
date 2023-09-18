@@ -1,0 +1,144 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0.25rem 1.5rem;
+  min-width: 5rem;
+  max-width: 20rem;
+  width: 100%;
+  flex-grow: 1;
+  height: 2.125rem;
+  border-radius: var(--radii-rounded);
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  font-family: inherit;
+  font-size: var(--fontsizes-button);
+  font-weight: var(--fontweights-bold);
+  border: none;
+  background: none;
+  margin: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.color-primary {
+  color: var(--colors-primary);
+  border-color: var(--colors-primary);
+}
+
+.color-secondary {
+  color: var(--colors-secondary-background);
+  border-color: var(--colors-secondary-background);
+}
+
+.variant-contained {
+  color: var(--colors-background);
+
+  &.color-primary {
+    background-color: var(--colors-primary);
+  }
+
+  &.color-secondary {
+    background-color: var(--colors-secondary-background);
+  }
+
+  &:hover {
+    color: var(--colors-white);
+  }
+
+  &:focus {
+    color: var(--colors-white);
+    box-shadow: var(--shadows-focus-large);
+  }
+
+  &:focus-visible {
+    color: var(--colors-white);
+    box-shadow: var(--shadows-focus-large);
+    outline: .375rem solid;
+
+    &.color-primary {
+      outline-color: var(--colors-outline-primary);
+    }
+
+    &.color-secondary {
+      outline-color: var(--colors-outline-secondary);
+    }
+  }
+
+  &:active {
+    color: var(--colors-white);
+    box-shadow: var(--shadows-active-large);
+  }
+}
+
+
+.variant-outlined {
+  border: 0.125rem solid;
+
+  &:hover {
+    background-color: var(--colors-white);
+  }
+
+  &:focus {
+    background-color: var(--colors-white);
+    box-shadow: var(--shadows-focus-large);
+  }
+
+  &:focus-visible {
+    background-color: var(--colors-white);
+    box-shadow: var(--shadows-focus-large);
+    outline: .375rem solid;
+
+    &.color-primary {
+      outline-color: var(--colors-outline-primary);
+    }
+
+    &.color-secondary {
+      outline-color: var(--colors-outline-secondary);
+    }
+  }
+
+  &:active {
+    background-color: var(--colors-white);
+    box-shadow: var(--shadows-active-large);
+  }
+}
+
+
+.variant-text {
+
+  &:focus {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    text-decoration: underline;
+    outline: .375rem solid;
+
+    &.color-primary {
+      outline-color: var(--colors-outline-primary);
+    }
+
+    &.color-secondary {
+      outline-color: var(--colors-outline-secondary);
+    }
+  }
+
+  &:active {
+    text-decoration: underline;
+    box-shadow: var(--shadows-active-large);
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .root {
+    max-width: none;
+    width: auto;
+    flex-grow: unset;
+  }
+}

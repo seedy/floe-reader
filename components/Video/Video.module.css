@@ -1,0 +1,5 @@
+.player {
+    aspect-ratio: 16/9;
+    display: block;
+    object-fit: cover;
+}
