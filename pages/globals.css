@@ -16,7 +16,7 @@
   --colors-tertiary: hsl(158, 20%, 81%);
   --colors-tertiary-hovered-field: hsla(158, 20%, 81%, .6);
   --colors-fern-green: hsl(103, 36%, 37%);
-  --colors-fern-green-underline: hsla(103, 36%, 37%, .6);
+  --colors-fern-green-underline: hsla(103, 36%, 37%, .3);
   --colors-text: hsl(0, 0%, 21%);
   --colors-text-hint: hsla(0, 0%, 21%, .8);
   --colors-error: hsl(0, 65%, 51%);
