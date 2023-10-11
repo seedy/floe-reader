@@ -42,6 +42,8 @@
   --radii-round: 50%;
   --radii-pill: 999rem;
 
+  --shadows-input: 0 .125rem 0 0 var(--colors-black-alpha7);
+  --shadows-input-focus: 0 .125rem 0 0 var(--colors-secondary-background);
   --shadows-focus: 0 0 .375rem .125rem var(--colors-black-alpha26);
   --shadows-focus-large: 0 0 .75rem .25rem var(--colors-black-alpha26);
   --shadows-selected: 0 0 .5rem .25rem var(--colors-black-alpha26);

@@ -4,20 +4,18 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  padding: 0.5rem 0 0 0;
-  background: var(--colors-input);
+  background: var(--colors-tertiary);
 
-  &::before {
-    display: inline-flex;
-    position: absolute;
-    inset: 0;
-    content: "";
-    pointer-events: none;
-    background: transparent;
-  }
+  &:focus-within {
+    background: white;
 
-  &:hover::before {
-    background: hsla(255, 7%, 11%, 0.08);
+    .input {
+      box-shadow: var(--shadows-input-focus);
+    }
+
+    .label {
+      color: var(--colors-secondary-background);
+    }
   }
 
   border-radius: var(--radii-input);
@@ -35,23 +33,15 @@
   font-weight: var(--fontweights-regular);
   display: inline-block;
   margin: 0;
-  padding: 1rem 3rem 1rem 1rem;
+  padding: 1.75rem 3rem 0.25rem 1rem;
   background: transparent;
   border: none;
   outline: none;
   color: var(--colors-text);
-  box-shadow: 0 0.0625rem 0 0 var(--colors-grey);
+  box-shadow: var(--shadows-input);
 
   &::placeholder {
     color: var(--colors-grey);
-  }
-
-  &:focus {
-    box-shadow: 0 0.125rem 0 0 var(--colors-primary);
-
-    &+.label {
-      color: var(--colors-primary);
-    }
   }
 }
 

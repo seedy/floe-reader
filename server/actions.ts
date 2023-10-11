@@ -25,13 +25,19 @@ const UNLOCK_INPUT_SCHEMA = z.object({
     password: z.string().min(1),
 })
 
-export const unlock = async (formData: FormData) => {
-    const { password } = UNLOCK_INPUT_SCHEMA.parse(formData);
-    if (password !== env.SHARE_PASSWORD) {
-        throw new Error('Mot de passe incorrect');
+export const unlock = async (_prevState: any, formData: FormData) => {
+    try {
+        const { password } = UNLOCK_INPUT_SCHEMA.parse({ password: formData.get('password') });
+        if (password !== env.SHARE_PASSWORD) {
+            throw new Error();
+        }
+    } catch (e) {
+        return {
+            error: 'Mot de passe incorrect',
+        }
     }
     return {
-        message: 'Déverrouillé'
+        success: 'Déverrouillé'
     }
 }
 

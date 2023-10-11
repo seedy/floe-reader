@@ -23,7 +23,9 @@ export const useToast = () => {
 const ToastProvider = ({ children }: ToastProviderProps) => {
   const [toasts, setToasts] = useState<ToastData[]>([]);
 
-  const addToast = (toast: ToastData) => setToasts((prev) => [...prev, toast]);
+  const addToast = (toast: ToastData) => {
+    setToasts((prev) => [...prev, toast])
+  };
 
   return (
     <Provider swipeDirection="right">
