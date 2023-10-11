@@ -14,7 +14,7 @@ const ButtonLink = forwardRef<ElementRef<"a">, ButtonLinkProps>(
     return (
       <a
         ref={forwardedRef}
-        className={classNames(styles.root, className, variantsClassName)}
+        className={classNames(styles.root, variantsClassName, className)}
         {...props}
       >
         {children}

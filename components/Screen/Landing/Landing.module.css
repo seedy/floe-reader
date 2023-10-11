@@ -92,13 +92,13 @@
 
 @media (max-width: 1023px) {
     .desktop {
-        display: none;
+        display: none !important;
     }
 }
 
 @media (min-width: 1024px) {
     .mobile {
-        display: none;
+        display: none !important;
     }
 
     .cta {

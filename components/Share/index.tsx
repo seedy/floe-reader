@@ -1,7 +1,9 @@
+"use client"
+
 import { CopyIcon, EnvelopeClosedIcon, LockClosedIcon, MixIcon, Share1Icon } from "@radix-ui/react-icons"
 import IconButton from "components/IconButton"
 import { Root, Trigger, Content, Label, Item, Group } from "@radix-ui/react-dropdown-menu"
-import styles from "components/Share/Share.module.scss"
+import styles from "components/Share/Share.module.css"
 import Button from "components/Button"
 import { useState } from "react"
 import getBaseUrl from "helpers/getBaseUrl"
