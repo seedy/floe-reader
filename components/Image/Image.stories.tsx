@@ -14,22 +14,12 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Image> = (args) => (
-  // compatibility with storybook: unoptimized + placeholder="empty"
-  <Image unoptimized placeholder="empty" {...args} /> // eslint-disable-line jsx-a11y/alt-text
+  <Image placeholder="empty" {...args} /> // eslint-disable-line jsx-a11y/alt-text
 );
 
 export const Default = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
+
 Default.args = {
-  alt: "ImageDefault",
-  width: 160,
-  height: 160,
-  src: "https://picsum.photos/160"
-};
-
-export const SRC = Template.bind({});
-
-SRC.args = {
   src: image,
-  alt: "ImageImage",
+  alt: "ImageDefault",
 };

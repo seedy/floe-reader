@@ -15,7 +15,7 @@ const IconButtonLink = forwardRef<ElementRef<"a">, IconButtonLinkProps>(({
 }, ref) => {
   const variantsClassName = variantsToClassNameStyles({ variant }, styles);
   return (
-    <a ref={ref} className={classNames(styles.root, className, variantsClassName)} {...props}>
+    <a ref={ref} className={classNames(styles.root, variantsClassName, className)} {...props}>
       {children}
     </a>
   );

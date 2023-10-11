@@ -1,7 +1,7 @@
-import React from "react";
+import React, { SyntheticEvent } from "react";
 import { StoryFn, Meta } from "@storybook/react";
 
-import ToastProvider from ".";
+import ToastProvider, { useToast } from ".";
 import Button from "components/Button";
 import Toast from "components/Toast";
 
@@ -20,12 +20,30 @@ const Template: StoryFn<typeof ToastProvider> = (args) => (
 );
 
 export const Default = Template.bind({});
+
+const Consumer = () => {
+  const addToast = useToast();
+
+  const onSubmit = async (e: SyntheticEvent<HTMLFormElement, SubmitEvent>) => {
+    e.preventDefault();
+    const target = e.target as typeof e.target & {
+      email: { value: string };
+    };
+    const email = target?.email?.value;
+    addToast({ variant: 'success', title: "Succès", children: email });
+  }
+
+  return (
+    <form onSubmit={onSubmit}>
+      <input type="text" name="email" />
+      <Button type="submit">Prendre contact</Button>
+    </form>
+  )
+}
+
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
   children: (
-    <div>
-      <input type="text" name="email" />
-      <Button type="submit">Prendre contact</Button>
-    </div>
+    <Consumer />
   ),
 };
