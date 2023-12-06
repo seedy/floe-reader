@@ -65,10 +65,6 @@ const Share = () => {
         await navigator.clipboard.writeText(getBaseUrl())
     }
 
-    useEffect(() => {
-        onUnlocked();
-    }, [])
-
     if (locked) {
         return (
             <ShareLocked open={dialogOpen} onOpenChange={setDialogOpen} onUnlocked={onUnlocked} onError={onPwError}>

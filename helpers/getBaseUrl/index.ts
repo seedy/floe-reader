@@ -1,7 +1,7 @@
 const getBaseUrl = () => {
     if (typeof window !== 'undefined')
-        // browser should use relative path
-        return '';
+        // browser origin
+        return window.location.origin;
 
     if (process.env.VERCEL_URL)
         // reference for vercel.com
