@@ -1,5 +1,4 @@
 import { Html } from "@react-email/html"
-import { Button } from "@react-email/button"
 import { Img } from "@react-email/img"
 import { Body } from "@react-email/body"
 import { Container } from "@react-email/container"
@@ -9,7 +8,7 @@ import { Link } from "@react-email/link"
 import { Head } from "@react-email/head"
 import { Preview } from "@react-email/preview"
 import { Heading } from "@react-email/heading"
-import getBaseUrl from "helpers/getBaseUrl"
+import getBaseUrl from "../helpers/getBaseUrl"
 
 
 const Share = () => (
