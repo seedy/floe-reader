@@ -10,6 +10,7 @@
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "emails": "email dev",
+    "emails-public": "echo TOTO",
     "build-storybook": "storybook build",
     "test": "jest --watch"
   },
