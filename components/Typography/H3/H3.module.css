@@ -1,7 +1,7 @@
 .root {
   display: block;
   font-size: var(--fontsizes-2);
-  line-height: 1.1875;
+  line-height: 1.5;
   font-family: inherit;
   color: var(--colors-text);
   font-weight: var(--fontweights-medium);

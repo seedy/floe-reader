@@ -1,3 +1,5 @@
+"use client"
+
 import { EyeClosedIcon, EyeOpenIcon } from "@radix-ui/react-icons";
 import Input from "components/Input";
 import { ComponentProps, useState } from "react"

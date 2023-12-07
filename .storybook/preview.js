@@ -1,5 +1,5 @@
 import Root from "../components/Root";
-import "../pages/globals.css";
+import "app/globals.css";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

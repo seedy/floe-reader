@@ -34,18 +34,18 @@ const ScreenLanding = () => {
           />
         </Box>
         <ButtonLink variant="contained" href={CALENDLY} className={classNames(styles.cta, styles.desktop, styles.appear)}>Planifier un RDV</ButtonLink>
-        <Logo alt="CBenCorrec'" src={cbcLogo} className={classNames(styles.logo, styles.appear)} />
-        <Image alt="Floé Gaubert" src={floeDetouree} className={classNames(styles.character, styles.appear)} />
+        <Logo alt="CBenCorrec'" priority src={cbcLogo} className={classNames(styles.logo, styles.appear)} />
+        <Image alt="Floé Gaubert" placeholder="empty" priority src={floeDetouree} className={classNames(styles.character, styles.appear)} />
       </Box>
       <Flex className={styles.presentation}>
         <Flex className={styles.author} direction="column">
           <H2>Floé Gaubert</H2>
           <H2>Conceptrice rédactrice</H2>
         </Flex>
-        <Logo alt="CBenCorrec" src={cbcSign} className={classNames(styles.sign, styles.desktop)} />
+        <Logo alt="CBenCorrec" priority src={cbcSign} className={classNames(styles.sign, styles.desktop)} />
       </Flex>
       <Flex className={styles.links}>
-        <Logo alt="CBenCorrec" src={cbcSign} className={classNames(styles.sign, styles.mobile)} />
+        <Logo alt="CBenCorrec" priority src={cbcSign} className={classNames(styles.sign, styles.mobile)} />
         <Socials />
         <ButtonLink variant="contained" href={CALENDLY} className={classNames(styles.cta, styles.mobile)}>Planifier un RDV</ButtonLink>
         <ScrollHint className={styles.hint} />

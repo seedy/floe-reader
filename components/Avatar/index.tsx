@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ComponentProps } from "react";
-import styles from "components/Avatar/Avatar.module.scss";
+import styles from "components/Avatar/Avatar.module.css";
 import classNames from "helpers/classNames";
 import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
 
@@ -16,7 +16,7 @@ const Avatar = ({ src, alt, className, selected, ...props }: AvatarProps) => {
   );
   return (
     <Image
-      className={classNames(styles.root, className, variantsClassName)}
+      className={classNames(styles.root, variantsClassName, className)}
       src={src}
       alt={alt}
       placeholder="blur"

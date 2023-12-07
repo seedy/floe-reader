@@ -1,3 +1,4 @@
+"use client"
 import {
   ComponentProps,
   ElementRef,
@@ -36,7 +37,7 @@ const Appear = forwardRef<ElementRef<"span">, AppearProps>(
     );
     return (
       <span
-        className={classNames(styles.root, className, variantsClassName)}
+        className={classNames(styles.root, variantsClassName, className)}
         ref={forwardedRef}
         {...props}
       >

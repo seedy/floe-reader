@@ -15,7 +15,7 @@ const IconButton = forwardRef<ElementRef<"button">, IconButtonProps>(({
 }, forwardedRef) => {
   const variantsClassName = variantsToClassNameStyles({ variant }, styles);
   return (
-    <button type="button" ref={forwardedRef} className={classNames(styles.root, className, variantsClassName)} {...props}>
+    <button type="button" ref={forwardedRef} className={classNames(styles.root, variantsClassName, className)} {...props}>
       {children}
     </button>
   );
