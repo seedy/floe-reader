@@ -1,3 +1,5 @@
+"use client"
+
 import { ComponentProps, ElementRef, forwardRef, useImperativeHandle, useRef } from "react";
 import styles from "components/Navbar/Navbar.module.scss";
 import classNames from "helpers/classNames";

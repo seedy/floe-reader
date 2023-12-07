@@ -1,4 +1,5 @@
 .root {
+    z-index: 9999;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -20,22 +21,22 @@
     background-color: var(--colors-navbar);
 }
 
-.navGroup {
+.navGroup.navGroup {
     gap: 1.5rem;
 }
 
-.actions {
+.actions.actions {
     gap: 1.25rem;
 }
 
 @media (max-width: 1023px) {
-    .desktop {
+    .desktop.desktop {
         display: none;
     }
 }
 
 @media (min-width: 1024px) {
-    .mobile {
+    .mobile.mobile {
         display: none;
     }
 }

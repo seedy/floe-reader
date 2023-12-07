@@ -1,7 +1,7 @@
 import "./env.mjs"
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
-import { withHighlightConfig } from "@highlight-run/next/server";
+import { withHighlightConfig } from "@highlight-run/next/config";
 import nextBuildId from "next-build-id"
 
 const __filename = fileURLToPath(import.meta.url)
@@ -12,17 +12,9 @@ const nextConfig = {
   generateBuildId: () => nextBuildId({ dir: __dirname }),
   reactStrictMode: true,
   swcMinify: true,
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "picsum.photos",
-        pathname: "/**",
-      },
-    ],
-  },
   experimental: {
     instrumentationHook: true,
+    serverActions: true,
   },
   productionBrowserSourceMaps: true,
 };

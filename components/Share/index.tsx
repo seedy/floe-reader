@@ -1,15 +1,14 @@
-import { CopyIcon, EnvelopeClosedIcon, LockClosedIcon, MixIcon, Share1Icon } from "@radix-ui/react-icons"
+"use client"
+
+import { LockClosedIcon, Share1Icon } from "@radix-ui/react-icons"
 import IconButton from "components/IconButton"
-import { Root, Trigger, Content, Label, Item, Group } from "@radix-ui/react-dropdown-menu"
-import styles from "components/Share/Share.module.scss"
-import Button from "components/Button"
-import { useState } from "react"
+import styles from "components/Share/Share.module.css"
+import { useEffect, useState } from "react"
 import getBaseUrl from "helpers/getBaseUrl"
-import H2 from "components/Typography/H2"
 import DialogQRCode from "components/Dialog/QRCode"
-import Flex from "components/Flex"
-import Locked from "components/Share/Locked"
 import { useToast } from "components/Toast/Provider"
+import ShareDropdown from "components/Share/Dropdown"
+import ShareLocked from "components/Share/Locked"
 
 // CONSTANTS
 const LOCKED_KEY = "locked";
@@ -25,6 +24,7 @@ const unlock = () => localStorage.setItem(LOCKED_KEY, "true");
 // COMPONENTS
 const Share = () => {
     const addToast = useToast();
+    const [dialogOpen, setDialogOpen] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [locked, setLocked] = useState(!getLocked())
     const [pwErrorCount, setPwErrorCount] = useState(0);
@@ -33,15 +33,20 @@ const Share = () => {
     const onUnlocked = () => {
         unlock();
         setLocked(!getLocked());
+        addToast({ variant: 'success', title: "Déverrouillé", children: "Bienvenue Floé" })
     }
 
     const onPwError = () => {
+        if (pwErrorCount >= 2) {
+            addToast({ variant: 'error', title: "Mot de passe incorrect", children: "Verrouillage." });
+        } else {
+            addToast({ variant: 'error', title: "Mot de passe incorrect", children: "Êtes-vous admin ?" });
+        }
         setPwErrorCount(prev => {
             if (prev === 2) {
-                addToast({ variant: 'error', title: "Mot de passe incorrect", children: "Verrouillage." });
                 setDropdownOpen(false);
+                setDialogOpen(false);
             }
-            addToast({ variant: 'error', title: "Mot de passe incorrect", children: "Êtes-vous admin ?" });
             return prev + 1
         });
     }
@@ -60,50 +65,28 @@ const Share = () => {
         await navigator.clipboard.writeText(getBaseUrl())
     }
 
-    return (
-        <Root open={dropdownOpen} onOpenChange={setDropdownOpen}>
-            <Trigger disabled={triggerDisabled} asChild>
-                <IconButton className={styles.buttonLocked}>
+    if (locked) {
+        return (
+            <ShareLocked open={dialogOpen} onOpenChange={setDialogOpen} onUnlocked={onUnlocked} onError={onPwError}>
+                <IconButton disabled={triggerDisabled} className={styles.buttonLocked}>
                     <Share1Icon />
-                    {locked && (
-                        <LockClosedIcon className={styles.lock} />
-                    )}
+                    <LockClosedIcon className={styles.lock} />
                 </IconButton>
-            </Trigger>
-            <Content className={styles.content} collisionPadding={20}>
-                <Label asChild>
-                    <H2 className={styles.label}>{locked ? "Seuls les admins sont autorisés" : "Partager mon site vitrine"}</H2>
-                </Label>
-                {locked ? (
-                    <Locked onUnlocked={onUnlocked} onError={onPwError} />
-                ) : (
-                    <Group asChild>
-                        <Flex align="start" direction="column">
-                            <Item asChild onSelect={onQrCodeOpen}>
-                                <Button className={styles.item} type="button" variant="link">
-                                    <MixIcon />
-                                    QR code
-                                </Button>
-                            </Item>
-                            <Item asChild onSelect={onShareMail}>
-                                <Button className={styles.item} type="button" variant="link">
-                                    <EnvelopeClosedIcon />
-                                    Mail automatique
-                                </Button>
-                            </Item>
-                            <Item asChild onSelect={onCopyLink}>
-                                <Button className={styles.item} type="button" variant="link">
-                                    <CopyIcon />
-                                    Copier le lien
-                                </Button>
-                            </Item>
+            </ShareLocked>
+        )
+    }
 
-                        </Flex>
-                    </Group>
-                )}
-            </Content>
+    return (
+        <ShareDropdown trigger={<IconButton className={styles.buttonLocked}>
+            <Share1Icon />
+            {locked && (
+                <LockClosedIcon className={styles.lock} />
+            )}
+        </IconButton>
+        } open={dropdownOpen} onOpenChange={setDropdownOpen} onQrCodeOpen={onQrCodeOpen} onShareMail={onShareMail} onCopyLink={onCopyLink}>
             <DialogQRCode open={qrCodeOpen} onOpenChange={setqrCodeOpen} />
-        </Root>
+
+        </ShareDropdown>
     )
 }
 

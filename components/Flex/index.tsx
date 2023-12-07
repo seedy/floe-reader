@@ -18,7 +18,7 @@ const Flex = forwardRef<HTMLDivElement, FlexProps>(
     );
     return (
       <div
-        className={classNames(styles.root, className, variantsClassName)}
+        className={classNames(styles.root, variantsClassName, className)}
         ref={forwardedRef}
         {...props}
       >

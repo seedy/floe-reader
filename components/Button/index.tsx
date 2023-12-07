@@ -15,7 +15,7 @@ const Button = forwardRef<ElementRef<"button">, ButtonProps>(
       <button
         type="button"
         ref={forwardedRef}
-        className={classNames(styles.root, className, variantsClassName)}
+        className={classNames(styles.root, variantsClassName, className)}
         {...props}
       >
         {children}
