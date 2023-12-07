@@ -21,8 +21,8 @@ const Toast = forwardRef<ElementRef<typeof Root>, ToastProps>(
           <Title className={styles.title}>{title}</Title>
           <Description className={styles.description}>{children}</Description>
         </Flex>
-        <Close asChild aria-label="Close">
-          <IconButton type="button">
+        <Close asChild aria-label="Fermer">
+          <IconButton variant="small" type="button">
             <Cross2Icon />
           </IconButton>
         </Close>
