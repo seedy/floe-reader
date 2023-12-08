@@ -153,7 +153,7 @@ const Share = () => (
                     <Img style={{ margin: 'auto' }} height={360} src="/static/landing-1-mask.png" alt="" />
                     <Heading style={{ position: 'absolute', top: 0, left: 0, right: 0, textAlign: "center", padding: "0 1.25rem", ...headings.h1 }}>Réalisons les contenus qui feront parler de toi</Heading>
                 </Section>
-                <Section style={{ position: "relative", marginBottom: "1rem" }}>
+                <Section style={{ position: "relative", marginBottom: "1rem", paddingLeft: "1.25rem" }}>
                     <Heading style={{ ...headings.h2, marginBottom: ".5rem" }} as="h2">Floé Gaubert</Heading>
                     <Heading style={headings.h2} as="h2">Conceptrice rédactrice</Heading>
                     <Img style={{ position: 'absolute', right: 0, bottom: 0 }} height={80} src="/static/logo-side.png" alt="" />
@@ -176,7 +176,7 @@ const Share = () => (
                             <Button aria-label="Téléphone" style={iconButton} href={TEL}><MobileIcon style={icon} fill="inherit" /></Button></Column>
                     </Row>
                 </Section>
-                <Section style={{ padding: "1.5rem", margin: "0 2.5rem", textAlign: "center" }}>
+                <Section style={{ textAlign: "center", marginBottom: "1.25rem" }}>
                     <Row style={{ marginBottom: "1.25rem" }}>
                         <Link style={button.link} href={getBaseUrl()}>Je visite le site de Floé</Link>
                     </Row>
