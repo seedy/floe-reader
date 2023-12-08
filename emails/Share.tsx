@@ -12,7 +12,6 @@ import { Preview } from "@react-email/preview";
 import { Heading } from "@react-email/heading";
 import { Row } from "@react-email/row";
 import { Column } from "@react-email/column";
-import getBaseUrl from "../helpers/getBaseUrl";
 import { INSTAGRAM, LINKEDIN, EMAIL, TEL, CALENDLY } from "../constants/links";
 
 const colors = {
@@ -140,7 +139,9 @@ const icon = {
 	margin: "auto",
 };
 
-const baseUrl = getBaseUrl();
+const baseUrl = process.env.VERCEL_URL
+	? `https://${process.env.VERCEL_URL}`
+	: "";
 
 const Share = () => (
 	<Html>
