@@ -7,9 +7,8 @@
   padding: 1.25rem;
   gap: 0.625rem;
   width: clamp(12rem, 33vw, 24rem);
-  height: 100vh;
   margin: 0;
   list-style: none;
-  z-index: 9999;
+  z-index: 12000;
   outline: none;
 }
