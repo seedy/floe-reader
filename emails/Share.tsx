@@ -141,7 +141,7 @@ const icon = {
 
 const baseUrl = process.env.VERCEL_URL
 	? `https://${process.env.VERCEL_URL}/public`
-	: "";
+	: "/static";
 
 const Share = () => (
 	<Html>
@@ -184,7 +184,7 @@ const Share = () => (
 						width: 360,
 						height: 360,
 						marginBottom: "1.25rem",
-						backgroundImage: `url(${baseUrl}/static/landing-1-mask.png)`,
+						backgroundImage: `url(${baseUrl}/landing-1-mask.png)`,
 					}}
 				>
 					<Heading
@@ -214,7 +214,7 @@ const Share = () => (
 							<Img
 								style={{ marginLeft: "auto" }}
 								height={80}
-								src={`${baseUrl}/static/logo-side.png`}
+								src={`${baseUrl}/logo-side.png`}
 								alt=""
 							/>
 						</Column>
@@ -237,7 +237,7 @@ const Share = () => (
 									<Row>
 										<Img
 											style={icon}
-											src={`${baseUrl}/static/instagram-logo-icon.png`}
+											src={`${baseUrl}/instagram-logo-icon.png`}
 											alt=""
 										/>
 									</Row>
@@ -250,7 +250,7 @@ const Share = () => (
 									<Row>
 										<Img
 											style={icon}
-											src={`${baseUrl}/static/linkedin-logo-icon.png`}
+											src={`${baseUrl}/linkedin-logo-icon.png`}
 											alt=""
 										/>
 									</Row>
@@ -263,7 +263,7 @@ const Share = () => (
 									<Row>
 										<Img
 											style={icon}
-											src={`${baseUrl}/static/envelope-closed-icon.png`}
+											src={`${baseUrl}/envelope-closed-icon.png`}
 											alt=""
 										/>
 									</Row>
@@ -276,7 +276,7 @@ const Share = () => (
 									<Row>
 										<Img
 											style={icon}
-											src={`${baseUrl}/static/mobile-icon.png`}
+											src={`${baseUrl}/mobile-icon.png`}
 											alt=""
 										/>
 									</Row>
