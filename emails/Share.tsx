@@ -140,7 +140,7 @@ const icon = {
 };
 
 const baseUrl = process.env.VERCEL_URL
-	? `https://${process.env.VERCEL_URL}/public`
+	? `https://${process.env.VERCEL_URL}`
 	: "/static";
 
 const Share = () => (
