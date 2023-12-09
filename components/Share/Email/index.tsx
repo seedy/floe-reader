@@ -17,9 +17,9 @@ import Input from "components/Input";
 import H2 from "components/Typography/H2";
 import H3 from "components/Typography/H3";
 import styles from "components/Share/Email/Email.module.css";
-import { ReactNode, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 // @ts-ignore
-import { experimental_useFormState as useFormState } from "react-dom";
+import { useFormState } from "react-dom";
 
 interface ShareEmailProps {
 	open: boolean;
