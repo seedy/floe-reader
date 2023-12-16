@@ -1,0 +1,37 @@
+.root {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 1rem;
+    margin: 0;
+    border-radius: var(--radii-round);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: var(--fontsizes-button);
+    font-weight: var(--fontweights-bold);
+    border: none;
+    background: none;
+    color: var(--colors-secondary-background);
+
+    & > svg {
+        width: 0.75rem;
+    }
+}
+
+.indicator {
+    fill: none;
+    stroke: var(--colors-secondary-background);
+}
+
+.indicator.active {
+    fill: var(--colors-secondary-background);
+    stroke: none;
+}
+
+@media (min-width: 1024px) {
+    .root {
+        padding: 2.5rem;
+    }
+}
