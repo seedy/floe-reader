@@ -73,20 +73,16 @@ const Carousel = ({ children, delay = 2000 }: CarouselProps) => {
 				))}
 			</Box>
 			{loaded && instanceRef.current && (
-				<Flex style={{ position: "absolute", bottom: 0 }}>
-					<Flex direction="column" align="center">
-						<Flex>
-							{dotKeys.map((key) => (
-								<CarouselIndicator
-									key={key}
-									active={currentSlide === key}
-									onClick={() => {
-										instanceRef.current?.moveToIdx(key);
-									}}
-								/>
-							))}
-						</Flex>
-					</Flex>
+				<Flex className={styles.indicators}>
+					{dotKeys.map((key) => (
+						<CarouselIndicator
+							key={key}
+							active={currentSlide === key}
+							onClick={() => {
+								instanceRef.current?.moveToIdx(key);
+							}}
+						/>
+					))}
 				</Flex>
 			)}
 		</Box>

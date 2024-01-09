@@ -7,6 +7,8 @@ import landing1 from "public/landing-1.jpg";
 import landing2 from "public/landing-2.jpg";
 import landing3 from "public/landing-3.jpg";
 import Image from "components/Image";
+import H1 from "components/Typography/H1";
+import Slide from "components/Slide";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default ({
@@ -27,9 +29,32 @@ const Template: StoryFn<typeof Carousel> = (args) => {
 			style={{ height: "100%", width: "100%" }}
 		>
 			<Carousel {...args}>
-				<Image src={landing1} width={360} height={360} alt="" />
-				<Image src={landing2} width={360} height={360} alt="" />
-				<Image src={landing3} width={360} height={360} alt="" />
+				<Slide
+					heading={<H1>Réalisons les contenus qui feront parler de toi</H1>}
+					src={landing1}
+					width={360}
+					height={360}
+					alt=""
+				/>
+				<Slide
+					heading={
+						<H1>
+							Je crée une expérience unique avec du contenu percutant et
+							chaleureux
+						</H1>
+					}
+					src={landing2}
+					width={360}
+					height={360}
+					alt=""
+				/>
+				<Slide
+					heading={<H1>Des podcasts qui feront résonner ton message</H1>}
+					src={landing3}
+					width={360}
+					height={360}
+					alt=""
+				/>
 			</Carousel>
 		</Flex>
 	);
