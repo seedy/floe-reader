@@ -26,7 +26,7 @@ const Template: StoryFn<typeof Carousel> = (args) => {
 		<Flex
 			align="center"
 			justify="center"
-			style={{ height: "100%", width: "100%" }}
+			style={{ height: "100%", width: 360 }}
 		>
 			<Carousel {...args}>
 				<Slide
