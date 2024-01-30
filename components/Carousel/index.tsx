@@ -8,6 +8,9 @@ import CarouselPlayPause from "components/Carousel/PlayPause";
 import keenSliderCarousel from "helpers/keenSlider/plugins/carousel";
 import styles from "components/Carousel/Carousel.module.scss";
 import Box from "components/Box";
+import mask from "public/mask.png";
+import maskDesktop from "public/mask-desktop.png";
+import useIsDesktop from "hooks/useIsDesktop";
 
 interface CarouselProps {
 	children: ReactNode;
@@ -20,6 +23,9 @@ const Carousel = ({ children, delay = 2000 }: CarouselProps) => {
 	const [currentSlide, setCurrentSlide] = useState<number>(0);
 	const slides = Children.count(children);
 	const dotKeys = useMemo(() => Array.from(Array(slides).keys()), [slides]);
+	const isDesktop = useIsDesktop();
+	const maskSrc = isDesktop ? maskDesktop.src : mask.src;
+	const minHeight = isDesktop ? 556 : 360;
 
 	const [opacities, setOpacities] = useState<number[]>([]);
 
@@ -57,7 +63,11 @@ const Carousel = ({ children, delay = 2000 }: CarouselProps) => {
 
 	return (
 		<Box className={styles.root}>
-			<Box className={`${styles.slides} keen-slider`} ref={sliderRef}>
+			<Box
+				className={`${styles.slides} keen-slider`}
+				style={{ maskImage: `url(${maskSrc})`, minHeight }}
+				ref={sliderRef}
+			>
 				<CarouselPlayPause
 					playing={playing}
 					onClick={playing ? onPause : onResume}
