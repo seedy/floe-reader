@@ -1,39 +1,43 @@
 .overlay {
-    z-index: 10000;
-    position: fixed;
-    inset: 0;
-    background-color: var(--colors-background);
+  z-index: 10000;
+  position: fixed;
+  inset: 0;
+  background-color: var(--colors-background);
 }
 
 .content {
-    z-index: 10000;
-    position: fixed;
-    inset: 0;
-    background-color: var(--colors-navbar);
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
+  z-index: 10000;
+  position: fixed;
+  inset: 0;
+  background-color: var(--colors-navbar);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
 }
 
 .adminRow {
-    padding: 0 1.25rem;
-    width: 100%;
-    margin-bottom: auto;
+  padding: 0 1.25rem;
+  width: 100%;
+  margin-bottom: auto;
 }
 
 .linkColumn {
-    padding: 0 1.25rem;
+  padding: 0 1.25rem;
 }
 
 .titleRow {
-    max-height: 4rem;
-    padding: 0 1.25rem;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 1;
+  max-height: 4rem;
+  padding: 0 1.25rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.logo {
+  gap: 0.5rem;
 }
 
 .actions {
-    align-items: center;
-    gap: 1.25rem;
+  align-items: center;
+  gap: 1rem;
 }
