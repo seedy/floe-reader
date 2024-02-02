@@ -1,0 +1,30 @@
+.root {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: var(--fontsizes-button);
+    font-weight: var(--fontweights-bold);
+    background: none;
+    border: none;
+    color: var(--colors-secondary-background);
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.root > * {
+    opacity: 0;
+    background-color: var(--colors-black-alpha7);
+    padding: 1.5rem;
+    border-radius: var(--radii-round);
+    transition: opacity 0.2s ease-out;
+}
+
+.root.visible > * {
+    opacity: 1;
+}

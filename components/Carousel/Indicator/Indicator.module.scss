@@ -1,0 +1,39 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  margin: 0;
+  border-radius: var(--radii-round);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: var(--fontsizes-button);
+  font-weight: var(--fontweights-bold);
+  border: none;
+  background: none;
+  color: var(--colors-secondary-background);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.indicator {
+  fill: none;
+  stroke: var(--colors-secondary-background);
+  width: clamp(1rem, 4vw, 2.5rem);
+  height: clamp(1rem, 4vw, 2.5rem);
+}
+
+.indicator.active {
+  fill: var(--colors-secondary-background);
+  stroke: none;
+}
+
+@media (min-width: 1024px) {
+  .root {
+    padding: 1.75rem;
+  }
+}

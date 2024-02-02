@@ -1,0 +1,48 @@
+.root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.slides {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+.slide {
+  position: absolute;
+  inset: 0;
+}
+
+.indicators {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  z-index: 10;
+  gap: 0.5rem;
+}
+
+.desktopHeading {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+@media (min-width: 1024px) {
+  .indicators {
+    bottom: auto;
+    left: auto;
+    top: 0;
+    right: 2.75rem;
+  }
+
+  .desktopHeading {
+    display: block;
+    width: 60%;
+  }
+}
