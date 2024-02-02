@@ -1,0 +1,88 @@
+:root {
+  --content-gap: 10vw;
+}
+
+@keyframes rootReverse {
+  from {
+    transform: translateX(20%);
+  }
+  to {
+    transform: translateX(-20%);
+  }
+}
+
+@keyframes banner {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - var(--content-gap) - 0.5ch));
+  }
+}
+
+.root {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0 1rem;
+  min-height: 3.75rem;
+  overflow: hidden;
+  background-color: var(--colors-navbar);
+  mask: linear-gradient(90deg, transparent, white 20% 80%, transparent);
+  animation: rootReverse linear;
+  animation-timeline: view();
+  animation-range: entry exit;
+}
+.content {
+  margin: 0;
+  padding: 0;
+  min-width: fit-content;
+  list-style-type: none;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: var(--content-gap);
+  animation: banner 10s linear infinite both;
+  &.direction-backward {
+    animation-direction: reverse;
+  }
+  & > * {
+    &:not(:last-child) {
+      display: flex;
+      gap: inherit;
+      &::after {
+        content: "•";
+        display: inline;
+        font-size: var(--fontsizes-body);
+        line-height: 1.5;
+        font-family: inherit;
+        color: var(--colors-text);
+        font-weight: var(--fontweights-regular);
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion) {
+  :root {
+    --content-gap: 3vw;
+  }
+  .root {
+    animation: none;
+  }
+  .content {
+    flex-wrap: wrap;
+    animation: none;
+    justify-content: center;
+    .duplicate {
+      display: none;
+    }
+    .last {
+      &::after {
+        content: none;
+      }
+    }
+  }
+}
