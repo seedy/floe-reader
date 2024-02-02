@@ -15,9 +15,14 @@ import useIsDesktop from "hooks/useIsDesktop";
 interface CarouselProps {
 	children: ReactNode;
 	delay?: number;
+	headingDesktop?: ReactNode;
 }
 
-const Carousel = ({ children, delay = 2000 }: CarouselProps) => {
+const Carousel = ({
+	children,
+	headingDesktop,
+	delay = 2000,
+}: CarouselProps) => {
 	const [loaded, setLoaded] = useState(false);
 	const [playing, setPlaying] = useState(true);
 	const [currentSlide, setCurrentSlide] = useState<number>(0);
@@ -94,6 +99,9 @@ const Carousel = ({ children, delay = 2000 }: CarouselProps) => {
 						/>
 					))}
 				</Flex>
+			)}
+			{headingDesktop && (
+				<div className={styles.desktopHeading}>{headingDesktop}</div>
 			)}
 		</Box>
 	);
