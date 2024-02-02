@@ -3,7 +3,7 @@
 import { LockClosedIcon, Share1Icon } from "@radix-ui/react-icons";
 import IconButton from "components/IconButton";
 import styles from "components/Share/Share.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import getBaseUrl from "helpers/getBaseUrl";
 import DialogQRCode from "components/Dialog/QRCode";
 import { useToast } from "components/Toast/Provider";

@@ -6,4 +6,5 @@
   color: var(--colors-text);
   font-weight: var(--fontweights-semiBold);
   margin: 0;
+  text-align: center;
 }
