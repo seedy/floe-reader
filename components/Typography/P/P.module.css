@@ -1,5 +1,10 @@
 .root {
   display: block;
+  font-size: var(--fontsizes-body);
+  line-height: 1.5;
+  font-family: inherit;
+  color: var(--colors-text);
+  font-weight: var(--fontweights-regular);
   margin: 0;
 }
 
