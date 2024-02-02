@@ -6,4 +6,5 @@
   font-weight: var(--fontweights-regular);
   margin: 0;
   text-align: center;
+  white-space: nowrap;
 }
