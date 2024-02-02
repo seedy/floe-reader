@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
-		<html lang="fr">
-			<body className={lora.className}>
+		<html lang="fr" className={lora.className}>
+			<body>
 				<ToastProvider>
 					<HighlightInit
 						projectId={env.NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID}
