@@ -8,7 +8,6 @@ import landing2 from "public/landing-2.jpg";
 import landing3 from "public/landing-3.jpg";
 import H1 from "components/Typography/H1";
 import Slide from "components/Slide";
-import useIsDesktop from "hooks/useIsDesktop";
 import H2 from "components/Typography/H2";
 import Socials from "components/Socials";
 
@@ -24,14 +23,8 @@ export default ({
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Carousel> = (args) => {
-	const isDesktop = useIsDesktop();
 	return (
-		<Flex
-			direction="column"
-			align="center"
-			justify="center"
-			// style={{ height: isDesktop ? 556 : 360, width: isDesktop ? 943 : 360 }}
-		>
+		<Flex direction="column" align="center" justify="center">
 			<Carousel {...args}>
 				<Slide
 					headingDesktop={
@@ -40,13 +33,7 @@ const Template: StoryFn<typeof Carousel> = (args) => {
 							chaleureux
 						</H2>
 					}
-					heading={
-						<H1>
-							{isDesktop
-								? "Des podcasts qui feront résonner ton message"
-								: "Réalisons les contenus qui feront parler de toi"}
-						</H1>
-					}
+					heading={<H1>Réalisons les contenus qui feront parler de toi</H1>}
 					src={landing1}
 					fill
 					alt=""
@@ -60,9 +47,8 @@ const Template: StoryFn<typeof Carousel> = (args) => {
 					}
 					heading={
 						<H1>
-							{isDesktop
-								? "Des podcasts qui feront résonner ton message"
-								: "Je crée une expérience unique avec du contenu percutant et chaleureux"}
+							Je crée une expérience unique avec du contenu percutant et
+							chaleureux
 						</H1>
 					}
 					src={landing2}

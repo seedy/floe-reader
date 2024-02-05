@@ -1,22 +1,9 @@
-:root {
-  --content-gap: 10vw;
-}
-
 @keyframes rootReverse {
   from {
     transform: translateX(20%);
   }
   to {
     transform: translateX(-20%);
-  }
-}
-
-@keyframes banner {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(calc(-50% - var(--content-gap) - 0.5ch));
   }
 }
 
@@ -43,11 +30,6 @@
   flex-grow: 1;
   flex-direction: row;
   flex-wrap: nowrap;
-  gap: var(--content-gap);
-  animation: banner 10s linear infinite both;
-  &.direction-backward {
-    animation-direction: reverse;
-  }
   & > * {
     &:not(:last-child) {
       display: flex;
@@ -66,15 +48,11 @@
 }
 
 @media (prefers-reduced-motion) {
-  :root {
-    --content-gap: 3vw;
-  }
   .root {
     animation: none;
   }
   .content {
     flex-wrap: wrap;
-    animation: none;
     justify-content: center;
     .duplicate {
       display: none;

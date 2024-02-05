@@ -1,18 +1,16 @@
 import styles from "components/Banner/Banner.module.scss";
-import useScrollDirection from "components/Banner/useScrollDirection";
+import BannerScrollAnimation from "components/Banner/ScrollAnimation";
 import P from "components/Typography/P";
 import classNames from "helpers/classNames";
-import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
 
 interface BannerProps {
 	tags: string[];
+	className?: string;
 }
-const Banner = ({ tags }: BannerProps) => {
-	const direction = useScrollDirection();
-	const directionClassNames = variantsToClassNameStyles({ direction }, styles);
+const Banner = ({ tags, className }: BannerProps) => {
 	return (
-		<div className={styles.root}>
-			<ul className={classNames(styles.content, directionClassNames)}>
+		<div className={classNames(styles.root, className)}>
+			<BannerScrollAnimation className={styles.content}>
 				{tags.map((tag, index) => (
 					<li
 						className={index === tags.length - 1 ? styles.last : ""}
@@ -26,7 +24,7 @@ const Banner = ({ tags }: BannerProps) => {
 						<P>{tag}</P>
 					</li>
 				))}
-			</ul>
+			</BannerScrollAnimation>
 		</div>
 	);
 };

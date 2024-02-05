@@ -1,3 +1,4 @@
+"use client";
 import useThrottle from "hooks/useThrottle";
 import { useLayoutEffect, useRef, useState } from "react";
 

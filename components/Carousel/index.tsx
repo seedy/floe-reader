@@ -1,3 +1,4 @@
+"use client";
 import { Children, MouseEvent, ReactNode, useMemo, useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 // STYLES
@@ -8,29 +9,27 @@ import CarouselPlayPause from "components/Carousel/PlayPause";
 import keenSliderCarousel from "helpers/keenSlider/plugins/carousel";
 import styles from "components/Carousel/Carousel.module.scss";
 import Box from "components/Box";
-import mask from "public/mask.png";
-import maskDesktop from "public/mask-desktop.png";
-import useIsDesktop from "hooks/useIsDesktop";
+import CarouselMask from "components/Carousel/Mask";
+import classNames from "helpers/classNames";
 
 interface CarouselProps {
 	children: ReactNode;
 	delay?: number;
 	headingDesktop?: ReactNode;
+	className?: string;
 }
 
 const Carousel = ({
 	children,
 	headingDesktop,
 	delay = 2000,
+	className,
 }: CarouselProps) => {
 	const [loaded, setLoaded] = useState(false);
 	const [playing, setPlaying] = useState(true);
 	const [currentSlide, setCurrentSlide] = useState<number>(0);
 	const slides = Children.count(children);
 	const dotKeys = useMemo(() => Array.from(Array(slides).keys()), [slides]);
-	const isDesktop = useIsDesktop();
-	const maskSrc = isDesktop ? maskDesktop.src : mask.src;
-	const minHeight = isDesktop ? 556 : 360;
 
 	const [opacities, setOpacities] = useState<number[]>([]);
 
@@ -67,12 +66,8 @@ const Carousel = ({
 	};
 
 	return (
-		<Box className={styles.root}>
-			<Box
-				className={`${styles.slides} keen-slider`}
-				style={{ maskImage: `url(${maskSrc})`, minHeight }}
-				ref={sliderRef}
-			>
+		<Box className={classNames(styles.root, className)}>
+			<CarouselMask className={`${styles.slides} keen-slider`} ref={sliderRef}>
 				<CarouselPlayPause
 					playing={playing}
 					onClick={playing ? onPause : onResume}
@@ -86,7 +81,7 @@ const Carousel = ({
 						{child}
 					</Box>
 				))}
-			</Box>
+			</CarouselMask>
 			{loaded && instanceRef.current && (
 				<Flex className={styles.indicators}>
 					{dotKeys.map((key) => (
