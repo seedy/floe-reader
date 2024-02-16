@@ -115,7 +115,7 @@ const ScreenLanding = () => {
 				>
 					Je prends rendez-vous
 				</ButtonLink>
-				<ScrollHint className={styles.hint} />
+				<ScrollHint className={styles.hint} href="#" />
 			</Flex>
 		</Screen>
 	);

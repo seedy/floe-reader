@@ -11,7 +11,8 @@
   font-family: inherit;
   font-size: var(--fontsizes-button);
   font-weight: var(--fontweights-bold);
-  border: 0.125rem solid transparent;
+  border: none;
+  outline: 0.125rem solid transparent;
   background: none;
   color: var(--colors-secondary-background);
 
@@ -21,18 +22,18 @@
 
   &:hover:not(:disabled) {
     cursor: pointer;
-    border: 0.125rem solid var(--colors-primary);
+    outline: 0.125rem solid var(--colors-primary);
     background-color: var(--colors-white);
   }
 
   &:focus:not(:disabled) {
-    border: 0.125rem solid var(--colors-primary);
+    outline: 0.125rem solid var(--colors-primary);
     background-color: var(--colors-white);
     box-shadow: var(--shadows-focus);
   }
 
   &:focus-visible:not(:disabled) {
-    border: 0.125rem solid var(--colors-primary);
+    outline: 0.125rem solid var(--colors-primary);
     background-color: var(--colors-white);
     box-shadow: var(--shadows-focus);
     outline-style: solid;
@@ -69,7 +70,7 @@
 .variant-small {
   padding: 1rem;
 
-  &>* {
+  & > * {
     width: 1rem;
     height: 1rem;
   }
@@ -78,7 +79,7 @@
 .variant-medium {
   padding: 1.5rem;
 
-  &>* {
+  & > * {
     width: 2rem;
     height: 2rem;
   }
@@ -87,7 +88,7 @@
 .variant-large {
   padding: 2.5rem;
 
-  &>* {
+  & > * {
     width: 4rem;
     height: 4rem;
   }
