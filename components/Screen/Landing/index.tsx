@@ -23,6 +23,7 @@ const ScreenLanding = () => {
 	return (
 		<Screen>
 			<Carousel
+				className={styles.carousel}
 				headingDesktop={
 					<Flex
 						direction="column"
@@ -99,10 +100,14 @@ const ScreenLanding = () => {
 					<H2>Floé Gaubert</H2>
 					<H2>Rédactrice & Podcasteuse</H2>
 				</Flex>
+				<ScrollHint
+					className={classNames(styles.hint, styles.desktop)}
+					href="#"
+				/>
 				<Logo className={styles.logo} alt="" priority src={logoSide} />
 			</Flex>
 			<Banner
-				className={styles.banner}
+				className={styles.mobile}
 				tags={["Interview", "Rédaction", "Podcast", "Photo", "Vidéo"]}
 			/>
 
@@ -111,12 +116,16 @@ const ScreenLanding = () => {
 				<ButtonLink
 					variant="contained"
 					href={CALENDLY}
-					className={classNames(styles.cta, styles.mobile)}
+					className={classNames(styles.cta)}
 				>
 					Je prends rendez-vous
 				</ButtonLink>
 				<ScrollHint className={styles.hint} href="#" />
 			</Flex>
+			<Banner
+				className={classNames(styles.desktop, styles.banner)}
+				tags={["Interview", "Rédaction", "Podcast", "Photo", "Vidéo"]}
+			/>
 		</Screen>
 	);
 };
