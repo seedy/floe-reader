@@ -33,7 +33,7 @@ const trigger = (
 	if (current === undefined || previous === undefined) {
 		return;
 	}
-	const showOrHide = current > THRESHOLD && current > previous;
+	const showOrHide = current < THRESHOLD || current < previous;
 	return showOrHide ? show(target) : hide(target);
 };
 

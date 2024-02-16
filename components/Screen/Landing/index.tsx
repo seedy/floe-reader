@@ -99,14 +99,14 @@ const ScreenLanding = () => {
 					<H2>Floé Gaubert</H2>
 					<H2>Rédactrice & Podcasteuse</H2>
 				</Flex>
-				<Logo alt="" priority src={logoSide} />
+				<Logo className={styles.logo} alt="" priority src={logoSide} />
 			</Flex>
 			<Banner
 				className={styles.banner}
 				tags={["Interview", "Rédaction", "Podcast", "Photo", "Vidéo"]}
 			/>
 
-			<Flex className={styles.links}>
+			<Flex className={classNames(styles.links, styles.mobile)}>
 				<Socials />
 				<ButtonLink
 					variant="contained"

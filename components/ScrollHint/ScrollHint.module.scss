@@ -59,26 +59,3 @@
 .link {
   padding: 0.25rem 1rem;
 }
-
-.desktop {
-  display: none;
-}
-
-@media (min-width: 1024px) {
-  .mouse {
-    width: 4rem;
-    height: 10rem;
-  }
-
-  .wheel {
-    top: 1.375rem;
-  }
-
-  .desktop {
-    display: unset;
-  }
-
-  .mobile {
-    display: none;
-  }
-}
