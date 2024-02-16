@@ -15,6 +15,7 @@ const BannerScrollAnimation = ({
 }: BannerScrollAnimationProps) => {
 	const direction = useScrollDirection();
 	const directionClassNames = variantsToClassNameStyles({ direction }, styles);
+
 	return (
 		<ul className={classNames(styles.root, directionClassNames, className)}>
 			{children}

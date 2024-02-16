@@ -5,12 +5,15 @@ import ScreenLanding from "components/Screen/Landing";
 import { LOREM } from "constants/lorem";
 
 const Home = () => (
-    <main className={styles.main}>
-        <ScreenLanding />
-        <Screen>
-            <Box>{LOREM}</Box>
-        </Screen>
-    </main>
-)
+	<main className={styles.main}>
+		<ScreenLanding />
+		<Screen>
+			<Box>{LOREM}</Box>
+			<Box>{LOREM}</Box>
+			<Box>{LOREM}</Box>
+			<Box>{LOREM}</Box>
+		</Screen>
+	</main>
+);
 
-export default Home
+export default Home;

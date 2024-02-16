@@ -1,5 +1,6 @@
 import styles from "components/Banner/Banner.module.scss";
 import BannerScrollAnimation from "components/Banner/ScrollAnimation";
+import Box from "components/Box";
 import P from "components/Typography/P";
 import classNames from "helpers/classNames";
 
@@ -9,7 +10,7 @@ interface BannerProps {
 }
 const Banner = ({ tags, className }: BannerProps) => {
 	return (
-		<div className={classNames(styles.root, className)}>
+		<Box className={classNames(styles.root, className)}>
 			<BannerScrollAnimation className={styles.content}>
 				{tags.map((tag, index) => (
 					<li
@@ -25,7 +26,7 @@ const Banner = ({ tags, className }: BannerProps) => {
 					</li>
 				))}
 			</BannerScrollAnimation>
-		</div>
+		</Box>
 	);
 };
 
