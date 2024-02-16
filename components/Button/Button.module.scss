@@ -17,6 +17,7 @@
   font-size: var(--fontsizes-button);
   font-weight: var(--fontweights-bold);
   border: none;
+  outline: 0.125rem solid transparent;
   background: none;
   margin: 0;
 
@@ -27,12 +28,12 @@
 
 .color-primary {
   color: var(--colors-primary);
-  border-color: var(--colors-primary);
+  outline-color: var(--colors-primary);
 }
 
 .color-secondary {
   color: var(--colors-secondary-background);
-  border-color: var(--colors-secondary-background);
+  outline-color: var(--colors-secondary-background);
 }
 
 .variant-contained {
@@ -58,7 +59,7 @@
   &:focus-visible {
     color: var(--colors-white);
     box-shadow: var(--shadows-focus-large);
-    outline: .375rem solid;
+    outline: 0.375rem solid;
 
     &.color-primary {
       outline-color: var(--colors-outline-primary);
@@ -75,9 +76,8 @@
   }
 }
 
-
 .variant-outlined {
-  border: 0.125rem solid;
+  outline: 0.125rem solid transparent;
 
   &:hover {
     background-color: var(--colors-white);
@@ -91,7 +91,7 @@
   &:focus-visible {
     background-color: var(--colors-white);
     box-shadow: var(--shadows-focus-large);
-    outline: .375rem solid;
+    outline: 0.375rem solid;
 
     &.color-primary {
       outline-color: var(--colors-outline-primary);
@@ -108,16 +108,16 @@
   }
 }
 
-
-.variant-text {
-
+.variant-link {
+  outline-color: transparent;
+  text-transform: none;
   &:focus {
     text-decoration: underline;
   }
 
   &:focus-visible {
     text-decoration: underline;
-    outline: .375rem solid;
+    outline: 0.375rem solid;
 
     &.color-primary {
       outline-color: var(--colors-outline-primary);
@@ -130,10 +130,9 @@
 
   &:active {
     text-decoration: underline;
-    box-shadow: var(--shadows-active-large);
+    text-shadow: var(--shadows-active-text);
   }
 }
-
 
 @media (min-width: 1024px) {
   .root {
