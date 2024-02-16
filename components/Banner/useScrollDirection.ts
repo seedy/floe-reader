@@ -1,5 +1,4 @@
 "use client";
-import useThrottle from "hooks/useThrottle";
 import { useLayoutEffect, useRef, useState } from "react";
 
 type Direction = "forward" | "backward";
@@ -7,7 +6,6 @@ type Direction = "forward" | "backward";
 const useScrollDirection = () => {
 	const prevScrollY = useRef(0);
 	const [direction, setDirection] = useState<Direction>("forward");
-	const throttleScroll = useThrottle(200);
 
 	useLayoutEffect(() => {
 		const onScroll = () => {
@@ -21,13 +19,12 @@ const useScrollDirection = () => {
 			}
 			prevScrollY.current = scrollY;
 		};
-		const throttledOnScroll = throttleScroll(onScroll);
-		document.addEventListener("scroll", throttledOnScroll);
+		document.addEventListener("scroll", onScroll, { passive: true });
 
 		return () => {
 			document.removeEventListener("scroll", onScroll);
 		};
-	}, [prevScrollY, setDirection, throttleScroll]);
+	}, [prevScrollY, setDirection]);
 
 	return direction;
 };
