@@ -6,6 +6,7 @@ import { Lora } from "next/font/google";
 import Navbar from "components/Navbar";
 import { ReactNode } from "react";
 import { Metadata } from "next";
+import styles from "app/styles.module.css";
 
 const lora = Lora({ subsets: ["latin"], style: ["normal"] });
 
@@ -30,7 +31,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 						excludedHostnames={["localhost"]}
 					/>
 					<Navbar />
-					{children}
+					<main className={styles.main}>{children}</main>
 				</ToastProvider>
 			</body>
 		</html>
