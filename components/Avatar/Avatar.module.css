@@ -1,9 +1,10 @@
 .root {
   display: inline-flex;
   object-fit: cover;
-  width: 15rem;
-  height: 15rem;
-  border-radius: var(--radii-round);
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radii-avatar);
 }
 
 .selected-true {

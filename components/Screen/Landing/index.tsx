@@ -1,7 +1,6 @@
 import Screen from "components/Screen";
 import H1 from "components/Typography/H1";
 import styles from "components/Screen/Landing/Landing.module.css";
-import Box from "components/Box";
 import logoSide from "public/logo-side.svg";
 import Logo from "components/Logo";
 import Flex from "components/Flex";

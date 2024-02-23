@@ -1,0 +1,25 @@
+.heading {
+  gap: 2.5rem;
+  margin: 1.5rem 1.25rem 1.25rem 1rem;
+}
+
+.hero {
+  gap: 2.5rem;
+  margin: 0 1.25rem;
+}
+
+.image {
+  aspect-ratio: 1 / 1;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.quote {
+  text-decoration: underline;
+  font-weight: var(--font-weights-bold);
+}
+
+@media (min-width: 1024px) {
+}
