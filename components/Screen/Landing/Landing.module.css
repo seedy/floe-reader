@@ -96,7 +96,9 @@
   }
 
   .hint {
-    align-self: flex-start;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .banner {
