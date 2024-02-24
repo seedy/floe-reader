@@ -97,7 +97,7 @@
     transform: translateX(-50%);
   }
 
-  .banner {
+  .banner.banner {
     margin-top: 2.5rem;
   }
 }
