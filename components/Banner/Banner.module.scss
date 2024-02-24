@@ -51,6 +51,7 @@
 @media (prefers-reduced-motion) {
   .root {
     animation: none;
+    mask: none;
   }
   .content {
     flex-wrap: wrap;
