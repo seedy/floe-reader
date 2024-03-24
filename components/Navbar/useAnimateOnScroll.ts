@@ -24,6 +24,7 @@ const show = (node: HTMLElement | null | undefined) => {
 const trigger = (
 	store: MutableRefObject<number | undefined>,
 	target: HTMLElement | null | undefined,
+	cumulatedScrollUp: MutableRefObject<number>,
 ) => {
 	const previous = store.current;
 	if (WINDOW) {
@@ -33,21 +34,26 @@ const trigger = (
 	if (current === undefined || previous === undefined) {
 		return;
 	}
-	const showOrHide = current < THRESHOLD || current < previous;
+	const isGoingUp = current < previous;
+	const upDiff = isGoingUp ? cumulatedScrollUp.current + previous - current : 0;
+	cumulatedScrollUp.current = upDiff;
+	const showOrHide = current < THRESHOLD || upDiff > THRESHOLD;
 	return showOrHide ? show(target) : hide(target);
 };
 
 // HOOKS
 const useAnimateOnScroll = (targetRef: MutableRefObject<null>) => {
 	const scrollStore = useRef<number | undefined>();
+	const cumulatedScrollUp = useRef(0);
 	useEffect(() => {
-		const handleScroll = () => trigger(scrollStore, targetRef.current);
-		trigger(scrollStore, targetRef.current);
+		const handleScroll = () =>
+			trigger(scrollStore, targetRef.current, cumulatedScrollUp);
+		trigger(scrollStore, targetRef.current, cumulatedScrollUp);
 		WINDOW?.addEventListener("scroll", handleScroll, { passive: true });
 		return () => {
 			WINDOW?.removeEventListener("scroll", handleScroll);
 		};
-	}, [targetRef, scrollStore]);
+	}, [targetRef, scrollStore, cumulatedScrollUp]);
 };
 
 export default useAnimateOnScroll;

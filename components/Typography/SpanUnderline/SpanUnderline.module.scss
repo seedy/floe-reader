@@ -1,0 +1,36 @@
+.root {
+  position: relative;
+
+  &.variant-secondary {
+    &::after {
+      background-image: linear-gradient(
+        to right,
+        var(--colors-outline-secondary),
+        var(--colors-outline-secondary)
+      );
+    }
+  }
+
+  &.variant-primary {
+    &::after {
+      background-image: linear-gradient(
+        to right,
+        var(--colors-fern-green-underline),
+        var(--colors-fern-green-underline)
+      );
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 0.5rem;
+    border-radius: var(--radii-rounded);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+}

@@ -10,10 +10,6 @@
   }
 }
 
-.appear {
-  animation: appear 400ms ease-in;
-}
-
 .logo {
   height: clamp(5rem, 16vw, 10rem);
   width: auto;
@@ -42,7 +38,7 @@
 .hint {
   align-self: flex-end;
   opacity: 0;
-  animation: 400ms ease-in 2s appear forwards;
+  animation: var(--animation-appear) 2s;
 }
 
 .links {
@@ -101,7 +97,7 @@
     transform: translateX(-50%);
   }
 
-  .banner {
+  .banner.banner {
     margin-top: 2.5rem;
   }
 }
