@@ -11,6 +11,7 @@ import Subtitle from "components/Typography/Subtitle";
 import Avatar from "components/Avatar";
 import classNames from "helpers/classNames";
 import Grid from "components/Grid";
+import H3 from "components/Typography/H3";
 
 const ScreenPresentation = () => {
 	return (
@@ -33,38 +34,48 @@ const ScreenPresentation = () => {
 							l&apos;attention de ton client idéal, de manière transparente et
 							authentique ?
 						</P>
-						<Grid className={styles.grid} cols={3}>
-							<P>
-								Tu aimerais concevoir une communication à la hauteur de tes
-								ambitions ? Créons ensemble,{" "}
-								<span className={styles.catchphrase}>
-									le contenu qui fera parler de toi.
-								</span>
-							</P>
-							<P>
-								Tu as besoin d&apos;une expertise en communication pour rendre
-								tes contenus percutants ? Fais réagir ton public avec{" "}
-								<span className={styles.catchphrase}>un message vibrant.</span>
-							</P>
-							<P>
-								Tu souhaites promouvoir tes services sur le web de manière
-								captivante et humaine ? Prenons le temps d&apos;étudier ton
-								audience pour{" "}
-								<span className={styles.catchphrase}>
-									créer du contenu attrayant et percutant.
-								</span>
-							</P>
-						</Grid>
-						<Flex direction="column" align="center" className={styles.subtitle}>
-							<Subtitle>
-								Je rédige pour{" "}
-								<SpanUnderline variant="secondary">ton audience</SpanUnderline>{" "}
-								!
-							</Subtitle>
-							<P>
-								Je définis ton client idéal ainsi que le message qui attirera
-								son attention, de manière transparente et authentique.
-							</P>
+						<Flex direction="column" className={styles.details} grow>
+							<Grid className={styles.grid} cols={3}>
+								<P>
+									Tu aimerais concevoir une communication à la hauteur de tes
+									ambitions ? Créons ensemble,{" "}
+									<span className={styles.catchphrase}>
+										le contenu qui fera parler de toi.
+									</span>
+								</P>
+								<P>
+									Tu as besoin d&apos;une expertise en communication pour rendre
+									tes contenus percutants ? Fais réagir ton public avec{" "}
+									<span className={styles.catchphrase}>
+										un message vibrant.
+									</span>
+								</P>
+								<P>
+									Tu souhaites promouvoir tes services sur le web de manière
+									captivante et humaine ? Prenons le temps d&apos;étudier ton
+									audience pour{" "}
+									<span className={styles.catchphrase}>
+										créer du contenu attrayant et percutant.
+									</span>
+								</P>
+							</Grid>
+							<Flex
+								direction="column"
+								align="center"
+								className={styles.subtitle}
+							>
+								<Subtitle>
+									Je rédige pour{" "}
+									<SpanUnderline variant="secondary">
+										ton audience
+									</SpanUnderline>{" "}
+									!
+								</Subtitle>
+								<P>
+									Je définis ton client idéal ainsi que le message qui attirera
+									son attention, de manière transparente et authentique.
+								</P>
+							</Flex>
 						</Flex>
 					</Flex>
 					<Flex direction="column" className={styles.hero}>
@@ -92,7 +103,7 @@ const ScreenPresentation = () => {
 							<br />
 							<span className={styles.catchphrase}>
 								Transmettre des émotions, partager le voyage, capturer
-								l&apos;instant
+								l&apos;instant !
 							</span>
 						</P>
 						<P className={styles.mobile}>
@@ -104,20 +115,40 @@ const ScreenPresentation = () => {
 							partager à ton public tes valeurs, tes ambitions et tes
 							connaissances.
 						</P>
-						<Grid className={styles.grid} cols={2}>
-							<P>
-								Tu aimerais concevoir une communication à la hauteur de tes
-								ambitions ? Créons ensemble,{" "}
-								<span className={styles.catchphrase}>
-									le contenu qui fera parler de toi.
-								</span>
-							</P>
-							<P>
-								Tu as besoin d&apos;une expertise en communication pour rendre
-								tes contenus percutants ? Fais réagir ton public avec{" "}
-								<span className={styles.catchphrase}>un message vibrant.</span>
-							</P>
-						</Grid>
+						<Flex direction="column" className={styles.details} grow>
+							<Grid className={styles.grid} cols={2}>
+								<Flex direction="column" className={styles.subtitle}>
+									<H3>Inspiration, qualité, sens</H3>
+									<P>
+										Je souhaite mettre en avant des projets novateurs et
+										inspirants, par le biais d&apos;une image de qualité et un
+										message qui fait sens.
+									</P>
+								</Flex>
+								<Flex direction="column" className={styles.subtitle}>
+									<H3>
+										Partager <SpanUnderline>tes valeurs</SpanUnderline>
+									</H3>
+									<P>
+										L&apos;audiovisuel est le meilleur moyen de partager à ton
+										audience tes valeurs, tes ambitions et tes connaissances.
+									</P>
+								</Flex>
+							</Grid>
+							<Flex
+								direction="column"
+								align="center"
+								className={styles.subtitle}
+							>
+								<Subtitle>
+									<SpanUnderline>La vidéo</SpanUnderline> : contenu privilégié !
+								</Subtitle>
+								<P>
+									C&apos;est le format le plus consommé de nos jours !<br />
+									La demande de contenus vidéos est en constante augmentation.
+								</P>
+							</Flex>
+						</Flex>
 					</Flex>
 					<Flex direction="column" className={styles.hero}>
 						<Avatar
@@ -142,8 +173,17 @@ const ScreenPresentation = () => {
 							J&apos;ai imaginé, enregistré et monté 2 podcasts… bientôt le tien
 							?
 						</H2>
-
-						<P>
+						<P className={styles.desktop}>
+							Toujours en quête de nouveauté et d&apos;originalité, j&apos;aime
+							mettre en lumière des projets inspirants grâce à mes compétences
+							en SEO et en copywriting.
+							<br />
+							<span className={styles.catchphrase}>
+								Transmettre des émotions, partager le voyage, capturer
+								l&apos;instant !
+							</span>
+						</P>
+						<P className={styles.mobile}>
 							<span className={styles.quote}>«Depuis des Lunes»</span>, un
 							podcast tourné vers la vie des femmes tout au long de leurs cycles
 							hormonaux.
@@ -152,6 +192,54 @@ const ScreenPresentation = () => {
 							<span className={styles.quote}>«Les Baroudeurs»</span> dans un
 							podcast du même nom.
 						</P>
+						<Flex direction="column" className={styles.details} grow>
+							<Grid className={styles.grid} cols={2}>
+								<Flex direction="column" className={styles.subtitle}>
+									<H3>
+										<SpanUnderline>Depuis des Lunes</SpanUnderline>
+									</H3>
+									<P>
+										Mon vécu m&apos;a poussée à créer un podcast tourné vers la
+										vie des femmes tout au long de leurs cycles hormonaux,{" "}
+										<span className={styles.quote}>«Depuis des Lunes»</span>.
+										<br />
+										<br />
+										Des témoignagnes poignants et émouvants pour raconter ce qui
+										ne se raconte pas.
+									</P>
+								</Flex>
+								<Flex direction="column" className={styles.subtitle}>
+									<H3>
+										<SpanUnderline>Les Baroudeurs</SpanUnderline>
+									</H3>
+									<P>
+										Passionnée par le voyage et les rencontres,
+										j&apos;interviewe{" "}
+										<span className={styles.quote}>«Les Baroudeurs»</span>.
+										<br />
+										<br />
+										Histoires loufoques ou insolites, galères et mésaventures
+										pour montrer que la vie est aussi belle que folle.
+									</P>
+								</Flex>
+							</Grid>
+							<Flex
+								direction="column"
+								align="center"
+								className={styles.subtitle}
+							>
+								<Subtitle>
+									Diffuse <SpanUnderline>ton message</SpanUnderline> à travers
+									le micro !
+								</Subtitle>
+								<P>
+									J&apos;ai aujourdh&apos;ui le matériel et les logiciels
+									adéquats pour la prise de son. J&apos;ai de l&apos;expérience
+									en interview. Je peux ainsi te proposer une prestation
+									complète.
+								</P>
+							</Flex>
+						</Flex>
 					</Flex>
 					<Flex direction="column" className={styles.hero}>
 						<Avatar

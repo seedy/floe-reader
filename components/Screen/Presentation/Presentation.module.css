@@ -13,10 +13,6 @@
   margin: 0 1.25rem;
 }
 
-.image {
-  height: auto;
-}
-
 .quote {
   text-decoration: underline;
   font-weight: var(--fontweights-bold);
@@ -26,8 +22,7 @@
   font-weight: var(--fontweights-bold);
 }
 
-.grid,
-.subtitle {
+.details {
   display: none;
 }
 
@@ -45,16 +40,20 @@
   .root {
     flex-direction: row-reverse;
     gap: 1.25rem;
+    justify-content: space-between;
   }
 
   .heading {
     gap: 3.375rem;
   }
 
-  .grid {
+  .details {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .grid.grid {
     margin-top: 1.875rem;
-    margin-bottom: 7.5rem;
-    display: grid;
     justify-content: space-between;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
@@ -63,9 +62,10 @@
   .image.image {
     aspect-ratio: 256 / 672;
     width: 25vw;
+    max-height: calc(100svh - 4rem);
   }
 
-  .subtitle {
+  .subtitle.subtitle {
     display: flex;
     gap: 0.75rem;
   }
