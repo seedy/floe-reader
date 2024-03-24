@@ -1,0 +1,40 @@
+.screen {
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.root {
+  margin: 1.5rem 1.25rem 1.25rem 1rem;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.heading {
+  gap: 2.5rem;
+}
+
+.cta {
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.ctaHint {
+  color: var(--colors-text-hint);
+}
+
+.clients {
+  gap: 1.25rem;
+}
+
+.client {
+  gap: 1rem;
+  align-items: center;
+}
+
+.logoText.logoText {
+  font-weight: var(--fontweights-bold);
+}
+
+@media (min-width: 1024px) {
+}
