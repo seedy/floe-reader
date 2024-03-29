@@ -9,5 +9,12 @@
 	},
 	"[css]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"tailwindCSS.experimental.classRegex": [
+		["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+		["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+	],
+	"files.associations": {
+		"*.css": "tailwindcss"
 	}
 }
