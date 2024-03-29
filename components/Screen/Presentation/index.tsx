@@ -9,7 +9,6 @@ import presentation2 from "public/presentation-2.jpg";
 import presentation3 from "public/presentation-3.jpg";
 import Subtitle from "components/Typography/Subtitle";
 import Avatar from "components/Avatar";
-import classNames from "helpers/classNames";
 import Grid from "components/Grid";
 import H3 from "components/Typography/H3";
 
@@ -20,11 +19,11 @@ const ScreenPresentation = () => {
 				<Flex className={styles.root}>
 					<Flex direction="column" className={styles.heading}>
 						<H2>Je rédige et corrige ton contenu web</H2>
-						<P className={styles.desktop}>
+						<P className="hidden lg:block">
 							J&apos;aime mettre en lumière des projets inspirants grâce à mes
 							compétences en SEO et en copywriting.
 						</P>
-						<P className={styles.mobile}>
+						<P className="lg:hidden">
 							J&apos;aime mettre en lumière des projets inspirants grâce à mes
 							compétences en SEO et en copywriting.
 							<br />
@@ -84,7 +83,7 @@ const ScreenPresentation = () => {
 							className={styles.image}
 							alt="Je rédige pour ton audience !"
 						/>
-						<Subtitle className={styles.mobile}>
+						<Subtitle className="lg:hidden">
 							Je rédige pour{" "}
 							<SpanUnderline variant="secondary">ton audience</SpanUnderline> !
 						</Subtitle>
@@ -97,7 +96,7 @@ const ScreenPresentation = () => {
 						<H2>
 							Je crée du contenu photo et vidéo pour améliorer ta visibilité
 						</H2>
-						<P className={styles.desktop}>
+						<P className="hidden lg:block">
 							Autodidacte et proactive, je me suis formée aux domaines de la
 							photo et du montage vidéo.
 							<br />
@@ -106,7 +105,7 @@ const ScreenPresentation = () => {
 								l&apos;instant !
 							</span>
 						</P>
-						<P className={styles.mobile}>
+						<P className="lg:hidden">
 							Je souhaite mettre en avant des projets novateurs et inspirants
 							par le biais d&apos;une{" "}
 							<SpanUnderline>image de qualité</SpanUnderline> et pleine de sens.
@@ -156,7 +155,7 @@ const ScreenPresentation = () => {
 							className={styles.image}
 							alt="Retranscrire les émotions, partager les expériences, capturer l'instant !"
 						/>
-						<Subtitle className={styles.mobile}>
+						<Subtitle className="lg:hidden">
 							Retranscrire les émotions, partager les expériences,{" "}
 							<SpanUnderline variant="secondary">
 								capturer l&apos;instant
@@ -173,7 +172,7 @@ const ScreenPresentation = () => {
 							J&apos;ai imaginé, enregistré et monté 2 podcasts… bientôt le tien
 							?
 						</H2>
-						<P className={styles.desktop}>
+						<P className="hidden lg:block">
 							Toujours en quête de nouveauté et d&apos;originalité, j&apos;aime
 							mettre en lumière des projets inspirants grâce à mes compétences
 							en SEO et en copywriting.
@@ -183,7 +182,7 @@ const ScreenPresentation = () => {
 								l&apos;instant !
 							</span>
 						</P>
-						<P className={styles.mobile}>
+						<P className="lg:hidden">
 							<span className={styles.quote}>«Depuis des Lunes»</span>, un
 							podcast tourné vers la vie des femmes tout au long de leurs cycles
 							hormonaux.
@@ -247,7 +246,7 @@ const ScreenPresentation = () => {
 							className={styles.image}
 							alt="Diffuse ton message à travers le micro !"
 						/>
-						<Subtitle className={styles.mobile}>
+						<Subtitle className="lg:hidden">
 							Diffuse{" "}
 							<SpanUnderline variant="secondary">ton message</SpanUnderline> à
 							travers le micro !

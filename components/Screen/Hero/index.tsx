@@ -1,7 +1,5 @@
 import ButtonLink from "components/Button/Link";
-import Flex from "components/Flex";
 import Screen from "components/Screen";
-import styles from "components/Screen/Hero/Hero.module.css";
 import H2 from "components/Typography/H2";
 import H3 from "components/Typography/H3";
 import P from "components/Typography/P";
@@ -12,9 +10,9 @@ import kinobaLogo from "public/kinoba-logo.svg";
 import savoieProcessLogo from "public/savoie-process-logo.svg";
 
 const ScreenHero = () => (
-	<Screen className={styles.screen}>
-		<Flex direction="column" className={styles.root}>
-			<Flex direction="column" className={styles.heading}>
+	<Screen className="h-svh flex flex-col">
+		<div className="flex flex-col mt-6 mb-5 mx-5 justify-between grow">
+			<div className="flex flex-col gap-10">
 				<H2>Et si on commençait par se rencontrer ?</H2>
 				<P>
 					Toutes les grandes histoires commencent par une rencontre. Quelle est
@@ -23,22 +21,22 @@ const ScreenHero = () => (
 					Prenons le temps de parler de ton projet !
 				</P>
 				<H3>Ils m&apos;ont confié leur communication</H3>
-				<Flex direction="column" className={styles.clients}>
-					<Flex className={styles.client}>
+				<div className="flex flex-col gap-5">
+					<div className="gap-4 items-center">
 						<Logo height={40} src={eidLabLogo} alt="Eid Lab" />
-						<P className={styles.logoText}>Eid Lab</P>
-					</Flex>
+						<P className="font-bold">Eid Lab</P>
+					</div>
 					<Logo height={40} src={kinobaLogo} alt="Kinoba" />
 					<Logo height={40} src={savoieProcessLogo} alt="Savoie Process" />
-				</Flex>
-			</Flex>
-			<Flex direction="column" className={styles.cta}>
-				<ButtonLink variant="contained" href={CALENDLY} className={styles.cta}>
+				</div>
+			</div>
+			<div className="flex flex-col gap-5 items-center">
+				<ButtonLink variant="contained" href={CALENDLY}>
 					Je prends rendez-vous
 				</ButtonLink>
-				<P className={styles.ctaHint}>Mon calendrier t&apos;est ouvert !</P>
-			</Flex>
-		</Flex>
+				<P className="text-textHint">Mon calendrier t&apos;est ouvert !</P>
+			</div>
+		</div>
 	</Screen>
 );
 

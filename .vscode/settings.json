@@ -2,7 +2,9 @@
 	"typescript.tsdk": "node_modules/typescript/lib",
 	"editor.defaultFormatter": "biomejs.biome",
 	"editor.codeActionsOnSave": {
-		"quickfix.biome": "explicit"
+		"source.fixAll.eslint": "explicit",
+		"quickfix.biome": "explicit",
+		"source.organizeImports.biome": "explicit"
 	},
 	"[scss]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -16,5 +18,8 @@
 	],
 	"files.associations": {
 		"*.css": "tailwindcss"
+	},
+	"[tailwindcss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	}
 }

@@ -1,22 +1,20 @@
-import styles from "components/Typography/P/P.module.css";
-import classNames from "helpers/classNames";
-import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
-import { ComponentProps } from "react";
+import cn from "helpers/cn";
+import type { ComponentProps } from "react";
 
-interface PProps extends ComponentProps<"p"> {
-  align?: "start" | "end";
-}
+interface PProps extends ComponentProps<"p"> {}
 
-const P = ({ className, children, align, ...props }: PProps) => {
-  const variantsClassName = variantsToClassNameStyles({ align }, styles);
-  return (
-    <p
-      className={classNames(styles.root, variantsClassName, className)}
-      {...props}
-    >
-      {children}
-    </p>
-  );
+const P = ({ className, children, ...props }: PProps) => {
+	return (
+		<p
+			className={cn(
+				"block text-body font-[inherit] text-text font-normal m-0",
+				className,
+			)}
+			{...props}
+		>
+			{children}
+		</p>
+	);
 };
 
 export default P;

@@ -1,9 +1,14 @@
 "use client";
-import { Children, MouseEvent, ReactNode, useMemo, useState } from "react";
+import {
+	Children,
+	type MouseEvent,
+	type ReactNode,
+	useMemo,
+	useState,
+} from "react";
 import { useKeenSlider } from "keen-slider/react";
 // STYLES
 import "keen-slider/keen-slider.min.css";
-import Flex from "components/Flex";
 import CarouselIndicator from "components/Carousel/Indicator";
 import CarouselPlayPause from "components/Carousel/PlayPause";
 import keenSliderCarousel from "helpers/keenSlider/plugins/carousel";
@@ -83,7 +88,7 @@ const Carousel = ({
 				))}
 			</CarouselMask>
 			{loaded && instanceRef.current && (
-				<Flex className={styles.indicators}>
+				<div className="absolute bottom-4 left-0 z-10 flex gap-2">
 					{dotKeys.map((key) => (
 						<CarouselIndicator
 							key={key}
@@ -93,7 +98,7 @@ const Carousel = ({
 							}}
 						/>
 					))}
-				</Flex>
+				</div>
 			)}
 			{headingDesktop && (
 				<div className={styles.desktopHeading}>{headingDesktop}</div>

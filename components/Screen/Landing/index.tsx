@@ -103,7 +103,7 @@ const ScreenLanding = () => {
 					className={classNames(styles.hint, styles.desktop)}
 					href="#"
 				/>
-				<Logo className={styles.logo} alt="" priority src={logoSide} />
+				<Logo className="h-sideLogo w-auto" alt="" priority src={logoSide} />
 			</Flex>
 			<Banner
 				className={styles.mobile}

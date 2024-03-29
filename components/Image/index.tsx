@@ -1,21 +1,20 @@
 import NextImage from "next/image";
-import { ComponentProps } from "react";
-import styles from "components/Image/Image.module.css";
-import classNames from "helpers/classNames";
+import type { ComponentProps } from "react";
+import cn from "helpers/cn";
 
 // CONSTANTS
 
 // COMPONENTS
-export interface ImageProps extends ComponentProps<typeof NextImage> { }
+export interface ImageProps extends ComponentProps<typeof NextImage> {}
 
 const Image = ({ src, alt, className, ...props }: ImageProps) => (
-  <NextImage
-    className={classNames(className, styles.root)}
-    src={src}
-    alt={alt}
-    placeholder="blur"
-    {...props}
-  />
+	<NextImage
+		className={cn("block object-cover rounded-none", className)}
+		src={src}
+		alt={alt}
+		placeholder="blur"
+		{...props}
+	/>
 );
 
 export default Image;

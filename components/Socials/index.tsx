@@ -1,18 +1,16 @@
 import {
+	GlobeIcon,
 	InstagramLogoIcon,
 	LinkedInLogoIcon,
-	GlobeIcon,
 } from "@radix-ui/react-icons";
-import Flex from "components/Flex";
 import IconButtonLink from "components/IconButton/Link";
-import styles from "components/Socials/Socials.module.css";
 import { INSTAGRAM, LINKEDIN, PORTFOLIO } from "constants/links";
-import classNames from "helpers/classNames";
-import { ComponentProps } from "react";
+import cn from "helpers/cn";
 
 type Source = "instagram" | "linkedin" | "portfolio";
 
-interface SocialsProps extends ComponentProps<typeof Flex> {
+interface SocialsProps {
+	className?: string;
 	sources?: Record<Source, boolean>;
 }
 const Socials = ({
@@ -23,7 +21,7 @@ const Socials = ({
 		return null;
 	}
 	return (
-		<Flex className={classNames(styles.root, className)} align="center">
+		<div className={cn("flex flex-col items-center p-2 gap-4", className)}>
 			{sources.instagram && (
 				<IconButtonLink href={INSTAGRAM} target="_blank" variant="small">
 					<InstagramLogoIcon />
@@ -39,7 +37,7 @@ const Socials = ({
 					<GlobeIcon />
 				</IconButtonLink>
 			)}
-		</Flex>
+		</div>
 	);
 };
 
