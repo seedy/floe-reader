@@ -1,29 +1,27 @@
 "use client";
 
 import {
+	CalendarIcon,
+	EnvelopeClosedIcon,
+	HamburgerMenuIcon,
+} from "@radix-ui/react-icons";
+import ButtonLink from "components/Button/Link";
+import IconButton from "components/IconButton";
+import IconButtonLink from "components/IconButton/Link";
+import Logo from "components/Logo";
+import Sidebar from "components/Navbar/Sidebar";
+import useAnimateOnScroll from "components/Navbar/useAnimateOnScroll";
+import Handwritten from "components/Typography/Handwritten";
+import { CALENDLY } from "constants/links";
+import cn from "helpers/cn";
+import cbcLogo from "public/CBC_LOGO_48.svg";
+import {
 	ComponentProps,
 	ElementRef,
 	forwardRef,
 	useImperativeHandle,
 	useRef,
 } from "react";
-import styles from "components/Navbar/Navbar.module.scss";
-import classNames from "helpers/classNames";
-import Flex from "components/Flex";
-import {
-	CalendarIcon,
-	EnvelopeClosedIcon,
-	HamburgerMenuIcon,
-} from "@radix-ui/react-icons";
-import ButtonLink from "components/Button/Link";
-import IconButtonLink from "components/IconButton/Link";
-import { CALENDLY } from "constants/links";
-import IconButton from "components/IconButton";
-import Sidebar from "components/Navbar/Sidebar";
-import useAnimateOnScroll from "components/Navbar/useAnimateOnScroll";
-import Handwritten from "components/Typography/Handwritten";
-import Logo from "components/Logo";
-import cbcLogo from "public/CBC_LOGO_48.svg";
 
 type NavbarProps = ComponentProps<"nav">;
 const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
@@ -36,15 +34,18 @@ const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 		return (
 			<nav
 				ref={innerRef}
-				className={classNames(styles.root, className)}
+				className={cn(
+					"z-[9999] fixed bottom-0 left-0 right-0 max-h-16 h-[0%] overflow-hidden bg-background transition-[height] duration-200 ease-out",
+					className,
+				)}
 				{...props}
 			>
-				<Flex className={styles.content}>
-					<Flex align="center" className={styles.logo}>
+				<div className="flex size-full flex-col items-center justify-between bg-navbar px-5 py-0">
+					<div className="flex items-center gap-2">
 						<Logo src={cbcLogo} alt="CBenCorrec'" />
 						<Handwritten>Floé Gaubert</Handwritten>
-					</Flex>
-					<Flex className={classNames(styles.navGroup, styles.desktop)}>
+					</div>
+					<div className={"hidden gap-6 lg:flex"}>
 						<ButtonLink variant="link" href="#intro">
 							Intro
 						</ButtonLink>
@@ -54,15 +55,15 @@ const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 						<ButtonLink variant="link" href="#portfolio">
 							Portfolio
 						</ButtonLink>
-					</Flex>
-					<Flex align="center" className={styles.actions}>
+					</div>
+					<div className="flex items-center gap-5">
 						<IconButtonLink variant="small" href={CALENDLY}>
 							<CalendarIcon />
 						</IconButtonLink>
 						<IconButtonLink
 							variant="small"
 							href="#email"
-							className={styles.desktop}
+							className="hidden lg:inline-flex"
 						>
 							<EnvelopeClosedIcon />
 						</IconButtonLink>
@@ -71,8 +72,8 @@ const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 								<HamburgerMenuIcon />
 							</IconButton>
 						</Sidebar>
-					</Flex>
-				</Flex>
+					</div>
+				</div>
 			</nav>
 		);
 	},

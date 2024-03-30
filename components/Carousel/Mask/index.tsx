@@ -1,18 +1,17 @@
 import styles from "components/Carousel/Mask/Mask.module.css";
-import { ElementRef, ReactNode, forwardRef } from "react";
-import Box from "components/Box";
-import classNames from "helpers/classNames";
+import cn from "helpers/cn";
+import { ReactNode, forwardRef } from "react";
 
 interface CarouselMaskProps {
 	children?: ReactNode;
 	className?: string;
 }
-const CarouselMask = forwardRef<ElementRef<typeof Box>, CarouselMaskProps>(
+const CarouselMask = forwardRef<HTMLDivElement, CarouselMaskProps>(
 	({ children, className }, forwardedRef) => {
 		return (
-			<Box className={classNames(styles.root, className)} ref={forwardedRef}>
+			<div className={cn(styles.root, className)} ref={forwardedRef}>
 				{children}
-			</Box>
+			</div>
 		);
 	},
 );

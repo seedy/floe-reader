@@ -1,50 +1,47 @@
-import Screen from "components/Screen";
-import H1 from "components/Typography/H1";
-import styles from "components/Screen/Landing/Landing.module.css";
-import logoSide from "public/logo-side.svg";
+import Banner from "components/Banner";
+import ButtonLink from "components/Button/Link";
+import Carousel from "components/Carousel";
 import Logo from "components/Logo";
-import Flex from "components/Flex";
-import H2 from "components/Typography/H2";
+import Screen from "components/Screen";
+import ResponsiveHeading from "components/Screen/Landing/ResponsiveHeading";
+import ScrollHint from "components/ScrollHint";
+import Slide from "components/Slide";
 import Socials from "components/Socials";
+import H1 from "components/Typography/H1";
+import H2 from "components/Typography/H2";
+import { CALENDLY } from "constants/links";
+import cn from "helpers/cn";
 import landing1 from "public/landing-1.jpg";
 import landing2 from "public/landing-2.jpg";
 import landing3 from "public/landing-3.jpg";
-import ScrollHint from "components/ScrollHint";
-import classNames from "helpers/classNames";
-import { CALENDLY } from "constants/links";
-import ButtonLink from "components/Button/Link";
-import Carousel from "components/Carousel";
-import Slide from "components/Slide";
-import ResponsiveHeading from "components/Screen/Landing/ResponsiveHeading";
-import Banner from "components/Banner";
+import logoSide from "public/logo-side.svg";
+
+const hintClassName =
+	"animate-appear self-end opacity-0 animation-delay-[2000] lg:absolute left-1/2 -translate-x-1/2";
 
 const ScreenLanding = () => {
 	return (
 		<Screen>
 			<Carousel
-				className={styles.carousel}
+				className="mx-10 mt-[5.5rem]"
 				headingDesktop={
-					<Flex
-						direction="column"
-						align="center"
-						className={styles.socialHeadingBlock}
-					>
-						<H2 className={styles.socialHeading}>
+					<div className="flex grow flex-col items-center gap-2.5 text-center">
+						<H2 className="text-secondaryBackground">
 							Réalisons les contenus qui feront parler de toi
 						</H2>
 						<Socials />
-					</Flex>
+					</div>
 				}
 			>
 				<Slide
 					headingDesktop={
-						<H2 className={styles.heading}>
+						<H2 className="text-white">
 							Je crée une expérience unique avec du contenu percutant et
 							chaleureux
 						</H2>
 					}
 					heading={
-						<H1 className={styles.heading}>
+						<H1 className="text-white">
 							<ResponsiveHeading
 								desktop="Des podcasts qui feront résonner ton message"
 								mobile="Réalisons les contenus qui feront parler de toi"
@@ -58,13 +55,13 @@ const ScreenLanding = () => {
 				/>
 				<Slide
 					headingDesktop={
-						<H2 className={styles.heading}>
+						<H2 className="text-white">
 							Je crée une expérience unique avec du contenu percutant et
 							chaleureux
 						</H2>
 					}
 					heading={
-						<H1 className={styles.heading}>
+						<H1 className="text-white">
 							<ResponsiveHeading
 								desktop="Des podcasts qui feront résonner ton message"
 								mobile="Je crée une expérience unique avec du contenu percutant et chaleureux"
@@ -78,13 +75,13 @@ const ScreenLanding = () => {
 				/>
 				<Slide
 					headingDesktop={
-						<H2 className={styles.heading}>
+						<H2 className="text-white">
 							Je crée une expérience unique avec du contenu percutant et
 							chaleureux
 						</H2>
 					}
 					heading={
-						<H1 className={styles.heading}>
+						<H1 className="text-white">
 							Des podcasts qui feront résonner ton message
 						</H1>
 					}
@@ -94,35 +91,40 @@ const ScreenLanding = () => {
 					alt=""
 				/>
 			</Carousel>
-			<Flex className={styles.presentation}>
-				<Flex className={styles.author} direction="column">
-					<H2>Floé Gaubert</H2>
-					<H2>Rédactrice & Podcasteuse</H2>
-				</Flex>
+			<div
+				className={cn(
+					"flex relative px-5 pt-5 flex-row w-full justify-between",
+					"lg:pt-8 lg:pb-3 lg:pl-10",
+				)}
+			>
+				<div className="flex flex-col gap-authorBlock">
+					<H2 className="text-left">Floé Gaubert</H2>
+					<H2 className="text-left">Rédactrice & Podcasteuse</H2>
+				</div>
 				<ScrollHint
-					className={classNames(styles.hint, styles.desktop)}
+					className={cn("hidden lg:inline-flex", hintClassName)}
 					href="#"
 				/>
 				<Logo className="h-sideLogo w-auto" alt="" priority src={logoSide} />
-			</Flex>
+			</div>
 			<Banner
-				className={styles.mobile}
+				className="lg:hidden"
 				tags={["Interview", "Rédaction", "Podcast", "Photo", "Vidéo"]}
 			/>
 
-			<Flex className={classNames(styles.links, styles.mobile)}>
+			<div className={cn("my-0 mx-4 flex flex-col items-center", "lg:hidden")}>
 				<Socials />
 				<ButtonLink
 					variant="contained"
 					href={CALENDLY}
-					className={classNames(styles.cta)}
+					className={cn("mb-5 mt-6", "lg:absolute bottom-24 self-center")}
 				>
 					Je prends rendez-vous
 				</ButtonLink>
-				<ScrollHint className={styles.hint} href="#" />
-			</Flex>
+				<ScrollHint className={hintClassName} href="#" />
+			</div>
 			<Banner
-				className={classNames(styles.desktop, styles.banner)}
+				className="hidden lg:mt-10 lg:flex"
 				tags={["Interview", "Rédaction", "Podcast", "Photo", "Vidéo"]}
 			/>
 		</Screen>

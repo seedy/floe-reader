@@ -1,17 +1,16 @@
 import {
-	Root,
-	Overlay,
-	Content,
-	Title,
-	Description,
 	Cancel,
+	Content,
+	Description,
+	Overlay,
+	Root,
+	Title,
 } from "@radix-ui/react-alert-dialog";
 import Button from "components/Button";
 import Image from "components/Image";
 import H2 from "components/Typography/H2";
 import H3 from "components/Typography/H3";
 import QRCode from "public/CBC_QR_CODE.png";
-import styles from "components/Dialog/QRCode/QRCode.module.scss";
 
 interface DialogQRCodeProps {
 	open: boolean;
@@ -21,7 +20,7 @@ const DialogQRCode = ({ open, onOpenChange }: DialogQRCodeProps) => {
 	return (
 		<Root open={open} onOpenChange={onOpenChange}>
 			<Overlay />
-			<Content className={styles.content}>
+			<Content className="absolute inset-0 flex flex-col items-center bg-background p-5">
 				<Title asChild>
 					<H2>QR Code</H2>
 				</Title>

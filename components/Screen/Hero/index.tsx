@@ -1,17 +1,17 @@
 import ButtonLink from "components/Button/Link";
+import Logo from "components/Logo";
 import Screen from "components/Screen";
 import H2 from "components/Typography/H2";
 import H3 from "components/Typography/H3";
 import P from "components/Typography/P";
 import { CALENDLY } from "constants/links";
-import Logo from "components/Logo";
 import eidLabLogo from "public/eidlab-logo.webp";
 import kinobaLogo from "public/kinoba-logo.svg";
 import savoieProcessLogo from "public/savoie-process-logo.svg";
 
 const ScreenHero = () => (
-	<Screen className="h-svh flex flex-col">
-		<div className="flex flex-col mt-6 mb-5 mx-5 justify-between grow">
+	<Screen className="flex h-svh flex-col">
+		<div className="mx-5 mb-5 mt-6 flex grow flex-col justify-between">
 			<div className="flex flex-col gap-10">
 				<H2>Et si on commençait par se rencontrer ?</H2>
 				<P>
@@ -22,7 +22,7 @@ const ScreenHero = () => (
 				</P>
 				<H3>Ils m&apos;ont confié leur communication</H3>
 				<div className="flex flex-col gap-5">
-					<div className="gap-4 items-center">
+					<div className="items-center gap-4">
 						<Logo height={40} src={eidLabLogo} alt="Eid Lab" />
 						<P className="font-bold">Eid Lab</P>
 					</div>
@@ -30,7 +30,7 @@ const ScreenHero = () => (
 					<Logo height={40} src={savoieProcessLogo} alt="Savoie Process" />
 				</div>
 			</div>
-			<div className="flex flex-col gap-5 items-center">
+			<div className="flex flex-col items-center gap-5">
 				<ButtonLink variant="contained" href={CALENDLY}>
 					Je prends rendez-vous
 				</ButtonLink>

@@ -1,14 +1,22 @@
+import { headingVariants } from "components/Typography/variants";
+import cn from "helpers/cn";
 import { ComponentProps, ElementRef, forwardRef } from "react";
-import styles from "components/Typography/H3/H3.module.css";
-import classNames from "helpers/classNames";
 
-interface H3Props extends ComponentProps<"h3"> { }
+interface H3Props extends ComponentProps<"h3"> {}
 
-const H3 = forwardRef<ElementRef<"h3">, H3Props>(({ children, className, ...props }, forwardedRef) => (
-  <h3 ref={forwardedRef} className={classNames(styles.root, className)} {...props}>
-    {children}
-  </h3>
-));
+const headingVariantClassName = headingVariants({ variant: "h3" });
+
+const H3 = forwardRef<ElementRef<"h3">, H3Props>(
+	({ children, className, ...props }, forwardedRef) => (
+		<h3
+			ref={forwardedRef}
+			className={cn(headingVariantClassName, className)}
+			{...props}
+		>
+			{children}
+		</h3>
+	),
+);
 
 H3.displayName = "H3";
 

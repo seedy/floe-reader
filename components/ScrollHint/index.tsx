@@ -1,27 +1,26 @@
-import { ComponentProps } from "react";
-import styles from "components/ScrollHint/ScrollHint.module.scss";
-import classNames from "helpers/classNames";
-import ScrollWheelIcon from "components/icons/ScrollWheel";
 import ButtonLink from "components/Button/Link";
-import Box from "components/Box";
-interface ScrollHintProps extends ComponentProps<typeof Box> {
+import styles from "components/ScrollHint/ScrollHint.module.scss";
+import ScrollWheelIcon from "components/icons/ScrollWheel";
+import cn from "helpers/cn";
+interface ScrollHintProps {
+	className?: string;
 	href?: string;
 }
-const ScrollHint = ({ className, href, ...props }: ScrollHintProps) => {
+const ScrollHint = ({ className, href }: ScrollHintProps) => {
 	return (
-		<Box className={classNames(styles.root, className)} {...props}>
-			<Box className={styles.mouse}>
-				<ScrollWheelIcon className={classNames(styles.wheel)} />
-			</Box>
+		<div className={cn(styles.root, className)}>
+			<div className="relative inline-flex h-20 w-8 justify-center rounded-pill outline outline-[0.125rem] outline-primary">
+				<ScrollWheelIcon className={styles.wheel} />
+			</div>
 			<ButtonLink
 				href={href}
-				className={styles.link}
+				className="px-4 py-1"
 				variant="link"
 				color="primary"
 			>
 				En savoir plus
 			</ButtonLink>
-		</Box>
+		</div>
 	);
 };
 

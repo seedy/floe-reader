@@ -1,9 +1,9 @@
 "use client";
-import useScrollDirection from "components/Banner/useScrollDirection";
-import { ReactNode } from "react";
 import styles from "components/Banner/ScrollAnimation/ScrollAnimation.module.scss";
+import useScrollDirection from "components/Banner/useScrollDirection";
+import cn from "helpers/cn";
 import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
-import classNames from "helpers/classNames";
+import { ReactNode } from "react";
 
 interface BannerScrollAnimationProps {
 	children?: ReactNode;
@@ -17,7 +17,7 @@ const BannerScrollAnimation = ({
 	const directionClassNames = variantsToClassNameStyles({ direction }, styles);
 
 	return (
-		<ul className={classNames(styles.root, directionClassNames, className)}>
+		<ul className={cn(styles.root, directionClassNames, className)}>
 			{children}
 		</ul>
 	);

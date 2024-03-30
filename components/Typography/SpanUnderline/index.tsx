@@ -3,7 +3,7 @@ import cn from "helpers/cn";
 import type { ReactNode } from "react";
 
 const spanUnderlineVariants = cva(
-	"relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-[90%] after:h-2 after:rounded after:bg-no-repeat after:bg-[length:100%_100%]",
+	"relative after:absolute after:bottom-0 after:left-1/2 after:h-2 after:w-[90%] after:-translate-x-1/2 after:rounded after:bg-[length:100%_100%] after:bg-no-repeat",
 	{
 		variants: {
 			variant: {

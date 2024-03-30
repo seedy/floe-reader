@@ -1,14 +1,16 @@
-import styles from "components/Typography/H1/H1.module.css";
-import classNames from "helpers/classNames";
+import { headingVariants } from "components/Typography/variants";
+import cn from "helpers/cn";
 import { ComponentProps, ElementRef, forwardRef } from "react";
 
 type H1Props = ComponentProps<"h1">;
+
+const headingVariantClassName = headingVariants({ variant: "h1" });
 
 const H1 = forwardRef<ElementRef<"h1">, H1Props>(
 	({ children, className, ...props }, forwardedRef) => (
 		<h1
 			ref={forwardedRef}
-			className={classNames(className, styles.root)}
+			className={cn(headingVariantClassName, className)}
 			{...props}
 		>
 			{children}

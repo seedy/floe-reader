@@ -1,29 +1,28 @@
-import { ComponentProps } from "react";
+import ButtonLink from "components/Button/Link";
 import styles from "components/SwipeHint/SwipeHint.module.scss";
-import classNames from "helpers/classNames";
-import Box from "components/Box";
-import Button from "components/Button";
 import SwipeWheel from "components/icons/SwipeWheel";
+import cn from "helpers/cn";
 
-interface SwipeHintProps extends ComponentProps<typeof Box> {
-    onClick: () => void
+interface SwipeHintProps {
+	href?: string;
+	className?: string;
 }
-const SwipeHint = (
-    ({ className, onClick, ...props }: SwipeHintProps) => {
-        return (
-            <Box
-                className={classNames(styles.root, className)}
-                {...props}
-            >
-                <Box className={styles.mouse}>
-                    <SwipeWheel className={styles.wheel} />
-                </Box>
-                <Button onClick={onClick} className={styles.link} variant="link" color="primary">
-                    Glisser pour défiler
-                </Button>
-            </Box>
-        );
-    }
-);
+const SwipeHint = ({ className, href }: SwipeHintProps) => {
+	return (
+		<div className={cn(styles.root, className)}>
+			<div className="relative inline-flex h-8 w-20 items-center rounded-pill outline outline-[0.125rem] outline-primary">
+				<SwipeWheel className={styles.wheel} />
+			</div>
+			<ButtonLink
+				href={href}
+				className="px-4 py-1"
+				variant="link"
+				color="primary"
+			>
+				Glisser pour défiler
+			</ButtonLink>
+		</div>
+	);
+};
 
 export default SwipeHint;

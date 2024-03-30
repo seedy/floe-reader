@@ -1,3 +1,5 @@
+const plugin = require("tailwindcss/plugin");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: [
@@ -46,8 +48,14 @@ module.exports = {
 			DEFAULT: "0.375rem",
 		},
 		extend: {
+			width: {
+				viewport: "clamp(12rem, 33vw, 24rem)",
+			},
 			height: {
 				sideLogo: "clamp(5rem, 16vw, 10rem)",
+			},
+			gap: {
+				authorBlock: "clamp(1rem, 2vw, 1.25rem)",
 			},
 			boxShadow: ({ theme }) => ({
 				input: `0 0.125rem 0 0 ${theme("colors.blackAlpha7")}`,
@@ -74,5 +82,20 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		plugin(({ matchUtilities, theme }) => {
+			matchUtilities(
+				{
+					"animation-delay": (value) => {
+						return {
+							"animation-delay": value,
+						};
+					},
+				},
+				{
+					values: theme("transitionDelay"),
+				},
+			);
+		}),
+	],
 };

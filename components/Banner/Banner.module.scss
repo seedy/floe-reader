@@ -56,13 +56,5 @@
   .content {
     flex-wrap: wrap;
     justify-content: center;
-    .duplicate {
-      display: none;
-    }
-    .last {
-      &::after {
-        content: none;
-      }
-    }
   }
 }

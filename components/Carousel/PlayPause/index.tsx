@@ -1,7 +1,7 @@
-import { PlayIcon, PauseIcon } from "@radix-ui/react-icons";
-import { useRef, useState, useTransition, MouseEvent } from "react";
+import { PauseIcon, PlayIcon } from "@radix-ui/react-icons";
 import styles from "components/Carousel/PlayPause/PlayPause.module.css";
-import classNames from "helpers/classNames";
+import cn from "helpers/cn";
+import { MouseEvent, useRef, useState, useTransition } from "react";
 
 interface PlayPauseProps {
 	playing?: boolean;
@@ -34,9 +34,7 @@ const PlayPause = ({ playing, onClick, delay = 1000 }: PlayPauseProps) => {
 
 	return (
 		<button
-			className={
-				visible ? classNames(styles.root, styles.visible) : styles.root
-			}
+			className={visible ? cn(styles.root, styles.visible) : styles.root}
 			onClick={onTogglePlayPause}
 		>
 			{playing ? (

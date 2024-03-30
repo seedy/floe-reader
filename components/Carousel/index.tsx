@@ -1,4 +1,12 @@
 "use client";
+import CarouselIndicator from "components/Carousel/Indicator";
+import CarouselMask from "components/Carousel/Mask";
+import CarouselPlayPause from "components/Carousel/PlayPause";
+import cn from "helpers/cn";
+import keenSliderCarousel from "helpers/keenSlider/plugins/carousel";
+// STYLES
+import "keen-slider/keen-slider.min.css";
+import { useKeenSlider } from "keen-slider/react";
 import {
 	Children,
 	type MouseEvent,
@@ -6,16 +14,6 @@ import {
 	useMemo,
 	useState,
 } from "react";
-import { useKeenSlider } from "keen-slider/react";
-// STYLES
-import "keen-slider/keen-slider.min.css";
-import CarouselIndicator from "components/Carousel/Indicator";
-import CarouselPlayPause from "components/Carousel/PlayPause";
-import keenSliderCarousel from "helpers/keenSlider/plugins/carousel";
-import styles from "components/Carousel/Carousel.module.scss";
-import Box from "components/Box";
-import CarouselMask from "components/Carousel/Mask";
-import classNames from "helpers/classNames";
 
 interface CarouselProps {
 	children: ReactNode;
@@ -71,20 +69,23 @@ const Carousel = ({
 	};
 
 	return (
-		<Box className={classNames(styles.root, className)}>
-			<CarouselMask className={`${styles.slides} keen-slider`} ref={sliderRef}>
+		<div className={cn("flex flex-col items-center relative", className)}>
+			<CarouselMask
+				className={cn("relative overflow-hidden w-full h-full", "keen-slider")}
+				ref={sliderRef}
+			>
 				<CarouselPlayPause
 					playing={playing}
 					onClick={playing ? onPause : onResume}
 				/>
 				{Children.map(children, (child, index) => (
-					<Box
-						className={`${styles.slide} keen-slider__slide`}
+					<div
+						className={cn("flex-initial", "keen-slider__slide")}
 						key={index}
 						style={{ opacity: opacities[index] }}
 					>
 						{child}
-					</Box>
+					</div>
 				))}
 			</CarouselMask>
 			{loaded && instanceRef.current && (
@@ -101,9 +102,11 @@ const Carousel = ({
 				</div>
 			)}
 			{headingDesktop && (
-				<div className={styles.desktopHeading}>{headingDesktop}</div>
+				<div className="absolute bottom-0 left-0 hidden lg:block lg:w-3/5">
+					{headingDesktop}
+				</div>
 			)}
-		</Box>
+		</div>
 	);
 };
 
