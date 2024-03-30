@@ -8,7 +8,6 @@ import {
 } from "@radix-ui/react-dropdown-menu";
 import { CopyIcon, EnvelopeClosedIcon, MixIcon } from "@radix-ui/react-icons";
 import Button from "components/Button";
-import Flex from "components/Flex";
 import H2 from "components/Typography/H2";
 import { ReactNode } from "react";
 
@@ -42,7 +41,7 @@ const ShareDropdown = ({
 				<H2 className="text-secondaryBackground">Partager mon site vitrine</H2>
 			</Label>
 			<Group asChild>
-				<Flex align="start" direction="column">
+				<div className="flex flex-col items-start">
 					<Item asChild onSelect={onQrCodeOpen}>
 						<Button className={itemClassName} type="button" variant="link">
 							<MixIcon />
@@ -61,7 +60,7 @@ const ShareDropdown = ({
 							Copier le lien
 						</Button>
 					</Item>
-				</Flex>
+				</div>
 			</Group>
 		</Content>
 		{children}
