@@ -7,7 +7,7 @@ import cn from "helpers/cn";
 import { type ElementRef, type ReactNode, forwardRef } from "react";
 
 const toastVariants = cva(
-	"flex items-center justify-between gap-x-4 rounded bg-background p-4 outline outline-[0.125rem]",
+	"relative flex items-center justify-between gap-x-4 overflow-hidden rounded bg-background p-4 outline outline-[0.125rem]",
 	{
 		variants: {
 			variant: {
@@ -24,20 +24,24 @@ interface ToastProps extends VariantProps<typeof toastVariants> {
 }
 const Toast = forwardRef<ElementRef<typeof Root>, ToastProps>(
 	({ title, children, ...props }, forwardedRef) => {
-		const variantsClassName = cva(props);
+		const variantsClassName = toastVariants(props);
 		return (
 			<Root
 				className={cn(styles.root, variantsClassName)}
 				ref={forwardedRef}
 				{...props}
 			>
-				<div className="flex flex-col">
-					<Title className="mb-4 text-body font-medium text-text">
-						{title}
-					</Title>
-					<Description className="m-0 text-text">{children}</Description>
+				<div className="flex flex-col gap-4 overflow-hidden">
+					<Title className="text-body font-medium text-text">{title}</Title>
+					<Description className="m-0 truncate text-text">
+						{children}
+					</Description>
 				</div>
-				<Close asChild aria-label="Fermer">
+				<Close
+					className="absolute right-2.5 top-2.5"
+					asChild
+					aria-label="Fermer"
+				>
 					<IconButton variant="small" type="button">
 						<Cross2Icon />
 					</IconButton>
