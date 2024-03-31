@@ -9,7 +9,7 @@ interface PlayPauseProps {
 	onClick?: (e: MouseEvent) => void;
 }
 const PlayPause = ({ playing, onClick, delay = 1000 }: PlayPauseProps) => {
-	const [isPending, startTransition] = useTransition();
+	const [_isPending, startTransition] = useTransition();
 	const [visible, setVisible] = useState(false);
 	const timeoutRef = useRef<NodeJS.Timeout>();
 
