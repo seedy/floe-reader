@@ -8,6 +8,8 @@ module.exports = {
 	],
 	theme: {
 		colors: {
+			current: "currentColor",
+			transparent: "transparent",
 			white: "hsl(0, 0%, 100%)",
 			black: "hsl(0, 0%, 0%)",
 			blackAlpha7: "hsla(0, 0%, 0%, 0.7)",
@@ -59,7 +61,7 @@ module.exports = {
 			},
 			boxShadow: ({ theme }) => ({
 				input: `0 0.125rem 0 0 ${theme("colors.blackAlpha7")}`,
-				inputFocus: `0 0.125rem 0 0 ${theme("colors.secondaryBackground")}`,
+				inputFocus: `0 0.125rem 0 0 transparent`,
 				focus: `0 0 0.375rem 0.125rem ${theme("colors.blackAlpha26")}`,
 				focusLarge: `0 0 0.75rem 0.25rem ${theme("colors.blackAlpha26")}`,
 				selected: `0 0 0.5rem 0.25rem ${theme("colors.blackAlpha26")}`,
