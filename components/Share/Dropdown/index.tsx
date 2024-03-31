@@ -38,7 +38,7 @@ const ShareDropdown = ({
 			collisionPadding={{ top: 20, right: 20 }}
 		>
 			<Label asChild>
-				<H2 className="text-secondaryBackground">Partager mon site vitrine</H2>
+				<H2 color="secondary">Partager mon site vitrine</H2>
 			</Label>
 			<Group asChild>
 				<div className="flex flex-col items-start">

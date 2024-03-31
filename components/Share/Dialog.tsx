@@ -32,7 +32,9 @@ interface DialogTitleProps {
 }
 export const DialogTitle = ({ children, className }: DialogTitleProps) => (
 	<Title asChild>
-		<H2 className={cn("text-secondaryBackground", className)}>{children}</H2>
+		<H2 color="secondary" className={className}>
+			{children}
+		</H2>
 	</Title>
 );
 

@@ -8,14 +8,6 @@
 }
 
 .root {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin: 0;
-  padding: 0 1rem;
-  min-height: 3.75rem;
-  overflow: hidden;
-  background-color: var(--colors-navbar);
   mask: linear-gradient(90deg, transparent, white 20% 80%, transparent);
   animation: translateScroller linear;
   animation-timeline: view();
@@ -23,14 +15,6 @@
 }
 
 .content {
-  margin: 0;
-  padding: 0;
-  min-width: fit-content;
-  list-style-type: none;
-  display: flex;
-  flex-grow: 1;
-  flex-direction: row;
-  flex-wrap: nowrap;
   & > * {
     &:not(:last-child) {
       display: flex;
@@ -52,9 +36,5 @@
   .root {
     animation: none;
     mask: none;
-  }
-  .content {
-    flex-wrap: wrap;
-    justify-content: center;
   }
 }

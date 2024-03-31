@@ -1,14 +1,28 @@
+import { VariantProps } from "class-variance-authority";
 import { headingVariants } from "components/Typography/variants";
-import cn from "helpers/cn";
-import type { ComponentProps } from "react";
+import { joinCn } from "helpers/cn";
+import type { ReactNode } from "react";
 
-interface SubtitleProps extends ComponentProps<"span"> {}
+interface SubtitleProps extends VariantProps<typeof headingVariants> {
+	children?: ReactNode;
+	className?: string;
+}
 
-const headingVariantClassName = headingVariants({ variant: "subtitle" });
+const Subtitle = ({
+	className,
+	children,
+	color,
+	align,
+	...props
+}: SubtitleProps) => {
+	const headingVariantClassName = headingVariants({
+		variant: "subtitle",
+		color,
+		align,
+	});
 
-const Subtitle = ({ className, children, ...props }: SubtitleProps) => {
 	return (
-		<span className={cn(headingVariantClassName, className)} {...props}>
+		<span className={joinCn(headingVariantClassName, className)} {...props}>
 			{children}
 		</span>
 	);

@@ -1,7 +1,8 @@
+import { VariantProps } from "class-variance-authority";
 import { headingVariants } from "components/Typography/variants";
-import cn from "helpers/cn";
+import { joinCn } from "helpers/cn";
 import { Bilbo_Swash_Caps } from "next/font/google";
-import { ComponentProps, ElementRef, forwardRef } from "react";
+import { ElementRef, ReactNode, forwardRef } from "react";
 
 const handwritten = Bilbo_Swash_Caps({
 	weight: "400",
@@ -9,14 +10,22 @@ const handwritten = Bilbo_Swash_Caps({
 	style: "normal",
 });
 
-const headingVariantClassName = headingVariants({ variant: "handwritten" });
+interface HandwrittenProps extends VariantProps<typeof headingVariants> {
+	children?: ReactNode;
+	className?: string;
+}
 
-const Handwritten = forwardRef<ElementRef<"h1">, ComponentProps<"h1">>(
-	({ children, className, ...rest }, forwardedRef) => {
+const Handwritten = forwardRef<ElementRef<"h1">, HandwrittenProps>(
+	({ children, className, color, align, ...rest }, forwardedRef) => {
+		const headingVariantClassName = headingVariants({
+			variant: "handwritten",
+			color,
+			align,
+		});
 		return (
 			<h1
 				ref={forwardedRef}
-				className={cn(
+				className={joinCn(
 					headingVariantClassName,
 					handwritten.className,
 					className,

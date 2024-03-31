@@ -26,7 +26,7 @@ const ScreenLanding = () => {
 				className="mx-10 mt-[5.5rem]"
 				headingDesktop={
 					<div className="flex grow flex-col items-center gap-2.5 text-center">
-						<H2 className="text-secondaryBackground">
+						<H2 color="secondary">
 							Réalisons les contenus qui feront parler de toi
 						</H2>
 						<Socials />
@@ -35,13 +35,13 @@ const ScreenLanding = () => {
 			>
 				<Slide
 					headingDesktop={
-						<H2 className="text-white">
+						<H2 color="white">
 							Je crée une expérience unique avec du contenu percutant et
 							chaleureux
 						</H2>
 					}
 					heading={
-						<H1 className="text-white">
+						<H1 color="white">
 							<ResponsiveHeading
 								desktop="Des podcasts qui feront résonner ton message"
 								mobile="Réalisons les contenus qui feront parler de toi"
@@ -55,13 +55,13 @@ const ScreenLanding = () => {
 				/>
 				<Slide
 					headingDesktop={
-						<H2 className="text-white">
+						<H2 color="white">
 							Je crée une expérience unique avec du contenu percutant et
 							chaleureux
 						</H2>
 					}
 					heading={
-						<H1 className="text-white">
+						<H1 color="white">
 							<ResponsiveHeading
 								desktop="Des podcasts qui feront résonner ton message"
 								mobile="Je crée une expérience unique avec du contenu percutant et chaleureux"
@@ -75,15 +75,13 @@ const ScreenLanding = () => {
 				/>
 				<Slide
 					headingDesktop={
-						<H2 className="text-white">
+						<H2 color="white">
 							Je crée une expérience unique avec du contenu percutant et
 							chaleureux
 						</H2>
 					}
 					heading={
-						<H1 className="text-white">
-							Des podcasts qui feront résonner ton message
-						</H1>
+						<H1 color="white">Des podcasts qui feront résonner ton message</H1>
 					}
 					src={landing3}
 					priority
@@ -98,8 +96,8 @@ const ScreenLanding = () => {
 				)}
 			>
 				<div className="flex flex-col gap-authorBlock">
-					<H2 className="text-left">Floé Gaubert</H2>
-					<H2 className="text-left">Rédactrice & Podcasteuse</H2>
+					<H2 align="left">Floé Gaubert</H2>
+					<H2 align="left">Rédactrice & Podcasteuse</H2>
 				</div>
 				<ScrollHint
 					className={cn("hidden lg:inline-flex", hintClassName)}

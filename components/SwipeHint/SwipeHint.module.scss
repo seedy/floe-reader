@@ -17,12 +17,6 @@
 }
 
 .root {
-  display: inline-flex;
-  flex-direction: column;
-  padding: 0.125rem 0;
-  align-items: center;
-  justify-content: center;
-
   &:hover .wheel,
   &:focus .wheel {
     animation-play-state: paused;
@@ -30,8 +24,5 @@
 }
 
 .wheel {
-  position: absolute;
-  color: var(--colors-secondary-background);
   animation: 1s ease-in-out 0s infinite left;
-  right: 0.6875rem;
 }
