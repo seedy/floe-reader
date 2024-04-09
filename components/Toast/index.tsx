@@ -42,7 +42,7 @@ const Toast = forwardRef<ElementRef<typeof Root>, ToastProps>(
 					asChild
 					aria-label="Fermer"
 				>
-					<IconButton variant="small" type="button">
+					<IconButton size="small" type="button">
 						<Cross2Icon />
 					</IconButton>
 				</Close>

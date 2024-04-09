@@ -52,7 +52,7 @@ const ShareEmail = ({
 					<div className="flex gap-4">
 						<Input label="Mail du destinataire" name="email" />
 						<SlotSubmit>
-							<IconButton variant="small" type="submit">
+							<IconButton size="small" type="submit">
 								<EnterIcon />
 							</IconButton>
 						</SlotSubmit>

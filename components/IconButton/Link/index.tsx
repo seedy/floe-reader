@@ -1,19 +1,19 @@
-import styles from "components/IconButton/IconButton.module.scss";
+import { iconButtonVariants } from "components/IconButton/variants";
 import cn from "helpers/cn";
-import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
 import { ComponentProps, ElementRef, ReactNode, forwardRef } from "react";
 
 interface IconButtonLinkProps extends ComponentProps<"a"> {
 	children?: ReactNode;
-	variant?: "small" | "medium" | "large";
+	size?: "small" | "medium" | "large";
 }
 const IconButtonLink = forwardRef<ElementRef<"a">, IconButtonLinkProps>(
-	({ children, variant = "medium", className, ...props }, ref) => {
-		const variantsClassName = variantsToClassNameStyles({ variant }, styles);
+	({ children, size = "medium", className, ...props }, ref) => {
+		const iconButtonVariantsClassName = iconButtonVariants({ size });
+
 		return (
 			<a
 				ref={ref}
-				className={cn(styles.root, variantsClassName, className)}
+				className={cn(iconButtonVariantsClassName, className)}
 				{...props}
 			>
 				{children}

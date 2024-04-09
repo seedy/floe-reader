@@ -40,11 +40,7 @@ export const DialogTitle = ({ children, className }: DialogTitleProps) => (
 
 export const DialogClose = () => (
 	<Close asChild aria-label="Fermer">
-		<IconButton
-			className="absolute right-0 top-0"
-			variant="small"
-			type="button"
-		>
+		<IconButton className="absolute right-0 top-0" size="small" type="button">
 			<Cross2Icon />
 		</IconButton>
 	</Close>

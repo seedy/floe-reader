@@ -50,11 +50,11 @@ const Sidebar = ({ children }: SidebarProps) => {
 							</Title>
 						</div>
 						<div className="flex items-center gap-4">
-							<IconButtonLink variant="small" href={CALENDLY}>
+							<IconButtonLink size="small" href={CALENDLY}>
 								<CalendarIcon />
 							</IconButtonLink>
 							<Cancel asChild>
-								<IconButton variant="small">
+								<IconButton size="small">
 									<Cross2Icon />
 								</IconButton>
 							</Cancel>

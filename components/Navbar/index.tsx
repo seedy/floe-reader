@@ -36,11 +36,12 @@ const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 				ref={innerRef}
 				className={cn(
 					"z-[9999] fixed bottom-0 left-0 right-0 max-h-16 h-[0%] overflow-hidden bg-background transition-[height] duration-200 ease-out",
+					"lg:bottom-auto lg:top-0",
 					className,
 				)}
 				{...props}
 			>
-				<div className="flex size-full flex-col items-center justify-between bg-navbar px-5 py-0">
+				<div className="flex size-full items-center justify-between bg-navbar px-5 py-0">
 					<div className="flex items-center gap-2">
 						<Logo src={cbcLogo} alt="CBenCorrec'" />
 						<Handwritten>Floé Gaubert</Handwritten>
@@ -57,18 +58,18 @@ const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 						</ButtonLink>
 					</div>
 					<div className="flex items-center gap-5">
-						<IconButtonLink variant="small" href={CALENDLY}>
+						<IconButtonLink size="small" href={CALENDLY}>
 							<CalendarIcon />
 						</IconButtonLink>
 						<IconButtonLink
-							variant="small"
+							size="small"
 							href="#email"
 							className="hidden lg:inline-flex"
 						>
 							<EnvelopeClosedIcon />
 						</IconButtonLink>
 						<Sidebar>
-							<IconButton variant="small">
+							<IconButton size="small">
 								<HamburgerMenuIcon />
 							</IconButton>
 						</Sidebar>

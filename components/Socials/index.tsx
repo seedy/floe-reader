@@ -23,17 +23,17 @@ const Socials = ({
 	return (
 		<div className={cn("flex items-center p-2 gap-4", className)}>
 			{sources.instagram && (
-				<IconButtonLink href={INSTAGRAM} target="_blank" variant="small">
+				<IconButtonLink href={INSTAGRAM} target="_blank" size="small">
 					<InstagramLogoIcon />
 				</IconButtonLink>
 			)}
 			{sources.linkedin && (
-				<IconButtonLink href={LINKEDIN} target="_blank" variant="small">
+				<IconButtonLink href={LINKEDIN} target="_blank" size="small">
 					<LinkedInLogoIcon />
 				</IconButtonLink>
 			)}
 			{sources.portfolio && (
-				<IconButtonLink href={PORTFOLIO} target="_blank" variant="small">
+				<IconButtonLink href={PORTFOLIO} target="_blank" size="small">
 					<GlobeIcon />
 				</IconButtonLink>
 			)}

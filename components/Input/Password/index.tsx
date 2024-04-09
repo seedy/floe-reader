@@ -22,7 +22,7 @@ const InputPassword = (props: InputPasswordProps) => {
 			<IconButton
 				onClick={onToggleShow}
 				className="absolute right-4"
-				variant="small"
+				size="small"
 			>
 				{show ? <EyeOpenIcon /> : <EyeClosedIcon />}
 			</IconButton>
