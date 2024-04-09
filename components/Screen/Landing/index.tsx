@@ -92,7 +92,7 @@ const ScreenLanding = () => {
 			<div
 				className={cn(
 					"flex relative px-5 pt-5 flex-row w-full justify-between",
-					"lg:pt-8 lg:pb-3 lg:pl-10",
+					"lg:pt-8 lg:pb-3 lg:pl-10 lg:pr-0",
 				)}
 			>
 				<div className="flex flex-col gap-authorBlock">

@@ -52,6 +52,7 @@ module.exports = {
 		extend: {
 			width: {
 				viewport: "clamp(12rem, 33vw, 24rem)",
+				indicator: "clamp(1rem, 4vw, 2.5rem)",
 			},
 			height: {
 				sideLogo: "clamp(5rem, 16vw, 10rem)",

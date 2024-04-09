@@ -75,7 +75,7 @@ const ScreenPresentation = () => {
 					<div className="mx-5 flex flex-col gap-10">
 						<Avatar
 							src={presentation1}
-							className="aspect-[256/672] max-h-[calc(100svh-4rem)] w-[25vw]"
+							className="aspect-[256/672] max-h-[calc(100svh-4rem)] w-[25vw] max-w-none"
 							alt="Je rédige pour ton audience !"
 						/>
 						<Subtitle className="lg:hidden">
@@ -146,7 +146,7 @@ const ScreenPresentation = () => {
 					<div className="mx-5 flex flex-col gap-10">
 						<Avatar
 							src={presentation2}
-							className="aspect-[256/672] max-h-[calc(100svh-4rem)] w-[25vw]"
+							className="aspect-[256/672] max-h-[calc(100svh-4rem)] w-[25vw] max-w-none"
 							alt="Retranscrire les émotions, partager les expériences, capturer l'instant !"
 						/>
 						<Subtitle className="lg:hidden">
@@ -242,7 +242,7 @@ const ScreenPresentation = () => {
 					<div className="mx-5 flex flex-col gap-10">
 						<Avatar
 							src={presentation3}
-							className="aspect-[256/672] max-h-[calc(100svh-4rem)] w-[25vw]"
+							className="aspect-[256/672] max-h-[calc(100svh-4rem)] w-[25vw] max-w-none"
 							alt="Diffuse ton message à travers le micro !"
 						/>
 						<Subtitle className="lg:hidden">

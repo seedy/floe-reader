@@ -21,7 +21,7 @@ const Socials = ({
 		return null;
 	}
 	return (
-		<div className={cn("flex flex-col items-center p-2 gap-4", className)}>
+		<div className={cn("flex items-center p-2 gap-4", className)}>
 			{sources.instagram && (
 				<IconButtonLink href={INSTAGRAM} target="_blank" variant="small">
 					<InstagramLogoIcon />

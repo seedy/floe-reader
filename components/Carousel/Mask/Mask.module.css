@@ -2,12 +2,10 @@
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
   mask-image: url("/mask.png");
-  min-height: 22.5rem;
 }
 
 @media (min-width: 1024px) {
   .root {
     mask-image: url("/mask-desktop.png");
-    min-height: 34.75rem;
   }
 }

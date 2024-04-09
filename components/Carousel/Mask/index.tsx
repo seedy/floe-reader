@@ -9,7 +9,14 @@ interface CarouselMaskProps {
 const CarouselMask = forwardRef<HTMLDivElement, CarouselMaskProps>(
 	({ children, className }, forwardedRef) => {
 		return (
-			<div className={cn(styles.root, className)} ref={forwardedRef}>
+			<div
+				className={cn(
+					"min-h-[22.5rem] lg:min-h-[34.75rem]",
+					styles.root,
+					className,
+				)}
+				ref={forwardedRef}
+			>
 				{children}
 			</div>
 		);

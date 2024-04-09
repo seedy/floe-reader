@@ -89,7 +89,12 @@ const Carousel = ({
 				))}
 			</CarouselMask>
 			{loaded && instanceRef.current && (
-				<div className="absolute bottom-4 left-0 z-10 flex gap-2">
+				<div
+					className={cn(
+						"absolute bottom-4 left-0 z-10 flex gap-2",
+						"lg:bottom-auto lg:left-auto lg:top-0 lg:right-11",
+					)}
+				>
 					{dotKeys.map((key) => (
 						<CarouselIndicator
 							key={key}
