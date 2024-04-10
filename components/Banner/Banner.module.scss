@@ -14,24 +14,6 @@
   animation-range: entry exit;
 }
 
-.content {
-  & > * {
-    &:not(:last-child) {
-      display: flex;
-      gap: inherit;
-      &::after {
-        content: "•";
-        display: inline;
-        font-size: var(--fontsizes-body);
-        line-height: 1.5;
-        font-family: inherit;
-        color: var(--colors-text);
-        font-weight: var(--fontweights-regular);
-      }
-    }
-  }
-}
-
 @media (prefers-reduced-motion) {
   .root {
     animation: none;

@@ -17,13 +17,13 @@ import landing3 from "public/landing-3.jpg";
 import logoSide from "public/logo-side.svg";
 
 const hintClassName =
-	"animate-appear self-end opacity-0 animation-delay-[2000] lg:absolute left-1/2 -translate-x-1/2";
+	"animate-appear self-end opacity-0 animation-delay-[2000ms] lg:absolute left-1/2 -translate-x-1/2";
 
 const ScreenLanding = () => {
 	return (
 		<Screen>
 			<Carousel
-				className="mx-10 mt-[5.5rem]"
+				className="lg:mx-10 lg:mt-[5.5rem]"
 				headingDesktop={
 					<div className="flex grow flex-col items-center gap-2.5 text-center">
 						<H2 color="secondary">
@@ -91,8 +91,8 @@ const ScreenLanding = () => {
 			</Carousel>
 			<div
 				className={cn(
-					"flex relative px-5 pt-5 flex-row w-full justify-between",
-					"lg:pt-8 lg:pb-3 lg:pl-10 lg:pr-0",
+					"flex relative pl-5 pr-0 py-5 flex-row w-full justify-between",
+					"lg:pl-10 lg:pt-8 lg:pb-3",
 				)}
 			>
 				<div className="flex flex-col gap-authorBlock">

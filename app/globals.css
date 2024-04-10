@@ -64,7 +64,6 @@
   --shadows-selected-large: 0 0 1rem 0.5rem var(--colors-black-alpha26);
   --shadows-active: 0 0 0.375rem 0.25rem var(--colors-black-alpha26) inset;
   --shadows-active-large: 0 0 0.75rem 0.5rem var(--colors-black-alpha26) inset;
-  --shadows-active-text: 0.125rem 0.125rem 0.25rem var(--colors-black-alpha26);
 
   --animation-appear: 400ms ease-in appear forwards;
 }

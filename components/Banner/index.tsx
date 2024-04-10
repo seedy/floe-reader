@@ -7,6 +7,12 @@ interface BannerProps {
 	tags: string[];
 	className?: string;
 }
+
+const liBaseClassName = "flex gap-[inherit]";
+const liAfterClassName =
+	"after:inline after:font-[inherit] after:text-body after:font-normal after:text-text after:content-['•']";
+const liMotionReduceClassName = "motion-reduce:hidden";
+
 const Banner = ({ tags, className }: BannerProps) => {
 	return (
 		<div
@@ -19,20 +25,31 @@ const Banner = ({ tags, className }: BannerProps) => {
 			<BannerScrollAnimation
 				className={cn(
 					"m-0 p-0 min-w-fit list-none flex grow flex-row flex-nowrap",
-					"motion-reduce:flex-wrap :motion-reduce:justify-center",
-					styles.content,
+					"motion-reduce:flex-wrap motion-reduce:justify-center",
 				)}
 			>
 				{tags.map((tag, index) => (
 					<li
-						className={index === tags.length - 1 ? "after:content-none" : ""}
+						className={cn(
+							liBaseClassName,
+							liAfterClassName,
+							index === tags.length - 1 && "motion-reduce:after:content-none",
+						)}
 						key={tag}
 					>
 						<P>{tag}</P>
 					</li>
 				))}
-				{tags.map((tag) => (
-					<li className="motion-reduce:hidden" key={tag} aria-hidden={true}>
+				{tags.map((tag, index) => (
+					<li
+						className={cn(
+							liBaseClassName,
+							index !== tags.length - 1 && liAfterClassName,
+							liMotionReduceClassName,
+						)}
+						key={tag}
+						aria-hidden={true}
+					>
 						<P>{tag}</P>
 					</li>
 				))}

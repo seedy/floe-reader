@@ -8,9 +8,20 @@ interface ScrollHintProps {
 }
 const ScrollHint = ({ className, href }: ScrollHintProps) => {
 	return (
-		<div className={cn(styles.root, className)}>
+		<div
+			className={cn(
+				"inline-flex gap-2 px-[0.125rem] py-0 items-center justify-center",
+				styles.root,
+				className,
+			)}
+		>
 			<div className="relative inline-flex h-20 w-8 justify-center rounded-pill outline outline-[0.125rem] outline-primary">
-				<ScrollWheelIcon className={styles.wheel} />
+				<ScrollWheelIcon
+					className={cn(
+						"absolute text-secondaryBackground top-[0.6875rem]",
+						styles.wheel,
+					)}
+				/>
 			</div>
 			<ButtonLink
 				href={href}

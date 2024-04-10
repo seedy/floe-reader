@@ -1,6 +1,5 @@
-import styles from "components/Button/Button.module.scss";
+import { buttonVariants } from "components/Button/variants";
 import cn from "helpers/cn";
-import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
 import { ComponentProps, ElementRef, ReactNode, forwardRef } from "react";
 
 interface ButtonLinkProps extends ComponentProps<"a"> {
@@ -13,14 +12,12 @@ const ButtonLink = forwardRef<ElementRef<"a">, ButtonLinkProps>(
 		{ children, variant = "link", color = "primary", className, ...props },
 		forwardedRef,
 	) => {
-		const variantsClassName = variantsToClassNameStyles(
-			{ variant, color },
-			styles,
-		);
+		const buttonVariantsClassName = buttonVariants({ variant, color });
+
 		return (
 			<a
 				ref={forwardedRef}
-				className={cn(styles.root, variantsClassName, className)}
+				className={cn(buttonVariantsClassName, className)}
 				{...props}
 			>
 				{children}
