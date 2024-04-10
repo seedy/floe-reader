@@ -1,5 +1,4 @@
 .root {
-  --content-gap: 10vw;
   @keyframes banner {
     from {
       transform: translateX(0);
@@ -8,7 +7,6 @@
       transform: translateX(calc(-50% - var(--content-gap) - 0.5ch));
     }
   }
-  gap: var(--content-gap);
   animation: banner 10s linear infinite both;
   &.direction-backward {
     animation-direction: reverse;
@@ -17,7 +15,6 @@
 
 @media (prefers-reduced-motion) {
   .root {
-    --content-gap: 3vw;
     animation: none;
   }
 }

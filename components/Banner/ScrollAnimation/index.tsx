@@ -17,7 +17,14 @@ const BannerScrollAnimation = ({
 	const directionClassNames = variantsToClassNameStyles({ direction }, styles);
 
 	return (
-		<ul className={cn(styles.root, directionClassNames, className)}>
+		<ul
+			className={cn(
+				"gap-[10vw] motion-reduce:gap-[3vw]",
+				styles.root,
+				directionClassNames,
+				className,
+			)}
+		>
 			{children}
 		</ul>
 	);
