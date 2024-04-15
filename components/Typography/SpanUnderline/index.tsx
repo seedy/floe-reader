@@ -8,10 +8,10 @@ const spanUnderlineVariants = cva(
 		variants: {
 			variant: {
 				primary: [
-					"after:bg-gradient-to-r after:from-outlineSecondary after:to-outlineSecondary",
+					"after:bg-gradient-to-r after:from-fernGreenUnderline after:to-fernGreenUnderline",
 				],
 				secondary: [
-					"after:bg-gradient-to-r after:from-fernGreenUnderline after:to-fernGreenUnderline",
+					"after:bg-gradient-to-r after:from-outlineSecondary after:to-outlineSecondary",
 				],
 			},
 		},
