@@ -1,5 +1,23 @@
 import { cva } from "class-variance-authority";
 
+const COLOR_VARIANTS = {
+	default: ["text-text"],
+	secondary: ["text-secondaryBackground"],
+	white: ["text-white"],
+};
+
+export const textVariants = cva(
+	"m-0 block font-[inherit] text-body text-text",
+	{
+		variants: {
+			color: COLOR_VARIANTS,
+		},
+		defaultVariants: {
+			color: "default",
+		},
+	},
+);
+
 export const headingVariants = cva("m-0 block font-[inherit]", {
 	variants: {
 		variant: {
@@ -9,11 +27,7 @@ export const headingVariants = cva("m-0 block font-[inherit]", {
 			subtitle: ["inline-block text-subtitle font-bold"],
 			handwritten: ["whitespace-nowrap text-handwritten font-normal"],
 		},
-		color: {
-			default: ["text-text"],
-			secondary: ["text-secondaryBackground"],
-			white: ["text-white"],
-		},
+		color: COLOR_VARIANTS,
 		align: {
 			center: ["text-center"],
 			right: ["text-right"],

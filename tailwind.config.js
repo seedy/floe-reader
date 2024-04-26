@@ -47,6 +47,7 @@ module.exports = {
 			avatar: "3.125rem",
 			pill: "999rem",
 			round: "50%",
+			quote: "0.5rem",
 			DEFAULT: "0.375rem",
 		},
 		extend: {

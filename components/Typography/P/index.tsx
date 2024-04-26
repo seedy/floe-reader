@@ -1,17 +1,18 @@
-import cn from "helpers/cn";
-import type { ComponentProps } from "react";
+import { VariantProps } from "class-variance-authority";
+import { textVariants } from "components/Typography/variants";
+import { joinCn } from "helpers/cn";
+import type { ReactNode } from "react";
 
-interface PProps extends ComponentProps<"p"> {}
+interface PProps extends VariantProps<typeof textVariants> {
+	children?: ReactNode;
+	className?: string;
+}
 
-const P = ({ className, children, ...props }: PProps) => {
+const P = ({ className, children, color, ...props }: PProps) => {
+	const textVariantClassName = textVariants({ color });
+
 	return (
-		<p
-			className={cn(
-				"block text-body font-[inherit] text-text font-normal m-0",
-				className,
-			)}
-			{...props}
-		>
+		<p className={joinCn(textVariantClassName, className)} {...props}>
 			{children}
 		</p>
 	);

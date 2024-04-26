@@ -11,7 +11,7 @@ const SwipeHint = ({ className, href }: SwipeHintProps) => {
 	return (
 		<div
 			className={cn(
-				"inline-flex flex-col px-0 py-[0.125rem] justify-center",
+				"inline-flex flex-col px-0 py-[0.125rem] items-center",
 				styles.root,
 				className,
 			)}
