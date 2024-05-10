@@ -17,29 +17,44 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Quote> = (args) => (
-	<Quote {...args}>
-		<QuoteItem
-			title={<H3>5 épisodes courts</H3>}
-			price={<P className="font-bold">3290€</P>}
-			perks={[
-				"± 30 min",
-				"Préparation questions",
-				"Interview",
-				"Voix-off",
-				"Recherche, ajout sons",
-				"Montage & Assemblage",
-				"Hébergement",
-				"Allers-retours illimités",
-			]}
-		>
-			<SwipeHint />
-		</QuoteItem>
-		<QuoteBadge title="Populaire">
+	<div className="overflow-auto">
+		<Quote {...args}>
 			<QuoteItem
-				title={<H3>5 episodes longs</H3>}
-				price={<P className="font-bold">3890€</P>}
+				title={<H3>5 épisodes courts</H3>}
+				price={<P className="font-bold">3290€</P>}
 				perks={[
-					"± 1 heure",
+					"± 30 min",
+					"Préparation questions",
+					"Interview",
+					"Voix-off",
+					"Recherche, ajout sons",
+					"Montage & Assemblage",
+					"Hébergement",
+					"Allers-retours illimités",
+				]}
+			>
+				<SwipeHint />
+			</QuoteItem>
+			<QuoteBadge title="Populaire">
+				<QuoteItem
+					title={<H3>5 episodes longs</H3>}
+					price={<P className="font-bold">3890€</P>}
+					perks={[
+						"± 1 heure",
+						"Préparation questions",
+						"Interview",
+						"Voix-off",
+						"Recherche, ajout sons",
+						"Montage & Assemblage",
+						"Hébergement",
+						"Allers-retours illimités",
+					]}
+				/>
+			</QuoteBadge>
+			<QuoteItem
+				title={<H3>Sur-mesure</H3>}
+				perks={[
+					"Durée & nombre à définir",
 					"Préparation questions",
 					"Interview",
 					"Voix-off",
@@ -49,21 +64,8 @@ const Template: StoryFn<typeof Quote> = (args) => (
 					"Allers-retours illimités",
 				]}
 			/>
-		</QuoteBadge>
-		<QuoteItem
-			title={<H3>Sur-mesure</H3>}
-			perks={[
-				"Durée & nombre à définir",
-				"Préparation questions",
-				"Interview",
-				"Voix-off",
-				"Recherche, ajout sons",
-				"Montage & Assemblage",
-				"Hébergement",
-				"Allers-retours illimités",
-			]}
-		/>
-	</Quote>
+		</Quote>
+	</div>
 );
 
 export const Default = Template.bind({});

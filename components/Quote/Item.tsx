@@ -15,7 +15,7 @@ const QuoteItem = ({ title, price, perks, children }: QuoteItemProps) => (
 			<div className="flex grow flex-col items-center justify-between">
 				{title}
 				{price}
-				<ul className="list-inside list-disc">
+				<ul className="list-inside list-disc whitespace-nowrap">
 					{perks.map((perk, index) => (
 						<li key={perk}>
 							<P className={cx("inline", index === 0 && "font-bold")}>{perk}</P>
@@ -23,7 +23,7 @@ const QuoteItem = ({ title, price, perks, children }: QuoteItemProps) => (
 					))}
 				</ul>
 			</div>
-			<Button variant="outlined" color="primary">
+			<Button variant="outlined" color="primary" className="whitespace-nowrap">
 				Je choisis ce format
 			</Button>
 		</div>
