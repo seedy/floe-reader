@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from "@storybook/react";
-import React from "react";
+import React, { useState } from "react";
 
 import Content from "components/Tabs/Content";
 import Tab from "components/Tabs/Tab";
@@ -30,3 +30,22 @@ const Template: StoryFn<typeof Tabs> = (args) => (
 );
 
 export const Default = Template.bind({});
+
+export const Controlled = () => {
+	const [value, setValue] = useState("Interviews");
+	return (
+		<Tabs
+			items={
+				<>
+					<Tab value="Podcasts">Podcasts</Tab>
+					<Tab value="Interviews">Interviews</Tab>
+				</>
+			}
+			value={value}
+			onChange={setValue}
+		>
+			<Content value="Podcasts">Podcasts</Content>
+			<Content value="Interviews">Interviews</Content>
+		</Tabs>
+	);
+};
