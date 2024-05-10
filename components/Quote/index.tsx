@@ -5,7 +5,8 @@ interface QuoteProps {
 }
 
 const Quote = ({ children }: QuoteProps) => (
-	<div className="flex items-start gap-4 pt-5">{children}</div>
+	<div className="flex grow items-start justify-center gap-4 pt-5">
+		{children}
+	</div>
 );
-
 export default Quote;

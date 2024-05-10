@@ -4,9 +4,12 @@ import { ReactNode } from "react";
 interface ContentProps {
 	value: string;
 	children?: ReactNode;
+	className?: string;
 }
-const Content = ({ value, children }: ContentProps) => (
-	<TabsContent value={value}>{children}</TabsContent>
+const Content = ({ value, className, children }: ContentProps) => (
+	<TabsContent className={className} value={value}>
+		{children}
+	</TabsContent>
 );
 
 export default Content;

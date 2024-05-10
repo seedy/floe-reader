@@ -11,7 +11,7 @@ interface QuoteItemProps {
 }
 const QuoteItem = ({ title, price, perks, children }: QuoteItemProps) => (
 	<div className="flex flex-col justify-end gap-3">
-		<div className="flex min-h-[30rem] flex-col items-center gap-10 rounded-quote border border-primary bg-background px-3 py-8">
+		<div className="flex min-h-[30rem] flex-col items-center gap-10 rounded-quote border border-primary bg-transparent px-3 py-8">
 			<div className="flex grow flex-col items-center justify-between">
 				{title}
 				{price}
