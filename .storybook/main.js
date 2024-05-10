@@ -9,7 +9,7 @@ module.exports = {
 		name: "@storybook/nextjs",
 		options: {
 			nextConfigPath: path.resolve(__dirname, "../next.config.js"),
-			builder: { useSWC: true },
+			builder: {},
 		},
 	},
 	addons: ["@storybook/addon-essentials"],

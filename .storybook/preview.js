@@ -1,8 +1,7 @@
-import Root from "../components/Root";
 import "app/globals.css";
+import Root from "../components/Root";
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
       color: /(background|color)$/i,
