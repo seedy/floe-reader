@@ -80,7 +80,7 @@ const Carousel = ({
 				/>
 				{Children.map(children, (child, index) => (
 					<div
-						className={cn("flex-initial", "keen-slider__slide")}
+						className={cn("flex-initial min-w-full", "keen-slider__slide")}
 						key={index}
 						style={{ opacity: opacities[index] }}
 					>
