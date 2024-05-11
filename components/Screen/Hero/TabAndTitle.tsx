@@ -7,6 +7,7 @@ import Tab from "components/Tabs/Tab";
 import H2 from "components/Typography/H2";
 import P from "components/Typography/P";
 import SpanUnderline from "components/Typography/SpanUnderline";
+import cn from "helpers/cn";
 import { useState } from "react";
 
 const TAB_PODCASTS = "podcasts";
@@ -21,8 +22,8 @@ const TabAndTitle = () => {
 			: ["humaines", "transparentes"];
 
 	return (
-		<div className="mx-5 flex flex-col items-center gap-2 lg:gap-10">
-			<div className="flex flex-col items-center gap-5 lg:gap-6">
+		<div className={cn("mx-5 flex flex-col items-center", "gap-4 lg:gap-10")}>
+			<div className={cn("flex flex-col items-center", " gap-5 lg:gap-6")}>
 				<H2>
 					Mes <SpanUnderline variant="secondary">{tab}</SpanUnderline> sont{" "}
 					{humane} et {transparent}, leurs{" "}
@@ -34,7 +35,7 @@ const TabAndTitle = () => {
 				</P>
 			</div>
 			<Tabs
-				className="mb-4 justify-center"
+				className={cn("justify-center", "mb-2 lg:mb-4")}
 				items={
 					<>
 						<Tab value={TAB_PODCASTS}>Podcasts</Tab>
