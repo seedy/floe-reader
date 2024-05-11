@@ -45,13 +45,13 @@ const TabAndTitle = () => {
 				onChange={setTab}
 			>
 				<Content
-					className="flex w-screen justify-start overflow-auto"
+					className="flex w-screen justify-start overflow-auto px-5"
 					value={TAB_PODCASTS}
 				>
 					<QuotePodcasts />
 				</Content>
 				<Content
-					className="flex w-screen justify-start overflow-auto"
+					className="flex w-screen justify-start overflow-auto px-5"
 					value={TAB_INTERVIEWS}
 				>
 					<QuoteInterviews />
