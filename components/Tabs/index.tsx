@@ -1,4 +1,4 @@
-import { List, Root } from "@radix-ui/react-tabs";
+import { Root } from "@radix-ui/react-tabs";
 import cn from "helpers/cn";
 import { ReactNode } from "react";
 
@@ -9,11 +9,12 @@ interface TabsProps {
 	onChange: (value: string) => void;
 	className?: string;
 }
-const Tabs = ({ items, children, value, onChange, className }: TabsProps) => (
-	<Root value={value} onValueChange={onChange}>
-		<List loop={false} className={cn("flex", className)}>
-			{items}
-		</List>
+const Tabs = ({ children, value, onChange, className }: TabsProps) => (
+	<Root
+		value={value}
+		onValueChange={onChange}
+		className={cn("flex flex-col", className)}
+	>
 		{children}
 	</Root>
 );

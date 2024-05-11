@@ -1,12 +1,25 @@
-import { ReactNode } from "react";
+import cn from "helpers/cn";
+import { ReactNode, forwardRef } from "react";
 
 interface QuoteProps {
 	children: ReactNode;
+	className?: string;
 }
 
-const Quote = ({ children }: QuoteProps) => (
-	<div className="flex grow items-start justify-center gap-4 pt-5">
-		{children}
-	</div>
+const Quote = forwardRef<HTMLDivElement, QuoteProps>(
+	({ children, className }, forwardedRef) => (
+		<div
+			ref={forwardedRef}
+			className={cn(
+				"flex grow items-start justify-start gap-4 pt-6",
+				className,
+			)}
+		>
+			{children}
+		</div>
+	),
 );
+
+Quote.displayName = "Quote";
+
 export default Quote;

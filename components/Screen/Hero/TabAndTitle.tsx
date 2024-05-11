@@ -3,6 +3,7 @@ import QuoteInterviews from "components/Screen/Hero/QuoteInterviews";
 import QuotePodcasts from "components/Screen/Hero/QuotePodcasts";
 import Tabs from "components/Tabs";
 import Content from "components/Tabs/Content";
+import List from "components/Tabs/List";
 import Tab from "components/Tabs/Tab";
 import H2 from "components/Typography/H2";
 import P from "components/Typography/P";
@@ -34,17 +35,11 @@ const TabAndTitle = () => {
 					rendez-vous.
 				</P>
 			</div>
-			<Tabs
-				className={cn("justify-center", "mb-2 lg:mb-4")}
-				items={
-					<>
-						<Tab value={TAB_PODCASTS}>Podcasts</Tab>
-						<Tab value={TAB_INTERVIEWS}>Interviews</Tab>
-					</>
-				}
-				value={tab}
-				onChange={setTab}
-			>
+			<Tabs className="gap-2 lg:gap-4" value={tab} onChange={setTab}>
+				<List className="justify-center">
+					<Tab value={TAB_PODCASTS}>Podcasts</Tab>
+					<Tab value={TAB_INTERVIEWS}>Interviews</Tab>
+				</List>
 				<Content
 					className="flex w-screen justify-start overflow-auto px-5"
 					value={TAB_PODCASTS}
