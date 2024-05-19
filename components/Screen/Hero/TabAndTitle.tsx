@@ -35,8 +35,8 @@ const TabAndTitle = () => {
 					rendez-vous.
 				</P>
 			</div>
-			<Tabs className="gap-2 lg:gap-4" value={tab} onChange={setTab}>
-				<List className="justify-center">
+			<Tabs value={tab} onChange={setTab}>
+				<List className="mb-2 justify-center lg:mb-4">
 					<Tab value={TAB_PODCASTS}>Podcasts</Tab>
 					<Tab value={TAB_INTERVIEWS}>Interviews</Tab>
 				</List>

@@ -10,10 +10,7 @@ const Quote = forwardRef<HTMLDivElement, QuoteProps>(
 	({ children, className }, forwardedRef) => (
 		<div
 			ref={forwardedRef}
-			className={cn(
-				"flex grow items-start justify-start gap-4 pt-6",
-				className,
-			)}
+			className={cn("flex grow items-start justify-start pt-6", className)}
 		>
 			{children}
 		</div>
