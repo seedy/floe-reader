@@ -1,18 +1,18 @@
+import { Body } from "@react-email/body";
+import { Button } from "@react-email/button";
+import { Column } from "@react-email/column";
+import { Container } from "@react-email/container";
+import { Font } from "@react-email/font";
+import { Head } from "@react-email/head";
+import { Heading } from "@react-email/heading";
 import { Html } from "@react-email/html";
 import { Img } from "@react-email/img";
-import { Body } from "@react-email/body";
-import { Container } from "@react-email/container";
+import { Link } from "@react-email/link";
+import { Preview } from "@react-email/preview";
+import { Row } from "@react-email/row";
 import { Section } from "@react-email/section";
 import { Text } from "@react-email/text";
-import { Font } from "@react-email/font";
-import { Button } from "@react-email/button";
-import { Link } from "@react-email/link";
-import { Head } from "@react-email/head";
-import { Preview } from "@react-email/preview";
-import { Heading } from "@react-email/heading";
-import { Row } from "@react-email/row";
-import { Column } from "@react-email/column";
-import { INSTAGRAM, LINKEDIN, EMAIL, TEL, CALENDLY } from "../constants/links";
+import { CALENDLY, EMAIL, INSTAGRAM, LINKEDIN, TEL } from "../constants/links";
 
 const colors = {
 	white: "hsl(0, 0%, 100%)",
@@ -179,7 +179,6 @@ const Share = () => (
 		<Body style={{ backgroundColor: colors.background, color: colors.text }}>
 			<Container style={{ width: 360, margin: "auto" }}>
 				<Section
-					className="title"
 					style={{
 						width: 360,
 						height: 360,
@@ -207,7 +206,7 @@ const Share = () => (
 								Floé Gaubert
 							</Heading>
 							<Heading style={headings.h2} as="h2">
-								Conceptrice rédactrice
+								Rédactrice & Podcasteuse
 							</Heading>
 						</Column>
 						<Column>

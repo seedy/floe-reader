@@ -1,15 +1,14 @@
-import styles from "components/Screen/Screen.module.css";
-import classNames from "helpers/classNames";
-import { ComponentProps } from "react";
+import cn from "helpers/cn";
+import type { ComponentProps } from "react";
 
 interface ScreenProps extends ComponentProps<"div"> {}
 
 const Screen = ({ className, children, ...props }: ScreenProps) => {
-  return (
-    <section className={classNames(styles.root, className)} {...props}>
-      {children}
-    </section>
-  );
+	return (
+		<section className={cn("relative mb-16", className)} {...props}>
+			{children}
+		</section>
+	);
 };
 
 export default Screen;

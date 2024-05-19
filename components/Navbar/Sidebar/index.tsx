@@ -1,24 +1,22 @@
 import {
-	Root,
-	Trigger,
-	Portal,
-	Overlay,
-	Content,
-	Title,
 	Cancel,
+	Content,
+	Overlay,
+	Portal,
+	Root,
+	Title,
+	Trigger,
 } from "@radix-ui/react-alert-dialog";
-import Flex from "components/Flex";
-import { ReactNode } from "react";
-import styles from "components/Navbar/Sidebar/Sidebar.module.css";
-import IconButtonLink from "components/IconButton/Link";
 import { CalendarIcon, Cross2Icon } from "@radix-ui/react-icons";
-import { CALENDLY } from "constants/links";
-import IconButton from "components/IconButton";
 import ButtonLink from "components/Button/Link";
+import IconButton from "components/IconButton";
+import IconButtonLink from "components/IconButton/Link";
+import Logo from "components/Logo";
 import Share from "components/Share";
 import Handwritten from "components/Typography/Handwritten";
+import { CALENDLY } from "constants/links";
 import cbcLogo from "public/CBC_LOGO_48.svg";
-import Logo from "components/Logo";
+import { ReactNode } from "react";
 
 interface SidebarProps {
 	children: ReactNode;
@@ -28,12 +26,12 @@ const Sidebar = ({ children }: SidebarProps) => {
 		<Root>
 			<Trigger asChild>{children}</Trigger>
 			<Portal>
-				<Overlay className={styles.overlay} />
-				<Content className={styles.content}>
-					<Flex align="center" justify="end" className={styles.adminRow}>
+				<Overlay className="fixed inset-0 z-[10000] bg-background" />
+				<Content className="fixed inset-0 z-[10000] flex shrink-0 flex-col bg-navbar">
+					<div className="mb-auto flex w-full items-center justify-end px-5">
 						<Share />
-					</Flex>
-					<Flex direction="column" align="start" className={styles.linkColumn}>
+					</div>
+					<div className="flex flex-col items-start px-5">
 						<ButtonLink variant="link" href="#intro">
 							Intro
 						</ButtonLink>
@@ -43,25 +41,25 @@ const Sidebar = ({ children }: SidebarProps) => {
 						<ButtonLink variant="link" href="#portfolio">
 							Portfolio
 						</ButtonLink>
-					</Flex>
-					<Flex className={styles.titleRow}>
-						<Flex align="center" className={styles.logo}>
+					</div>
+					<div className="flex max-h-16 grow items-center justify-between px-5">
+						<div className="flex items-center gap-2">
 							<Logo src={cbcLogo} alt="CBenCorrec'" />
 							<Title asChild>
 								<Handwritten>Floé Gaubert</Handwritten>
 							</Title>
-						</Flex>
-						<Flex className={styles.actions}>
-							<IconButtonLink variant="small" href={CALENDLY}>
+						</div>
+						<div className="flex items-center gap-4">
+							<IconButtonLink size="small" href={CALENDLY}>
 								<CalendarIcon />
 							</IconButtonLink>
 							<Cancel asChild>
-								<IconButton variant="small">
+								<IconButton size="small">
 									<Cross2Icon />
 								</IconButton>
 							</Cancel>
-						</Flex>
-					</Flex>
+						</div>
+					</div>
 				</Content>
 			</Portal>
 		</Root>

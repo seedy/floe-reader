@@ -1,18 +1,20 @@
 "use client";
 
 import { LockClosedIcon, Share1Icon } from "@radix-ui/react-icons";
-import IconButton from "components/IconButton";
-import styles from "components/Share/Share.module.css";
-import { useState } from "react";
-import getBaseUrl from "helpers/getBaseUrl";
 import DialogQRCode from "components/Dialog/QRCode";
-import { useToast } from "components/Toast/Provider";
+import IconButton from "components/IconButton";
 import ShareDropdown from "components/Share/Dropdown";
-import ShareLocked from "components/Share/Locked";
 import ShareEmail from "components/Share/Email";
+import ShareLocked from "components/Share/Locked";
+import { useToast } from "components/Toast/Provider";
+import getBaseUrl from "helpers/getBaseUrl";
+import { useState } from "react";
 
 // CONSTANTS
 const LOCKED_KEY = "locked";
+
+const iconButtonClassName = "relative";
+const iconClassName = "absolute bottom-4 right-3 size-4 text-primary";
 
 // HELPERS
 const getLocked = () => {
@@ -101,9 +103,9 @@ const Share = () => {
 				onUnlocked={onUnlocked}
 				onError={onPwError}
 			>
-				<IconButton disabled={triggerDisabled} className={styles.buttonLocked}>
+				<IconButton disabled={triggerDisabled} className={iconButtonClassName}>
 					<Share1Icon />
-					<LockClosedIcon className={styles.lock} />
+					<LockClosedIcon className={iconClassName} />
 				</IconButton>
 			</ShareLocked>
 		);
@@ -112,9 +114,9 @@ const Share = () => {
 	return (
 		<ShareDropdown
 			trigger={
-				<IconButton className={styles.buttonLocked}>
+				<IconButton className={iconButtonClassName}>
 					<Share1Icon />
-					{locked && <LockClosedIcon className={styles.lock} />}
+					{locked && <LockClosedIcon className={iconClassName} />}
 				</IconButton>
 			}
 			open={dropdownOpen}

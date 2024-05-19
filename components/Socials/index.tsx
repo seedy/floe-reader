@@ -1,18 +1,16 @@
 import {
+	GlobeIcon,
 	InstagramLogoIcon,
 	LinkedInLogoIcon,
-	GlobeIcon,
 } from "@radix-ui/react-icons";
-import Flex from "components/Flex";
 import IconButtonLink from "components/IconButton/Link";
-import styles from "components/Socials/Socials.module.css";
 import { INSTAGRAM, LINKEDIN, PORTFOLIO } from "constants/links";
-import classNames from "helpers/classNames";
-import { ComponentProps } from "react";
+import cn from "helpers/cn";
 
 type Source = "instagram" | "linkedin" | "portfolio";
 
-interface SocialsProps extends ComponentProps<typeof Flex> {
+interface SocialsProps {
+	className?: string;
 	sources?: Record<Source, boolean>;
 }
 const Socials = ({
@@ -23,23 +21,23 @@ const Socials = ({
 		return null;
 	}
 	return (
-		<Flex className={classNames(styles.root, className)} align="center">
+		<div className={cn("flex items-center gap-4 p-2", className)}>
 			{sources.instagram && (
-				<IconButtonLink href={INSTAGRAM} target="_blank" variant="small">
+				<IconButtonLink href={INSTAGRAM} target="_blank" size="small">
 					<InstagramLogoIcon />
 				</IconButtonLink>
 			)}
 			{sources.linkedin && (
-				<IconButtonLink href={LINKEDIN} target="_blank" variant="small">
+				<IconButtonLink href={LINKEDIN} target="_blank" size="small">
 					<LinkedInLogoIcon />
 				</IconButtonLink>
 			)}
 			{sources.portfolio && (
-				<IconButtonLink href={PORTFOLIO} target="_blank" variant="small">
+				<IconButtonLink href={PORTFOLIO} target="_blank" size="small">
 					<GlobeIcon />
 				</IconButtonLink>
 			)}
-		</Flex>
+		</div>
 	);
 };
 

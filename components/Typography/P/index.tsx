@@ -1,22 +1,21 @@
-import styles from "components/Typography/P/P.module.css";
-import classNames from "helpers/classNames";
-import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
-import { ComponentProps } from "react";
+import { VariantProps } from "class-variance-authority";
+import { textVariants } from "components/Typography/variants";
+import { joinCn } from "helpers/cn";
+import type { ReactNode } from "react";
 
-interface PProps extends ComponentProps<"p"> {
-  align?: "start" | "end";
+interface PProps extends VariantProps<typeof textVariants> {
+	children?: ReactNode;
+	className?: string;
 }
 
-const P = ({ className, children, align, ...props }: PProps) => {
-  const variantsClassName = variantsToClassNameStyles({ align }, styles);
-  return (
-    <p
-      className={classNames(styles.root, variantsClassName, className)}
-      {...props}
-    >
-      {children}
-    </p>
-  );
+const P = ({ className, children, color, ...props }: PProps) => {
+	const textVariantClassName = textVariants({ color });
+
+	return (
+		<p className={joinCn(textVariantClassName, className)} {...props}>
+			{children}
+		</p>
+	);
 };
 
 export default P;

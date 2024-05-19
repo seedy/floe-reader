@@ -1,9 +1,0 @@
-.main {
-  box-sizing: border-box;
-}
-
-@media (min-width: 1024px) {
-  .main {
-    margin-top: 4rem;
-  }
-}

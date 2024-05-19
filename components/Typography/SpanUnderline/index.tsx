@@ -1,24 +1,40 @@
-import styles from "components/Typography/SpanUnderline/SpanUnderline.module.scss";
-import classNames from "helpers/classNames";
-import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
-import { ComponentProps } from "react";
+import { type VariantProps, cva } from "class-variance-authority";
+import cn from "helpers/cn";
+import type { ReactNode } from "react";
 
-interface SpanUnderlineProps extends ComponentProps<"span"> {
-	variant?: "primary" | "secondary";
+const spanUnderlineVariants = cva(
+	"relative after:absolute after:bottom-0 after:left-1/2 after:h-2 after:w-[90%] after:-translate-x-1/2 after:rounded after:bg-[length:100%_100%] after:bg-no-repeat",
+	{
+		variants: {
+			variant: {
+				primary: [
+					"after:bg-gradient-to-r after:from-fernGreenUnderline after:to-fernGreenUnderline",
+				],
+				secondary: [
+					"after:bg-gradient-to-r after:from-outlineSecondary after:to-outlineSecondary",
+				],
+			},
+		},
+		defaultVariants: {
+			variant: "primary",
+		},
+	},
+);
+
+interface SpanUnderlineProps
+	extends VariantProps<typeof spanUnderlineVariants> {
+	children?: ReactNode;
+	className?: string;
 }
 const SpanUnderline = ({
 	children,
 	className,
-	variant = "primary",
 	...props
 }: SpanUnderlineProps) => {
-	const variantsClassName = variantsToClassNameStyles({ variant }, styles);
+	const variantsClassName = spanUnderlineVariants(props);
 
 	return (
-		<span
-			className={classNames(styles.root, variantsClassName, className)}
-			{...props}
-		>
+		<span className={cn(variantsClassName, className)} {...props}>
 			{children}
 		</span>
 	);

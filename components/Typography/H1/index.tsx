@@ -1,19 +1,31 @@
-import styles from "components/Typography/H1/H1.module.css";
-import classNames from "helpers/classNames";
-import { ComponentProps, ElementRef, forwardRef } from "react";
+import { VariantProps } from "class-variance-authority";
+import { headingVariants } from "components/Typography/variants";
+import { joinCn } from "helpers/cn";
+import { ElementRef, ReactNode, forwardRef } from "react";
 
-type H1Props = ComponentProps<"h1">;
+interface H1Props extends VariantProps<typeof headingVariants> {
+	children?: ReactNode;
+	className?: string;
+}
 
 const H1 = forwardRef<ElementRef<"h1">, H1Props>(
-	({ children, className, ...props }, forwardedRef) => (
-		<h1
-			ref={forwardedRef}
-			className={classNames(className, styles.root)}
-			{...props}
-		>
-			{children}
-		</h1>
-	),
+	({ children, className, color, align, ...props }, forwardedRef) => {
+		const headingVariantClassName = headingVariants({
+			variant: "h1",
+			color,
+			align,
+		});
+
+		return (
+			<h1
+				ref={forwardedRef}
+				className={joinCn(headingVariantClassName, className)}
+				{...props}
+			>
+				{children}
+			</h1>
+		);
+	},
 );
 
 H1.displayName = "H1";
