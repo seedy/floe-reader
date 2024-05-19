@@ -1,45 +1,48 @@
-"use client"
+"use client";
 
 import { Provider, Viewport } from "@radix-ui/react-toast";
 import Toast from "components/Toast";
 import { ReactNode, createContext, useContext, useState } from "react";
-import styles from "components/Toast/Provider/Provider.module.css";
 interface ToastProviderProps {
-  children?: ReactNode;
+	children?: ReactNode;
 }
 
-type ToastData = { title: string, children: ReactNode, variant: 'success' | 'error' }
+type ToastData = {
+	title: string;
+	children: ReactNode;
+	variant: "success" | "error";
+};
 
-const ToastContext = createContext<((toast: ToastData) => void) | undefined>(undefined);
+const ToastContext = createContext<((toast: ToastData) => void) | undefined>(
+	undefined,
+);
 
 export const useToast = () => {
-  const addToast = useContext(ToastContext);
-  if (addToast === undefined) {
-    throw new Error("useToast should be used within ToastProvider Context")
-  }
-  return addToast
-}
+	const addToast = useContext(ToastContext);
+	if (addToast === undefined) {
+		throw new Error("useToast should be used within ToastProvider Context");
+	}
+	return addToast;
+};
 
 const ToastProvider = ({ children }: ToastProviderProps) => {
-  const [toasts, setToasts] = useState<ToastData[]>([]);
+	const [toasts, setToasts] = useState<ToastData[]>([]);
 
-  const addToast = (toast: ToastData) => {
-    setToasts((prev) => [...prev, toast])
-  };
+	const addToast = (toast: ToastData) => {
+		setToasts((prev) => [...prev, toast]);
+	};
 
-  return (
-    <Provider swipeDirection="right">
-      <ToastContext.Provider value={addToast}>
-        {children}
-      </ToastContext.Provider>
-      {toasts.map(({ title, variant, children }, index) => (
-        <Toast title={title} variant={variant} key={index}>
-          {children}
-        </Toast>
-      ))}
-      <Viewport className={styles.viewport} />
-    </Provider>
-  );
+	return (
+		<Provider swipeDirection="right">
+			<ToastContext.Provider value={addToast}>{children}</ToastContext.Provider>
+			{toasts.map(({ title, variant, children }, index) => (
+				<Toast title={title} variant={variant} key={index}>
+					{children}
+				</Toast>
+			))}
+			<Viewport className="fixed right-0 top-0 z-[12000] m-0 flex w-viewport list-none flex-col gap-2.5 p-5 outline-none" />
+		</Provider>
+	);
 };
 
 export default ToastProvider;

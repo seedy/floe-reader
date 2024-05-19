@@ -17,35 +17,12 @@
 }
 
 .root {
-  display: inline-flex;
-  flex-direction: column;
-  padding: 0.125rem 0;
-  align-items: center;
-  justify-content: center;
-
   &:hover .wheel,
   &:focus .wheel {
     animation-play-state: paused;
   }
 }
 
-.mouse {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  border-radius: var(--radii-pill);
-  outline: 0.125rem solid var(--colors-primary);
-  width: 5rem;
-  height: 2rem;
-}
-
 .wheel {
-  position: absolute;
-  color: var(--colors-secondary-background);
   animation: 1s ease-in-out 0s infinite left;
-  right: 0.6875rem;
-}
-
-.link {
-  padding: 0.25rem 1rem;
 }

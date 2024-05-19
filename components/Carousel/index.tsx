@@ -1,16 +1,19 @@
 "use client";
-import { Children, MouseEvent, ReactNode, useMemo, useState } from "react";
-import { useKeenSlider } from "keen-slider/react";
+import CarouselIndicator from "components/Carousel/Indicator";
+import CarouselMask from "components/Carousel/Mask";
+import CarouselPlayPause from "components/Carousel/PlayPause";
+import cn from "helpers/cn";
+import keenSliderCarousel from "helpers/keenSlider/plugins/carousel";
 // STYLES
 import "keen-slider/keen-slider.min.css";
-import Flex from "components/Flex";
-import CarouselIndicator from "components/Carousel/Indicator";
-import CarouselPlayPause from "components/Carousel/PlayPause";
-import keenSliderCarousel from "helpers/keenSlider/plugins/carousel";
-import styles from "components/Carousel/Carousel.module.scss";
-import Box from "components/Box";
-import CarouselMask from "components/Carousel/Mask";
-import classNames from "helpers/classNames";
+import { useKeenSlider } from "keen-slider/react";
+import {
+	Children,
+	type MouseEvent,
+	type ReactNode,
+	useMemo,
+	useState,
+} from "react";
 
 interface CarouselProps {
 	children: ReactNode;
@@ -66,24 +69,32 @@ const Carousel = ({
 	};
 
 	return (
-		<Box className={classNames(styles.root, className)}>
-			<CarouselMask className={`${styles.slides} keen-slider`} ref={sliderRef}>
+		<div className={cn("relative flex flex-col items-center", className)}>
+			<CarouselMask
+				className={cn("relative size-full overflow-hidden", "keen-slider")}
+				ref={sliderRef}
+			>
 				<CarouselPlayPause
 					playing={playing}
 					onClick={playing ? onPause : onResume}
 				/>
 				{Children.map(children, (child, index) => (
-					<Box
-						className={`${styles.slide} keen-slider__slide`}
+					<div
+						className={cn("min-w-full flex-initial", "keen-slider__slide")}
 						key={index}
 						style={{ opacity: opacities[index] }}
 					>
 						{child}
-					</Box>
+					</div>
 				))}
 			</CarouselMask>
 			{loaded && instanceRef.current && (
-				<Flex className={styles.indicators}>
+				<div
+					className={cn(
+						"absolute bottom-4 left-0 z-10 flex gap-2 px-2",
+						"lg:bottom-auto lg:left-auto lg:right-11 lg:top-0 lg:px-6",
+					)}
+				>
 					{dotKeys.map((key) => (
 						<CarouselIndicator
 							key={key}
@@ -93,12 +104,14 @@ const Carousel = ({
 							}}
 						/>
 					))}
-				</Flex>
+				</div>
 			)}
 			{headingDesktop && (
-				<div className={styles.desktopHeading}>{headingDesktop}</div>
+				<div className="absolute bottom-0 left-0 hidden lg:block lg:w-3/5">
+					{headingDesktop}
+				</div>
 			)}
-		</Box>
+		</div>
 	);
 };
 

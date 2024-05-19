@@ -1,8 +1,7 @@
 import React from "react";
-import { StoryFn, Meta } from "@storybook/react";
+import type { StoryFn, Meta } from "@storybook/react";
 
 import Carousel from ".";
-import Flex from "components/Flex";
 import landing1 from "public/landing-1.jpg";
 import landing2 from "public/landing-2.jpg";
 import landing3 from "public/landing-3.jpg";
@@ -12,19 +11,19 @@ import H2 from "components/Typography/H2";
 import Socials from "components/Socials";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default ({
+export default {
 	title: "Components/Carousel",
 	component: Carousel,
 	// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 	argTypes: {
 		backgroundColor: { control: "color" },
 	},
-} as Meta<typeof Carousel>);
+} as Meta<typeof Carousel>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Carousel> = (args) => {
 	return (
-		<Flex direction="column" align="center" justify="center">
+		<div className="flex flex-col items-center justify-center">
 			<Carousel {...args}>
 				<Slide
 					headingDesktop={
@@ -68,7 +67,7 @@ const Template: StoryFn<typeof Carousel> = (args) => {
 					alt=""
 				/>
 			</Carousel>
-		</Flex>
+		</div>
 	);
 };
 
@@ -76,13 +75,9 @@ export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
 	headingDesktop: (
-		<Flex
-			direction="column"
-			align="center"
-			style={{ textAlign: "center", gap: 10, flexGrow: 1 }}
-		>
+		<div className="flex grow flex-col items-center gap-8 text-center">
 			<H2>Réalisons les contenus qui feront parler de toi</H2>
 			<Socials />
-		</Flex>
+		</div>
 	),
 };

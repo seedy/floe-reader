@@ -1,25 +1,20 @@
 "use client";
 
-import {
-	Root,
-	Overlay,
-	Content,
-	Title,
-	Close,
-	Description,
-} from "@radix-ui/react-dialog";
-import { Cross2Icon, EnterIcon } from "@radix-ui/react-icons";
-import { share } from "server/actions";
-import Flex from "components/Flex";
+import { Description, Overlay, Root } from "@radix-ui/react-dialog";
+import { EnterIcon } from "@radix-ui/react-icons";
 import IconButton from "components/IconButton";
-import SlotSubmit from "components/Slot/Submit";
 import Input from "components/Input";
-import H2 from "components/Typography/H2";
+import {
+	DialogClose,
+	DialogContent,
+	DialogTitle,
+} from "components/Share/Dialog";
+import SlotSubmit from "components/Slot/Submit";
 import H3 from "components/Typography/H3";
-import styles from "components/Share/Email/Email.module.css";
 import { useEffect, useRef } from "react";
 // @ts-ignore
 import { useFormState } from "react-dom";
+import { share } from "server/actions";
 
 interface ShareEmailProps {
 	open: boolean;
@@ -46,31 +41,25 @@ const ShareEmail = ({
 	return (
 		<Root open={open} onOpenChange={onOpenChange}>
 			<Overlay />
-			<Content className={styles.content}>
-				<Title asChild>
-					<H2 className={styles.label}>Partager la carte de visite</H2>
-				</Title>
+			<DialogContent>
+				<DialogTitle>Partager la carte de visite</DialogTitle>
 				<Description asChild>
-					<H3 className={styles.description}>
+					<H3 className="text-body">
 						Veuillez indiquer le mail du destinataire
 					</H3>
 				</Description>
 				<form action={formAction}>
-					<Flex className={styles.formRow}>
+					<div className="flex gap-4">
 						<Input label="Mail du destinataire" name="email" />
 						<SlotSubmit>
-							<IconButton variant="small" type="submit">
+							<IconButton size="small" type="submit">
 								<EnterIcon />
 							</IconButton>
 						</SlotSubmit>
-					</Flex>
+					</div>
 				</form>
-				<Close asChild aria-label="Fermer">
-					<IconButton className={styles.close} variant="small" type="button">
-						<Cross2Icon />
-					</IconButton>
-				</Close>
-			</Content>
+				<DialogClose />
+			</DialogContent>
 		</Root>
 	);
 };

@@ -1,12 +1,11 @@
-import "./globals.css";
-import ToastProvider from "components/Toast/Provider";
 import { HighlightInit } from "@highlight-run/next/client";
-import { env } from "env.mjs";
-import { Lora } from "next/font/google";
 import Navbar from "components/Navbar";
-import { ReactNode } from "react";
-import { Metadata } from "next";
-import styles from "app/styles.module.css";
+import ToastProvider from "components/Toast/Provider";
+import { env } from "env.mjs";
+import type { Metadata } from "next";
+import { Lora } from "next/font/google";
+import type { ReactNode } from "react";
+import "./globals.css";
 
 const lora = Lora({ subsets: ["latin"], style: ["normal"] });
 
@@ -31,7 +30,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 						excludedHostnames={["localhost"]}
 					/>
 					<Navbar />
-					<main className={styles.main}>{children}</main>
+					<main className="lg:mt-16">{children}</main>
 				</ToastProvider>
 			</body>
 		</html>

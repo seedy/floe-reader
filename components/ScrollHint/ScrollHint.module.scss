@@ -21,41 +21,12 @@
 }
 
 .root {
-  display: inline-flex;
-  padding: 0.125rem 0;
-  gap: 0.5rem;
-  align-items: center;
-  justify-content: center;
-
   &:hover .wheel,
   &:focus-within .wheel {
     animation-play-state: paused;
   }
 }
 
-.mouse {
-  width: 2rem;
-  height: 5rem;
-}
-
 .wheel {
-  top: 0.6875rem;
-}
-
-.mouse {
-  display: inline-flex;
-  justify-content: center;
-  border-radius: var(--radii-pill);
-  outline: 0.125rem solid var(--colors-primary);
-  position: relative;
-}
-
-.wheel {
-  position: absolute;
-  color: var(--colors-secondary-background);
   animation: 3s ease-in-out 0s infinite down;
-}
-
-.link {
-  padding: 0.25rem 1rem;
 }

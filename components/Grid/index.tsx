@@ -1,6 +1,5 @@
+import cn from "helpers/cn";
 import { ReactNode } from "react";
-import styles from "components/Grid/Grid.module.css";
-import classNames from "helpers/classNames";
 
 interface GridProps {
 	children: ReactNode;
@@ -9,7 +8,7 @@ interface GridProps {
 }
 const Grid = ({ children, cols, className }: GridProps) => (
 	<div
-		className={classNames(styles.root, className)}
+		className={cn("grid grid-cols-[repeat(auto-fill,1fr)]", className)}
 		style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}
 	>
 		{children}
