@@ -91,8 +91,8 @@ const ScreenLanding = () => {
 			</Carousel>
 			<div
 				className={cn(
-					"flex relative pl-5 pr-0 py-5 flex-row w-full justify-between",
-					"lg:pl-10 lg:pt-8 lg:pb-3",
+					"relative flex w-full flex-row justify-between py-5 pl-5 pr-0",
+					"lg:pb-3 lg:pl-10 lg:pt-8",
 				)}
 			>
 				<div className="flex flex-col gap-authorBlock">
@@ -110,12 +110,12 @@ const ScreenLanding = () => {
 				tags={["Interview", "Rédaction", "Podcast", "Photo", "Vidéo"]}
 			/>
 
-			<div className={cn("my-0 mx-4 flex flex-col items-center", "lg:hidden")}>
+			<div className={cn("mx-4 my-0 flex flex-col items-center", "lg:hidden")}>
 				<Socials />
 				<ButtonLink
 					variant="contained"
 					href={CALENDLY}
-					className={cn("mb-5 mt-6", "lg:absolute bottom-24 self-center")}
+					className={cn("mb-5 mt-6", "bottom-24 self-center lg:absolute")}
 				>
 					Je prends rendez-vous
 				</ButtonLink>

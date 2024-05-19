@@ -69,9 +69,9 @@ const Carousel = ({
 	};
 
 	return (
-		<div className={cn("flex flex-col items-center relative", className)}>
+		<div className={cn("relative flex flex-col items-center", className)}>
 			<CarouselMask
-				className={cn("relative overflow-hidden w-full h-full", "keen-slider")}
+				className={cn("relative size-full overflow-hidden", "keen-slider")}
 				ref={sliderRef}
 			>
 				<CarouselPlayPause
@@ -80,7 +80,7 @@ const Carousel = ({
 				/>
 				{Children.map(children, (child, index) => (
 					<div
-						className={cn("flex-initial min-w-full", "keen-slider__slide")}
+						className={cn("min-w-full flex-initial", "keen-slider__slide")}
 						key={index}
 						style={{ opacity: opacities[index] }}
 					>
@@ -92,7 +92,7 @@ const Carousel = ({
 				<div
 					className={cn(
 						"absolute bottom-4 left-0 z-10 flex gap-2 px-2",
-						"lg:bottom-auto lg:left-auto lg:top-0 lg:right-11 lg:px-6",
+						"lg:bottom-auto lg:left-auto lg:right-11 lg:top-0 lg:px-6",
 					)}
 				>
 					{dotKeys.map((key) => (

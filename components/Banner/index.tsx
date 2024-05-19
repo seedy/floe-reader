@@ -17,14 +17,14 @@ const Banner = ({ tags, className }: BannerProps) => {
 	return (
 		<div
 			className={cn(
-				"flex items-center w-full m-0 py-0 px-4 min-h-[3.75rem] overflow-hidden bg-navbar",
+				"m-0 flex min-h-[3.75rem] w-full items-center overflow-hidden bg-navbar px-4 py-0",
 				styles.root,
 				className,
 			)}
 		>
 			<BannerScrollAnimation
 				className={cn(
-					"m-0 p-0 min-w-fit list-none flex grow flex-row flex-nowrap",
+					"m-0 flex min-w-fit grow list-none flex-row flex-nowrap p-0",
 					"motion-reduce:flex-wrap motion-reduce:justify-center",
 				)}
 			>

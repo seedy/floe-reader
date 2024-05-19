@@ -35,7 +35,7 @@ const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 			<nav
 				ref={innerRef}
 				className={cn(
-					"z-[9999] fixed bottom-0 left-0 right-0 max-h-16 h-[0%] overflow-hidden bg-background transition-[height] duration-200 ease-out",
+					"fixed inset-x-0 bottom-0 z-[9999] h-0 max-h-16 overflow-hidden bg-background transition-[height] duration-200 ease-out",
 					"lg:bottom-auto lg:top-0",
 					className,
 				)}

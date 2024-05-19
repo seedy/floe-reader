@@ -11,7 +11,7 @@ const SwipeHint = ({ className, href }: SwipeHintProps) => {
 	return (
 		<div
 			className={cn(
-				"inline-flex flex-col px-0 py-[0.125rem] items-center",
+				"inline-flex flex-col items-center px-0 py-0.5",
 				styles.root,
 				className,
 			)}
@@ -19,7 +19,7 @@ const SwipeHint = ({ className, href }: SwipeHintProps) => {
 			<div className="relative inline-flex h-8 w-20 items-center rounded-pill outline outline-[0.125rem] outline-primary">
 				<SwipeWheel
 					className={cn(
-						"absolute text-secondaryBackground right-[0.6875rem]",
+						"absolute right-[0.6875rem] text-secondaryBackground",
 						styles.wheel,
 					)}
 				/>
