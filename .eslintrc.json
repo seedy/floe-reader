@@ -5,6 +5,12 @@
 		"next/core-web-vitals"
 	],
 	"plugins": ["simple-import-sort", "unused-imports"],
+	"settings": {
+		"tailwindcss": {
+			"callees": ["cn", "cx"],
+			"whitelist": ["keen-slider(__slide)?"]
+		}
+	},
 	"rules": {
 		"unused-imports/no-unused-imports": "error",
 		"unused-imports/no-unused-vars": [
