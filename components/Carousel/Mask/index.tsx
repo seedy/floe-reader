@@ -11,7 +11,10 @@ const CarouselMask = forwardRef<HTMLDivElement, CarouselMaskProps>(
 		return (
 			<div
 				className={cn(
-					"min-h-[22.5rem] lg:min-h-[34.75rem]",
+					"size-full",
+					"min-h-[22.5rem] min-w-[22.5rem]",
+					"lg:min-h-[34.75rem]",
+					"sm:h-[40vh] xl:h-[70vh]",
 					styles.root,
 					className,
 				)}

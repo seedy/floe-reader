@@ -21,9 +21,9 @@ const hintClassName =
 
 const ScreenLanding = () => {
 	return (
-		<Screen>
+		<Screen className="lg:pt-6">
 			<Carousel
-				className="lg:mx-10 lg:mt-[5.5rem]"
+				className="lg:mx-10"
 				headingDesktop={
 					<div className="flex grow flex-col items-center gap-2.5 text-center">
 						<H2 color="secondary">

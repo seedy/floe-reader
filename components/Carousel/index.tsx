@@ -71,7 +71,7 @@ const Carousel = ({
 	return (
 		<div className={cn("relative flex flex-col items-center", className)}>
 			<CarouselMask
-				className={cn("relative size-full overflow-hidden", "keen-slider")}
+				className={cn("relative overflow-hidden", "keen-slider")}
 				ref={sliderRef}
 			>
 				<CarouselPlayPause
@@ -92,6 +92,7 @@ const Carousel = ({
 				<div
 					className={cn(
 						"absolute bottom-4 left-0 z-10 flex gap-2 px-2",
+						"md:bottom-1 md:left-10",
 						"lg:bottom-auto lg:left-auto lg:right-11 lg:top-0 lg:px-6",
 					)}
 				>
