@@ -11,6 +11,7 @@ import {
 	Children,
 	type MouseEvent,
 	type ReactNode,
+	useCallback,
 	useMemo,
 	useState,
 } from "react";
@@ -56,17 +57,23 @@ const Carousel = ({
 		[keenSliderCarousel(delay)],
 	);
 
-	const onPause = (e: MouseEvent) => {
-		e.stopPropagation();
-		setPlaying(false);
-		(instanceRef.current?.emit as any)("stopped");
-	};
+	const onPause = useCallback(
+		(e: MouseEvent) => {
+			e.stopPropagation();
+			setPlaying(false);
+			(instanceRef.current?.emit as any)("stopped");
+		},
+		[instanceRef],
+	);
 
-	const onResume = (e: MouseEvent) => {
-		e.stopPropagation();
-		setPlaying(true);
-		(instanceRef.current?.emit as any)("resumed");
-	};
+	const onResume = useCallback(
+		(e: MouseEvent) => {
+			e.stopPropagation();
+			setPlaying(true);
+			(instanceRef.current?.emit as any)("resumed");
+		},
+		[instanceRef],
+	);
 
 	return (
 		<div className={cn("relative flex flex-col items-center", className)}>
