@@ -29,6 +29,7 @@ const AvatarAndContent = ({
 			"mb-4 mt-6 flex",
 			"mx-5 flex-col",
 			"lg:mx-10 lg:flex-row-reverse lg:justify-between lg:gap-10",
+			"lg:relative lg:h-[150vh]",
 		)}
 	>
 		<div className="mb-5 flex flex-col gap-10 lg:gap-[3.375rem]">
@@ -47,10 +48,20 @@ const AvatarAndContent = ({
 				className={cn(
 					"size-80 lg:size-auto",
 					"lg:aspect-[256/672] lg:max-h-[calc(100svh-4rem)] lg:w-[25vw] lg:max-w-none",
+					"lg:sticky lg:overflow-hidden",
 				)}
 			/>
 			<Subtitle className="lg:hidden">{catcher}</Subtitle>
 		</div>
+		<Avatar
+			src={src}
+			alt={alt}
+			className={cn(
+				"size-80 lg:size-auto",
+				"lg:aspect-[256/672] lg:max-h-[calc(100svh-4rem)] lg:w-[25vw] lg:max-w-none",
+				"lg:sticky lg:top-0 lg:overflow-hidden",
+			)}
+		/>
 	</div>
 );
 
