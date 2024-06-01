@@ -1,4 +1,3 @@
-import Grid from "components/Grid";
 import Screen from "components/Screen";
 import AvatarAndContent from "components/Screen/Presentation/AvatarAndContent";
 import H3 from "components/Typography/H3";
@@ -56,10 +55,7 @@ const ScreenPresentation = () => {
 					src={presentation1}
 					alt="Je rédige pour ton audience !"
 				>
-					<Grid
-						className="mt-[1.875rem] grid-cols-3 justify-between gap-8"
-						cols={3}
-					>
+					<div className="mt-[1.875rem] flex flex-col justify-between gap-32">
 						<P>
 							Tu aimerais concevoir une communication à la hauteur de tes
 							ambitions ? Créons ensemble,{" "}
@@ -80,11 +76,12 @@ const ScreenPresentation = () => {
 								créer du contenu attrayant et percutant.
 							</span>
 						</P>
-					</Grid>
+					</div>
 				</AvatarAndContent>
 			</Screen>
 			<Screen>
 				<AvatarAndContent
+					side="right"
 					title="Je crée du contenu photo et vidéo pour améliorer ta visibilité"
 					longSubtitle={
 						<>
@@ -132,11 +129,8 @@ const ScreenPresentation = () => {
 					src={presentation2}
 					alt="Retranscrire les émotions, partager les expériences, capturer l'instant !"
 				>
-					<Grid
-						className="mt-[1.875rem] grid-cols-3 justify-between gap-8"
-						cols={2}
-					>
-						<div className="flex flex-col items-center lg:gap-3">
+					<div className="mt-[1.875rem] flex flex-col justify-between gap-32">
+						<div className="flex flex-col lg:gap-3">
 							<H3>
 								Inspiration, qualité, <SpanUnderline>sens</SpanUnderline>
 							</H3>
@@ -146,7 +140,7 @@ const ScreenPresentation = () => {
 								sens.
 							</P>
 						</div>
-						<div className="flex flex-col items-center lg:gap-3">
+						<div className="flex flex-col lg:gap-3">
 							<H3>
 								Partager <SpanUnderline>tes valeurs</SpanUnderline>
 							</H3>
@@ -155,7 +149,7 @@ const ScreenPresentation = () => {
 								audience tes valeurs, tes ambitions et tes connaissances.
 							</P>
 						</div>
-					</Grid>
+					</div>
 				</AvatarAndContent>
 			</Screen>
 			<Screen>
@@ -191,7 +185,7 @@ const ScreenPresentation = () => {
 								micro !
 							</Subtitle>
 							<P>
-								J&apos;ai aujourdh&apos;ui le matériel et les logiciels adéquats
+								J&apos;ai aujourd&apos;hui le matériel et les logiciels adéquats
 								pour la prise de son. J&apos;ai de l&apos;expérience en
 								interview. Je peux ainsi te proposer une prestation complète.
 							</P>
@@ -208,11 +202,8 @@ const ScreenPresentation = () => {
 					src={presentation3}
 					alt="Diffuse ton message à travers le micro !"
 				>
-					<Grid
-						className="mt-[1.875rem] grid-cols-3 justify-between gap-8"
-						cols={2}
-					>
-						<div className="flex flex-col items-center lg:gap-3">
+					<div className="mt-[1.875rem] flex flex-col justify-between gap-32">
+						<div className="flex flex-col lg:gap-3">
 							<H3>
 								<SpanUnderline>Depuis des Lunes</SpanUnderline>
 							</H3>
@@ -227,7 +218,7 @@ const ScreenPresentation = () => {
 								se raconte pas.
 							</P>
 						</div>
-						<div className="flex flex-col items-center lg:gap-3">
+						<div className="flex flex-col lg:gap-3">
 							<H3>
 								<SpanUnderline>Les Baroudeurs</SpanUnderline>
 							</H3>
@@ -241,7 +232,7 @@ const ScreenPresentation = () => {
 								montrer que la vie est aussi belle que folle.
 							</P>
 						</div>
-					</Grid>
+					</div>
 				</AvatarAndContent>
 			</Screen>
 		</>

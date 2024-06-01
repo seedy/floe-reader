@@ -1,4 +1,5 @@
 import Avatar from "components/Avatar";
+import AsideAvatar from "components/Avatar/Aside";
 import H2 from "components/Typography/H2";
 import P from "components/Typography/P";
 import Subtitle from "components/Typography/Subtitle";
@@ -13,6 +14,7 @@ interface AvatarAndContentProps
 	children: ReactNode;
 	catcher: ReactNode;
 	longCatcher: ReactNode;
+	side?: "left" | "right";
 }
 const AvatarAndContent = ({
 	title,
@@ -23,45 +25,31 @@ const AvatarAndContent = ({
 	longCatcher,
 	src,
 	alt,
+	side = "left",
 }: AvatarAndContentProps) => (
 	<div
 		className={cn(
 			"mb-4 mt-6 flex",
 			"mx-5 flex-col",
-			"lg:mx-10 lg:flex-row-reverse lg:justify-between lg:gap-10",
-			"lg:relative lg:h-[150vh]",
+			"lg:relative lg:mx-10 lg:flex-row lg:gap-10",
+			side === "left" ? "lg:justify-start" : "lg:justify-end",
 		)}
 	>
+		{side === "left" && <AsideAvatar src={src} alt={alt} />}
 		<div className="mb-5 flex flex-col gap-10 lg:gap-[3.375rem]">
 			<H2>{title}</H2>
 			<P className="hidden lg:block">{longSubtitle}</P>
 			<P className="lg:hidden">{subtitle}</P>
-			<div className="hidden grow justify-between lg:flex lg:flex-col">
+			<div className="hidden grow gap-40 lg:flex lg:flex-col">
 				{children}
 				<div className="flex flex-col items-center lg:gap-3">{longCatcher}</div>
 			</div>
 		</div>
-		<div className="flex flex-col gap-10">
-			<Avatar
-				src={src}
-				alt={alt}
-				className={cn(
-					"size-80 lg:size-auto",
-					"lg:aspect-[256/672] lg:max-h-[calc(100svh-4rem)] lg:w-[25vw] lg:max-w-none",
-					"lg:sticky lg:overflow-hidden",
-				)}
-			/>
-			<Subtitle className="lg:hidden">{catcher}</Subtitle>
+		{side === "right" && <AsideAvatar src={src} alt={alt} />}
+		<div className="flex flex-col gap-10 lg:hidden">
+			<Avatar src={src} alt={alt} className="size-80" />
+			<Subtitle>{catcher}</Subtitle>
 		</div>
-		<Avatar
-			src={src}
-			alt={alt}
-			className={cn(
-				"size-80 lg:size-auto",
-				"lg:aspect-[256/672] lg:max-h-[calc(100svh-4rem)] lg:w-[25vw] lg:max-w-none",
-				"lg:sticky lg:top-0 lg:overflow-hidden",
-			)}
-		/>
 	</div>
 );
 
