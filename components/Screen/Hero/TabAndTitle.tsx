@@ -35,19 +35,19 @@ const TabAndTitle = () => {
 					rendez-vous.
 				</P>
 			</div>
-			<Tabs value={tab} onChange={setTab}>
+			<Tabs value={tab} onChange={setTab} className="w-full">
 				<List className="mb-2 justify-center lg:mb-4">
 					<Tab value={TAB_PODCASTS}>Podcasts</Tab>
 					<Tab value={TAB_INTERVIEWS}>Interviews</Tab>
 				</List>
 				<Content
-					className="flex w-screen justify-start overflow-auto px-5"
+					className="flex w-full justify-start overflow-auto px-5"
 					value={TAB_PODCASTS}
 				>
 					<QuotePodcasts />
 				</Content>
 				<Content
-					className="flex w-screen justify-start overflow-auto px-5"
+					className="flex w-full justify-start overflow-auto px-5"
 					value={TAB_INTERVIEWS}
 				>
 					<QuoteInterviews />
