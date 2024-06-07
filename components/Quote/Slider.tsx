@@ -15,7 +15,7 @@ interface QuoteSliderProps {
 const QuoteSlider = ({ children }: QuoteSliderProps) => {
 	const [loaded, setLoaded] = useState(false);
 	const ref = useRef<HTMLDivElement | null>();
-	const [knRef] = useKeenSlider({
+	const [ksRef] = useKeenSlider({
 		mode: "free",
 		slides: {
 			number: Children.count(children),
@@ -47,7 +47,7 @@ const QuoteSlider = ({ children }: QuoteSliderProps) => {
 		<SliderOverflowingContextProvider value={loaded && isOverflowing}>
 			<Quote
 				ref={(node) => {
-					knRef(node);
+					ksRef(node);
 					ref.current = node;
 				}}
 				className={cn("keen-slider", { "gap-4": !loaded })}
