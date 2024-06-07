@@ -15,7 +15,7 @@ const ScrollHint = ({ className, href }: ScrollHintProps) => {
 				className,
 			)}
 		>
-			<div className="relative inline-flex h-20 w-8 justify-center rounded-pill outline outline-[0.125rem] outline-primary">
+			<div className="relative inline-flex h-20 w-8 shrink-0 justify-center rounded-pill outline outline-[0.125rem] outline-primary">
 				<ScrollWheelIcon
 					className={cn(
 						"absolute top-[0.6875rem] text-secondaryBackground",
@@ -25,7 +25,7 @@ const ScrollHint = ({ className, href }: ScrollHintProps) => {
 			</div>
 			<ButtonLink
 				href={href}
-				className="px-4 py-1"
+				className="shrink-0 px-4 py-1"
 				variant="link"
 				color="primary"
 			>
