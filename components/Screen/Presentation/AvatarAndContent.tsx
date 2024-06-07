@@ -46,7 +46,7 @@ const AvatarAndContent = ({
 			</div>
 		</div>
 		{side === "right" && <AsideAvatar src={src} alt={alt} />}
-		<div className="flex flex-col gap-10 lg:hidden">
+		<div className="flex flex-col items-center gap-10 lg:hidden">
 			<Avatar src={src} alt={alt} className="size-80" />
 			<Subtitle>{catcher}</Subtitle>
 		</div>
