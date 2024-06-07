@@ -38,7 +38,9 @@ const ScreenHero = () => {
 								</P>
 							</div>
 						</div>
-						<div className={cn("flex flex-col gap-10", "lg:gap-20")}>
+						<div
+							className={cn("flex flex-col items-center", "gap-10 lg:gap-20")}
+						>
 							<H3>Ils m&apos;ont confié leur communication</H3>
 							<div
 								className={cn(
