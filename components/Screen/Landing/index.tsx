@@ -99,7 +99,7 @@ const ScreenLanding = () => {
 			>
 				<div className="flex flex-col gap-authorBlock">
 					<H2 align="left">Floé Gaubert</H2>
-					<H2 align="left">Rédactrice & Podcasteuse</H2>
+					<H2 align="left">Monteuse & Expérimentaliste</H2>
 				</div>
 				<div
 					className={cn(
