@@ -45,7 +45,7 @@ const ScreenLanding = () => {
 					heading={
 						<H1 color="white">
 							<ResponsiveHeading
-								desktop="Des podcasts qui feront résonner ton message"
+								desktop="Des interviews qui feront résonner ton message"
 								mobile="Réalisons les contenus qui feront parler de toi"
 							/>
 						</H1>
@@ -65,7 +65,7 @@ const ScreenLanding = () => {
 					heading={
 						<H1 color="white">
 							<ResponsiveHeading
-								desktop="Des podcasts qui feront résonner ton message"
+								desktop="Des interviews qui feront résonner ton message"
 								mobile="Je crée une expérience unique avec du contenu percutant et chaleureux"
 							/>
 						</H1>
@@ -83,7 +83,9 @@ const ScreenLanding = () => {
 						</H2>
 					}
 					heading={
-						<H1 color="white">Des podcasts qui feront résonner ton message</H1>
+						<H1 color="white">
+							Des interviews qui feront résonner ton message
+						</H1>
 					}
 					src={landing3}
 					priority
