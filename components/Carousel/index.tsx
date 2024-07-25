@@ -115,7 +115,7 @@ const Carousel = ({
 				</div>
 			)}
 			{headingDesktop && (
-				<div className="absolute bottom-0 left-0 hidden lg:block lg:w-3/5">
+				<div className="absolute bottom-0 left-0 hidden pt-4 lg:block lg:w-3/5">
 					{headingDesktop}
 				</div>
 			)}
