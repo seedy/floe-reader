@@ -58,6 +58,9 @@ module.exports = {
 			height: {
 				sideLogo: "clamp(5rem, 16vw, 10rem)",
 			},
+			aspectRatio: {
+				social: "9 / 16",
+			},
 			gap: {
 				authorBlock: "clamp(1rem, 2vw, 1.25rem)",
 			},

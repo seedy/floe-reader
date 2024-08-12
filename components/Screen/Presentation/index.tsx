@@ -3,13 +3,19 @@ import H3 from "components/Typography/H3";
 import P from "components/Typography/P";
 import SpanUnderline from "components/Typography/SpanUnderline";
 import Subtitle from "components/Typography/Subtitle";
+import cn from "helpers/cn";
 import presentation1 from "public/presentation-1.jpg";
 import presentation2 from "public/presentation-2.jpg";
 import presentation3 from "public/presentation-3.jpg";
 
 const ScreenPresentation = () => {
 	return (
-		<div className="relative grid grid-cols-[auto_1fr]">
+		<div
+			className={cn(
+				"relative mt-6 lg:grid lg:grid-cols-[auto_1fr]",
+				"mb-[50vh]",
+			)}
+		>
 			<Content
 				title="Je rédige et corrige ton contenu web"
 				longSubtitle={
@@ -146,6 +152,7 @@ const ScreenPresentation = () => {
 				</div>
 			</Content>
 			<Content
+				className="mb-0"
 				title={
 					<>
 						J&apos;ai imaginé, enregistré et monté 2 podcasts… bientôt le tien ?

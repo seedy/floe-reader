@@ -14,6 +14,7 @@ interface ContentProps
 	children: ReactNode;
 	catcher: ReactNode;
 	longCatcher: ReactNode;
+	className?: string;
 }
 const Content = ({
 	title,
@@ -24,14 +25,16 @@ const Content = ({
 	longCatcher,
 	src,
 	alt,
+	className,
 }: ContentProps) => (
 	<>
 		<ParallaxAvatar src={src} alt={alt} />
 		<div
 			className={cn(
-				"mb-4 mt-6 flex",
+				"mb-[50vh] flex",
 				"mx-5 flex-col",
 				"lg:mx-10 lg:flex-row lg:justify-start lg:gap-10",
+				className,
 			)}
 		>
 			<div className="mb-5 flex flex-col gap-10 lg:gap-[3.375rem]">
