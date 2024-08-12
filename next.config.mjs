@@ -4,17 +4,18 @@ import { withHighlightConfig } from "@highlight-run/next/config";
 import NextBundleAnalyzer from "@next/bundle-analyzer";
 import nextBuildId from "next-build-id";
 import "./env.mjs";
-
 const withBundleAnalyzer = NextBundleAnalyzer({
 	enabled: process.env.ANALYZE === "true",
 });
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	generateBuildId: () => nextBuildId({ dir: __dirname }),
+	generateBuildId: () =>
+		nextBuildId({
+			dir: __dirname,
+		}),
 	reactStrictMode: true,
 	swcMinify: true,
 	experimental: {
@@ -22,5 +23,4 @@ const nextConfig = {
 	},
 	productionBrowserSourceMaps: true,
 };
-
 export default withBundleAnalyzer(withHighlightConfig(nextConfig));
