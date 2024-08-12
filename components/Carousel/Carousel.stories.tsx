@@ -1,14 +1,14 @@
+import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
-import type { StoryFn, Meta } from "@storybook/react";
 
-import Carousel from ".";
+import Slide from "components/Slide";
+import Socials from "components/Socials";
+import H1 from "components/Typography/H1";
+import H2 from "components/Typography/H2";
 import landing1 from "public/landing-1.jpg";
 import landing2 from "public/landing-2.jpg";
 import landing3 from "public/landing-3.jpg";
-import H1 from "components/Typography/H1";
-import Slide from "components/Slide";
-import H2 from "components/Typography/H2";
-import Socials from "components/Socials";
+import Carousel from ".";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -61,7 +61,7 @@ const Template: StoryFn<typeof Carousel> = (args) => {
 							chaleureux
 						</H2>
 					}
-					heading={<H1>Des podcasts qui feront résonner ton message</H1>}
+					heading={<H1>Des interviews qui feront résonner ton message</H1>}
 					src={landing3}
 					fill
 					alt=""

@@ -11,6 +11,7 @@ import {
 	Children,
 	type MouseEvent,
 	type ReactNode,
+	useCallback,
 	useMemo,
 	useState,
 } from "react";
@@ -56,22 +57,28 @@ const Carousel = ({
 		[keenSliderCarousel(delay)],
 	);
 
-	const onPause = (e: MouseEvent) => {
-		e.stopPropagation();
-		setPlaying(false);
-		(instanceRef.current?.emit as any)("stopped");
-	};
+	const onPause = useCallback(
+		(e: MouseEvent) => {
+			e.stopPropagation();
+			setPlaying(false);
+			(instanceRef.current?.emit as any)("stopped");
+		},
+		[instanceRef],
+	);
 
-	const onResume = (e: MouseEvent) => {
-		e.stopPropagation();
-		setPlaying(true);
-		(instanceRef.current?.emit as any)("resumed");
-	};
+	const onResume = useCallback(
+		(e: MouseEvent) => {
+			e.stopPropagation();
+			setPlaying(true);
+			(instanceRef.current?.emit as any)("resumed");
+		},
+		[instanceRef],
+	);
 
 	return (
 		<div className={cn("relative flex flex-col items-center", className)}>
 			<CarouselMask
-				className={cn("relative size-full overflow-hidden", "keen-slider")}
+				className={cn("relative overflow-hidden", "keen-slider")}
 				ref={sliderRef}
 			>
 				<CarouselPlayPause
@@ -92,6 +99,7 @@ const Carousel = ({
 				<div
 					className={cn(
 						"absolute bottom-4 left-0 z-10 flex gap-2 px-2",
+						"md:bottom-1 md:left-10",
 						"lg:bottom-auto lg:left-auto lg:right-11 lg:top-0 lg:px-6",
 					)}
 				>
@@ -107,7 +115,7 @@ const Carousel = ({
 				</div>
 			)}
 			{headingDesktop && (
-				<div className="absolute bottom-0 left-0 hidden lg:block lg:w-3/5">
+				<div className="absolute bottom-0 left-0 hidden pt-4 lg:block lg:w-3/5">
 					{headingDesktop}
 				</div>
 			)}

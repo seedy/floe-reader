@@ -2,6 +2,7 @@ import Banner from "components/Banner";
 import ButtonLink from "components/Button/Link";
 import Carousel from "components/Carousel";
 import Logo from "components/Logo";
+import ParallaxLeave from "components/ParallaxLeave";
 import Screen from "components/Screen";
 import ResponsiveHeading from "components/Screen/Landing/ResponsiveHeading";
 import ScrollHint from "components/ScrollHint";
@@ -16,14 +17,15 @@ import landing2 from "public/landing-2.jpg";
 import landing3 from "public/landing-3.jpg";
 import logoSide from "public/logo-side.svg";
 
-const hintClassName =
-	"animate-appear self-end opacity-0 animation-delay-[2000ms] lg:absolute left-1/2 -translate-x-1/2";
+const hintClassName = "animate-appear opacity-0 animation-delay-[2000ms]";
+
+const TAGS = ["Montage", "Interview", "Podcast", "Photo", "Vidéo"];
 
 const ScreenLanding = () => {
 	return (
-		<Screen>
+		<Screen className="lg:pt-6">
 			<Carousel
-				className="lg:mx-10 lg:mt-[5.5rem]"
+				className="lg:mx-10"
 				headingDesktop={
 					<div className="flex grow flex-col items-center gap-2.5 text-center">
 						<H2 color="secondary">
@@ -43,7 +45,7 @@ const ScreenLanding = () => {
 					heading={
 						<H1 color="white">
 							<ResponsiveHeading
-								desktop="Des podcasts qui feront résonner ton message"
+								desktop="Des interviews qui feront résonner ton message"
 								mobile="Réalisons les contenus qui feront parler de toi"
 							/>
 						</H1>
@@ -63,7 +65,7 @@ const ScreenLanding = () => {
 					heading={
 						<H1 color="white">
 							<ResponsiveHeading
-								desktop="Des podcasts qui feront résonner ton message"
+								desktop="Des interviews qui feront résonner ton message"
 								mobile="Je crée une expérience unique avec du contenu percutant et chaleureux"
 							/>
 						</H1>
@@ -81,7 +83,9 @@ const ScreenLanding = () => {
 						</H2>
 					}
 					heading={
-						<H1 color="white">Des podcasts qui feront résonner ton message</H1>
+						<H1 color="white">
+							Des interviews qui feront résonner ton message
+						</H1>
 					}
 					src={landing3}
 					priority
@@ -97,18 +101,21 @@ const ScreenLanding = () => {
 			>
 				<div className="flex flex-col gap-authorBlock">
 					<H2 align="left">Floé Gaubert</H2>
-					<H2 align="left">Rédactrice & Podcasteuse</H2>
+					<H2 align="left">Monteuse & Expérimentaliste</H2>
 				</div>
-				<ScrollHint
-					className={cn("hidden lg:inline-flex", hintClassName)}
-					href="#"
-				/>
+				<div
+					className={cn(
+						"hidden lg:inline-flex",
+						"left-1/2 -translate-x-1/2 lg:absolute",
+					)}
+				>
+					<ParallaxLeave>
+						<ScrollHint className={hintClassName} href="#" />
+					</ParallaxLeave>
+				</div>
 				<Logo className="h-sideLogo w-auto" alt="" priority src={logoSide} />
 			</div>
-			<Banner
-				className="lg:hidden"
-				tags={["Interview", "Rédaction", "Podcast", "Photo", "Vidéo"]}
-			/>
+			<Banner className="lg:hidden" tags={TAGS} />
 
 			<div className={cn("mx-4 my-0 flex flex-col items-center", "lg:hidden")}>
 				<Socials />
@@ -119,12 +126,11 @@ const ScreenLanding = () => {
 				>
 					Je prends rendez-vous
 				</ButtonLink>
-				<ScrollHint className={hintClassName} href="#" />
+				<ParallaxLeave className="self-end">
+					<ScrollHint className={hintClassName} href="#" />
+				</ParallaxLeave>
 			</div>
-			<Banner
-				className="hidden lg:mt-10 lg:flex"
-				tags={["Interview", "Rédaction", "Podcast", "Photo", "Vidéo"]}
-			/>
+			<Banner className="hidden lg:mt-10 lg:flex" tags={TAGS} />
 		</Screen>
 	);
 };

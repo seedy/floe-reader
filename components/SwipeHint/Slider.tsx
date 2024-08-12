@@ -1,9 +1,9 @@
 import { cx } from "class-variance-authority";
-import { useSliderLoadedContext } from "components/Context/Slider/Loaded";
+import { useSliderOverflowingContext } from "components/Context/Slider/Overflowing";
 import SwipeHint from "components/SwipeHint";
 
 const SwipeHintSlider = () => {
-	const loaded = useSliderLoadedContext();
+	const loaded = useSliderOverflowingContext();
 
 	return (
 		<SwipeHint

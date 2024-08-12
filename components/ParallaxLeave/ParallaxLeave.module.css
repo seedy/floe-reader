@@ -1,0 +1,19 @@
+@keyframes parallaxLeave {
+  to {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+
+.root {
+  animation: parallaxLeave linear forwards;
+  animation-timeline: view();
+  animation-range: contain 0% exit 0%;
+  margin-bottom: 100px;
+}
+
+@media (prefers-reduced-motion) {
+  .root {
+    animation: none;
+  }
+}

@@ -17,7 +17,7 @@ const Banner = ({ tags, className }: BannerProps) => {
 	return (
 		<div
 			className={cn(
-				"m-0 flex min-h-[3.75rem] w-full items-center overflow-hidden bg-navbar px-4 py-0",
+				"m-0 flex min-h-[3.75rem] w-4/5 items-center overflow-hidden bg-navbar p-0",
 				styles.root,
 				className,
 			)}
