@@ -11,10 +11,7 @@ import presentation3 from "public/presentation-3.jpg";
 const ScreenPresentation = () => {
 	return (
 		<div
-			className={cn(
-				"relative mt-6 lg:grid lg:grid-cols-[auto_1fr]",
-				"mb-[50vh]",
-			)}
+			className={cn("relative mt-6 lg:grid lg:grid-cols-[auto_1fr]", "mb-80")}
 		>
 			<Content
 				title="Je rédige et corrige ton contenu web"

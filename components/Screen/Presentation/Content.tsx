@@ -31,7 +31,7 @@ const Content = ({
 		<ParallaxAvatar src={src} alt={alt} />
 		<div
 			className={cn(
-				"mb-[50vh] flex",
+				"mb-80 flex",
 				"mx-5 flex-col",
 				"lg:mx-10 lg:flex-row lg:justify-start lg:gap-10",
 				className,
