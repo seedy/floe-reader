@@ -2,12 +2,13 @@ import {
 	GlobeIcon,
 	InstagramLogoIcon,
 	LinkedInLogoIcon,
+	VideoIcon,
 } from "@radix-ui/react-icons";
 import IconButtonLink from "components/IconButton/Link";
-import { INSTAGRAM, LINKEDIN, PORTFOLIO } from "constants/links";
+import { INSTAGRAM, LINKEDIN, PORTFOLIO, YOUTUBE } from "constants/links";
 import cn from "helpers/cn";
 
-type Source = "instagram" | "linkedin" | "portfolio";
+type Source = "instagram" | "linkedin" | "portfolio" | "youtube";
 
 interface SocialsProps {
 	className?: string;
@@ -15,7 +16,7 @@ interface SocialsProps {
 }
 const Socials = ({
 	className,
-	sources = { instagram: true, linkedin: true, portfolio: true },
+	sources = { instagram: true, linkedin: true, portfolio: true, youtube: true },
 }: SocialsProps) => {
 	if (Object.keys(sources).length === 0) {
 		return null;
@@ -35,6 +36,11 @@ const Socials = ({
 			{sources.portfolio && (
 				<IconButtonLink href={PORTFOLIO} target="_blank" size="small">
 					<GlobeIcon />
+				</IconButtonLink>
+			)}
+			{sources.youtube && (
+				<IconButtonLink href={YOUTUBE} target="_blank" size="small">
+					<VideoIcon />
 				</IconButtonLink>
 			)}
 		</div>
