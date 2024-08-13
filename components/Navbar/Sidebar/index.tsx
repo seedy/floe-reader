@@ -13,8 +13,9 @@ import IconButton from "components/IconButton";
 import IconButtonLink from "components/IconButton/Link";
 import Logo from "components/Logo";
 import Share from "components/Share";
+import Socials from "components/Socials";
 import Handwritten from "components/Typography/Handwritten";
-import { CALENDLY } from "constants/links";
+import { CALENDLY, PORTFOLIO, SERVICES } from "constants/links";
 import { env } from "env.mjs";
 import cbcLogo from "public/CBC_LOGO_48.svg";
 import { ReactNode } from "react";
@@ -32,16 +33,21 @@ const Sidebar = ({ children }: SidebarProps) => {
 					<div className="mb-auto flex w-full items-center justify-end px-5">
 						{env.NEXT_PUBLIC_DISPLAY_SHARE === true && <Share />}
 					</div>
-					<div className="flex flex-col items-start px-5">
-						<ButtonLink variant="link" href="#intro">
-							Intro
+					<div className="flex flex-col items-start gap-4 px-5">
+						<ButtonLink variant="link" href={SERVICES}>
+							Prestations
 						</ButtonLink>
-						<ButtonLink variant="link" href="#presentation">
-							Présentation
-						</ButtonLink>
-						<ButtonLink variant="link" href="#portfolio">
+						<ButtonLink
+							variant="link"
+							href={PORTFOLIO}
+							external
+							target="_blank"
+						>
 							Portfolio
 						</ButtonLink>
+						<div className="flex w-full justify-center py-5">
+							<Socials />
+						</div>
 					</div>
 					<div className="flex max-h-16 grow items-center justify-between px-5">
 						<div className="flex items-center gap-2">

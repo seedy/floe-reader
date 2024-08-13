@@ -1,17 +1,13 @@
 "use client";
 
-import {
-	CalendarIcon,
-	EnvelopeClosedIcon,
-	HamburgerMenuIcon,
-} from "@radix-ui/react-icons";
+import { CalendarIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import ButtonLink from "components/Button/Link";
 import IconButton from "components/IconButton";
 import IconButtonLink from "components/IconButton/Link";
 import LogoFull from "components/Logo/Full";
 import Sidebar from "components/Navbar/Sidebar";
 import useAnimateOnScroll from "components/Navbar/useAnimateOnScroll";
-import { CALENDLY } from "constants/links";
+import { CALENDLY, PORTFOLIO, SERVICES } from "constants/links";
 import cn from "helpers/cn";
 import {
 	ComponentProps,
@@ -41,27 +37,27 @@ const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 			>
 				<div className="flex size-full items-center justify-between bg-navbar px-5 py-0">
 					<LogoFull />
-					<div className={"hidden gap-6 lg:flex"}>
-						<ButtonLink variant="link" href="#intro">
-							Intro
+					<div className="hidden gap-6 lg:flex">
+						<ButtonLink variant="link" href={SERVICES}>
+							Prestations
 						</ButtonLink>
-						<ButtonLink variant="link" href="#presentation">
-							Présentation
-						</ButtonLink>
-						<ButtonLink variant="link" href="#portfolio">
+						<ButtonLink
+							variant="link"
+							href={PORTFOLIO}
+							external
+							target="_blank"
+						>
 							Portfolio
 						</ButtonLink>
 					</div>
-					<div className="flex items-center gap-5">
+					<div className="hidden lg:flex">
+						<ButtonLink variant="contained" href={CALENDLY}>
+							Je prends rendez-vous
+						</ButtonLink>
+					</div>
+					<div className="flex items-center gap-4 lg:hidden">
 						<IconButtonLink size="small" href={CALENDLY}>
 							<CalendarIcon />
-						</IconButtonLink>
-						<IconButtonLink
-							size="small"
-							href="#email"
-							className="hidden lg:inline-flex"
-						>
-							<EnvelopeClosedIcon />
 						</IconButtonLink>
 						<Sidebar>
 							<IconButton size="small">
