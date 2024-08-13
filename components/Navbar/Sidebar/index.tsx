@@ -15,6 +15,7 @@ import Logo from "components/Logo";
 import Share from "components/Share";
 import Handwritten from "components/Typography/Handwritten";
 import { CALENDLY } from "constants/links";
+import { env } from "env.mjs";
 import cbcLogo from "public/CBC_LOGO_48.svg";
 import { ReactNode } from "react";
 
@@ -29,7 +30,7 @@ const Sidebar = ({ children }: SidebarProps) => {
 				<Overlay className="fixed inset-0 z-[10000] bg-background" />
 				<Content className="fixed inset-0 z-[10000] flex shrink-0 flex-col bg-navbar">
 					<div className="mb-auto flex w-full items-center justify-end px-5">
-						<Share />
+						{env.NEXT_PUBLIC_DISPLAY_SHARE === true && <Share />}
 					</div>
 					<div className="flex flex-col items-start px-5">
 						<ButtonLink variant="link" href="#intro">
