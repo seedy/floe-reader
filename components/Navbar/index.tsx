@@ -8,13 +8,11 @@ import {
 import ButtonLink from "components/Button/Link";
 import IconButton from "components/IconButton";
 import IconButtonLink from "components/IconButton/Link";
-import Logo from "components/Logo";
+import LogoFull from "components/Logo/Full";
 import Sidebar from "components/Navbar/Sidebar";
 import useAnimateOnScroll from "components/Navbar/useAnimateOnScroll";
-import Handwritten from "components/Typography/Handwritten";
 import { CALENDLY } from "constants/links";
 import cn from "helpers/cn";
-import cbcLogo from "public/CBC_LOGO_48.svg";
 import {
 	ComponentProps,
 	ElementRef,
@@ -42,10 +40,7 @@ const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 				{...props}
 			>
 				<div className="flex size-full items-center justify-between bg-navbar px-5 py-0">
-					<div className="flex items-center gap-2">
-						<Logo src={cbcLogo} alt="CBenCorrec'" />
-						<Handwritten>Floé Gaubert</Handwritten>
-					</div>
+					<LogoFull />
 					<div className={"hidden gap-6 lg:flex"}>
 						<ButtonLink variant="link" href="#intro">
 							Intro
