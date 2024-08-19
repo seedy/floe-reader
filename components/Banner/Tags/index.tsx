@@ -1,9 +1,9 @@
-import styles from "components/Banner/Banner.module.scss";
 import BannerScrollAnimation from "components/Banner/ScrollAnimation";
+import styles from "components/Banner/Tags/Tags.module.scss";
 import P from "components/Typography/P";
 import cn from "helpers/cn";
 
-interface BannerProps {
+interface BannerTagsProps {
 	tags: string[];
 	className?: string;
 }
@@ -13,7 +13,7 @@ const liAfterClassName =
 	"after:inline after:font-[inherit] after:text-body after:font-normal after:text-text after:content-['•']";
 const liMotionReduceClassName = "motion-reduce:hidden";
 
-const Banner = ({ tags, className }: BannerProps) => {
+const BannerTags = ({ tags, className }: BannerTagsProps) => {
 	return (
 		<div
 			className={cn(
@@ -58,4 +58,4 @@ const Banner = ({ tags, className }: BannerProps) => {
 	);
 };
 
-export default Banner;
+export default BannerTags;
