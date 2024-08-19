@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const buttonVariants = cva(
-	"m-0 inline-flex h-[2.125rem] w-full min-w-20 max-w-80 items-center justify-center rounded border-none bg-none px-6 py-1 text-center font-[inherit] text-button font-bold uppercase outline outline-[0.125rem] outline-transparent focus-visible:outline-[0.375rem] lg:w-auto lg:max-w-none lg:grow-0",
+	"m-0 inline-flex h-[2.125rem] min-w-20 max-w-80 items-center justify-center rounded border-none bg-none px-6 py-1 text-center font-[inherit] text-button font-bold uppercase outline outline-[0.125rem] outline-transparent focus-visible:outline-[0.375rem] lg:w-auto lg:max-w-none lg:grow-0",
 	{
 		variants: {
 			variant: {
@@ -12,24 +12,27 @@ export const buttonVariants = cva(
 					"outline outline-[0.125rem] outline-transparent hover:bg-white focus:bg-white focus:shadow-focusLarge focus-visible:shadow-focusLarge active:bg-white active:shadow-activeLarge",
 				],
 				link: [
-					"normal-case outline-transparent focus:underline focus-visible:underline active:text-opacity-70 active:underline",
+					"gap-2 normal-case focus:underline focus-visible:underline active:text-opacity-70 active:underline",
 				],
 			},
 			color: {
 				primary: ["outline-outlinePrimary"],
 				secondary: ["outline-outlineSecondary"],
 			},
+			full: {
+				true: ["w-full"],
+			},
 		},
 		compoundVariants: [
 			{
 				variant: "contained",
 				color: "primary",
-				className: "bg-primary",
+				className: "bg-primary outline-transparent",
 			},
 			{
 				variant: "contained",
 				color: "secondary",
-				className: "bg-secondaryBackground",
+				className: "bg-secondaryBackground outline-transparent",
 			},
 			{
 				variant: "outlined",
