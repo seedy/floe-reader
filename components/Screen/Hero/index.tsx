@@ -6,7 +6,7 @@ import H2 from "components/Typography/H2";
 import H3 from "components/Typography/H3";
 import P from "components/Typography/P";
 import SpanUnderline from "components/Typography/SpanUnderline";
-import { CALENDLY } from "constants/links";
+import { CALENDLY, SERVICES } from "constants/links";
 import cn from "helpers/cn";
 import eidLabLogo from "public/eidlab-logo.webp";
 import kinobaLogo from "public/kinoba-logo.svg";
@@ -69,7 +69,7 @@ const ScreenHero = () => {
 					</div>
 				</div>
 			</Screen>
-			<Screen>
+			<Screen id={SERVICES.replace("#", "")}>
 				<TabAndTitle />
 			</Screen>
 		</>
