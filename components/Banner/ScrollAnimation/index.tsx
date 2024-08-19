@@ -1,6 +1,6 @@
 "use client";
 import styles from "components/Banner/ScrollAnimation/ScrollAnimation.module.scss";
-import useScrollDirection from "components/Banner/ScrollAnimation/useScrollDirection";
+import useScrollDirection from "components/Banner/useScrollDirection";
 import cn from "helpers/cn";
 import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
 import { ReactNode } from "react";
