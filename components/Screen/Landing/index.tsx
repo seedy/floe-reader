@@ -1,6 +1,7 @@
 import BannerTags from "components/Banner/Tags";
 import ButtonLink from "components/Button/Link";
 import Carousel from "components/Carousel";
+import Image from "components/Image";
 import Logo from "components/Logo";
 import ParallaxLeave from "components/ParallaxLeave";
 import Screen from "components/Screen";
@@ -10,8 +11,9 @@ import Slide from "components/Slide";
 import Socials from "components/Socials";
 import H1 from "components/Typography/H1";
 import H2 from "components/Typography/H2";
-import { CALENDLY } from "constants/links";
+import { CALENDLY, PORTFOLIO } from "constants/links";
 import cn from "helpers/cn";
+import floeDetouree from "public/Floe-tournage-detouree.png";
 import landing1 from "public/landing-1.jpg";
 import landing2 from "public/landing-2.jpg";
 import landing3 from "public/landing-3.jpg";
@@ -130,7 +132,26 @@ const ScreenLanding = () => {
 					<ScrollHint className={hintClassName} href="#" />
 				</ParallaxLeave>
 			</div>
+			{/* Banner Tags + Image */}
 			<BannerTags className="hidden lg:mt-10 lg:flex" tags={TAGS} />
+			<div
+				className={cn(
+					"relative flex items-center justify-center gap-10",
+					"mt-10 lg:-mt-4",
+					"flex-col lg:flex-row",
+					"bg-navbar from-navbar lg:bg-transparent lg:bg-gradient-to-t",
+					"pt-5 lg:pt-0",
+					"lg:mx-10 lg:rounded-quote",
+				)}
+			>
+				<div className="flex flex-col gap-8">
+					<H2>Tu souhaites voir mes réalisations ?</H2>
+					<ButtonLink variant="link" href={PORTFOLIO} target="_blank">
+						J&apos;explore le portfolio
+					</ButtonLink>
+				</div>
+				<Image placeholder="empty" height={293} src={floeDetouree} alt="" />
+			</div>
 		</Screen>
 	);
 };
