@@ -1,3 +1,4 @@
+import BannerMagnifier from "components/Banner/Magnifier";
 import ButtonLink from "components/Button/Link";
 import Screen from "components/Screen";
 import Content from "components/Screen/Presentation/Content";
@@ -7,13 +8,16 @@ import P from "components/Typography/P";
 import SpanUnderline from "components/Typography/SpanUnderline";
 import Subtitle from "components/Typography/Subtitle";
 import { PORTFOLIO } from "constants/links";
+import djirs3 from "public/dji-rs3.png";
+import fujixs10 from "public/fuji-xs10.png";
 import presentationAudiovisuel from "public/presentation-audiovisuel.jpg";
 import presentationPodcast from "public/presentation-podcast.jpg";
 import presentationVideo from "public/presentation-video.jpg";
+import zoomh5 from "public/zoom-h5.png";
 
 const ScreenPresentation = () => {
 	return (
-		<Screen>
+		<Screen className="flex flex-col gap-16 lg:gap-32">
 			<div className="lg:grid lg:grid-cols-[auto_1fr]">
 				<Content
 					title="Je crée du contenu photo et vidéo pour améliorer ta visibilité"
@@ -296,6 +300,28 @@ const ScreenPresentation = () => {
 						</div>
 					</div>
 				</Content>
+			</div>
+			<div className="flex flex-col items-center gap-8">
+				<H2>Mon matériel</H2>
+				<BannerMagnifier
+					items={[
+						{
+							src: fujixs10,
+							label: "Fujifilm XS-10",
+							href: "https://fujifilm-x.com/fr-fr/products/cameras/x-s10/",
+						},
+						{
+							src: zoomh5,
+							label: "Zoom H5",
+							href: "https://www.zoom-europe.com/en/handy-recorders/zoom-h5",
+						},
+						{
+							src: djirs3,
+							label: "DJI RS-3",
+							href: "https://www.dji.com/fr/rs-3",
+						},
+					]}
+				/>
 			</div>
 		</Screen>
 	);

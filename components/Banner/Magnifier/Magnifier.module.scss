@@ -1,0 +1,22 @@
+.root {
+  --content-gap: 1.5rem;
+  @keyframes banner {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - var(--content-gap) / 2));
+    }
+  }
+  gap: var(--content-gap);
+  animation: banner 6s linear infinite both;
+  &.direction-backward {
+    animation-direction: reverse;
+  }
+}
+
+@media (min-width: 1024px) {
+  .root {
+    animation: none;
+  }
+}

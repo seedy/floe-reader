@@ -1,4 +1,4 @@
-import Banner from "components/Banner";
+import BannerTags from "components/Banner/Tags";
 import ButtonLink from "components/Button/Link";
 import Carousel from "components/Carousel";
 import Logo from "components/Logo";
@@ -115,7 +115,7 @@ const ScreenLanding = () => {
 				</div>
 				<Logo className="h-sideLogo w-auto" alt="" priority src={logoSide} />
 			</div>
-			<Banner className="lg:hidden" tags={TAGS} />
+			<BannerTags className="lg:hidden" tags={TAGS} />
 
 			<div className={cn("mx-4 my-0 flex flex-col items-center", "lg:hidden")}>
 				<Socials />
@@ -130,7 +130,7 @@ const ScreenLanding = () => {
 					<ScrollHint className={hintClassName} href="#" />
 				</ParallaxLeave>
 			</div>
-			<Banner className="hidden lg:mt-10 lg:flex" tags={TAGS} />
+			<BannerTags className="hidden lg:mt-10 lg:flex" tags={TAGS} />
 		</Screen>
 	);
 };
