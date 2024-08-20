@@ -1,21 +1,20 @@
+import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
-import type { StoryFn, Meta } from "@storybook/react";
-
-import Banner from ".";
+import BannerTags from ".";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-	title: "Components/Banner",
-	component: Banner,
+	title: "Components/Banner/Tags",
+	component: BannerTags,
 	// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 	argTypes: {},
-} as Meta<typeof Banner>;
+} as Meta<typeof BannerTags>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof Banner> = (args) => (
+const Template: StoryFn<typeof BannerTags> = (args) => (
 	<>
 		<div style={{ height: "1000px" }} />
-		<Banner {...args} />
+		<BannerTags {...args} />
 		<div style={{ height: "1000px" }} />
 	</>
 );
