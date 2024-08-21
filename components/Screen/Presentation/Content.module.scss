@@ -1,0 +1,35 @@
+@media (min-width: 1024px) {
+  .root {
+    --parallax-factor: 0.625rem;
+    @keyframes reveal {
+      0% {
+        opacity: 0;
+        transform: translateY(var(--parallax-factor));
+      }
+      20% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      80% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(0);
+      }
+    }
+    & * {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
+  }
+
+  @media (prefers-reduced-motion) {
+    .root {
+      --parallax-factor: 0;
+    }
+  }
+}
