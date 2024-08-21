@@ -8,7 +8,7 @@
       transform: translateX(calc(-50% - var(--content-gap) - 0.5ch));
     }
   }
-  gap: var(--content-gap);
+  column-gap: var(--content-gap);
   animation: banner 10s linear infinite both;
   &.direction-backward {
     animation-direction: reverse;
@@ -18,5 +18,6 @@
 @media (prefers-reduced-motion) {
   .root {
     animation: none;
+    column-gap: 3vw;
   }
 }

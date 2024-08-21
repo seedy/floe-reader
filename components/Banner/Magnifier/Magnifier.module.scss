@@ -20,3 +20,9 @@
     animation: none;
   }
 }
+
+@media (prefers-reduced-motion) {
+  .root {
+    animation: none;
+  }
+}
