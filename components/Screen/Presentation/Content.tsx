@@ -1,5 +1,6 @@
 import Avatar from "components/Avatar";
 import ParallaxAvatar from "components/Avatar/Parallax";
+import styles from "components/Screen/Presentation/Content.module.scss";
 import H2 from "components/Typography/H2";
 import P from "components/Typography/P";
 import Subtitle from "components/Typography/Subtitle";
@@ -37,7 +38,11 @@ const Content = ({
 				className,
 			)}
 		>
-			<div className="mb-5 flex flex-col gap-10 lg:gap-[3.375rem]">
+			<div
+				className={
+					(cn("mb-5 flex flex-col gap-10 lg:gap-[3.375rem]"), styles.root)
+				}
+			>
 				<H2>{title}</H2>
 				<P className="hidden lg:block">{longSubtitle}</P>
 				<P className="lg:hidden">{subtitle}</P>
