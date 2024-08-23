@@ -146,11 +146,11 @@ const ScreenLanding = () => {
 			>
 				<div className="flex flex-col gap-8">
 					<H2>Tu souhaites voir mes réalisations ?</H2>
-					<ButtonLink variant="link" href={PORTFOLIO} target="_blank">
+					<ButtonLink variant="contained" href={PORTFOLIO} target="_blank">
 						J&apos;explore le portfolio
 					</ButtonLink>
 				</div>
-				<Image placeholder="empty" height={293} src={floeDetouree} alt="" />
+				<Image placeholder="empty" height={393} src={floeDetouree} alt="" />
 			</div>
 		</Screen>
 	);

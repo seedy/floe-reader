@@ -10,7 +10,7 @@ import "./globals.css";
 const lora = Lora({ subsets: ["latin"], style: ["normal"] });
 
 export const metadata: Metadata = {
-	title: "Floé Gaubert - Conceptrice rédactrice",
+	title: "Floé Gaubert - Monteuse & Expérimentaliste",
 	description: "Site vitrine",
 };
 
