@@ -11,6 +11,7 @@ module.exports = {
 			current: "currentColor",
 			transparent: "transparent",
 			white: "hsl(0, 0%, 100%)",
+			whiteHint: "hsla(0, 0%, 100%, 0.8)",
 			black: "hsl(0, 0%, 0%)",
 			blackAlpha7: "hsla(0, 0%, 0%, 0.7)",
 			blackAlpha26: "hsla(0, 0%, 0%, 0.26)",
