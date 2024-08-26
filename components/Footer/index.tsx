@@ -37,7 +37,7 @@ const Footer = () => (
 				<Link href="/privacy" passHref legacyBehavior>
 					<ButtonLink variant="link">Confidentialité</ButtonLink>
 				</Link>
-				<Link href="/sitemap" passHref legacyBehavior>
+				<Link href="/sitemap.xml" passHref legacyBehavior>
 					<ButtonLink variant="link">Plan du site</ButtonLink>
 				</Link>
 			</div>
