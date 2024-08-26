@@ -21,17 +21,7 @@ const ScreenPresentation = () => {
 			<div className="lg:grid lg:grid-cols-[auto_1fr]">
 				<Content
 					title="Je crée du contenu photo et vidéo pour améliorer ta visibilité"
-					longSubtitle={
-						<>
-							Autodidacte et proactive, je me suis formée aux domaines de la
-							photo et du montage vidéo.
-							<br />
-							<span className="font-bold">
-								Retranscrire les émotions, partager les expériences, capturer
-								l&apos;instant !
-							</span>
-						</>
-					}
+					longSubtitle={<></>}
 					subtitle={
 						<>
 							Je souhaite mettre en avant des projets novateurs et inspirants
