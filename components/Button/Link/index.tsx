@@ -1,12 +1,13 @@
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
+import { VariantProps } from "class-variance-authority";
 import { buttonVariants } from "components/Button/variants";
 import cn from "helpers/cn";
 import { ComponentProps, ElementRef, ReactNode, forwardRef } from "react";
 
-interface ButtonLinkProps extends ComponentProps<"a"> {
+interface ButtonLinkProps
+	extends Omit<ComponentProps<"a">, "color">,
+		VariantProps<typeof buttonVariants> {
 	children?: ReactNode;
-	variant?: "contained" | "outlined" | "link";
-	color?: "primary" | "secondary";
 	external?: boolean;
 }
 const ButtonLink = forwardRef<ElementRef<"a">, ButtonLinkProps>(
