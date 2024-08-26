@@ -36,7 +36,7 @@ module.exports = {
 			body: ["clamp(1.125rem, 1.5vw, 1.25rem)", 1.5],
 			button: ["clamp(1rem, 1.5vw, 1.125rem)", 1.5],
 			handwritten: ["clamp(2rem, 4vw, 2.5rem)", 1.5],
-			heading1: ["clamp(1.75rem, 3vw, 2rem)", 1.5],
+			heading1: ["clamp(2rem, 3vw, 2.5rem)", 1.5],
 			heading2: ["clamp(1.25rem, 2vw, 1.5rem)", 1.5],
 			heading3: ["clamp(1.25rem, 2vw, 1.5rem)", 1.5],
 			subtitle: ["clamp(1rem, 1.5vw, 1.125rem)", 1.5],
