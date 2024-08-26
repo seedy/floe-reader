@@ -16,9 +16,12 @@ interface HandwrittenProps extends VariantProps<typeof headingVariants> {
 }
 
 const Handwritten = forwardRef<ElementRef<"h1">, HandwrittenProps>(
-	({ children, className, color, align, ...rest }, forwardedRef) => {
+	(
+		{ children, className, color, align, variant = "handwritten", ...rest },
+		forwardedRef,
+	) => {
 		const headingVariantClassName = headingVariants({
-			variant: "handwritten",
+			variant,
 			color,
 			align,
 		});
