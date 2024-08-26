@@ -32,7 +32,7 @@ const Footer = () => (
 				)}
 			>
 				<Link href="/legal" passHref legacyBehavior>
-					<ButtonLink variant="link">Prestations</ButtonLink>
+					<ButtonLink variant="link">Mentions légales</ButtonLink>
 				</Link>
 				<Link href="/privacy" passHref legacyBehavior>
 					<ButtonLink variant="link">Confidentialité</ButtonLink>
