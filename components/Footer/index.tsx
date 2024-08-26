@@ -7,7 +7,7 @@ import cn from "helpers/cn";
 import Link from "next/link";
 
 const Footer = () => (
-	<div
+	<footer
 		className={cn(
 			"flex gap-4 bg-navbar p-5",
 			"items-center lg:items-start",
@@ -44,7 +44,7 @@ const Footer = () => (
 		</div>
 
 		<LogoFull />
-	</div>
+	</footer>
 );
 
 export default Footer;
