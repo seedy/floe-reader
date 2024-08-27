@@ -21,7 +21,7 @@ export const textVariants = cva(
 export const headingVariants = cva("m-0 block font-[inherit]", {
 	variants: {
 		variant: {
-			h1: ["text-heading1 font-bold"],
+			h1: ["text-heading1 font-regular"],
 			h2: ["text-heading2 font-semibold"],
 			h3: ["text-heading3 font-medium"],
 			subtitle: ["inline-block text-subtitle font-bold"],

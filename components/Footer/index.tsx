@@ -7,7 +7,7 @@ import cn from "helpers/cn";
 import Link from "next/link";
 
 const Footer = () => (
-	<div
+	<footer
 		className={cn(
 			"flex gap-4 bg-navbar p-5",
 			"items-center lg:items-start",
@@ -20,7 +20,7 @@ const Footer = () => (
 				<H2 align="left">Floé Gaubert</H2>
 				<H2 align="left">Monteuse & Expérimentaliste</H2>
 				<P className="hidden lg:mt-2 lg:block">
-					Tes vidéos sur-mesure pour captiver ton audience
+					Réalisons les contenus qui feront parler de toi
 				</P>
 			</div>
 			<Socials />
@@ -44,7 +44,7 @@ const Footer = () => (
 		</div>
 
 		<LogoFull />
-	</div>
+	</footer>
 );
 
 export default Footer;

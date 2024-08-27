@@ -18,6 +18,7 @@ export const buttonVariants = cva(
 			color: {
 				primary: ["outline-outlinePrimary"],
 				secondary: ["outline-outlineSecondary"],
+				white: ["outline-white"],
 			},
 			full: {
 				true: ["w-full"],
@@ -35,6 +36,11 @@ export const buttonVariants = cva(
 				className: "bg-secondaryBackground outline-transparent",
 			},
 			{
+				variant: "contained",
+				color: "white",
+				className: "bg-white outline-transparent",
+			},
+			{
 				variant: "outlined",
 				color: "primary",
 				className: "text-primary",
@@ -45,6 +51,11 @@ export const buttonVariants = cva(
 				className: "text-secondaryBackground",
 			},
 			{
+				variant: "outlined",
+				color: "white",
+				className: "text-white",
+			},
+			{
 				variant: "link",
 				color: "primary",
 				className: "text-primary outline-transparent",
@@ -53,6 +64,11 @@ export const buttonVariants = cva(
 				variant: "link",
 				color: "secondary",
 				className: "text-secondaryBackground outline-transparent",
+			},
+			{
+				variant: "link",
+				color: "white",
+				className: "text-white outline-transparent",
 			},
 		],
 	},

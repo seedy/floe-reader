@@ -5,7 +5,10 @@ interface ScreenProps extends ComponentProps<"div"> {}
 
 const Screen = ({ className, children, ...props }: ScreenProps) => {
 	return (
-		<section className={cn("relative mb-80", className)} {...props}>
+		<section
+			className={cn("relative min-h-svh lg:min-h-[initial]", className)}
+			{...props}
+		>
 			{children}
 		</section>
 	);

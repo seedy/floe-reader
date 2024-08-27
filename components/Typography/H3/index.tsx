@@ -9,9 +9,12 @@ interface H3Props extends VariantProps<typeof headingVariants> {
 }
 
 const H3 = forwardRef<ElementRef<"h3">, H3Props>(
-	({ children, className, color, align, ...props }, forwardedRef) => {
+	(
+		{ children, className, color, align, variant = "h3", ...props },
+		forwardedRef,
+	) => {
 		const headingVariantClassName = headingVariants({
-			variant: "h3",
+			variant,
 			color,
 			align,
 		});

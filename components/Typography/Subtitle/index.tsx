@@ -13,10 +13,11 @@ const Subtitle = ({
 	children,
 	color,
 	align,
+	variant = "subtitle",
 	...props
 }: SubtitleProps) => {
 	const headingVariantClassName = headingVariants({
-		variant: "subtitle",
+		variant,
 		color,
 		align,
 	});
