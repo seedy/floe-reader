@@ -1,9 +1,9 @@
 import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 
-import djirs3 from "public/dji-rs3.png";
-import fujixs10 from "public/fuji-xs10.png";
-import zoomh5 from "public/zoom-h5.png";
+import djirs3 from "public/dji-rs3.webp";
+import fujixs10 from "public/fuji-xs10.webp";
+import zoomh5 from "public/zoom-h5.webp";
 import BannerMagnifier from ".";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

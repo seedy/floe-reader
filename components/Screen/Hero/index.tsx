@@ -76,8 +76,8 @@ const ScreenHero = () => {
 							src={hero}
 							alt=""
 							className={cn(
-								"aspect-square lg:aspect-social",
-								"size-80 lg:h-[32rem] lg:w-auto",
+								"aspect-social",
+								"w-80 lg:h-[32rem] lg:w-auto",
 								"lg:rounded-r-none",
 							)}
 						/>

@@ -1,18 +1,29 @@
 import Image, { type ImageProps } from "components/Image";
+import cn from "helpers/cn";
 import type { ReactNode } from "react";
 
 interface SlideProps extends ImageProps {
 	heading: ReactNode;
-	headingDesktop: ReactNode;
+	headingDesktop?: ReactNode;
 }
 const Slide = ({ heading, headingDesktop, alt, ...rest }: SlideProps) => (
 	<div className="relative flex size-full items-center">
-		<div className="absolute inset-x-0 top-2 z-1 px-5 py-0 lg:max-w-[60%]">
-			{heading}
+		<div
+			className={cn(
+				"absolute inset-x-0 top-0 z-1 px-5 py-2 bg-gradient-to-b from-blackAlpha7",
+			)}
+		>
+			<div className="w-full lg:max-w-[60%]">{heading}</div>
 		</div>
-		<div className="absolute bottom-2 right-0 z-1 hidden max-w-[34%] px-5 py-0 lg:block">
-			{headingDesktop}
-		</div>
+		{headingDesktop && (
+			<div
+				className={cn(
+					"absolute inset-x-0 bottom-0 z-1 hidden px-5 py-2 lg:flex justify-end bg-gradient-to-t from-blackAlpha7",
+				)}
+			>
+				<div className="max-w-[34%]">{headingDesktop}</div>
+			</div>
+		)}
 		<Image alt={alt} {...rest} />
 	</div>
 );

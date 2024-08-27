@@ -98,9 +98,9 @@ const Carousel = ({
 			{loaded && instanceRef.current && (
 				<div
 					className={cn(
-						"absolute bottom-4 left-0 z-10 flex gap-2 px-2",
-						"md:bottom-1 md:left-10",
-						"lg:bottom-auto lg:left-auto lg:right-11 lg:top-0 lg:px-6",
+						"absolute bottom-4 left-0 z-10 flex pl-5",
+						"md:bottom-0",
+						"lg:bottom-auto lg:left-auto lg:right-0 lg:top-0 lg:pl-0",
 					)}
 				>
 					{dotKeys.map((key) => (

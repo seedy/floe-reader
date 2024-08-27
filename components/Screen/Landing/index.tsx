@@ -13,10 +13,12 @@ import H1 from "components/Typography/H1";
 import H2 from "components/Typography/H2";
 import { CALENDLY, PORTFOLIO } from "constants/links";
 import cn from "helpers/cn";
-import floeDetouree from "public/Floe-tournage-detouree.png";
-import landing1 from "public/landing-1.jpg";
-import landing2 from "public/landing-2.jpg";
-import landing3 from "public/landing-3.jpg";
+import floeDetouree from "public/Floe-tournage-detouree.webp";
+import landing1 from "public/landing-1.webp";
+import landing2 from "public/landing-2.webp";
+import landing3 from "public/landing-3.webp";
+import landing4 from "public/landing-4.webp";
+import landing5 from "public/landing-5.webp";
 import logoSide from "public/logo-side.svg";
 
 const hintClassName = "animate-appear opacity-0 animation-delay-[2000ms]";
@@ -38,16 +40,10 @@ const ScreenLanding = () => {
 				}
 			>
 				<Slide
-					headingDesktop={
-						<H2 color="white">
-							Je crée une expérience unique avec du contenu percutant et
-							chaleureux
-						</H2>
-					}
 					heading={
 						<H1 color="white">
 							<ResponsiveHeading
-								desktop="Des interviews qui feront résonner ton message"
+								desktop="Une expérience visuelle unique"
 								mobile="Réalisons les contenus qui feront parler de toi"
 							/>
 						</H1>
@@ -60,19 +56,29 @@ const ScreenLanding = () => {
 				<Slide
 					headingDesktop={
 						<H2 color="white">
-							Je crée une expérience unique avec du contenu percutant et
-							chaleureux
+							Tes vidéos sur-mesure pour captiver ton audience
 						</H2>
 					}
 					heading={
 						<H1 color="white">
-							<ResponsiveHeading
-								desktop="Des interviews qui feront résonner ton message"
-								mobile="Je crée une expérience unique avec du contenu percutant et chaleureux"
-							/>
+							<ResponsiveHeading mobile="Une expérience visuelle unique" />
 						</H1>
 					}
 					src={landing2}
+					priority
+					fill
+					alt=""
+				/>
+				<Slide
+					heading={
+						<H1 color="white">
+							<ResponsiveHeading
+								desktop="Tes instants sublimés en photo"
+								mobile="Tes vidéos sur-mesure pour captiver ton audience"
+							/>
+						</H1>
+					}
+					src={landing3}
 					priority
 					fill
 					alt=""
@@ -86,10 +92,24 @@ const ScreenLanding = () => {
 					}
 					heading={
 						<H1 color="white">
-							Des interviews qui feront résonner ton message
+							<ResponsiveHeading mobile="Tes instants sublimés en photo" />
 						</H1>
 					}
-					src={landing3}
+					src={landing4}
+					priority
+					fill
+					alt=""
+				/>
+				<Slide
+					heading={
+						<H1 color="white">
+							<ResponsiveHeading
+								desktop="Viens expérimenter avec moi"
+								mobile="Viens expérimenter avec moi"
+							/>
+						</H1>
+					}
+					src={landing5}
 					priority
 					fill
 					alt=""
