@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { Lora } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
+import Footer from "components/Footer";
 
 const lora = Lora({ subsets: ["latin"], style: ["normal"] });
 
@@ -30,7 +31,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 						excludedHostnames={["localhost"]}
 					/>
 					<Navbar />
-					<main className="lg:mt-16">{children}</main>
+					<main className="mb-32 lg:mt-16">{children}</main>
+					<Footer />
 				</ToastProvider>
 			</body>
 		</html>

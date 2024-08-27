@@ -17,7 +17,7 @@ import zoomh5 from "public/zoom-h5.png";
 
 const ScreenPresentation = () => {
 	return (
-		<Screen className="flex flex-col gap-16 lg:gap-32">
+		<Screen className="flex flex-col gap-32">
 			<div className="lg:grid lg:grid-cols-[auto_1fr]">
 				<Content
 					title="Je crée du contenu photo et vidéo pour améliorer ta visibilité"
