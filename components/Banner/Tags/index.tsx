@@ -10,7 +10,7 @@ interface BannerTagsProps {
 
 const liBaseClassName = "flex gap-[inherit]";
 const liAfterClassName =
-	"after:inline after:font-[inherit] after:text-body after:font-normal after:text-text after:content-['•']";
+	"after:inline after:font-body after:text-body after:font-normal after:text-text after:content-['•']";
 const liMotionReduceClassName = "motion-reduce:hidden";
 
 const BannerTags = ({ tags, className }: BannerTagsProps) => {

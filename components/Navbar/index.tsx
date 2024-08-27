@@ -55,7 +55,7 @@ const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 							Je prends rendez-vous
 						</ButtonLink>
 					</div>
-					<div className="flex items-center gap-4 lg:hidden">
+					<div className="flex items-center gap-2 lg:hidden">
 						<IconButtonLink size="small" href={CALENDLY}>
 							<CalendarIcon />
 						</IconButtonLink>

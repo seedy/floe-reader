@@ -6,26 +6,22 @@ const COLOR_VARIANTS = {
 	white: ["text-white"],
 };
 
-export const textVariants = cva(
-	"m-0 block font-[inherit] text-body text-text",
-	{
-		variants: {
-			color: COLOR_VARIANTS,
-		},
-		defaultVariants: {
-			color: "default",
-		},
+export const textVariants = cva("m-0 block font-body text-body text-text", {
+	variants: {
+		color: COLOR_VARIANTS,
 	},
-);
+	defaultVariants: {
+		color: "default",
+	},
+});
 
-export const headingVariants = cva("m-0 block font-[inherit]", {
+export const headingVariants = cva("m-0 block font-display", {
 	variants: {
 		variant: {
 			h1: ["text-heading1 font-regular"],
 			h2: ["text-heading2 font-semibold"],
 			h3: ["text-heading3 font-medium"],
 			subtitle: ["inline-block text-subtitle font-bold"],
-			handwritten: ["whitespace-nowrap text-handwritten font-normal"],
 		},
 		color: COLOR_VARIANTS,
 		align: {
