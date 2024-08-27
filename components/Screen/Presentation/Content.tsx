@@ -54,7 +54,7 @@ const Content = ({
 				</div>
 			</div>
 			<div className="flex flex-col items-center gap-10 lg:hidden">
-				<Avatar src={src} alt={alt} className="aspect-square size-80" />
+				<Avatar src={src} alt={alt} className="aspect-social w-80" />
 				<Subtitle>{catcher}</Subtitle>
 			</div>
 		</div>

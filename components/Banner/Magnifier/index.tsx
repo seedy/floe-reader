@@ -57,7 +57,7 @@ const BannerMagnifier = ({ items }: BannerMagnifierProps) => {
 									alt={label}
 									aria-hidden={true}
 								/>
-								<P className="inline-flex items-center justify-center gap-2 text-center">
+								<P className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-center">
 									{label}
 									<ExternalLinkIcon />
 								</P>

@@ -8,19 +8,22 @@ import P from "components/Typography/P";
 import SpanUnderline from "components/Typography/SpanUnderline";
 import Subtitle from "components/Typography/Subtitle";
 import { PORTFOLIO } from "constants/links";
-import djirs3 from "public/dji-rs3.png";
-import fujixs10 from "public/fuji-xs10.png";
-import presentationAudiovisuel from "public/presentation-audiovisuel.jpg";
-import presentationPodcast from "public/presentation-podcast.jpg";
-import presentationVideo from "public/presentation-video.jpg";
-import zoomh5 from "public/zoom-h5.png";
+import djimini4pro from "public/dji-mini4-pro.webp";
+import djirs3 from "public/dji-rs3.webp";
+import fujixs10 from "public/fuji-xs10.webp";
+import presentationAudiovisuel from "public/presentation-audiovisuel.webp";
+import presentationMoi from "public/presentation-moi.webp";
+import presentationMontage from "public/presentation-montage.webp";
+import presentationPhoto from "public/presentation-photo.webp";
+import presentationTournage from "public/presentation-tournage.webp";
+import zoomh5 from "public/zoom-h5.webp";
 
 const ScreenPresentation = () => {
 	return (
 		<Screen className="flex flex-col gap-32">
 			<div className="lg:grid lg:grid-cols-[auto_1fr]">
 				<Content
-					title="Je crée du contenu photo et vidéo pour améliorer ta visibilité"
+					title="Je réalise les tournages photo et vidéo qui augmenteront ta visibilité"
 					longSubtitle={<></>}
 					subtitle={
 						<>
@@ -53,7 +56,7 @@ const ScreenPresentation = () => {
 							!
 						</>
 					}
-					src={presentationVideo}
+					src={presentationTournage}
 					alt="Retranscrire les émotions, partager les expériences, capturer l'instant !"
 				>
 					<div className="mt-[1.875rem] flex flex-col justify-between gap-32">
@@ -79,12 +82,7 @@ const ScreenPresentation = () => {
 					</div>
 				</Content>
 				<Content
-					title={
-						<>
-							J&apos;ai imaginé, enregistré et monté 2 podcasts… bientôt le tien
-							?
-						</>
-					}
+					title="Je monte et transforme tes rushs en vidéos dynamiques pour les réseaux ! En solo ou en renfort d'équipe !"
 					longSubtitle={
 						<>
 							Toujours en quête de nouveauté et d&apos;originalité, j&apos;aime
@@ -124,7 +122,7 @@ const ScreenPresentation = () => {
 							travers le micro !
 						</>
 					}
-					src={presentationPodcast}
+					src={presentationMontage}
 					alt="Diffuse ton message à travers le micro !"
 				>
 					<div className="mt-[1.875rem] flex flex-col justify-between gap-32">
@@ -160,7 +158,7 @@ const ScreenPresentation = () => {
 					</div>
 				</Content>
 				<Content
-					title={<>À propos de moi</>}
+					title="Photo"
 					longSubtitle={
 						<>
 							D&apos;attachée commerciale dans l&apos;agroalimentaire, à
@@ -185,8 +183,78 @@ const ScreenPresentation = () => {
 					}
 					longCatcher={<></>}
 					catcher={<></>}
-					src={presentationAudiovisuel}
+					src={presentationPhoto}
 					alt="Mon voyage initiatique"
+				>
+					<div className="mt-[1.875rem] flex flex-col justify-between gap-32">
+						<div className="flex flex-col lg:gap-3">
+							<H3>
+								<SpanUnderline>Depuis des Lunes</SpanUnderline>
+							</H3>
+							<P>
+								Mon vécu m&apos;a poussée à créer un podcast tourné vers la vie
+								des femmes tout au long de leurs cycles hormonaux,{" "}
+								<span className="font-bold underline">«Depuis des Lunes»</span>
+								.
+								<br />
+								<br />
+								Des témoignagnes poignants et émouvants pour raconter ce qui ne
+								se raconte pas.
+							</P>
+						</div>
+						<div className="flex flex-col lg:gap-3">
+							<H3>
+								<SpanUnderline>Les Baroudeurs</SpanUnderline>
+							</H3>
+							<P>
+								Passionnée par le voyage et les rencontres, j&apos;interviewe{" "}
+								<span className="font-bold underline">«Les Baroudeurs»</span>
+								.
+								<br />
+								<br />
+								Histoires loufoques ou insolites, galères et mésaventures pour
+								montrer que la vie est aussi belle que folle.
+							</P>
+						</div>
+					</div>
+				</Content>
+				<Content
+					className="mb-0"
+					title={"À propos de moi"}
+					longSubtitle={
+						<>
+							Je m&apos;intéresse de plus en plus à la photo et au montage
+							vidéo. Je propose à des associations puis des artisans de réaliser
+							des vidéos de présentation et des interviews et de les monter
+							moi-même.
+						</>
+					}
+					subtitle={
+						<>
+							Je m&apos;intéresse de plus en plus à la photo et au montage
+							vidéo. Je propose à des associations puis des artisans de réaliser
+							des vidéos de présentation et des interviews et de les monter
+							moi-même.
+						</>
+					}
+					longCatcher={
+						<div className="flex flex-col gap-8">
+							<H2>Tu souhaites voir mes réalisations ?</H2>
+							<ButtonLink variant="link" href={PORTFOLIO} target="_blank">
+								J&apos;explore le portfolio
+							</ButtonLink>
+						</div>
+					}
+					catcher={
+						<div className="flex flex-col gap-8">
+							<H2>Tu souhaites voir mes réalisations ?</H2>
+							<ButtonLink variant="link" href={PORTFOLIO} target="_blank">
+								J&apos;explore le portfolio
+							</ButtonLink>
+						</div>
+					}
+					src={presentationMoi}
+					alt="Mon coup de coeur pour l'audiovisuel"
 				>
 					<div className="mt-[1.875rem] flex flex-col justify-between gap-32">
 						<div className="flex flex-col lg:gap-3">
@@ -309,6 +377,11 @@ const ScreenPresentation = () => {
 							src: djirs3,
 							label: "DJI RS-3",
 							href: "https://www.dji.com/fr/rs-3",
+						},
+						{
+							src: djimini4pro,
+							label: "DJI mini 4 pro",
+							href: "https://www.dji.com/fr/mini-4-pro",
 						},
 					]}
 				/>

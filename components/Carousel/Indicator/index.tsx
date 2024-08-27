@@ -21,8 +21,9 @@ const CarouselIndicator = ({ active, ...props }: CarouselIndicatorProps) => {
 	return (
 		<button
 			className={cn(
-				"m-0 inline-flex items-center justify-center rounded-round border-none p-2 text-secondaryBackground",
-				"hover:cursor-pointer lg:p-5",
+				"m-0 inline-flex items-center justify-center rounded-round border-none text-secondaryBackground",
+				"hover:cursor-pointer",
+				"p-2 sm:p-3 md:p-4 lg:p-3 xl:p-5 2xl:p-7",
 			)}
 			{...props}
 		>

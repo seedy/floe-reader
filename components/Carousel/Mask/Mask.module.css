@@ -1,11 +1,11 @@
 .root {
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
-  mask-image: url("/mask.png");
+  mask-image: url("/mask.webp");
 }
 
 @media (min-width: 1024px) {
   .root {
-    mask-image: url("/mask-desktop.png");
+    mask-image: url("/mask-desktop.webp");
   }
 }

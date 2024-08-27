@@ -183,7 +183,7 @@ const Share = () => (
 						width: 360,
 						height: 360,
 						marginBottom: "1.25rem",
-						backgroundImage: `url(${baseUrl}/landing-1-mask.png)`,
+						backgroundImage: `url(${baseUrl}/landing-1-mask.webp)`,
 					}}
 				>
 					<Heading
@@ -213,7 +213,7 @@ const Share = () => (
 							<Img
 								style={{ marginLeft: "auto" }}
 								height={80}
-								src={`${baseUrl}/logo-side.png`}
+								src={`${baseUrl}/logo-side.webp`}
 								alt=""
 							/>
 						</Column>
