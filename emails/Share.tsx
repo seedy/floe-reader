@@ -213,7 +213,7 @@ const Share = () => (
 							<Img
 								style={{ marginLeft: "auto" }}
 								height={80}
-								src={`${baseUrl}/logo-side.png`}
+								src={`${baseUrl}/logo-side.webp`}
 								alt=""
 							/>
 						</Column>
