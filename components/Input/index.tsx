@@ -34,7 +34,7 @@ const Input = ({
 				type={type}
 				placeholder={placeholder}
 				className={cn(
-					"m-0 inline-block min-h-6 w-full min-w-64 border-none bg-transparent px-4 pb-1 pt-7 text-start indent-0 font-[inherit] text-body font-normal outline-none",
+					"m-0 inline-block min-h-6 w-full min-w-64 border-none bg-transparent px-4 pb-1 pt-7 text-start indent-0 font-body text-body font-normal outline-none",
 					"text-text shadow-input",
 					"focus:text-secondaryBackground focus:shadow-inputFocus",
 					"placeholder:text-text",
@@ -44,7 +44,7 @@ const Input = ({
 			/>
 			<label
 				className={cn(
-					"absolute left-4 top-2 m-0 origin-top-left bg-transparent p-0 font-[inherit] text-label font-normal text-text transition-transform",
+					"absolute left-4 top-2 m-0 origin-top-left bg-transparent p-0 font-body text-label font-normal text-text transition-transform",
 					"group-focus-within:-translate-y-1 group-focus-within:scale-75 group-focus-within:text-secondaryBackground",
 				)}
 				htmlFor={finalId}

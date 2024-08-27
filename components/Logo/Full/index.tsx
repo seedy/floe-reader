@@ -1,11 +1,11 @@
 import Logo from "components/Logo";
-import Handwritten from "components/Typography/Handwritten";
+import LogoType from "components/Typography/LogoType";
 import cbcLogo from "public/CBC_LOGO_48.svg";
 
 const LogoFull = () => (
 	<div className="flex items-center gap-2">
 		<Logo src={cbcLogo} alt="" />
-		<Handwritten>Floé Gaubert</Handwritten>
+		<LogoType>Floé Gaubert</LogoType>
 	</div>
 );
 

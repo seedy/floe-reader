@@ -14,7 +14,7 @@ import IconButtonLink from "components/IconButton/Link";
 import Logo from "components/Logo";
 import Share from "components/Share";
 import Socials from "components/Socials";
-import Handwritten from "components/Typography/Handwritten";
+import LogoType from "components/Typography/LogoType";
 import { CALENDLY, PORTFOLIO, SERVICES } from "constants/links";
 import { env } from "env.mjs";
 import cbcLogo from "public/CBC_LOGO_48.svg";
@@ -53,10 +53,10 @@ const Sidebar = ({ children }: SidebarProps) => {
 						<div className="flex items-center gap-2">
 							<Logo src={cbcLogo} alt="" />
 							<Title asChild>
-								<Handwritten>Floé Gaubert</Handwritten>
+								<LogoType>Floé Gaubert</LogoType>
 							</Title>
 						</div>
-						<div className="flex items-center gap-4">
+						<div className="flex items-center gap-2">
 							<IconButtonLink size="small" href={CALENDLY}>
 								<CalendarIcon />
 							</IconButtonLink>

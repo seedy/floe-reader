@@ -1,4 +1,5 @@
 const plugin = require("tailwindcss/plugin");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -36,7 +37,6 @@ module.exports = {
 			label: ["clamp(0.75rem, 1.3vw, 0.875rem)", 1.5],
 			body: ["clamp(1.125rem, 1.5vw, 1.25rem)", 1.5],
 			button: ["clamp(1rem, 1.5vw, 1.125rem)", 1.5],
-			handwritten: ["clamp(2rem, 4vw, 2.5rem)", 1.5],
 			heading1: ["clamp(2rem, 3vw, 2.5rem)", 1.5],
 			heading2: ["clamp(1.25rem, 2vw, 1.5rem)", 1.5],
 			heading3: ["clamp(1.25rem, 2vw, 1.5rem)", 1.5],
@@ -52,6 +52,10 @@ module.exports = {
 			DEFAULT: "0.375rem",
 		},
 		extend: {
+			fontFamily: {
+				display: ["var(--font-urbanist)", ...defaultTheme.fontFamily.sans],
+				body: ["var(--font-lora)", ...defaultTheme.fontFamily.serif],
+			},
 			width: {
 				viewport: "clamp(12rem, 33vw, 24rem)",
 				indicator: "clamp(1rem, 4vw, 2.5rem)",
