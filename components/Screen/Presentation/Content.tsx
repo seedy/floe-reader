@@ -32,7 +32,7 @@ const Content = ({
 		<ParallaxAvatar src={src} alt={alt} />
 		<div
 			className={cn(
-				"mb-80 flex",
+				"flex",
 				"mx-5 flex-col",
 				"lg:mx-10 lg:flex-row lg:justify-start lg:gap-10",
 				className,
@@ -54,7 +54,7 @@ const Content = ({
 				</div>
 			</div>
 			<div className="flex flex-col items-center gap-10 lg:hidden">
-				<Avatar src={src} alt={alt} className="size-80" />
+				<Avatar src={src} alt={alt} className="aspect-square size-80" />
 				<Subtitle>{catcher}</Subtitle>
 			</div>
 		</div>

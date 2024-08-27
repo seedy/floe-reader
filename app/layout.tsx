@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 						excludedHostnames={["localhost"]}
 					/>
 					<Navbar />
-					<main className="lg:mt-16">{children}</main>
+					<main className="mb-32 lg:mt-16">{children}</main>
 					<Footer />
 				</ToastProvider>
 			</body>

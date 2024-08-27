@@ -5,7 +5,7 @@ import { ComponentProps } from "react";
 
 // VARIANTS
 const avatarVariants = cva(
-	"inline-flex aspect-square h-auto w-full rounded-avatar object-cover",
+	"inline-flex aspect-auto h-auto w-full rounded-avatar object-cover",
 	{
 		variants: {
 			selected: {

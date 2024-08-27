@@ -18,11 +18,12 @@ const ButtonLink = forwardRef<ElementRef<"a">, ButtonLinkProps>(
 			color = "primary",
 			className,
 			external,
+			full,
 			...props
 		},
 		forwardedRef,
 	) => {
-		const buttonVariantsClassName = buttonVariants({ variant, color });
+		const buttonVariantsClassName = buttonVariants({ variant, color, full });
 
 		return (
 			<a
