@@ -56,6 +56,9 @@ module.exports = {
 				display: ["var(--font-urbanist)", ...defaultTheme.fontFamily.sans],
 				body: ["var(--font-lora)", ...defaultTheme.fontFamily.serif],
 			},
+			listStyleType: {
+				checkmark: "checkmark",
+			},
 			width: {
 				viewport: "clamp(12rem, 33vw, 24rem)",
 				indicator: "clamp(1rem, 4vw, 2.5rem)",

@@ -5,9 +5,9 @@ import Slide from "components/Slide";
 import Socials from "components/Socials";
 import H1 from "components/Typography/H1";
 import H2 from "components/Typography/H2";
-import landing1 from "public/landing-1.jpg";
-import landing2 from "public/landing-2.jpg";
-import landing3 from "public/landing-3.jpg";
+import landing1 from "public/landing-1.webp";
+import landing2 from "public/landing-2.webp";
+import landing3 from "public/landing-3.webp";
 import Carousel from ".";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
