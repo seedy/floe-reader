@@ -226,14 +226,16 @@ const ScreenPresentation = () => {
 						Tu peux d&apos;ores et déjà retrouver mes clichés sur mes réseaux ou
 						mon portfolio !
 					</P>
-					<Socials
-						sources={{
-							instagram: true,
-							linkedin: false,
-							portfolio: true,
-							youtube: false,
-						}}
-					/>
+					<div className="flex w-full justify-center">
+						<Socials
+							sources={{
+								instagram: true,
+								linkedin: false,
+								portfolio: true,
+								youtube: false,
+							}}
+						/>
+					</div>
 					<P>
 						Certains de mes clichés te font de l&apos;oeil ?
 						<br />
