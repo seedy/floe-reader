@@ -1,5 +1,6 @@
 "use client";
 import ButtonLink from "components/Button/Link";
+import Logo from "components/Logo";
 import QuoteBadge from "components/Quote/Badge";
 import QuoteItem from "components/Quote/Item";
 import QuoteSlide from "components/Quote/Slide";
@@ -11,6 +12,7 @@ import P from "components/Typography/P";
 import SpanUnderline from "components/Typography/SpanUnderline";
 import { CALENDLY, PORTFOLIO } from "constants/links";
 import cn from "helpers/cn";
+import logoSide from "public/logo-side.svg";
 
 const QuoteHero = () => (
 	<div
@@ -20,8 +22,13 @@ const QuoteHero = () => (
 			"gap-10 lg:gap-24",
 		)}
 	>
-		<H2>
+		<H2 className="relative">
 			Mes <SpanUnderline variant="secondary">prestations</SpanUnderline>
+			<Logo
+				className="absolute left-full top-0 h-sideLogo w-auto -rotate-90 -scale-x-100"
+				alt=""
+				src={logoSide}
+			/>
 		</H2>
 		<div className="flex w-full flex-col items-center gap-10">
 			<div className="flex w-full flex-col items-center">
