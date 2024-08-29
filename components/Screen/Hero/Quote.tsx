@@ -10,7 +10,13 @@ import H2 from "components/Typography/H2";
 import H3 from "components/Typography/H3";
 import P from "components/Typography/P";
 import SpanUnderline from "components/Typography/SpanUnderline";
-import { CALENDLY, PORTFOLIO } from "constants/links";
+import {
+	PORTFOLIO,
+	ZCAL_FIRST,
+	ZCAL_INTERVIEW,
+	ZCAL_MONTAGE,
+	ZCAL_PHOTO,
+} from "constants/links";
 import cn from "helpers/cn";
 import logoSide from "public/logo-side.svg";
 
@@ -40,7 +46,7 @@ const QuoteHero = () => (
 								cta={
 									<ButtonLink
 										variant="outlined"
-										href={CALENDLY}
+										href={ZCAL_MONTAGE}
 										target="_blank"
 									>
 										Je prends RDV
@@ -68,7 +74,7 @@ const QuoteHero = () => (
 									cta={
 										<ButtonLink
 											variant="outlined"
-											href={CALENDLY}
+											href={ZCAL_INTERVIEW}
 											target="_blank"
 										>
 											Je prends RDV
@@ -94,7 +100,7 @@ const QuoteHero = () => (
 								cta={
 									<ButtonLink
 										variant="outlined"
-										href={CALENDLY}
+										href={ZCAL_PHOTO}
 										target="_blank"
 									>
 										Je prends RDV
@@ -122,7 +128,7 @@ const QuoteHero = () => (
 						Pour une prestation sur-mesure, je t&apos;invite à prendre
 						rendez-vous avec moi !
 					</P>
-					<ButtonLink variant="contained" href={CALENDLY}>
+					<ButtonLink variant="contained" href={ZCAL_FIRST}>
 						Je prends rendez-vous
 					</ButtonLink>
 				</div>

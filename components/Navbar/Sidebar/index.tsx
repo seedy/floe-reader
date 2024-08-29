@@ -15,7 +15,7 @@ import Logo from "components/Logo";
 import Share from "components/Share";
 import Socials from "components/Socials";
 import LogoType from "components/Typography/LogoType";
-import { CALENDLY, PORTFOLIO, SERVICES } from "constants/links";
+import { PORTFOLIO, SERVICES, ZCAL_FIRST } from "constants/links";
 import { env } from "env.mjs";
 import cbcLogo from "public/CBC_LOGO_48.svg";
 import { ReactNode } from "react";
@@ -57,7 +57,7 @@ const Sidebar = ({ children }: SidebarProps) => {
 							</Title>
 						</div>
 						<div className="flex items-center gap-2">
-							<IconButtonLink size="small" href={CALENDLY}>
+							<IconButtonLink size="small" href={ZCAL_FIRST}>
 								<CalendarIcon />
 							</IconButtonLink>
 							<Cancel asChild>

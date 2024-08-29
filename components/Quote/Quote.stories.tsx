@@ -5,7 +5,12 @@ import QuoteBadge from "components/Quote/Badge";
 import QuoteItem from "components/Quote/Item";
 import SwipeHint from "components/SwipeHint";
 import H3 from "components/Typography/H3";
-import { CALENDLY, PORTFOLIO } from "constants/links";
+import {
+	PORTFOLIO,
+	ZCAL_INTERVIEW,
+	ZCAL_MONTAGE,
+	ZCAL_PHOTO,
+} from "constants/links";
 import React from "react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -23,7 +28,7 @@ const Template: StoryFn<typeof Quote> = (args) => (
 			<QuoteItem
 				title={<H3>Montage vidéo</H3>}
 				cta={
-					<ButtonLink variant="outlined" href={CALENDLY} target="_blank">
+					<ButtonLink variant="outlined" href={ZCAL_MONTAGE} target="_blank">
 						Je prends RDV
 						<br />
 						Montage
@@ -45,7 +50,11 @@ const Template: StoryFn<typeof Quote> = (args) => (
 				<QuoteItem
 					title={<H3>Interview / Reportage</H3>}
 					cta={
-						<ButtonLink variant="outlined" href={CALENDLY} target="_blank">
+						<ButtonLink
+							variant="outlined"
+							href={ZCAL_INTERVIEW}
+							target="_blank"
+						>
 							Je prends RDV
 							<br />
 							Interview
@@ -65,7 +74,7 @@ const Template: StoryFn<typeof Quote> = (args) => (
 			<QuoteItem
 				title={<H3>Photo</H3>}
 				cta={
-					<ButtonLink variant="outlined" href={CALENDLY} target="_blank">
+					<ButtonLink variant="outlined" href={ZCAL_PHOTO} target="_blank">
 						Je prends RDV
 						<br />
 						Photo
