@@ -7,7 +7,7 @@ import H2 from "components/Typography/H2";
 import H3 from "components/Typography/H3";
 import P from "components/Typography/P";
 import SpanUnderline from "components/Typography/SpanUnderline";
-import { EMAIL, PORTFOLIO } from "constants/links";
+import { EMAIL } from "constants/links";
 import cn from "helpers/cn";
 import djimini4pro from "public/dji-mini4-pro.webp";
 import djirs3 from "public/dji-rs3.webp";
@@ -330,7 +330,7 @@ const ScreenPresentation = () => {
 						<br />
 						J&apos;ai toujours adoré les photos qui suscitent l&apos;émotion !
 					</P>
-					<H3>Du podcast au "dé-click" !</H3>
+					<H3>Du podcast au &ldquo;dé-click&rdquo; !</H3>
 					<P>
 						Avec mes projets de podcast, j&apos;ai rapidement eu besoin de
 						m&apos;équiper pour la prise de son.
