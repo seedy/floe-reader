@@ -22,7 +22,11 @@ const LogoType = forwardRef<ElementRef<"h1">, LogoTypeProps>(
 		return (
 			<span
 				ref={forwardedRef}
-				className={joinCn(headingVariantClassName, className)}
+				className={joinCn(
+					headingVariantClassName,
+					"whitespace-nowrap",
+					className,
+				)}
 				{...props}
 			>
 				{children}

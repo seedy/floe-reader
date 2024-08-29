@@ -3,14 +3,13 @@ import { useSliderOverflowingContext } from "components/Context/Slider/Overflowi
 import SwipeHint from "components/SwipeHint";
 
 const SwipeHintSlider = () => {
-	const loaded = useSliderOverflowingContext();
+	const overflowing = useSliderOverflowingContext();
 
 	return (
 		<SwipeHint
-			className={cx(
-				"opacity-0 transition-opacity duration-1000",
-				loaded && "opacity-100",
-			)}
+			className={cx("opacity-0 transition-all duration-1000", {
+				"mb-10 opacity-100": overflowing,
+			})}
 		/>
 	);
 };

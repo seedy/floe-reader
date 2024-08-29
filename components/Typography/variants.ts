@@ -9,6 +9,9 @@ const COLOR_VARIANTS = {
 export const textVariants = cva("m-0 block font-body text-body text-text", {
 	variants: {
 		color: COLOR_VARIANTS,
+		inline: {
+			true: ["inline"],
+		},
 	},
 	defaultVariants: {
 		color: "default",

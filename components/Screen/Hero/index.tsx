@@ -1,7 +1,7 @@
 import Avatar from "components/Avatar";
 import ButtonLink from "components/Button/Link";
 import Screen from "components/Screen";
-import TabAndTitle from "components/Screen/Hero/TabAndTitle";
+import QuoteHero from "components/Screen/Hero/Quote";
 import H2 from "components/Typography/H2";
 import P from "components/Typography/P";
 import { CALENDLY, SERVICES } from "constants/links";
@@ -148,7 +148,7 @@ const ScreenHero = () => {
 				*/}
 			</Screen>
 			<Screen id={SERVICES.replace("#", "")}>
-				<TabAndTitle />
+				<QuoteHero />
 			</Screen>
 		</>
 	);

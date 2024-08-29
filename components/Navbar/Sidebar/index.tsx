@@ -50,7 +50,7 @@ const Sidebar = ({ children }: SidebarProps) => {
 						</div>
 					</div>
 					<div className="flex max-h-16 grow items-center justify-between px-5">
-						<div className="flex items-center gap-2">
+						<div className="flex shrink-0 items-center gap-2">
 							<Logo src={cbcLogo} alt="" />
 							<Title asChild>
 								<LogoType>Floé Gaubert</LogoType>

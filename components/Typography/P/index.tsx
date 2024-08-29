@@ -8,8 +8,8 @@ interface PProps extends VariantProps<typeof textVariants> {
 	className?: string;
 }
 
-const P = ({ className, children, color, ...props }: PProps) => {
-	const textVariantClassName = textVariants({ color });
+const P = ({ className, children, color, inline, ...props }: PProps) => {
+	const textVariantClassName = textVariants({ color, inline });
 
 	return (
 		<p className={joinCn(textVariantClassName, className)} {...props}>

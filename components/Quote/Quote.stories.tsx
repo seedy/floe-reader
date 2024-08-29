@@ -1,10 +1,11 @@
 import { Meta, StoryFn } from "@storybook/react";
+import ButtonLink from "components/Button/Link";
 import Quote from "components/Quote";
 import QuoteBadge from "components/Quote/Badge";
 import QuoteItem from "components/Quote/Item";
 import SwipeHint from "components/SwipeHint";
 import H3 from "components/Typography/H3";
-import P from "components/Typography/P";
+import { CALENDLY, PORTFOLIO } from "constants/links";
 import React from "react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -20,48 +21,66 @@ const Template: StoryFn<typeof Quote> = (args) => (
 	<div className="overflow-auto">
 		<Quote {...args}>
 			<QuoteItem
-				title={<H3>5 épisodes courts</H3>}
-				price={<P className="font-bold">3290€</P>}
+				title={<H3>Montage vidéo</H3>}
+				cta={
+					<ButtonLink variant="outlined" href={CALENDLY} target="_blank">
+						Je prends RDV
+						<br />
+						Montage
+					</ButtonLink>
+				}
 				perks={[
-					"± 30 min",
-					"Préparation questions",
-					"Interview",
-					"Voix-off",
-					"Recherche, ajout sons",
-					"Montage & Assemblage",
-					"Hébergement",
+					"Solo ou renfort d'équipe",
+					"Bibliothèque FX / SFX",
+					"Sous-titrage",
+					"Colorimétrie",
 					"Allers-retours illimités",
+					"Télétravail total",
+					"Mobilité France, Europe",
 				]}
 			>
 				<SwipeHint />
 			</QuoteItem>
 			<QuoteBadge title="Populaire">
 				<QuoteItem
-					title={<H3>5 episodes longs</H3>}
-					price={<P className="font-bold">3890€</P>}
+					title={<H3>Interview / Reportage</H3>}
+					cta={
+						<ButtonLink variant="outlined" href={CALENDLY} target="_blank">
+							Je prends RDV
+							<br />
+							Interview
+						</ButtonLink>
+					}
 					perks={[
-						"± 1 heure",
-						"Préparation questions",
-						"Interview",
-						"Voix-off",
-						"Recherche, ajout sons",
-						"Montage & Assemblage",
-						"Hébergement",
+						"Organisation du tournage",
+						"Réalisation sur place",
+						"Captation 9:16, 16:9",
+						"Prises de vue aériennes",
+						"Montage complet",
 						"Allers-retours illimités",
+						"Mobilité France, Europe",
 					]}
 				/>
 			</QuoteBadge>
 			<QuoteItem
-				title={<H3>Sur-mesure</H3>}
+				title={<H3>Photo</H3>}
+				cta={
+					<ButtonLink variant="outlined" href={CALENDLY} target="_blank">
+						Je prends RDV
+						<br />
+						Photo
+					</ButtonLink>
+				}
 				perks={[
-					"Durée & nombre à définir",
-					"Préparation questions",
-					"Interview",
-					"Voix-off",
-					"Recherche, ajout sons",
-					"Montage & Assemblage",
-					"Hébergement",
-					"Allers-retours illimités",
+					"Analyse du besoin",
+					"Shooting inté / exté",
+					"Portrait, paysage, voyage",
+					"Prises de vue aériennes",
+					"Retouche",
+					"Mobilité France, Europe",
+					<ButtonLink className="px-0" key="images" href={PORTFOLIO}>
+						Vente d&apos;images
+					</ButtonLink>,
 				]}
 			/>
 		</Quote>

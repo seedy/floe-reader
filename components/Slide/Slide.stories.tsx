@@ -1,17 +1,17 @@
+import { Meta, StoryFn } from "@storybook/react";
+import landing1 from "public/landing-1.webp";
 import React from "react";
-import { StoryFn, Meta } from "@storybook/react";
-import landing1 from "public/landing-1.jpg";
 
-import Slide from ".";
 import H1 from "components/Typography/H1";
+import Slide from ".";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default ({
+export default {
 	title: "Components/Slide",
 	component: Slide,
 	// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 	argTypes: {},
-} as Meta<typeof Slide>);
+} as Meta<typeof Slide>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Slide> = (args) => <Slide {...args} />;
