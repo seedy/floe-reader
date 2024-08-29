@@ -12,7 +12,7 @@ const ParallaxAvatar = ({ className, ...props }: ParallaxAvatarProps) => (
 			"hidden lg:inline-flex",
 			"lg:aspect-social",
 			"max-h-[80vh] w-[25vw] min-w-64 max-w-none",
-			"sticky top-[10vh] ml-10",
+			"sticky top-[10vh]",
 			styles.root,
 			className,
 		)}

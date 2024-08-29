@@ -1,62 +1,52 @@
 import Avatar from "components/Avatar";
 import ParallaxAvatar from "components/Avatar/Parallax";
+import ButtonLink from "components/Button/Link";
 import styles from "components/Screen/Presentation/Content.module.scss";
 import H2 from "components/Typography/H2";
 import P from "components/Typography/P";
 import Subtitle from "components/Typography/Subtitle";
+import { CALENDLY } from "constants/links";
 import cn from "helpers/cn";
 import { ComponentProps, ReactNode } from "react";
 
 interface ContentProps
 	extends Pick<ComponentProps<typeof Avatar>, "src" | "alt"> {
 	title: ReactNode;
-	subtitle: ReactNode;
-	longSubtitle: ReactNode;
 	children: ReactNode;
 	catcher: ReactNode;
-	longCatcher: ReactNode;
+	hint?: string;
 	className?: string;
 }
 const Content = ({
 	title,
-	subtitle,
-	longSubtitle,
 	children,
 	catcher,
-	longCatcher,
+	hint,
 	src,
 	alt,
 	className,
 }: ContentProps) => (
 	<>
 		<ParallaxAvatar src={src} alt={alt} />
-		<div
-			className={cn(
-				"flex",
-				"mx-5 flex-col",
-				"lg:mx-10 lg:flex-row lg:justify-start lg:gap-10",
-				className,
-			)}
-		>
-			<div
-				className={
-					(cn("mb-5 flex flex-col gap-10 lg:gap-[3.375rem]"), styles.root)
-				}
-			>
+		<div className={cn("flex flex-col gap-10", className)}>
+			<div className={cn("flex flex-col gap-10 lg:gap-16", styles.root)}>
 				<H2>{title}</H2>
-				<P className="hidden lg:block">{longSubtitle}</P>
-				<P className="lg:hidden">{subtitle}</P>
-				<div className="hidden grow gap-40 lg:flex lg:flex-col">
+				<div className={cn("hidden lg:flex", "flex-col gap-10")}>
 					{children}
-					<div className="flex flex-col items-center lg:gap-3">
-						{longCatcher}
-					</div>
 				</div>
 			</div>
 			<div className="flex flex-col items-center gap-10 lg:hidden">
 				<Avatar src={src} alt={alt} className="aspect-social w-80" />
 				<Subtitle>{catcher}</Subtitle>
 			</div>
+			{hint && (
+				<div className="flex flex-col items-center gap-10">
+					<P className="text-textHint">{hint}</P>
+					<ButtonLink variant="contained" color="primary" href={CALENDLY}>
+						Je prends rendez-vous
+					</ButtonLink>
+				</div>
+			)}
 		</div>
 	</>
 );
