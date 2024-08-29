@@ -12,7 +12,13 @@ import { Preview } from "@react-email/preview";
 import { Row } from "@react-email/row";
 import { Section } from "@react-email/section";
 import { Text } from "@react-email/text";
-import { CALENDLY, EMAIL, INSTAGRAM, LINKEDIN, TEL } from "../constants/links";
+import {
+	EMAIL,
+	INSTAGRAM,
+	LINKEDIN,
+	TEL,
+	ZCAL_FIRST,
+} from "../constants/links";
 
 const colors = {
 	white: "hsl(0, 0%, 100%)",
@@ -291,7 +297,7 @@ const Share = () => (
 						</Link>
 					</Row>
 					<Row>
-						<Link style={button.contained} href={CALENDLY}>
+						<Link style={button.contained} href={ZCAL_FIRST}>
 							Je prends rendez-vous
 						</Link>
 					</Row>

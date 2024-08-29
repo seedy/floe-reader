@@ -5,7 +5,6 @@ import styles from "components/Screen/Presentation/Content.module.scss";
 import H2 from "components/Typography/H2";
 import P from "components/Typography/P";
 import Subtitle from "components/Typography/Subtitle";
-import { CALENDLY } from "constants/links";
 import cn from "helpers/cn";
 import { ComponentProps, ReactNode } from "react";
 
@@ -15,6 +14,7 @@ interface ContentProps
 	children: ReactNode;
 	catcher: ReactNode;
 	hint?: string;
+	href?: string;
 	className?: string;
 }
 const Content = ({
@@ -22,6 +22,7 @@ const Content = ({
 	children,
 	catcher,
 	hint,
+	href,
 	src,
 	alt,
 	className,
@@ -42,9 +43,11 @@ const Content = ({
 			{hint && (
 				<div className="flex flex-col items-center gap-10">
 					<P className="text-textHint">{hint}</P>
-					<ButtonLink variant="contained" color="primary" href={CALENDLY}>
-						Je prends rendez-vous
-					</ButtonLink>
+					{href && (
+						<ButtonLink variant="contained" color="primary" href={href}>
+							Je prends rendez-vous
+						</ButtonLink>
+					)}
 				</div>
 			)}
 		</div>

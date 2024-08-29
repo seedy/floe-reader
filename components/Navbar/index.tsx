@@ -7,7 +7,7 @@ import IconButtonLink from "components/IconButton/Link";
 import LogoFull from "components/Logo/Full";
 import Sidebar from "components/Navbar/Sidebar";
 import useAnimateOnScroll from "components/Navbar/useAnimateOnScroll";
-import { CALENDLY, PORTFOLIO, SERVICES } from "constants/links";
+import { PORTFOLIO, SERVICES, ZCAL_FIRST } from "constants/links";
 import cn from "helpers/cn";
 import {
 	ComponentProps,
@@ -51,12 +51,12 @@ const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 						</ButtonLink>
 					</div>
 					<div className="hidden lg:flex">
-						<ButtonLink variant="contained" href={CALENDLY}>
+						<ButtonLink variant="contained" href={ZCAL_FIRST}>
 							Je prends rendez-vous
 						</ButtonLink>
 					</div>
 					<div className="flex items-center gap-2 lg:hidden">
-						<IconButtonLink size="small" href={CALENDLY}>
+						<IconButtonLink size="small" href={ZCAL_FIRST}>
 							<CalendarIcon />
 						</IconButtonLink>
 						<Sidebar>

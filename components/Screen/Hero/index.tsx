@@ -4,7 +4,7 @@ import Screen from "components/Screen";
 import QuoteHero from "components/Screen/Hero/Quote";
 import H2 from "components/Typography/H2";
 import P from "components/Typography/P";
-import { CALENDLY, SERVICES } from "constants/links";
+import { SERVICES, ZCAL_FIRST } from "constants/links";
 import cn from "helpers/cn";
 import hero from "public/hero.webp";
 
@@ -58,7 +58,11 @@ const ScreenHero = () => {
 						<div
 							className={cn("hidden flex-col items-center gap-8", "lg:flex")}
 						>
-							<ButtonLink variant="contained" color="secondary" href={CALENDLY}>
+							<ButtonLink
+								variant="contained"
+								color="secondary"
+								href={ZCAL_FIRST}
+							>
 								Je prends rendez-vous
 							</ButtonLink>
 							<P className="text-whiteHint">
@@ -90,7 +94,7 @@ const ScreenHero = () => {
 						full
 						variant="contained"
 						color="secondary"
-						href={CALENDLY}
+						href={ZCAL_FIRST}
 					>
 						Je prends rendez-vous
 					</ButtonLink>
@@ -139,7 +143,7 @@ const ScreenHero = () => {
 						</div>
 					</div>
 					<div className="flex flex-col items-center gap-5">
-						<ButtonLink variant="contained" href={CALENDLY}>
+						<ButtonLink variant="contained" href={ZCAL_FIRST}>
 							Je prends rendez-vous
 						</ButtonLink>
 						<P className="text-textHint">Mon calendrier t&apos;est ouvert !</P>

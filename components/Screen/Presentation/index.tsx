@@ -7,7 +7,12 @@ import H2 from "components/Typography/H2";
 import H3 from "components/Typography/H3";
 import P from "components/Typography/P";
 import SpanUnderline from "components/Typography/SpanUnderline";
-import { EMAIL } from "constants/links";
+import {
+	EMAIL,
+	ZCAL_INTERVIEW,
+	ZCAL_MONTAGE,
+	ZCAL_PHOTO,
+} from "constants/links";
 import cn from "helpers/cn";
 import djimini4pro from "public/dji-mini4-pro.webp";
 import djirs3 from "public/dji-rs3.webp";
@@ -41,6 +46,7 @@ const ScreenPresentation = () => {
 						</>
 					}
 					hint="Parlons de ton projet audiovisuel !"
+					href={ZCAL_INTERVIEW}
 					src={presentationTournage}
 					alt="Retranscrire les émotions, partager les expériences, capturer l'instant !"
 				>
@@ -118,6 +124,7 @@ const ScreenPresentation = () => {
 					}
 					src={presentationMontage}
 					hint="Parlons de tes besoins en montage !"
+					href={ZCAL_MONTAGE}
 					alt="Je porte une attention particulière aux couleurs et ambiances que dégagent mes réalisations"
 				>
 					<P>
@@ -181,6 +188,7 @@ const ScreenPresentation = () => {
 				<Content
 					title="Tu prendras bien un shot de photo ?"
 					hint="Parlons de ton projet photo !"
+					href={ZCAL_PHOTO}
 					catcher={
 						<>
 							Des photos de qualité qui te ressemblent, afin d&apos;

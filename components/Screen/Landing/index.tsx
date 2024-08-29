@@ -11,7 +11,7 @@ import Slide from "components/Slide";
 import Socials from "components/Socials";
 import H1 from "components/Typography/H1";
 import H2 from "components/Typography/H2";
-import { CALENDLY, PORTFOLIO } from "constants/links";
+import { PORTFOLIO, ZCAL_FIRST } from "constants/links";
 import cn from "helpers/cn";
 import floeDetouree from "public/Floe-tournage-detouree.webp";
 import landing1 from "public/landing-1.webp";
@@ -143,7 +143,7 @@ const ScreenLanding = () => {
 				<Socials />
 				<ButtonLink
 					variant="contained"
-					href={CALENDLY}
+					href={ZCAL_FIRST}
 					className={cn("mb-5 mt-6", "bottom-24 self-center lg:absolute")}
 				>
 					Je prends rendez-vous
