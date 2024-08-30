@@ -1,5 +1,6 @@
 import ButtonLink from "components/Button/Link";
 import styles from "components/ScrollHint/ScrollHint.module.scss";
+import SlotTrack from "components/Slot/Track";
 import ScrollWheelIcon from "components/icons/ScrollWheel";
 import cn from "helpers/cn";
 interface ScrollHintProps {
@@ -23,14 +24,16 @@ const ScrollHint = ({ className, href }: ScrollHintProps) => {
 					)}
 				/>
 			</div>
-			<ButtonLink
-				href={href}
-				className="shrink-0 px-4 py-1"
-				variant="link"
-				color="primary"
-			>
-				En savoir plus
-			</ButtonLink>
+			<SlotTrack name="click scrollhint link">
+				<ButtonLink
+					href={href}
+					className="shrink-0 px-4 py-1"
+					variant="link"
+					color="primary"
+				>
+					En savoir plus
+				</ButtonLink>
+			</SlotTrack>
 		</div>
 	);
 };

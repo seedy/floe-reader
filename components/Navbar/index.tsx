@@ -7,6 +7,7 @@ import IconButtonLink from "components/IconButton/Link";
 import LogoFull from "components/Logo/Full";
 import Sidebar from "components/Navbar/Sidebar";
 import useAnimateOnScroll from "components/Navbar/useAnimateOnScroll";
+import SlotTrack from "components/Slot/Track";
 import { PORTFOLIO, SERVICES, ZCAL_FIRST } from "constants/links";
 import cn from "helpers/cn";
 import {
@@ -38,27 +39,35 @@ const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 				<div className="flex size-full items-center justify-between bg-navbar px-5 py-0">
 					<LogoFull />
 					<div className="hidden gap-6 lg:flex">
-						<ButtonLink variant="link" href={SERVICES}>
-							Prestations
-						</ButtonLink>
-						<ButtonLink
-							variant="link"
-							href={PORTFOLIO}
-							external
-							target="_blank"
-						>
-							Portfolio
-						</ButtonLink>
+						<SlotTrack name="click navbar link prestations">
+							<ButtonLink variant="link" href={SERVICES}>
+								Prestations
+							</ButtonLink>
+						</SlotTrack>
+						<SlotTrack name="click navbar link portfolio">
+							<ButtonLink
+								variant="link"
+								href={PORTFOLIO}
+								external
+								target="_blank"
+							>
+								Portfolio
+							</ButtonLink>
+						</SlotTrack>
 					</div>
 					<div className="hidden lg:flex">
-						<ButtonLink variant="contained" href={ZCAL_FIRST}>
-							Je prends rendez-vous
-						</ButtonLink>
+						<SlotTrack name="click navbar cta first">
+							<ButtonLink variant="contained" href={ZCAL_FIRST}>
+								Je prends rendez-vous
+							</ButtonLink>
+						</SlotTrack>
 					</div>
 					<div className="flex items-center gap-2 lg:hidden">
-						<IconButtonLink size="small" href={ZCAL_FIRST}>
-							<CalendarIcon />
-						</IconButtonLink>
+						<SlotTrack name="click navbar icon first">
+							<IconButtonLink size="small" href={ZCAL_FIRST}>
+								<CalendarIcon />
+							</IconButtonLink>
+						</SlotTrack>
 						<Sidebar>
 							<IconButton size="small">
 								<HamburgerMenuIcon />

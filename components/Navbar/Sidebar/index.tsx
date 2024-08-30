@@ -13,6 +13,7 @@ import IconButton from "components/IconButton";
 import IconButtonLink from "components/IconButton/Link";
 import Logo from "components/Logo";
 import Share from "components/Share";
+import SlotTrack from "components/Slot/Track";
 import Socials from "components/Socials";
 import LogoType from "components/Typography/LogoType";
 import { PORTFOLIO, SERVICES, ZCAL_FIRST } from "constants/links";
@@ -34,17 +35,21 @@ const Sidebar = ({ children }: SidebarProps) => {
 						{env.NEXT_PUBLIC_DISPLAY_SHARE === true && <Share />}
 					</div>
 					<div className="flex flex-col items-start gap-4 px-5">
-						<ButtonLink variant="link" href={SERVICES}>
-							Prestations
-						</ButtonLink>
-						<ButtonLink
-							variant="link"
-							href={PORTFOLIO}
-							external
-							target="_blank"
-						>
-							Portfolio
-						</ButtonLink>
+						<SlotTrack name="click sidebar link prestations">
+							<ButtonLink variant="link" href={SERVICES}>
+								Prestations
+							</ButtonLink>
+						</SlotTrack>
+						<SlotTrack name="click sidebar link portfolio">
+							<ButtonLink
+								variant="link"
+								href={PORTFOLIO}
+								external
+								target="_blank"
+							>
+								Portfolio
+							</ButtonLink>
+						</SlotTrack>
 						<div className="flex w-full justify-center py-5">
 							<Socials />
 						</div>

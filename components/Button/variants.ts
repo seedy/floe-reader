@@ -12,7 +12,7 @@ export const buttonVariants = cva(
 					"outline outline-[0.125rem] outline-transparent hover:bg-white focus:bg-white focus:shadow-focusLarge focus-visible:shadow-focusLarge active:bg-white active:shadow-activeLarge",
 				],
 				link: [
-					"gap-2 normal-case focus:underline focus-visible:underline active:text-opacity-70 active:underline",
+					"gap-2 normal-case focus:underline focus-visible:underline active:text-opacity-70 active:underline px-0",
 				],
 			},
 			color: {

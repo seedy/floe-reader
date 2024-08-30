@@ -10,4 +10,6 @@ export const YOUTUBE =
 	"https://www.youtube.com/@FloéGaubert-Monteusevideo?sub_confirmation=1";
 export const EMAIL = "mailto:floe.gaubert+pro@gmail.com";
 export const TEL = "tel:0683988242";
+
+export const CTA_PORTFOLIO = "#cta-portfolio";
 export const SERVICES = "#services";

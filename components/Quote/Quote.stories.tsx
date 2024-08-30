@@ -87,7 +87,7 @@ const Template: StoryFn<typeof Quote> = (args) => (
 					"Prises de vue aériennes",
 					"Retouche",
 					"Mobilité France, Europe",
-					<ButtonLink className="px-0" key="images" href={PORTFOLIO}>
+					<ButtonLink key="images" href={PORTFOLIO}>
 						Vente d&apos;images
 					</ButtonLink>,
 				]}
