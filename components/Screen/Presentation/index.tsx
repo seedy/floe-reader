@@ -2,6 +2,7 @@ import BannerMagnifier from "components/Banner/Magnifier";
 import ButtonLink from "components/Button/Link";
 import Screen from "components/Screen";
 import Content from "components/Screen/Presentation/Content";
+import SlotTrack from "components/Slot/Track";
 import Socials from "components/Socials";
 import H2 from "components/Typography/H2";
 import H3 from "components/Typography/H3";
@@ -45,8 +46,22 @@ const ScreenPresentation = () => {
 							!
 						</>
 					}
-					hint="Parlons de ton projet audiovisuel !"
-					href={ZCAL_INTERVIEW}
+					cta={
+						<div className="flex flex-col items-center gap-10">
+							<P className="text-textHint">
+								Parlons de ton projet audiovisuel !
+							</P>
+							<SlotTrack name="click presentation cta interview">
+								<ButtonLink
+									variant="contained"
+									color="primary"
+									href={ZCAL_INTERVIEW}
+								>
+									Je prends rendez-vous
+								</ButtonLink>
+							</SlotTrack>
+						</div>
+					}
 					src={presentationTournage}
 					alt="Retranscrire les émotions, partager les expériences, capturer l'instant !"
 				>
@@ -75,9 +90,9 @@ const ScreenPresentation = () => {
 						de réalisme.
 					</P>
 					<P>
-						Je souhaite mettre en avant les agronomes et les artisan·e·s
-						d&apos;aujourd&apos;hui, qui feront de demain un monde plus
-						respectueux des humains et de la nature.
+						Je souhaite mettre en avant les agriculteur·rice·s et les
+						artisan·e·s d&apos;aujourd&apos;hui, qui feront de demain un monde
+						plus respectueux des humains et de la nature.
 					</P>
 					<P>Peut-être en fais-tu partie ?</P>
 					<P>
@@ -123,8 +138,22 @@ const ScreenPresentation = () => {
 						</>
 					}
 					src={presentationMontage}
-					hint="Parlons de tes besoins en montage !"
-					href={ZCAL_MONTAGE}
+					cta={
+						<div className="flex flex-col items-center gap-10">
+							<P className="text-textHint">
+								Parlons de tes besoins en montage !
+							</P>
+							<SlotTrack name="click presentation cta montage">
+								<ButtonLink
+									variant="contained"
+									color="primary"
+									href={ZCAL_MONTAGE}
+								>
+									Je prends rendez-vous
+								</ButtonLink>
+							</SlotTrack>
+						</div>
+					}
 					alt="Je porte une attention particulière aux couleurs et ambiances que dégagent mes réalisations"
 				>
 					<P>
@@ -187,8 +216,20 @@ const ScreenPresentation = () => {
 				</Content>
 				<Content
 					title="Tu prendras bien un shot de photo ?"
-					hint="Parlons de ton projet photo !"
-					href={ZCAL_PHOTO}
+					cta={
+						<div className="flex flex-col items-center gap-10">
+							<P className="text-textHint">Parlons de ton projet photo !</P>
+							<SlotTrack name="click presentation cta photo">
+								<ButtonLink
+									variant="contained"
+									color="primary"
+									href={ZCAL_PHOTO}
+								>
+									Je prends rendez-vous
+								</ButtonLink>
+							</SlotTrack>
+						</div>
+					}
 					catcher={
 						<>
 							Des photos de qualité qui te ressemblent, afin d&apos;
