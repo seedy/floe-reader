@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "components/Footer";
 import Navbar from "components/Navbar";
 import ToastProvider from "components/Toast/Provider";
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 					<main className="mb-32 lg:mt-16">{children}</main>
 					<Footer />
 				</ToastProvider>
+				<SpeedInsights />
 			</body>
 			<Script
 				defer
