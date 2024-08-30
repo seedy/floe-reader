@@ -10,14 +10,13 @@ export const env = createEnv({
 		SHARE_PASSWORD: z.string().min(1),
 	},
 	client: {
-		NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID: z.string().min(1),
+		NEXT_PUBLIC_UMAMI_WEBSITE_ID: z.string().min(1),
 		NEXT_PUBLIC_DISPLAY_SHARE: z
 			.enum(["true", "false"])
 			.transform((v) => v === "true"),
 	},
 	experimental__runtimeEnv: {
-		NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID:
-			process.env.NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID,
+		NEXT_PUBLIC_UMAMI_WEBSITE_ID: process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID,
 		NEXT_PUBLIC_DISPLAY_SHARE: process.env.NEXT_PUBLIC_DISPLAY_SHARE,
 	},
 });
