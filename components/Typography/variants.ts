@@ -2,11 +2,12 @@ import { cva } from "class-variance-authority";
 
 const COLOR_VARIANTS = {
 	default: ["text-text"],
+	primary: ["text-primary"],
 	secondary: ["text-secondaryBackground"],
 	white: ["text-white"],
 };
 
-export const textVariants = cva("m-0 block font-body text-body text-text", {
+export const textVariants = cva("m-0 block font-body text-body", {
 	variants: {
 		color: COLOR_VARIANTS,
 		inline: {
