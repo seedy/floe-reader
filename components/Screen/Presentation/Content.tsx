@@ -2,7 +2,6 @@ import Avatar from "components/Avatar";
 import ParallaxAvatar from "components/Avatar/Parallax";
 import styles from "components/Screen/Presentation/Content.module.scss";
 import H2 from "components/Typography/H2";
-import P from "components/Typography/P";
 import Subtitle from "components/Typography/Subtitle";
 import cn from "helpers/cn";
 import { ComponentProps, ReactNode } from "react";
@@ -32,7 +31,7 @@ const Content = ({
 			<div className={cn("flex flex-col gap-10 lg:gap-16", styles.root)}>
 				<H2>{title}</H2>
 				{summary && (
-					<div className="lg:hidden flex flex-col gap-6">{summary}</div>
+					<div className="flex flex-col gap-6 lg:hidden">{summary}</div>
 				)}
 				<div className={cn("hidden lg:flex", "flex-col gap-6")}>{children}</div>
 			</div>

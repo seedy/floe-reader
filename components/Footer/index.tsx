@@ -15,8 +15,8 @@ const Footer = () => (
 			"lg:justify-between",
 		)}
 	>
-		<div className={cn("flex flex-col gap-4 items-start w-full", "lg:w-auto")}>
-			<div className="flex flex-col gap-4 w-[inherit]">
+		<div className={cn("flex w-full flex-col items-start gap-4", "lg:w-auto")}>
+			<div className="flex w-[inherit] flex-col gap-4">
 				<div className="flex flex-col gap-2">
 					<H2 align="left">Floé Gaubert</H2>
 					<H2 align="left">Monteuse & Expérimentaliste</H2>
@@ -44,7 +44,7 @@ const Footer = () => (
 				</Link>
 			</div>
 		</div>
-		<div className="flex flex-col gap-2 items-center">
+		<div className="flex flex-col items-center gap-2">
 			<LogoFull />
 			<P>Chaque jour est différent, fais-en ce que tu veux !</P>
 		</div>
