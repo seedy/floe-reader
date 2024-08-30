@@ -5,7 +5,7 @@ export const ZCAL_PHOTO = "https://zcal.co/floe-gaubert/photo";
 
 export const INSTAGRAM = "https://www.instagram.com/floe.gaubert/";
 export const LINKEDIN = "https://www.linkedin.com/in/floé-gaubert/";
-export const PORTFOLIO = "https://cbencorrec.myportfolio.com/";
+export const PORTFOLIO = "https://floegaubert.myportfolio.com/";
 export const YOUTUBE =
 	"https://www.youtube.com/@FloéGaubert-Monteusevideo?sub_confirmation=1";
 export const EMAIL = "mailto:floe.gaubert+pro@gmail.com";
