@@ -40,6 +40,7 @@
 		"@react-email/row": "^0.0.8",
 		"@react-email/section": "^0.0.12",
 		"@react-email/text": "^0.0.8",
+		"@sentry/nextjs": "^8",
 		"@t3-oss/env-nextjs": "^0.6.1",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.4.0",
