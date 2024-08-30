@@ -2,6 +2,7 @@ import Avatar from "components/Avatar";
 import ButtonLink from "components/Button/Link";
 import Screen from "components/Screen";
 import QuoteHero from "components/Screen/Hero/Quote";
+import SlotTrack from "components/Slot/Track";
 import H2 from "components/Typography/H2";
 import P from "components/Typography/P";
 import { SERVICES, ZCAL_FIRST } from "constants/links";
@@ -39,16 +40,16 @@ const ScreenHero = () => {
 					<div
 						className={cn(
 							"flex shrink-0 flex-col items-center",
-							"gap-16 lg:gap-20",
+							"gap-12 lg:gap-20",
 							"lg:grow",
 						)}
 					>
 						<H2 variant="h1" color="white" className="lg:hidden">
 							Et si on commençait par se rencontrer ?
 						</H2>
-						<div className={cn("flex flex-col", "gap-0 lg:gap-8")}>
-							<div>
-								<P color="white">
+						<div className={cn("flex flex-col items-center", "gap-2 lg:gap-4")}>
+							<div className="flex flex-col items-center">
+								<P className="text-center" color="white">
 									Toutes les grandes histoires commencent par une rencontre.
 								</P>
 								<P color="white">Quelle est la tienne ?</P>
@@ -58,13 +59,15 @@ const ScreenHero = () => {
 						<div
 							className={cn("hidden flex-col items-center gap-8", "lg:flex")}
 						>
-							<ButtonLink
-								variant="contained"
-								color="secondary"
-								href={ZCAL_FIRST}
-							>
-								Je prends rendez-vous
-							</ButtonLink>
+							<SlotTrack name="click hero cta first">
+								<ButtonLink
+									variant="contained"
+									color="secondary"
+									href={ZCAL_FIRST}
+								>
+									Je prends rendez-vous
+								</ButtonLink>
+							</SlotTrack>
 							<P className="text-whiteHint">
 								Mon calendrier t&apos;est ouvert !
 							</P>
@@ -90,14 +93,16 @@ const ScreenHero = () => {
 				<div
 					className={cn("mb-10 flex flex-col items-center gap-8", "lg:hidden")}
 				>
-					<ButtonLink
-						full
-						variant="contained"
-						color="secondary"
-						href={ZCAL_FIRST}
-					>
-						Je prends rendez-vous
-					</ButtonLink>
+					<SlotTrack name="click hero cta first">
+						<ButtonLink
+							full
+							variant="contained"
+							color="secondary"
+							href={ZCAL_FIRST}
+						>
+							Je prends rendez-vous
+						</ButtonLink>
+					</SlotTrack>
 					<P className="text-whiteHint">Mon calendrier t&apos;est ouvert !</P>
 				</div>
 				{/* <div
@@ -143,15 +148,17 @@ const ScreenHero = () => {
 						</div>
 					</div>
 					<div className="flex flex-col items-center gap-5">
+					<SlotTrack name="click hero partners cta first">
 						<ButtonLink variant="contained" href={ZCAL_FIRST}>
 							Je prends rendez-vous
 						</ButtonLink>
+					</SlotTrack>
 						<P className="text-textHint">Mon calendrier t&apos;est ouvert !</P>
 					</div>
 				</div>
 				*/}
 			</Screen>
-			<Screen id={SERVICES.replace("#", "")}>
+			<Screen className="lg:pb-8" id={SERVICES.replace("#", "")}>
 				<QuoteHero />
 			</Screen>
 		</>

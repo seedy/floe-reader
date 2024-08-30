@@ -5,6 +5,7 @@ import QuoteBadge from "components/Quote/Badge";
 import QuoteItem from "components/Quote/Item";
 import QuoteSlide from "components/Quote/Slide";
 import QuoteSlider from "components/Quote/Slider";
+import SlotTrack from "components/Slot/Track";
 import SwipeHintSlider from "components/SwipeHint/Slider";
 import H2 from "components/Typography/H2";
 import H3 from "components/Typography/H3";
@@ -25,7 +26,7 @@ const QuoteHero = () => (
 		className={cn(
 			"flex flex-col items-center",
 			"mx-5 lg:mx-10",
-			"gap-10 lg:gap-24",
+			"gap-16 md:gap-24 lg:gap-24",
 		)}
 	>
 		<H2 className="relative">
@@ -44,15 +45,17 @@ const QuoteHero = () => (
 							<QuoteItem
 								title={<H3>Montage vidéo</H3>}
 								cta={
-									<ButtonLink
-										variant="outlined"
-										href={ZCAL_MONTAGE}
-										target="_blank"
-									>
-										Je prends RDV
-										<br />
-										Montage
-									</ButtonLink>
+									<SlotTrack name="click quote button montage">
+										<ButtonLink
+											variant="outlined"
+											href={ZCAL_MONTAGE}
+											target="_blank"
+										>
+											Je prends
+											<br />
+											rendez-vous
+										</ButtonLink>
+									</SlotTrack>
 								}
 								perks={[
 									"Solo ou renfort d'équipe",
@@ -72,15 +75,17 @@ const QuoteHero = () => (
 								<QuoteItem
 									title={<H3>Interview / Reportage</H3>}
 									cta={
-										<ButtonLink
-											variant="outlined"
-											href={ZCAL_INTERVIEW}
-											target="_blank"
-										>
-											Je prends RDV
-											<br />
-											Interview
-										</ButtonLink>
+										<SlotTrack name="click quote button interview">
+											<ButtonLink
+												variant="outlined"
+												href={ZCAL_INTERVIEW}
+												target="_blank"
+											>
+												Je prends
+												<br />
+												rendez-vous
+											</ButtonLink>
+										</SlotTrack>
 									}
 									perks={[
 										"Organisation du tournage",
@@ -98,15 +103,17 @@ const QuoteHero = () => (
 							<QuoteItem
 								title={<H3>Photo</H3>}
 								cta={
-									<ButtonLink
-										variant="outlined"
-										href={ZCAL_PHOTO}
-										target="_blank"
-									>
-										Je prends RDV
-										<br />
-										Photo
-									</ButtonLink>
+									<SlotTrack name="click quote button photo">
+										<ButtonLink
+											variant="outlined"
+											href={ZCAL_PHOTO}
+											target="_blank"
+										>
+											Je prends
+											<br />
+											rendez-vous
+										</ButtonLink>
+									</SlotTrack>
 								}
 								perks={[
 									"Analyse du besoin",
@@ -115,9 +122,14 @@ const QuoteHero = () => (
 									"Prises de vue aériennes",
 									"Retouche",
 									"Mobilité France, Europe",
-									<ButtonLink className="px-0" key="images" href={PORTFOLIO}>
-										Vente d&apos;images
-									</ButtonLink>,
+									<SlotTrack
+										key="sell photo"
+										name="click quote link sell photo"
+									>
+										<ButtonLink href={PORTFOLIO}>
+											Vente d&apos;images
+										</ButtonLink>
+									</SlotTrack>,
 								]}
 							/>
 						</QuoteSlide>
@@ -128,9 +140,11 @@ const QuoteHero = () => (
 						Pour une prestation sur-mesure, je t&apos;invite à prendre
 						rendez-vous avec moi !
 					</P>
-					<ButtonLink variant="contained" href={ZCAL_FIRST}>
-						Je prends rendez-vous
-					</ButtonLink>
+					<SlotTrack name="click quote button first">
+						<ButtonLink variant="contained" href={ZCAL_FIRST}>
+							Je prends rendez-vous
+						</ButtonLink>
+					</SlotTrack>
 				</div>
 			</div>
 		</div>

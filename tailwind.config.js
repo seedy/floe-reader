@@ -35,7 +35,7 @@ module.exports = {
 		},
 		fontSize: {
 			label: ["clamp(0.75rem, 1.3vw, 0.875rem)", 1.5],
-			body: ["clamp(1.125rem, 1.5vw, 1.25rem)", 1.5],
+			body: ["clamp(0.875rem, 1.3vw, 1rem)", 1.5],
 			button: ["clamp(1rem, 1.5vw, 1.125rem)", 1.5],
 			heading1: ["clamp(2rem, 3vw, 2.5rem)", 1.5],
 			heading2: ["clamp(1.25rem, 2vw, 1.5rem)", 1.5],

@@ -1,6 +1,6 @@
 import { VariantProps, cva } from "class-variance-authority";
-import ButtonLink from "components/Button/Link";
 import styles from "components/SwipeHint/SwipeHint.module.scss";
+import P from "components/Typography/P";
 import SwipeWheel from "components/icons/SwipeWheel";
 import cn from "helpers/cn";
 
@@ -19,10 +19,9 @@ const swipeHintVariants = cva(
 
 // COMPONENTS
 interface SwipeHintProps extends VariantProps<typeof swipeHintVariants> {
-	href?: string;
 	className?: string;
 }
-const SwipeHint = ({ className, href, color = "primary" }: SwipeHintProps) => {
+const SwipeHint = ({ className, color = "primary" }: SwipeHintProps) => {
 	const variantsClassName = swipeHintVariants({ color });
 	return (
 		<div
@@ -40,14 +39,12 @@ const SwipeHint = ({ className, href, color = "primary" }: SwipeHintProps) => {
 					)}
 				/>
 			</div>
-			<ButtonLink
-				href={href}
-				className="px-4 py-1"
-				variant="link"
+			<P
+				className="px-4 py-1 text-center font-body text-button font-bold"
 				color={color}
 			>
 				Glisser pour défiler
-			</ButtonLink>
+			</P>
 		</div>
 	);
 };

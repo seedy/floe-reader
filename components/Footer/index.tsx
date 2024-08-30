@@ -10,20 +10,22 @@ const Footer = () => (
 	<footer
 		className={cn(
 			"flex gap-4 bg-navbar p-5",
-			"items-center lg:items-start",
+			"items-start",
 			"flex-col lg:flex-row",
 			"lg:justify-between",
 		)}
 	>
-		<div className="flex flex-col items-center gap-4">
-			<div className="flex flex-col gap-2">
-				<H2 align="left">Floé Gaubert</H2>
-				<H2 align="left">Monteuse & Expérimentaliste</H2>
-				<P className="hidden lg:mt-2 lg:block">
-					Réalisons les contenus qui feront parler de toi
-				</P>
+		<div className={cn("flex flex-col gap-4 items-start w-full", "lg:w-auto")}>
+			<div className="flex flex-col gap-4 w-[inherit]">
+				<div className="flex flex-col gap-2">
+					<H2 align="left">Floé Gaubert</H2>
+					<H2 align="left">Monteuse & Expérimentaliste</H2>
+					<P className="hidden lg:mt-2 lg:block">
+						Réalisons les contenus qui feront parler de toi
+					</P>
+				</div>
+				<Socials className="self-center" />
 			</div>
-			<Socials />
 			<div
 				className={cn(
 					"flex items-start self-start",
@@ -42,8 +44,10 @@ const Footer = () => (
 				</Link>
 			</div>
 		</div>
-
-		<LogoFull />
+		<div className="flex flex-col gap-2 items-center">
+			<LogoFull />
+			<P>Chaque jour est différent, fais-en ce que tu veux !</P>
+		</div>
 	</footer>
 );
 

@@ -8,10 +8,11 @@ import Screen from "components/Screen";
 import ResponsiveHeading from "components/Screen/Landing/ResponsiveHeading";
 import ScrollHint from "components/ScrollHint";
 import Slide from "components/Slide";
+import SlotTrack from "components/Slot/Track";
 import Socials from "components/Socials";
 import H1 from "components/Typography/H1";
 import H2 from "components/Typography/H2";
-import { PORTFOLIO, ZCAL_FIRST } from "constants/links";
+import { CTA_PORTFOLIO, PORTFOLIO, ZCAL_FIRST } from "constants/links";
 import cn from "helpers/cn";
 import floeDetouree from "public/Floe-tournage-detouree.webp";
 import landing1 from "public/landing-1.webp";
@@ -43,7 +44,7 @@ const ScreenLanding = () => {
 					heading={
 						<H1 color="white">
 							<ResponsiveHeading
-								desktop="Une expérience visuelle unique"
+								desktop="Tes vidéos sur-mesure"
 								mobile="Réalisons les contenus qui feront parler de toi"
 							/>
 						</H1>
@@ -55,13 +56,11 @@ const ScreenLanding = () => {
 				/>
 				<Slide
 					headingDesktop={
-						<H2 color="white">
-							Tes vidéos sur-mesure pour captiver ton audience
-						</H2>
+						<H1 color="white">Une expérience visuelle soignée</H1>
 					}
 					heading={
 						<H1 color="white">
-							<ResponsiveHeading mobile="Une expérience visuelle unique" />
+							<ResponsiveHeading mobile="Une expérience visuelle soignée" />
 						</H1>
 					}
 					src={landing2}
@@ -73,8 +72,8 @@ const ScreenLanding = () => {
 					heading={
 						<H1 color="white">
 							<ResponsiveHeading
-								desktop="Tes instants sublimés en photo"
-								mobile="Tes vidéos sur-mesure pour captiver ton audience"
+								desktop="Tes contenus au fil de mes voyages"
+								mobile="Tes contenus au fil de mes voyages"
 							/>
 						</H1>
 					}
@@ -85,14 +84,11 @@ const ScreenLanding = () => {
 				/>
 				<Slide
 					headingDesktop={
-						<H2 color="white">
-							Je crée une expérience unique avec du contenu percutant et
-							chaleureux
-						</H2>
+						<H1 color="white">Des clichés originaux à ta demande</H1>
 					}
 					heading={
 						<H1 color="white">
-							<ResponsiveHeading mobile="Tes instants sublimés en photo" />
+							<ResponsiveHeading mobile="Des clichés originaux à ta demande" />
 						</H1>
 					}
 					src={landing4}
@@ -104,8 +100,8 @@ const ScreenLanding = () => {
 					heading={
 						<H1 color="white">
 							<ResponsiveHeading
-								desktop="Viens expérimenter avec moi"
-								mobile="Viens expérimenter avec moi"
+								desktop="Tes instants sublimés en photo"
+								mobile="Tes instants sublimés en photo"
 							/>
 						</H1>
 					}
@@ -132,7 +128,7 @@ const ScreenLanding = () => {
 					)}
 				>
 					<ParallaxLeave>
-						<ScrollHint className={hintClassName} href="#" />
+						<ScrollHint className={hintClassName} href={CTA_PORTFOLIO} />
 					</ParallaxLeave>
 				</div>
 				<Logo className="h-sideLogo w-auto" alt="" priority src={logoSide} />
@@ -141,15 +137,17 @@ const ScreenLanding = () => {
 
 			<div className={cn("mx-4 my-0 flex flex-col items-center", "lg:hidden")}>
 				<Socials />
-				<ButtonLink
-					variant="contained"
-					href={ZCAL_FIRST}
-					className={cn("mb-5 mt-6", "bottom-24 self-center lg:absolute")}
-				>
-					Je prends rendez-vous
-				</ButtonLink>
+				<SlotTrack name="click landing cta first">
+					<ButtonLink
+						variant="contained"
+						href={ZCAL_FIRST}
+						className={cn("mb-5 mt-6", "bottom-24 self-center lg:absolute")}
+					>
+						Je prends rendez-vous
+					</ButtonLink>
+				</SlotTrack>
 				<ParallaxLeave className="self-end">
-					<ScrollHint className={hintClassName} href="#" />
+					<ScrollHint className={hintClassName} href={CTA_PORTFOLIO} />
 				</ParallaxLeave>
 			</div>
 			{/* Banner Tags + Image */}
@@ -165,10 +163,14 @@ const ScreenLanding = () => {
 				)}
 			>
 				<div className="flex flex-col gap-8">
-					<H2>Tu souhaites voir mes réalisations ?</H2>
-					<ButtonLink variant="contained" href={PORTFOLIO} target="_blank">
-						J&apos;explore le portfolio
-					</ButtonLink>
+					<H2 id={CTA_PORTFOLIO.replace("#", "")}>
+						Tu souhaites voir mes réalisations ?
+					</H2>
+					<SlotTrack name="click landing cta portfolio">
+						<ButtonLink variant="contained" href={PORTFOLIO} target="_blank">
+							J&apos;explore le portfolio
+						</ButtonLink>
+					</SlotTrack>
 				</div>
 				<Image placeholder="empty" height={393} src={floeDetouree} alt="" />
 			</div>

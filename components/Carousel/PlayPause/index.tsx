@@ -1,5 +1,7 @@
+"use client";
 import { PauseIcon, PlayIcon } from "@radix-ui/react-icons";
 import { cva } from "class-variance-authority";
+import SlotTrack from "components/Slot/Track";
 import { MouseEvent, useRef, useState, useTransition } from "react";
 
 interface PlayPauseProps {
@@ -47,18 +49,22 @@ const PlayPause = ({ playing, onClick, delay = 1000 }: PlayPauseProps) => {
 	};
 
 	return (
-		<button
-			className="absolute inset-0 z-1 m-0 inline-flex items-center justify-center border-none bg-none p-0 text-secondaryBackground focus-visible:bg-blackAlpha7 focus-visible:outline-none"
-			onClick={onTogglePlayPause}
+		<SlotTrack
+			name={`click play pause button from ${playing ? "playing" : "pause"}`}
 		>
-			<div className={childVariantClassName}>
-				{playing ? (
-					<PlayIcon width={40} height={40} />
-				) : (
-					<PauseIcon width={40} height={40} />
-				)}
-			</div>
-		</button>
+			<button
+				className="absolute inset-0 z-1 m-0 inline-flex items-center justify-center border-none bg-none p-0 text-secondaryBackground focus-visible:bg-blackAlpha7 focus-visible:outline-none"
+				onClick={onTogglePlayPause}
+			>
+				<div className={childVariantClassName}>
+					{playing ? (
+						<PlayIcon width={40} height={40} />
+					) : (
+						<PauseIcon width={40} height={40} />
+					)}
+				</div>
+			</button>
+		</SlotTrack>
 	);
 };
 

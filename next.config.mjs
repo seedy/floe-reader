@@ -1,6 +1,5 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
-import { withHighlightConfig } from "@highlight-run/next/config";
 import NextBundleAnalyzer from "@next/bundle-analyzer";
 import nextBuildId from "next-build-id";
 import "./env.mjs";
@@ -18,9 +17,14 @@ const nextConfig = {
 		}),
 	reactStrictMode: true,
 	swcMinify: true,
-	experimental: {
-		instrumentationHook: true,
-	},
 	productionBrowserSourceMaps: true,
+	rewrites: async () => ({
+		afterFiles: [
+			{
+				source: "/analytics/script.js",
+				destination: "https://cloud.umami.is/script.js",
+			},
+		],
+	}),
 };
-export default withBundleAnalyzer(withHighlightConfig(nextConfig));
+export default withBundleAnalyzer(nextConfig);

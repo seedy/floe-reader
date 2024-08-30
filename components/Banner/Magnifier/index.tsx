@@ -1,6 +1,7 @@
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
 import styles from "components/Banner/Magnifier/Magnifier.module.scss";
 import Image from "components/Image";
+import SlotTrack from "components/Slot/Track";
 import SwipeHint from "components/SwipeHint";
 import P from "components/Typography/P";
 import cn from "helpers/cn";
@@ -28,40 +29,44 @@ const BannerMagnifier = ({ items }: BannerMagnifierProps) => {
 				<ul className={cn("m-0 flex", styles.root)}>
 					{items.map(({ src, label, href }) => (
 						<li className="lg:has-[:hover]:px-16" key={label}>
-							<a
-								className="group flex flex-col gap-6"
-								href={href}
-								target="_blank"
-							>
-								<Image
-									placeholder="empty"
-									className="max-w-fit lg:transition-transform lg:group-hover:scale-150"
-									height={120}
-									src={src}
-									alt={label}
-								/>
-								<P className="inline-flex items-center justify-center gap-2 text-center">
-									{label}
-									<ExternalLinkIcon />
-								</P>
-							</a>
+							<SlotTrack name="click magnifier link">
+								<a
+									className="group flex flex-col gap-6"
+									href={href}
+									target="_blank"
+								>
+									<Image
+										placeholder="empty"
+										className="max-w-fit lg:transition-transform lg:group-hover:scale-150"
+										height={120}
+										src={src}
+										alt={label}
+									/>
+									<P className="inline-flex items-center justify-center gap-2 text-center">
+										{label}
+										<ExternalLinkIcon />
+									</P>
+								</a>
+							</SlotTrack>
 						</li>
 					))}
 					{items.map(({ src, label, href }) => (
 						<li key={label} className="motion-reduce:hidden lg:hidden">
-							<a className="flex flex-col gap-6" href={href} target="_blank">
-								<Image
-									className="max-w-fit"
-									height={120}
-									src={src}
-									alt={label}
-									aria-hidden={true}
-								/>
-								<P className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-center">
-									{label}
-									<ExternalLinkIcon />
-								</P>
-							</a>
+							<SlotTrack name="click magnifier link">
+								<a className="flex flex-col gap-6" href={href} target="_blank">
+									<Image
+										className="max-w-fit"
+										height={120}
+										src={src}
+										alt={label}
+										aria-hidden={true}
+									/>
+									<P className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-center">
+										{label}
+										<ExternalLinkIcon />
+									</P>
+								</a>
+							</SlotTrack>
 						</li>
 					))}
 				</ul>

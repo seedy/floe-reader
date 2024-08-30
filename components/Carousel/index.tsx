@@ -2,6 +2,7 @@
 import CarouselIndicator from "components/Carousel/Indicator";
 import CarouselMask from "components/Carousel/Mask";
 import CarouselPlayPause from "components/Carousel/PlayPause";
+import SlotTrack from "components/Slot/Track";
 import cn from "helpers/cn";
 import keenSliderCarousel from "helpers/keenSlider/plugins/carousel";
 // STYLES
@@ -104,13 +105,14 @@ const Carousel = ({
 					)}
 				>
 					{dotKeys.map((key) => (
-						<CarouselIndicator
-							key={key}
-							active={currentSlide === key}
-							onClick={() => {
-								instanceRef.current?.moveToIdx(key);
-							}}
-						/>
+						<SlotTrack key={key} name={`click carousel indicator n°${key}`}>
+							<CarouselIndicator
+								active={currentSlide === key}
+								onClick={() => {
+									instanceRef.current?.moveToIdx(key);
+								}}
+							/>
+						</SlotTrack>
 					))}
 				</div>
 			)}

@@ -5,8 +5,9 @@ import ScreenPresentation from "components/Screen/Presentation";
 const Home = () => (
 	<div className="flex flex-col gap-32">
 		<ScreenLanding />
-		<ScreenPresentation />
-		<ScreenHero />
+		<ScreenPresentation>
+			<ScreenHero />
+		</ScreenPresentation>
 	</div>
 );
 
