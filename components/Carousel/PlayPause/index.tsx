@@ -1,3 +1,4 @@
+"use client";
 import { PauseIcon, PlayIcon } from "@radix-ui/react-icons";
 import { cva } from "class-variance-authority";
 import { MouseEvent, useRef, useState, useTransition } from "react";
