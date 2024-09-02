@@ -24,6 +24,10 @@ interface CarouselProps {
 	className?: string;
 }
 
+function easeInOutQuint(x: number): number {
+	return x < 0.5 ? 16 * x * x * x * x * x : 1 - Math.pow(-2 * x + 2, 5) / 2;
+}
+
 const Carousel = ({
 	children,
 	headingDesktop,
@@ -42,6 +46,10 @@ const Carousel = ({
 		{
 			slides,
 			loop: true,
+			defaultAnimation: {
+				duration: 1000,
+				easing: easeInOutQuint,
+			},
 			slideChanged(slider) {
 				setCurrentSlide(slider.track.details.rel);
 			},

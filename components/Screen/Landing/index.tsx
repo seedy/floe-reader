@@ -51,7 +51,6 @@ const ScreenLanding = () => {
 					}
 					src={landing1}
 					priority
-					fill
 					alt=""
 				/>
 				<Slide
@@ -65,7 +64,6 @@ const ScreenLanding = () => {
 					}
 					src={landing2}
 					priority
-					fill
 					alt=""
 				/>
 				<Slide
@@ -78,7 +76,6 @@ const ScreenLanding = () => {
 						</H1>
 					}
 					src={landing3}
-					fill
 					alt=""
 				/>
 				<Slide
@@ -91,7 +88,6 @@ const ScreenLanding = () => {
 						</H1>
 					}
 					src={landing4}
-					fill
 					alt=""
 				/>
 				<Slide
@@ -104,7 +100,6 @@ const ScreenLanding = () => {
 						</H1>
 					}
 					src={landing5}
-					fill
 					alt=""
 				/>
 			</Carousel>

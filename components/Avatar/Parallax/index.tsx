@@ -5,7 +5,6 @@ import { ComponentProps } from "react";
 
 interface ParallaxAvatarProps extends ComponentProps<typeof Avatar> {}
 const ParallaxAvatar = ({ className, ...props }: ParallaxAvatarProps) => (
-	// TODO: implement parallax
 	<Avatar
 		{...props}
 		className={cn(
@@ -16,6 +15,7 @@ const ParallaxAvatar = ({ className, ...props }: ParallaxAvatarProps) => (
 			styles.root,
 			className,
 		)}
+		sizes="(max-width: 1024px) 50vw, 25vw"
 	/>
 );
 

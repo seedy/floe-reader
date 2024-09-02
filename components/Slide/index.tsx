@@ -2,7 +2,7 @@ import Image, { type ImageProps } from "components/Image";
 import cn from "helpers/cn";
 import type { ReactNode } from "react";
 
-interface SlideProps extends ImageProps {
+interface SlideProps extends Omit<ImageProps, "fill" | "sizes"> {
 	heading: ReactNode;
 	headingDesktop?: ReactNode;
 }
@@ -24,7 +24,9 @@ const Slide = ({ heading, headingDesktop, alt, ...rest }: SlideProps) => (
 				<div className="max-w-[34%]">{headingDesktop}</div>
 			</div>
 		)}
-		<Image alt={alt} {...rest} />
+		<div className="relative size-full">
+			<Image sizes="100vw" fill alt={alt} {...rest} />
+		</div>
 	</div>
 );
 

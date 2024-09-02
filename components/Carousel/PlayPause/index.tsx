@@ -11,11 +11,11 @@ interface PlayPauseProps {
 }
 
 const childVariants = cva(
-	"rounded-round bg-blackAlpha7 p-6 text-secondaryBackground opacity-0 transition-opacity",
+	"rounded-round bg-blackAlpha7 p-6 text-secondaryBackground opacity-0 transition",
 	{
 		variants: {
 			visible: {
-				true: ["opacity-100"],
+				true: ["opacity-100 scale-150"],
 			},
 		},
 	},
