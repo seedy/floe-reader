@@ -78,7 +78,6 @@ const ScreenLanding = () => {
 						</H1>
 					}
 					src={landing3}
-					priority
 					fill
 					alt=""
 				/>
@@ -92,7 +91,6 @@ const ScreenLanding = () => {
 						</H1>
 					}
 					src={landing4}
-					priority
 					fill
 					alt=""
 				/>
@@ -106,7 +104,6 @@ const ScreenLanding = () => {
 						</H1>
 					}
 					src={landing5}
-					priority
 					fill
 					alt=""
 				/>

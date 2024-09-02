@@ -10,6 +10,7 @@ const Logo = ({ src, alt, className, ...props }: LogoProps) => (
 		className={cn("object-cover", className)}
 		src={src}
 		alt={alt}
+		quality={100}
 		{...props}
 	/>
 );
