@@ -115,6 +115,7 @@ const Carousel = ({
 					{dotKeys.map((key) => (
 						<SlotTrack key={key} name={`click carousel indicator n°${key}`}>
 							<CarouselIndicator
+								aria-label={`Voir le slide n°${key + 1}`}
 								active={currentSlide === key}
 								onClick={() => {
 									instanceRef.current?.moveToIdx(key);

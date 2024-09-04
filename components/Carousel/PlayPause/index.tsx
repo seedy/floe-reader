@@ -53,6 +53,7 @@ const PlayPause = ({ playing, onClick, delay = 1000 }: PlayPauseProps) => {
 			name={`click play pause button from ${playing ? "playing" : "pause"}`}
 		>
 			<button
+				aria-label={playing ? "Mettre en pause" : "Reprendre"}
 				className="absolute inset-0 z-1 m-0 inline-flex items-center justify-center border-none bg-none p-0 text-secondaryBackground focus-visible:bg-blackAlpha7 focus-visible:outline-none"
 				onClick={onTogglePlayPause}
 			>
