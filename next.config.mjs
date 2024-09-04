@@ -29,7 +29,7 @@ const nextConfig = {
 		],
 	}),
 };
-export default withSentryConfig(withBundleAnalyzer(nextConfig), {
+const sentryConfig = withSentryConfig(withBundleAnalyzer(nextConfig), {
 	// For all available options, see:
 	// https://github.com/getsentry/sentry-webpack-plugin#options
 
@@ -68,3 +68,13 @@ export default withSentryConfig(withBundleAnalyzer(nextConfig), {
 	// https://vercel.com/docs/cron-jobs
 	automaticVercelMonitors: true,
 });
+
+/** @type {import('next').NextConfig} */
+const finalConfig = {
+	...sentryConfig,
+	experimental: {
+		instrumentationHook: process.env.NODE_ENV === "production",
+	},
+};
+
+export default finalConfig;
