@@ -1,24 +1,21 @@
+"use client";
 import {
-	Cancel,
 	Content,
+	Description,
 	Overlay,
 	Portal,
 	Root,
 	Title,
 	Trigger,
 } from "@radix-ui/react-alert-dialog";
-import { CalendarIcon, Cross2Icon } from "@radix-ui/react-icons";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import ButtonLink from "components/Button/Link";
-import IconButton from "components/IconButton";
-import IconButtonLink from "components/IconButton/Link";
-import Logo from "components/Logo";
 import Share from "components/Share";
 import SlotTrack from "components/Slot/Track";
 import Socials from "components/Socials";
-import LogoType from "components/Typography/LogoType";
-import { PORTFOLIO, SERVICES, ZCAL_FIRST } from "constants/links";
+import { PORTFOLIO, SERVICES } from "constants/links";
 import { env } from "env.mjs";
-import cbcLogo from "public/CBC_LOGO_48.svg";
+import cn from "helpers/cn";
 import { ReactNode } from "react";
 
 interface SidebarProps {
@@ -29,12 +26,34 @@ const Sidebar = ({ children }: SidebarProps) => {
 		<Root>
 			<Trigger asChild>{children}</Trigger>
 			<Portal>
-				<Overlay className="fixed inset-0 z-[10000] bg-background" />
-				<Content className="fixed inset-0 z-[10000] flex shrink-0 flex-col bg-navbar">
+				<Overlay
+					className={cn(
+						"fixed inset-x-0 bottom-navbar top-0 z-navbar bg-background",
+						"origin-bottom data-[state=closed]:animate-fold data-[state=open]:animate-unfold",
+					)}
+				/>
+				<Content
+					className={cn(
+						"group fixed inset-x-0 bottom-navbar top-0 z-navbar flex shrink-0 origin-bottom flex-col bg-navbar",
+						"data-[state=closed]:animate-fold data-[state=open]:animate-unfold",
+					)}
+				>
+					<VisuallyHidden>
+						<Title>Menu</Title>
+						<Description>
+							Menu principal du site, tu y trouveras tous les liens pour me
+							suivre.
+						</Description>
+					</VisuallyHidden>
 					<div className="mb-auto flex w-full items-center justify-end px-5">
 						{env.NEXT_PUBLIC_DISPLAY_SHARE === true && <Share />}
 					</div>
-					<div className="flex flex-col items-start gap-4 px-5">
+					<div
+						className={cn(
+							"flex flex-col items-start gap-4 px-5",
+							"group-data-[state=closed]:animate-disappear group-data-[state=open]:animate-appear",
+						)}
+					>
 						<SlotTrack name="click sidebar link prestations">
 							<ButtonLink variant="link" href={SERVICES}>
 								Prestations
@@ -52,24 +71,6 @@ const Sidebar = ({ children }: SidebarProps) => {
 						</SlotTrack>
 						<div className="flex w-full justify-center py-5">
 							<Socials />
-						</div>
-					</div>
-					<div className="flex max-h-16 grow items-center justify-between px-5">
-						<div className="flex shrink-0 items-center gap-2">
-							<Logo src={cbcLogo} alt="" />
-							<Title asChild>
-								<LogoType>Floé Gaubert</LogoType>
-							</Title>
-						</div>
-						<div className="flex items-center gap-2">
-							<IconButtonLink size="small" href={ZCAL_FIRST}>
-								<CalendarIcon />
-							</IconButtonLink>
-							<Cancel asChild>
-								<IconButton size="small">
-									<Cross2Icon />
-								</IconButton>
-							</Cancel>
 						</div>
 					</div>
 				</Content>

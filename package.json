@@ -25,6 +25,7 @@
 		"@radix-ui/react-slot": "^1.1.0",
 		"@radix-ui/react-tabs": "^1.1.0",
 		"@radix-ui/react-toast": "^1.2.1",
+		"@radix-ui/react-visually-hidden": "1.1.0",
 		"@react-email/body": "^0.0.8",
 		"@react-email/button": "^0.0.15",
 		"@react-email/column": "^0.0.10",

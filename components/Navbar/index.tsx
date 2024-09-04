@@ -1,8 +1,8 @@
 "use client";
 
-import { CalendarIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { CalendarIcon } from "@radix-ui/react-icons";
 import ButtonLink from "components/Button/Link";
-import IconButton from "components/IconButton";
+import IconButtonHamburgerMenu from "components/IconButton/HamburgerMenu";
 import IconButtonLink from "components/IconButton/Link";
 import LogoFull from "components/Logo/Full";
 import Sidebar from "components/Navbar/Sidebar";
@@ -30,8 +30,8 @@ const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 			<nav
 				ref={innerRef}
 				className={cn(
-					"fixed inset-x-0 bottom-0 z-[9999] h-0 max-h-16 overflow-hidden bg-background transition-[height] duration-200 ease-out",
-					"lg:bottom-auto lg:top-0",
+					"pointer-events-auto fixed z-navbar h-0 max-h-navbar overflow-hidden bg-background transition-[height] duration-200 ease-out",
+					"inset-x-0 bottom-0 lg:bottom-auto lg:top-0",
 					className,
 				)}
 				{...props}
@@ -69,9 +69,7 @@ const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 							</IconButtonLink>
 						</SlotTrack>
 						<Sidebar>
-							<IconButton size="small">
-								<HamburgerMenuIcon />
-							</IconButton>
+							<IconButtonHamburgerMenu aria-label="Menu" size="small" />
 						</Sidebar>
 					</div>
 				</div>
