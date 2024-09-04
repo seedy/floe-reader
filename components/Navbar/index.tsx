@@ -64,7 +64,11 @@ const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 					</div>
 					<div className="flex items-center gap-2 lg:hidden">
 						<SlotTrack name="click navbar icon first">
-							<IconButtonLink size="small" href={ZCAL_FIRST}>
+							<IconButtonLink
+								aria-label="Prendre rendez-vous"
+								size="small"
+								href={ZCAL_FIRST}
+							>
 								<CalendarIcon />
 							</IconButtonLink>
 						</SlotTrack>
