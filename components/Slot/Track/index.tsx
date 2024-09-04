@@ -23,4 +23,6 @@ const SlotTrack = forwardRef<ElementRef<typeof Slot>, SlotTrackProps>(
 	},
 );
 
+SlotTrack.displayName = "SlotTrack";
+
 export default SlotTrack;
