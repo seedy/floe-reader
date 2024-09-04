@@ -34,7 +34,6 @@ const Template: StoryFn<typeof Carousel> = (args) => {
 					}
 					heading={<H1>Réalisons les contenus qui feront parler de toi</H1>}
 					src={landing1}
-					fill
 					alt=""
 				/>
 				<Slide
@@ -51,7 +50,6 @@ const Template: StoryFn<typeof Carousel> = (args) => {
 						</H1>
 					}
 					src={landing2}
-					fill
 					alt=""
 				/>
 				<Slide
@@ -63,7 +61,6 @@ const Template: StoryFn<typeof Carousel> = (args) => {
 					}
 					heading={<H1>Des interviews qui feront résonner ton message</H1>}
 					src={landing3}
-					fill
 					alt=""
 				/>
 			</Carousel>

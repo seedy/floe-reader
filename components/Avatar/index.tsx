@@ -30,6 +30,7 @@ const Avatar = ({ src, alt, className, ...props }: AvatarProps) => {
 			className={cn(variantsClassName, className)}
 			src={src}
 			alt={alt}
+			quality={100}
 			placeholder="blur"
 			{...props}
 		/>

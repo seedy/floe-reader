@@ -13,6 +13,7 @@ const Image = ({ src, alt, className, ...props }: ImageProps) => (
 		src={src}
 		alt={alt}
 		placeholder="blur"
+		quality={100}
 		{...props}
 	/>
 );

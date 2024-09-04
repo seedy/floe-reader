@@ -64,7 +64,11 @@ module.exports = {
 				indicator: "clamp(1rem, 4vw, 2.5rem)",
 			},
 			height: {
+				navbar: "4rem",
 				sideLogo: "clamp(5rem, 16vw, 10rem)",
+			},
+			spacing: {
+				navbar: "4rem",
 			},
 			aspectRatio: {
 				social: "9 / 16",
@@ -88,12 +92,28 @@ module.exports = {
 					from: { opacity: 0, transform: "translateY(0.625rem)" },
 					to: { opacity: 1, transform: "translateY(0)" },
 				},
+				disappear: {
+					from: { opacity: 1, transform: "translateY(0)" },
+					to: { opacity: 0, transform: "translateY(0.625rem)" },
+				},
+				fold: {
+					from: { transform: "scaleY(100%)" },
+					to: { transform: "scaleY(0%)" },
+				},
+				unfold: {
+					from: { transform: "scaleY(0%)" },
+					to: { transform: "scaleY(100%)" },
+				},
 			},
 			animation: {
 				appear: "400ms ease-in appear forwards",
+				disappear: "100ms ease-in disappear forwards",
+				fold: "200ms linear fold forwards",
+				unfold: "200ms linear unfold forwards",
 			},
 			zIndex: {
 				1: "1",
+				navbar: "9999",
 			},
 		},
 	},

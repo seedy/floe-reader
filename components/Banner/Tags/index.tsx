@@ -18,7 +18,7 @@ const BannerTags = ({ tags, className }: BannerTagsProps) => {
 		<div
 			className={cn(
 				"m-0 flex min-h-[3.75rem] items-center overflow-hidden bg-navbar p-0",
-				"w-4/5 motion-reduce:w-full",
+				"w-full supports-[animation-timeline:view()]:w-4/5 motion-reduce:w-full",
 				styles.root,
 				className,
 			)}

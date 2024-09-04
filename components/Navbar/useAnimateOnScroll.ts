@@ -31,8 +31,11 @@ const trigger = (
 		store.current = WINDOW.scrollY;
 	}
 	const current = store.current;
-	if (current === undefined || previous === undefined) {
+	if (current === undefined) {
 		return;
+	}
+	if (previous === undefined) {
+		return show(target);
 	}
 	const isGoingUp = current < previous;
 	const upDiff = isGoingUp ? cumulatedScrollUp.current + previous - current : 0;

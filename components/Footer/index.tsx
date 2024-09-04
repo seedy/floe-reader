@@ -44,7 +44,7 @@ const Footer = () => (
 				</Link>
 			</div>
 		</div>
-		<div className="flex flex-col items-center gap-2">
+		<div className="flex w-full flex-col items-center gap-2">
 			<LogoFull />
 			<P>Chaque jour est différent, fais-en ce que tu veux !</P>
 		</div>

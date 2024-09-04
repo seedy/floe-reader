@@ -7,10 +7,12 @@
   }
 }
 
-.root {
-  animation: parallaxEnter linear forwards;
-  animation-timeline: view();
-  animation-range: entry 0% contain 0%;
+@supports (animation-timeline: view()) {
+  .root {
+    animation: parallaxEnter linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% contain 0%;
+  }
 }
 
 @media (prefers-reduced-motion) {
