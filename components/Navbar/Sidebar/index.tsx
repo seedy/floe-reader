@@ -1,5 +1,6 @@
 "use client";
 import {
+	Action,
 	Content,
 	Description,
 	Overlay,
@@ -54,11 +55,13 @@ const Sidebar = ({ children }: SidebarProps) => {
 							"group-data-[state=closed]:animate-disappear group-data-[state=open]:animate-appear",
 						)}
 					>
-						<SlotTrack name="click sidebar link prestations">
-							<ButtonLink variant="link" href={SERVICES}>
-								Prestations
-							</ButtonLink>
-						</SlotTrack>
+						<Action>
+							<SlotTrack name="click sidebar link prestations">
+								<ButtonLink variant="link" href={SERVICES}>
+									Prestations
+								</ButtonLink>
+							</SlotTrack>
+						</Action>
 						<SlotTrack name="click sidebar link portfolio">
 							<ButtonLink
 								variant="link"
