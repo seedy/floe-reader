@@ -119,7 +119,7 @@ const ScreenLanding = () => {
 						"left-1/2 -translate-x-1/2 lg:absolute",
 					)}
 				>
-					<ParallaxLeave>
+					<ParallaxLeave className="w-full">
 						<ScrollHint className={hintClassName} href={CTA_PORTFOLIO} />
 					</ParallaxLeave>
 				</div>
@@ -138,7 +138,7 @@ const ScreenLanding = () => {
 						Je prends rendez-vous
 					</ButtonLink>
 				</SlotTrack>
-				<ParallaxLeave className="self-end">
+				<ParallaxLeave className="w-full">
 					<ScrollHint className={hintClassName} href={CTA_PORTFOLIO} />
 				</ParallaxLeave>
 			</div>
