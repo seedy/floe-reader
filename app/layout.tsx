@@ -6,6 +6,7 @@ import Footer from "components/Footer";
 import Navbar from "components/Navbar";
 import ToastProvider from "components/Toast/Provider";
 import { env } from "env.mjs";
+import { LazyMotion, domAnimation } from "framer-motion";
 import cn from "helpers/cn";
 import { Lora } from "next/font/google";
 import { Urbanist } from "next/font/google";
@@ -30,10 +31,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
 		<html lang="fr" className={cn(lora.variable, urbanist.variable)}>
-			<body>
+			<body className="relative">
 				<ToastProvider>
 					<Navbar />
-					<main className="mb-32 lg:mt-16">{children}</main>
+					<LazyMotion features={domAnimation}>
+						<main className="mb-32 lg:mt-16">{children}</main>
+					</LazyMotion>
 					<Footer />
 				</ToastProvider>
 				<SpeedInsights />
