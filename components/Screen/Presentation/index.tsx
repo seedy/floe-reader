@@ -43,18 +43,16 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
 				>
 					<Content
 						title="Un tournage sur-mesure pour les spots vidéo de ton entreprise"
-						summary={
-							<>
-								<P>
-									Je crée de A à Z différents formats audiovisuels et des
-									reportages.
-									<br />
-									Nous rédigeons ensemble le script. Je réalise le tournage puis
-									le montage et enfin, l&apos;étalonnage pour plus
-									d&apos;authenticité et de réalisme.
-								</P>
-							</>
-						}
+						summary={[
+							<P key={1}>
+								Je crée de A à Z différents formats audiovisuels et des
+								reportages.
+								<br />
+								Nous rédigeons ensemble le script. Je réalise le tournage puis
+								le montage et enfin, l&apos;étalonnage pour plus
+								d&apos;authenticité et de réalisme.
+							</P>,
+						]}
 						catcher={
 							<>
 								Retranscrire les émotions, partager les expériences,{" "}
@@ -141,23 +139,21 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
 								et ambiances que dégagent mes réalisations.
 							</>
 						}
-						summary={
-							<>
-								<P>
-									Du short, à la vidéo courte, en passant par le reportage, je
-									sais orchestrer le tempo qui convient à ton besoin et au style
-									de tes contenus.
-								</P>
-								<P>
-									Besoin d&apos;une aide temporaire pour assurer tes délais de
-									livraisons ? Je suis celle qu&apos;il te faut !
-								</P>
-								<P>
-									Réactive et proactive, j&apos;aime relever des défis et
-									travailler en équipe.
-								</P>
-							</>
-						}
+						summary={[
+							<P key={1}>
+								Du short, à la vidéo courte, en passant par le reportage, je
+								sais orchestrer le tempo qui convient à ton besoin et au style
+								de tes contenus.
+							</P>,
+							<P key={2}>
+								Besoin d&apos;une aide temporaire pour assurer tes délais de
+								livraisons ? Je suis celle qu&apos;il te faut !
+							</P>,
+							<P key={3}>
+								Réactive et proactive, j&apos;aime relever des défis et
+								travailler en équipe.
+							</P>,
+						]}
 						src={presentationMontage}
 						cta={
 							<div className="flex flex-col items-center gap-4">
@@ -253,27 +249,25 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
 								</SlotTrack>
 							</div>
 						}
-						summary={
-							<>
-								<P>
-									Transmettre un message et une émotion est le rôle essentiel de
-									mes photographies.
-								</P>
-								<P>
-									Je capture les portraits qui te mettront en valeur, ainsi que
-									ton cadre quotidien.
-								</P>
-								<P>
-									<span className="font-bold">Passe ta commande</span>, en tant
-									que digital nomade, je suis en mesure de prendre tes clichés
-									sur la route !
-								</P>
-								<P>
-									Mes images sont aussi disponibles à l&apos;achat individuel ou
-									groupé.
-								</P>
-							</>
-						}
+						summary={[
+							<P key={1}>
+								Transmettre un message et une émotion est le rôle essentiel de
+								mes photographies.
+							</P>,
+							<P key={2}>
+								Je capture les portraits qui te mettront en valeur, ainsi que
+								ton cadre quotidien.
+							</P>,
+							<P key={3}>
+								<span className="font-bold">Passe ta commande</span>, en tant
+								que digital nomade, je suis en mesure de prendre tes clichés sur
+								la route !
+							</P>,
+							<P key={4}>
+								Mes images sont aussi disponibles à l&apos;achat individuel ou
+								groupé.
+							</P>,
+						]}
 						catcher={
 							<>
 								Des photos de qualité qui te ressemblent, afin de mettre en
@@ -384,29 +378,26 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
 								</SpanUnderline>
 							</>
 						}
-						summary={
-							<>
-								<H3 className="mb-2 mt-6">
-									Il était une fois : voyage initiatique et reconversion
-								</H3>
-								<P>
-									Après 2 ans en tant qu&apos;attachée commerciale, j&apos;ai
-									quitté la France pour entamer un voyage initiatique au Québec
-									!
-								</P>
-								<P>
-									De retour en France, j&apos;ai besoin d&apos;un nouveau
-									départ, j&apos;entame ma reconversion.
-								</P>
-								<P>
-									J&apos;ai commencé par enregistrer mon tout premier podcast
-									avec une amie.
-									<br />
-									Elle me raconte sa première expérience à bord d&apos;un
-									voilier en partance pour l&apos;Antarctique.
-								</P>
-							</>
-						}
+						summary={[
+							<H3 key={1} className="mb-2 mt-6">
+								Il était une fois : voyage initiatique et reconversion
+							</H3>,
+							<P key={2}>
+								Après 2 ans en tant qu&apos;attachée commerciale, j&apos;ai
+								quitté la France pour entamer un voyage initiatique au Québec !
+							</P>,
+							<P key={3}>
+								De retour en France, j&apos;ai besoin d&apos;un nouveau départ,
+								j&apos;entame ma reconversion.
+							</P>,
+							<P key={4}>
+								J&apos;ai commencé par enregistrer mon tout premier podcast avec
+								une amie.
+								<br />
+								Elle me raconte sa première expérience à bord d&apos;un voilier
+								en partance pour l&apos;Antarctique.
+							</P>,
+						]}
 						alt="À la suite de plusieurs podcasts, j'ai pris conscience de mon envie de réaliser des interviews"
 					>
 						<H3 className="mb-2 mt-6">
@@ -461,27 +452,24 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
 						</P>
 					</Content>
 					<Content
-						className="mb-0"
 						title={<>Aujourd&apos;hui : digital nomade</>}
-						summary={
-							<>
-								<P>Je suis monteuse vidéo et photographe.</P>
-								<P>
-									Ma curiosité me pousse à travailler sur des projets divers et
-									variés et vient challenger ma créativité afin de répondre à
-									tes besoins.
-								</P>
-								<H3 className="mb-2 mt-6">
-									Mon terrain de jeu : la France et l&apos;Europe
-								</H3>
-								<P>
-									Je parcours la France et l&apos;Europe avec{" "}
-									<span className="italic">Vanupattes</span>, mon van aménagé,
-									en quête de projets innovants et en accord avec
-									l&apos;environnement.
-								</P>
-							</>
-						}
+						summary={[
+							<P key={1}>Je suis monteuse vidéo et photographe.</P>,
+							<P key={2}>
+								Ma curiosité me pousse à travailler sur des projets divers et
+								variés et vient challenger ma créativité afin de répondre à tes
+								besoins.
+							</P>,
+							<H3 key={3} className="mb-2 mt-6">
+								Mon terrain de jeu : la France et l&apos;Europe
+							</H3>,
+							<P key={4}>
+								Je parcours la France et l&apos;Europe avec{" "}
+								<span className="italic">Vanupattes</span>, mon van aménagé, en
+								quête de projets innovants et en accord avec
+								l&apos;environnement.
+							</P>,
+						]}
 						catcher={
 							<>
 								Passionnée par{" "}
