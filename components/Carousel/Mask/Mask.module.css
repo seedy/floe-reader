@@ -4,6 +4,18 @@
   mask-image: url("/mask.webp");
 }
 
+@media (min-width: 640px) {
+  .root {
+    mask-image: url("/mask-xs.webp");
+  }
+}
+
+@media (min-width: 768px) {
+  .root {
+    mask-image: url("/mask-sm.webp");
+  }
+}
+
 @media (min-width: 1024px) {
   .root {
     mask-image: url("/mask-desktop.webp");
