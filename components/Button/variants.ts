@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const buttonVariants = cva(
-	"m-0 inline-flex min-h-[2.125rem] min-w-20 max-w-80 items-center justify-center rounded border-none bg-none px-6 py-1 text-center font-body text-button font-bold uppercase outline outline-[0.125rem] outline-transparent focus-visible:outline-[0.375rem] lg:w-auto lg:max-w-none lg:grow-0 whitespace-nowrap",
+	"m-0 inline-flex min-h-[2.125rem] min-w-20 max-w-80 justify-center items-center rounded border-none bg-none px-6 py-1 text-center font-body text-button font-bold uppercase outline outline-[0.125rem] outline-transparent focus-visible:outline-[0.375rem] lg:w-auto lg:max-w-none lg:grow-0 whitespace-nowrap",
 	{
 		variants: {
 			variant: {
@@ -22,6 +22,9 @@ export const buttonVariants = cva(
 			},
 			full: {
 				true: ["w-full"],
+			},
+			inline: {
+				true: ["min-w-fit items-baseline"],
 			},
 		},
 		compoundVariants: [

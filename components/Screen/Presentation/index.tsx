@@ -344,11 +344,7 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
 							<br />
 							Elles sont disponibles à l&apos;achat individuel ou groupé, je
 							t&apos;invite à{" "}
-							<ButtonLink
-								className="min-w-fit items-baseline px-0"
-								href={EMAIL}
-								target="_blank"
-							>
+							<ButtonLink inline href={EMAIL} target="_blank">
 								m&apos;écrire
 							</ButtonLink>{" "}
 							pour en savoir plus.
