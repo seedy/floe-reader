@@ -10,6 +10,7 @@ import useAnimateOnScroll from "components/Navbar/useAnimateOnScroll";
 import SlotTrack from "components/Slot/Track";
 import { PORTFOLIO, SERVICES, ZCAL_FIRST } from "constants/links";
 import cn from "helpers/cn";
+import Link from "next/link";
 import {
 	ComponentProps,
 	ElementRef,
@@ -37,7 +38,9 @@ const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 				{...props}
 			>
 				<div className="flex size-full items-center justify-between bg-navbar px-5 py-0">
-					<LogoFull />
+					<Link href="/" aria-label="Accueil">
+						<LogoFull />
+					</Link>
 					<div className="hidden gap-6 lg:flex">
 						<SlotTrack name="click navbar link prestations">
 							<ButtonLink variant="link" href={SERVICES}>

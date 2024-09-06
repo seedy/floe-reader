@@ -15,12 +15,18 @@ const Button = forwardRef<ElementRef<"button">, ButtonProps>(
 			variant = "outlined",
 			color = "primary",
 			full,
+			inline,
 			className,
 			...props
 		},
 		forwardedRef,
 	) => {
-		const buttonVariantsClassName = buttonVariants({ variant, color, full });
+		const buttonVariantsClassName = buttonVariants({
+			variant,
+			color,
+			full,
+			inline,
+		});
 		return (
 			<button
 				type="button"
