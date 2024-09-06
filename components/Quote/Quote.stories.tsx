@@ -28,7 +28,7 @@ const Template: StoryFn<typeof Quote> = (args) => (
 			<QuoteItem
 				title={<H3>Montage vidéo</H3>}
 				cta={
-					<ButtonLink variant="outlined" href={ZCAL_MONTAGE} target="_blank">
+					<ButtonLink variant="outlined" href={ZCAL_MONTAGE}>
 						Je prends RDV
 						<br />
 						Montage
@@ -50,11 +50,7 @@ const Template: StoryFn<typeof Quote> = (args) => (
 				<QuoteItem
 					title={<H3>Interview / Reportage</H3>}
 					cta={
-						<ButtonLink
-							variant="outlined"
-							href={ZCAL_INTERVIEW}
-							target="_blank"
-						>
+						<ButtonLink variant="outlined" href={ZCAL_INTERVIEW}>
 							Je prends RDV
 							<br />
 							Interview
@@ -74,7 +70,7 @@ const Template: StoryFn<typeof Quote> = (args) => (
 			<QuoteItem
 				title={<H3>Photo</H3>}
 				cta={
-					<ButtonLink variant="outlined" href={ZCAL_PHOTO} target="_blank">
+					<ButtonLink variant="outlined" href={ZCAL_PHOTO}>
 						Je prends RDV
 						<br />
 						Photo
