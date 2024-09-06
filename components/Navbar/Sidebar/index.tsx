@@ -17,12 +17,13 @@ import Socials from "components/Socials";
 import { PORTFOLIO, SERVICES } from "constants/links";
 import { env } from "env.mjs";
 import cn from "helpers/cn";
-import { ReactNode } from "react";
+import { ComponentProps, ReactNode } from "react";
 
 interface SidebarProps {
 	children: ReactNode;
+	onOpenAutoFocus?: ComponentProps<typeof Content>["onOpenAutoFocus"];
 }
-const Sidebar = ({ children }: SidebarProps) => {
+const Sidebar = ({ children, onOpenAutoFocus }: SidebarProps) => {
 	return (
 		<Root>
 			<Trigger asChild>{children}</Trigger>
@@ -34,6 +35,7 @@ const Sidebar = ({ children }: SidebarProps) => {
 					)}
 				/>
 				<Content
+					onOpenAutoFocus={onOpenAutoFocus}
 					className={cn(
 						"group fixed inset-x-0 bottom-navbar top-0 z-navbar flex shrink-0 origin-bottom flex-col bg-navbar",
 						"data-[state=closed]:animate-fold data-[state=open]:animate-unfold",

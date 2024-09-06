@@ -45,7 +45,9 @@ const trigger = (
 };
 
 // HOOKS
-const useAnimateOnScroll = (targetRef: MutableRefObject<null>) => {
+const useAnimateOnScroll = (
+	targetRef: MutableRefObject<HTMLElement | null>,
+) => {
 	const scrollStore = useRef<number | undefined>();
 	const cumulatedScrollUp = useRef(0);
 	useEffect(() => {

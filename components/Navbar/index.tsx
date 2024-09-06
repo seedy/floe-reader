@@ -22,10 +22,17 @@ import {
 type NavbarProps = ComponentProps<"nav">;
 const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 	({ className, ...props }, forwardedRef) => {
-		const innerRef = useRef(null);
+		const innerRef = useRef<ElementRef<"nav"> | null>(null);
 		useImperativeHandle(forwardedRef, () => innerRef?.current!, [innerRef]);
 
 		useAnimateOnScroll(innerRef);
+
+		const onOpenAutoFocus = () => {
+			if (innerRef.current) {
+				innerRef.current.removeAttribute("aria-hidden");
+				innerRef.current.removeAttribute("data-aria-hidden");
+			}
+		};
 
 		return (
 			<nav
@@ -75,7 +82,7 @@ const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 								<CalendarIcon />
 							</IconButtonLink>
 						</SlotTrack>
-						<Sidebar>
+						<Sidebar onOpenAutoFocus={onOpenAutoFocus}>
 							<IconButtonHamburgerMenu aria-label="Menu" size="small" />
 						</Sidebar>
 					</div>
