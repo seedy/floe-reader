@@ -1,7 +1,6 @@
 "use client";
 import SlotMotion from "components/Slot/Motion";
 import { useReducedMotion, useScroll, useTransform } from "framer-motion";
-import useSupportsViewTimeline from "hooks/useSupportsViewTimeline";
 import { ReactNode, useRef } from "react";
 
 interface BannerTagsMotionViewTimelineProps {
@@ -10,20 +9,19 @@ interface BannerTagsMotionViewTimelineProps {
 const BannerTagsMotionViewTimeline = ({
 	children,
 }: BannerTagsMotionViewTimelineProps) => {
-	const supportsViewTimeline = useSupportsViewTimeline();
 	const prefersReducedMotion = useReducedMotion();
 	const scrollTarget = useRef(null);
 	const { scrollYProgress } = useScroll({
-		target: supportsViewTimeline ? undefined : scrollTarget,
+		target: scrollTarget,
 		offset: ["start end", "end start"],
+		layoutEffect: false,
 	});
 	const translateX = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
 
-	if (supportsViewTimeline || prefersReducedMotion) {
-		return <>{children}</>;
-	}
+	const style = prefersReducedMotion ? {} : { translateX };
+
 	return (
-		<SlotMotion style={{ translateX }} ref={scrollTarget}>
+		<SlotMotion style={style} ref={scrollTarget}>
 			{children}
 		</SlotMotion>
 	);

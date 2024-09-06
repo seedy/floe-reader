@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
 		<html lang="fr" className={cn(lora.variable, urbanist.variable)}>
-			<body className="relative bg-background">
+			<body className="bg-background">
 				<ToastProvider>
 					<Navbar />
 					<LazyMotion features={domAnimation}>
