@@ -1,7 +1,6 @@
 "use client";
 import SlotMotion from "components/Slot/Motion";
 import { useReducedMotion, useScroll, useTransform } from "framer-motion";
-import useSupportsViewTimeline from "hooks/useSupportsViewTimeline";
 import { ReactNode, useRef } from "react";
 
 interface AvatarParallaxMotionViewTimelineProps {
@@ -10,20 +9,19 @@ interface AvatarParallaxMotionViewTimelineProps {
 const AvatarParallaxMotionViewTimeline = ({
 	children,
 }: AvatarParallaxMotionViewTimelineProps) => {
-	const supportsViewTimeline = useSupportsViewTimeline();
 	const prefersReducedMotion = useReducedMotion();
 	const scrollTarget = useRef(null);
 	const { scrollYProgress } = useScroll({
-		target: supportsViewTimeline ? undefined : scrollTarget,
+		target: scrollTarget,
 		offset: ["start end", "end end"],
+		layoutEffect: false,
 	});
 	const scale = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
 
-	if (supportsViewTimeline || prefersReducedMotion) {
-		return <>{children}</>;
-	}
+	const style = prefersReducedMotion ? {} : { scale };
+
 	return (
-		<SlotMotion style={{ scale }} ref={scrollTarget}>
+		<SlotMotion style={style} ref={scrollTarget}>
 			{children}
 		</SlotMotion>
 	);
