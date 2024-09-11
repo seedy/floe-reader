@@ -26,24 +26,22 @@ const Template: StoryFn<typeof Carousel> = (args) => {
 		<div className="flex flex-col items-center justify-center">
 			<Carousel {...args}>
 				<Slide
-					headingDesktop={
-						<H2>
-							Je crée une expérience unique avec du contenu percutant et
-							chaleureux
-						</H2>
+					headingTop={{
+						mobile:
+							"Je crée une expérience unique avec du contenu percutant et chaleureux",
+					}}
+					headingBottom={
+						<H1>Réalisons les contenus qui feront parler de toi</H1>
 					}
-					heading={<H1>Réalisons les contenus qui feront parler de toi</H1>}
 					src={landing1}
 					alt=""
 				/>
 				<Slide
-					headingDesktop={
-						<H2>
-							Je crée une expérience unique avec du contenu percutant et
-							chaleureux
-						</H2>
-					}
-					heading={
+					headingTop={{
+						mobile:
+							"Je crée une expérience unique avec du contenu percutant et chaleureux",
+					}}
+					headingBottom={
 						<H1>
 							Je crée une expérience unique avec du contenu percutant et
 							chaleureux
@@ -53,13 +51,13 @@ const Template: StoryFn<typeof Carousel> = (args) => {
 					alt=""
 				/>
 				<Slide
-					headingDesktop={
-						<H2>
-							Je crée une expérience unique avec du contenu percutant et
-							chaleureux
-						</H2>
+					headingTop={{
+						mobile:
+							"Je crée une expérience unique avec du contenu percutant et chaleureux",
+					}}
+					headingBottom={
+						<H1>Des interviews qui feront résonner ton message</H1>
 					}
-					heading={<H1>Des interviews qui feront résonner ton message</H1>}
 					src={landing3}
 					alt=""
 				/>
