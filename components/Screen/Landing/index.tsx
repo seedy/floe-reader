@@ -5,7 +5,6 @@ import Image from "components/Image";
 import Logo from "components/Logo";
 import ParallaxLeave from "components/ParallaxLeave";
 import Screen from "components/Screen";
-import ResponsiveHeading from "components/Screen/Landing/ResponsiveHeading";
 import ScrollHint from "components/ScrollHint";
 import Slide from "components/Slide";
 import SlotTrack from "components/Slot/Track";
@@ -41,64 +40,42 @@ const ScreenLanding = () => {
 				}
 			>
 				<Slide
-					heading={
-						<H1 color="white">
-							<ResponsiveHeading
-								desktop="Tes vidéos sur-mesure"
-								mobile="Réalisons les contenus qui feront parler de toi"
-							/>
-						</H1>
-					}
+					headingTop={{
+						desktop: "Tes vidéos sur-mesure",
+						mobile: "Réalisons les contenus qui feront parler de toi",
+					}}
 					src={landing1}
 					priority
 					alt=""
 				/>
 				<Slide
-					headingDesktop={
-						<H1 color="white">Une expérience visuelle soignée</H1>
-					}
-					heading={
-						<H1 color="white">
-							<ResponsiveHeading mobile="Une expérience visuelle soignée" />
-						</H1>
-					}
+					headingBottom={<H1 color="white">Une expérience visuelle soignée</H1>}
+					headingTop={{ mobile: "Une expérience visuelle soignée" }}
 					src={landing2}
 					priority
 					alt=""
 				/>
 				<Slide
-					heading={
-						<H1 color="white">
-							<ResponsiveHeading
-								desktop="Tes contenus au fil de mes voyages"
-								mobile="Tes contenus au fil de mes voyages"
-							/>
-						</H1>
-					}
+					headingTop={{
+						desktop: "Tes contenus au fil de mes voyages",
+						mobile: "Tes contenus au fil de mes voyages",
+					}}
 					src={landing3}
 					alt=""
 				/>
 				<Slide
-					headingDesktop={
+					headingBottom={
 						<H1 color="white">Des clichés originaux à ta demande</H1>
 					}
-					heading={
-						<H1 color="white">
-							<ResponsiveHeading mobile="Des clichés originaux à ta demande" />
-						</H1>
-					}
+					headingTop={{ mobile: "Des clichés originaux à ta demande" }}
 					src={landing4}
 					alt=""
 				/>
 				<Slide
-					heading={
-						<H1 color="white">
-							<ResponsiveHeading
-								desktop="Tes instants sublimés en photo"
-								mobile="Tes instants sublimés en photo"
-							/>
-						</H1>
-					}
+					headingTop={{
+						desktop: "Tes instants sublimés en photo",
+						mobile: "Tes instants sublimés en photo",
+					}}
 					src={landing5}
 					alt=""
 				/>
