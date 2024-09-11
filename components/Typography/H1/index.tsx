@@ -1,9 +1,11 @@
 import { VariantProps } from "class-variance-authority";
 import { headingVariants } from "components/Typography/variants";
 import { joinCn } from "helpers/cn";
-import { ElementRef, ReactNode, forwardRef } from "react";
+import { ComponentProps, ElementRef, ReactNode, forwardRef } from "react";
 
-interface H1Props extends VariantProps<typeof headingVariants> {
+interface H1Props
+	extends VariantProps<typeof headingVariants>,
+		Omit<ComponentProps<"h1">, "color"> {
 	children?: ReactNode;
 	className?: string;
 }

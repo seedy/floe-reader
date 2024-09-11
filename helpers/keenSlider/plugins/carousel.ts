@@ -1,22 +1,24 @@
-import { KeenSliderInstance } from "keen-slider/react";
+import { KeenSliderHooks, KeenSliderInstance } from "keen-slider/react";
 
-interface CustomKeenSliderInstance extends KeenSliderInstance {
-	on: (name: string, cb: Function, remove?: boolean) => void;
-	emit: (name: string) => void;
-}
+export type CustomKeenSliderHooks =
+	| KeenSliderHooks
+	| "in"
+	| "out"
+	| "stopped"
+	| "resumed";
 
 const keenSliderCarousel =
-	(delay: number, onDoneOnce?: Function) => (slider: KeenSliderInstance) => {
+	(delay: number) =>
+	(slider: KeenSliderInstance<{}, {}, CustomKeenSliderHooks>) => {
 		let timeout: ReturnType<typeof setTimeout>;
-		let mouseOver = false;
-		let doneOnce: boolean | undefined = false;
+		let busy = false;
 
 		const observer = new IntersectionObserver((entries) => {
 			const entry = entries[0];
 			if (entry.isIntersecting) {
-				return (slider as CustomKeenSliderInstance).emit("in");
+				return slider.emit("in");
 			}
-			(slider as CustomKeenSliderInstance).emit("out");
+			slider.emit("out");
 		});
 
 		const clearNextTimeout = () => {
@@ -25,20 +27,30 @@ const keenSliderCarousel =
 
 		const nextTimeout = () => {
 			clearTimeout(timeout);
-			if (mouseOver) return;
+			if (busy) return;
 			timeout = setTimeout(() => {
 				slider.next();
 			}, delay);
 		};
 
 		const onMouseOver = () => {
-			mouseOver = true;
+			busy = true;
 			clearNextTimeout();
 		};
 
 		const onMouseOut = () => {
-			mouseOver = false;
+			busy = false;
 			nextTimeout();
+		};
+
+		const onFocusIn = () => {
+			busy = true;
+			clearNextTimeout();
+		};
+
+		const onFocusOut = () => {
+			busy = false;
+			clearNextTimeout();
 		};
 
 		const onCreated = (instance: KeenSliderInstance) => {
@@ -46,6 +58,8 @@ const keenSliderCarousel =
 		};
 
 		const onIn = (instance: KeenSliderInstance) => {
+			instance.container.addEventListener("focusin", onFocusIn);
+			instance.container.addEventListener("focusout", onFocusOut);
 			instance.container.addEventListener("mouseover", onMouseOver);
 			instance.container.addEventListener("mouseout", onMouseOut);
 			instance.on("animationEnded", nextTimeout);
@@ -53,6 +67,8 @@ const keenSliderCarousel =
 		};
 
 		const onOut = (instance: KeenSliderInstance) => {
+			instance.container.removeEventListener("focusin", onFocusIn);
+			instance.container.removeEventListener("focusout", onFocusOut);
 			instance.container.removeEventListener("mouseover", onMouseOver);
 			instance.container.removeEventListener("mouseout", onMouseOut);
 			instance.on("animationEnded", nextTimeout, true);
@@ -71,24 +87,10 @@ const keenSliderCarousel =
 
 		slider.on("created", onCreated);
 		slider.on("destroyed", onStop);
-		(slider as CustomKeenSliderInstance).on("in", onIn);
-		(slider as CustomKeenSliderInstance).on("out", onOut);
-		(slider as CustomKeenSliderInstance).on("stopped", onStop);
-		(slider as CustomKeenSliderInstance).on("resumed", onResume);
-
-		const onSlideChanged = () => {
-			if (doneOnce === true && onDoneOnce) {
-				onDoneOnce();
-				doneOnce = undefined;
-			}
-			const current = slider.track.details.rel;
-			const lastSlideIndex = slider.track.details.slides.length - 1;
-			if (doneOnce === false && current === lastSlideIndex) {
-				doneOnce = true;
-			}
-		};
-
-		slider.on("slideChanged", onSlideChanged);
+		slider.on("in", onIn);
+		slider.on("out", onOut);
+		slider.on("stopped", onStop);
+		slider.on("resumed", onResume);
 	};
 
 export default keenSliderCarousel;

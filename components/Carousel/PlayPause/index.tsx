@@ -2,7 +2,7 @@
 import { PauseIcon, PlayIcon } from "@radix-ui/react-icons";
 import { cva } from "class-variance-authority";
 import SlotTrack from "components/Slot/Track";
-import { MouseEvent, useRef, useState, useTransition } from "react";
+import { MouseEvent, useEffect, useRef, useState, useTransition } from "react";
 
 interface PlayPauseProps {
 	playing?: boolean;
@@ -34,6 +34,9 @@ const PlayPause = ({ playing, onClick, delay = 1000 }: PlayPauseProps) => {
 			return;
 		}
 		onClick(e);
+	};
+
+	useEffect(() => {
 		startTransition(() => {
 			setVisible(true);
 		});
@@ -46,7 +49,7 @@ const PlayPause = ({ playing, onClick, delay = 1000 }: PlayPauseProps) => {
 				setVisible(false);
 			});
 		}, delay);
-	};
+	}, [delay, playing]);
 
 	return (
 		<SlotTrack
