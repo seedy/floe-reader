@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "components/Footer";
 import Navbar from "components/Navbar";
 import ToastProvider from "components/Toast/Provider";
+import { MAIN_CONTENT } from "constants/links";
 import { env } from "env.mjs";
 import { LazyMotion, domAnimation } from "framer-motion";
 import cn from "helpers/cn";
@@ -39,7 +40,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 				<ToastProvider>
 					<Navbar />
 					<LazyMotion features={domAnimation}>
-						<main className="mb-32 lg:mt-16">{children}</main>
+						<main id={MAIN_CONTENT.replace("#", "")} className="mb-32 lg:mt-16">
+							{children}
+						</main>
 					</LazyMotion>
 					<Footer />
 				</ToastProvider>

@@ -7,6 +7,7 @@ import IconButtonLink from "components/IconButton/Link";
 import LogoFull from "components/Logo/Full";
 import Sidebar from "components/Navbar/Sidebar";
 import useAnimateOnScroll from "components/Navbar/useAnimateOnScroll";
+import SkipLink from "components/SkipLink";
 import SlotTrack from "components/Slot/Track";
 import { PORTFOLIO, SERVICES, ZCAL_FIRST } from "constants/links";
 import cn from "helpers/cn";
@@ -45,6 +46,7 @@ const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 				{...props}
 			>
 				<div className="flex size-full items-center justify-between bg-navbar px-5 py-0">
+					<SkipLink />
 					<Link href="/" aria-label="Accueil">
 						<LogoFull />
 					</Link>
