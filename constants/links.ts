@@ -11,5 +11,6 @@ export const YOUTUBE =
 export const EMAIL = "mailto:floe.gaubert+pro@gmail.com";
 export const TEL = "tel:0683988242";
 
+export const MAIN_CONTENT = "#main";
 export const CTA_PORTFOLIO = "#cta-portfolio";
 export const SERVICES = "#services";
