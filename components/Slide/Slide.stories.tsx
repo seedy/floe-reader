@@ -19,7 +19,8 @@ const Template: StoryFn<typeof Slide> = (args) => <Slide {...args} />;
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
-	heading: <H1>Réalisons les contenus qui feront parler de toi</H1>,
+	headingTop: { mobile: "Réalisons les contenus qui feront parler de toi" },
+	headingBottom: <H1 color="white">Une expérience visuelle soignée</H1>,
 	src: landing1,
 	alt: "",
 	width: 360,
