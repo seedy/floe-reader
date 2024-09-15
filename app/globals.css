@@ -12,6 +12,13 @@ body {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion) {
+  html,
+  body {
+    scroll-behavior: auto;
+  }
+}
+
 @layer utilities {
   @counter-style checkmark {
     system: cyclic;
