@@ -1,10 +1,9 @@
-import ButtonLink from "components/Button/Link";
+import ButtonLinkNext from "components/Button/Link/Next";
 import LogoFull from "components/Logo/Full";
 import Socials from "components/Socials";
 import H2 from "components/Typography/H2";
 import P from "components/Typography/P";
 import cn from "helpers/cn";
-import Link from "next/link";
 
 const Footer = () => (
 	<footer
@@ -33,15 +32,15 @@ const Footer = () => (
 					"lg:gap-5",
 				)}
 			>
-				<Link href="/legal" passHref legacyBehavior>
-					<ButtonLink variant="link">Mentions légales</ButtonLink>
-				</Link>
-				<Link href="/privacy" passHref legacyBehavior>
-					<ButtonLink variant="link">Confidentialité</ButtonLink>
-				</Link>
-				<Link href="/sitemap.xml" passHref legacyBehavior>
-					<ButtonLink variant="link">Plan du site</ButtonLink>
-				</Link>
+				<ButtonLinkNext href="/legal" variant="link">
+					Mentions légales
+				</ButtonLinkNext>
+				<ButtonLinkNext href="/privacy" variant="link">
+					Confidentialité
+				</ButtonLinkNext>
+				<ButtonLinkNext href="/sitemap.xml" variant="link">
+					Plan du site
+				</ButtonLinkNext>
 			</div>
 		</div>
 		<div className="flex w-full flex-col items-center gap-2">
