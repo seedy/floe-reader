@@ -1,11 +1,11 @@
 import ButtonLink from "components/Button/Link";
+import ButtonLinkNext from "components/Button/Link/Next";
 import H1 from "components/Typography/H1";
 import H2 from "components/Typography/H2";
 import P from "components/Typography/P";
 import Subtitle from "components/Typography/Subtitle";
 import { EMAIL, TEL } from "constants/links";
 import cn from "helpers/cn";
-import Link from "next/link";
 
 const Legal = () => (
 	<section className={cn("flex flex-col gap-10 pt-6", "mx-5 lg:mx-10")}>
@@ -149,9 +149,9 @@ const Legal = () => (
 				caractère personnel, se reporter à la Charte en matière de protection
 				des données à caractère personnel du site floegaubert.com accessible
 				depuis la page{" "}
-				<Link href="/privacy" passHref legacyBehavior>
-					<ButtonLink inline>Confidentialité</ButtonLink>
-				</Link>
+				<ButtonLinkNext href="/privacy" inline>
+					Confidentialité
+				</ButtonLinkNext>
 				.
 			</P>
 		</div>

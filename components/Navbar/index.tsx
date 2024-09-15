@@ -2,6 +2,7 @@
 
 import { CalendarIcon } from "@radix-ui/react-icons";
 import ButtonLink from "components/Button/Link";
+import ButtonLinkNext from "components/Button/Link/Next";
 import IconButtonHamburgerMenu from "components/IconButton/HamburgerMenu";
 import IconButtonLink from "components/IconButton/Link";
 import LogoFull from "components/Logo/Full";
@@ -52,9 +53,15 @@ const Navbar = forwardRef<ElementRef<"nav">, NavbarProps>(
 					</Link>
 					<div className="hidden gap-6 lg:flex">
 						<SlotTrack name="click navbar link prestations">
-							<ButtonLink variant="link" href={SERVICES}>
+							<ButtonLinkNext
+								href={{
+									pathname: "/",
+									hash: SERVICES,
+								}}
+								variant="link"
+							>
 								Prestations
-							</ButtonLink>
+							</ButtonLinkNext>
 						</SlotTrack>
 						<SlotTrack name="click navbar link portfolio">
 							<ButtonLink

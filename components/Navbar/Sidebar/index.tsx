@@ -11,6 +11,7 @@ import {
 } from "@radix-ui/react-alert-dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import ButtonLink from "components/Button/Link";
+import ButtonLinkNext from "components/Button/Link/Next";
 import Share from "components/Share";
 import SlotTrack from "components/Slot/Track";
 import Socials from "components/Socials";
@@ -57,13 +58,19 @@ const Sidebar = ({ children, onOpenAutoFocus }: SidebarProps) => {
 							"group-data-[state=closed]:animate-disappear group-data-[state=open]:animate-appear",
 						)}
 					>
-						<Action>
-							<SlotTrack name="click sidebar link prestations">
-								<ButtonLink variant="link" href={SERVICES}>
+						<SlotTrack name="click sidebar link prestations">
+							<Action asChild>
+								<ButtonLinkNext
+									href={{
+										pathname: "/",
+										hash: SERVICES,
+									}}
+									variant="link"
+								>
 									Prestations
-								</ButtonLink>
-							</SlotTrack>
-						</Action>
+								</ButtonLinkNext>
+							</Action>
+						</SlotTrack>
 						<SlotTrack name="click sidebar link portfolio">
 							<ButtonLink
 								variant="link"

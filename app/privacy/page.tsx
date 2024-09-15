@@ -1,10 +1,10 @@
 import ButtonLink from "components/Button/Link";
+import ButtonLinkNext from "components/Button/Link/Next";
 import H1 from "components/Typography/H1";
 import H2 from "components/Typography/H2";
 import H3 from "components/Typography/H3";
 import P from "components/Typography/P";
 import cn from "helpers/cn";
-import Link from "next/link";
 
 const Privacy = () => (
 	<section className={cn("flex flex-col gap-10 pt-6", "mx-5 lg:mx-10")}>
@@ -43,9 +43,9 @@ const Privacy = () => (
 			</ul>
 			<P>
 				Cette politique complète les mentions légales consultables sur la page{" "}
-				<Link href="/legal" passHref legacyBehavior>
-					<ButtonLink inline>Mentions légales</ButtonLink>
-				</Link>
+				<ButtonLinkNext href="/legal" inline>
+					Mentions légales
+				</ButtonLinkNext>
 			</P>
 		</div>
 		<H2>
