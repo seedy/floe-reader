@@ -5,6 +5,12 @@ import H2 from "components/Typography/H2";
 import H3 from "components/Typography/H3";
 import P from "components/Typography/P";
 import cn from "helpers/cn";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Floé Gaubert - Monteuse & Expérimentaliste | Confidentialité",
+	description: "Confidentialité du site vitrine",
+};
 
 const Privacy = () => (
 	<section className={cn("flex flex-col gap-10 pt-6", "mx-5 lg:mx-10")}>

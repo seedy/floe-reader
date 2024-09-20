@@ -6,6 +6,12 @@ import P from "components/Typography/P";
 import Subtitle from "components/Typography/Subtitle";
 import { EMAIL, TEL } from "constants/links";
 import cn from "helpers/cn";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Floé Gaubert - Monteuse & Expérimentaliste | Mentions legales",
+	description: "Mentions légales du site vitrine",
+};
 
 const Legal = () => (
 	<section className={cn("flex flex-col gap-10 pt-6", "mx-5 lg:mx-10")}>
