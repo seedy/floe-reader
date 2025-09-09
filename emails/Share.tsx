@@ -212,7 +212,7 @@ const Share = () => (
 								Floé Gaubert
 							</Heading>
 							<Heading style={headings.h2} as="h2">
-								Monteuse & Expérimentaliste
+								Photographe, vidéaste et monteuse vidéo
 							</Heading>
 						</Column>
 						<Column>

@@ -8,7 +8,8 @@ import cn from "helpers/cn";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Floé Gaubert - Monteuse & Expérimentaliste | Confidentialité",
+	title:
+		"Floé Gaubert - Photographe, vidéaste et monteuse vidéo | Confidentialité",
 	description: "Confidentialité du site vitrine",
 };
 
