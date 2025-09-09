@@ -49,7 +49,7 @@ const headings = {
 		color: colors.white,
 		fontSize: fontSizes[1],
 		lineHeight: 1.5,
-		fontFamily: "inherit",
+		fontFamily: "Urbanist",
 		fontWeight: 700,
 		margin: 0,
 	},
@@ -58,7 +58,7 @@ const headings = {
 		color: colors.text,
 		fontSize: fontSizes[2],
 		lineHeight: 1.5,
-		fontFamily: "inherit",
+		fontFamily: "Urbanist",
 		fontWeight: 700,
 		margin: 0,
 	},
@@ -67,7 +67,7 @@ const headings = {
 		color: colors.text,
 		fontSize: fontSizes.body,
 		lineHeight: 1.5,
-		fontFamily: "inherit",
+		fontFamily: "Lora",
 		fontWeight: 400,
 		margin: 0,
 	},
@@ -96,7 +96,7 @@ const button = {
 		textTransform: "uppercase" as const,
 		textDecoration: "none",
 		textAlign: "center" as const,
-		fontFamily: "inherit",
+		fontFamily: "Lora",
 		fontSize: fontSizes.button,
 		fontWeight: 700,
 		border: "none",
@@ -116,7 +116,7 @@ const button = {
 		borderRadius: radii.rounded,
 		textDecoration: "none",
 		textAlign: "center" as const,
-		fontFamily: "inherit",
+		fontFamily: "Lora",
 		fontSize: fontSizes.button,
 		fontWeight: 700,
 		border: "none",
@@ -147,7 +147,7 @@ const icon = {
 
 const baseUrl = process.env.VERCEL_URL
 	? `https://${process.env.VERCEL_URL}`
-	: "/static";
+	: "";
 
 const Share = () => (
 	<Html>
@@ -172,6 +172,26 @@ const Share = () => (
 					format: "woff2",
 				}}
 			/>
+			<Font
+				fontFamily="Urbanist"
+				fallbackFontFamily="sans-serif"
+				fontWeight={400}
+				fontStyle="normal"
+				webFont={{
+					url: "https://fonts.gstatic.com/s/urbanist/v17/L0x-DF02iFML4hGCyMqlbS1miXK2.woff2",
+					format: "woff2",
+				}}
+			/>
+			<Font
+				fontFamily="Urbanist"
+				fallbackFontFamily="sans-serif"
+				fontWeight={700}
+				fontStyle="normal"
+				webFont={{
+					url: "https://fonts.gstatic.com/s/urbanist/v17/L0x-DF02iFML4hGCyMqlbS1miXK2.woff2",
+					format: "woff2",
+				}}
+			/>
 			<style>
 				{`
                     .title tbody {
@@ -189,12 +209,15 @@ const Share = () => (
 						width: 360,
 						height: 360,
 						marginBottom: "1.25rem",
-						backgroundImage: `url(${baseUrl}/landing-1-mask.webp)`,
+						backgroundImage: `url(${baseUrl}/static/landing-1-mask.webp)`,
+						display: "flex",
+						alignItems: "flex-start",
 					}}
 				>
 					<Heading
 						style={{
 							textAlign: "center",
+							verticalAlign: "start",
 							padding: "0 1.25rem",
 							...headings.h1,
 						}}
@@ -212,14 +235,14 @@ const Share = () => (
 								Floé Gaubert
 							</Heading>
 							<Heading style={headings.h2} as="h2">
-								Photographe, vidéaste et monteuse vidéo
+								Photographe, vidéaste et monteuse
 							</Heading>
 						</Column>
 						<Column>
 							<Img
 								style={{ marginLeft: "auto" }}
 								height={80}
-								src={`${baseUrl}/logo-side.webp`}
+								src={`${baseUrl}/static/logo-side.webp`}
 								alt=""
 							/>
 						</Column>
@@ -227,7 +250,7 @@ const Share = () => (
 				</Section>
 				<Section style={{ ...banner, marginBottom: "1.5rem" }}>
 					<Text style={headings.body}>
-						Interview • Rédaction • Podcast • Photo • Vidéo
+						Interview • Montage • Podcast • Photo • Vidéo
 					</Text>
 				</Section>
 				<Section style={{ textAlign: "center", marginBottom: "4.25rem" }}>
@@ -242,7 +265,7 @@ const Share = () => (
 									<Row>
 										<Img
 											style={icon}
-											src={`${baseUrl}/instagram-logo-icon.png`}
+											src={`${baseUrl}/static/instagram-logo-icon.png`}
 											alt=""
 										/>
 									</Row>
@@ -255,7 +278,7 @@ const Share = () => (
 									<Row>
 										<Img
 											style={icon}
-											src={`${baseUrl}/linkedin-logo-icon.png`}
+											src={`${baseUrl}/static/linkedin-logo-icon.png`}
 											alt=""
 										/>
 									</Row>
@@ -268,7 +291,7 @@ const Share = () => (
 									<Row>
 										<Img
 											style={icon}
-											src={`${baseUrl}/envelope-closed-icon.png`}
+											src={`${baseUrl}/static/envelope-closed-icon.png`}
 											alt=""
 										/>
 									</Row>
@@ -281,7 +304,7 @@ const Share = () => (
 									<Row>
 										<Img
 											style={icon}
-											src={`${baseUrl}/mobile-icon.png`}
+											src={`${baseUrl}/static/mobile-icon.png`}
 											alt=""
 										/>
 									</Row>
@@ -292,7 +315,7 @@ const Share = () => (
 				</Section>
 				<Section style={{ textAlign: "center", marginBottom: "1.25rem" }}>
 					<Row style={{ marginBottom: "1.25rem" }}>
-						<Link style={button.link} href={baseUrl}>
+						<Link style={button.link} href="https://floegaubert.com">
 							Je visite le site de Floé
 						</Link>
 					</Row>

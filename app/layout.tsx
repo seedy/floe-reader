@@ -26,7 +26,7 @@ const urbanist = Urbanist({
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://floegaubert.com"),
-	title: "Floé Gaubert - Photographe, vidéaste et monteuse vidéo",
+	title: "Floé Gaubert - Photographe, vidéaste et monteuse",
 	description: "Site vitrine",
 	openGraph: {
 		images: "/opengraph-image.jpg",

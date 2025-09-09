@@ -9,8 +9,7 @@ import cn from "helpers/cn";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title:
-		"Floé Gaubert - Photographe, vidéaste et monteuse vidéo | Mentions legales",
+	title: "Floé Gaubert - Photographe, vidéaste et monteuse | Mentions legales",
 	description: "Mentions légales du site vitrine",
 };
 
