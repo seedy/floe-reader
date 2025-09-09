@@ -22,5 +22,5 @@ const Template: StoryFn<typeof BannerTags> = (args) => (
 export const Default = Template.bind({});
 
 Default.args = {
-	tags: ["Interview", "Rédaction", "Podcast", "Photo", "Vidéo"],
+	tags: ["Interview", "Montage", "Podcast", "Photo", "Vidéo"],
 };

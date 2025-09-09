@@ -18,7 +18,7 @@ const Footer = () => (
 			<div className="flex w-[inherit] flex-col gap-4">
 				<div className="flex flex-col gap-2">
 					<H2 align="left">Floé Gaubert</H2>
-					<H2 align="left">Monteuse & Expérimentaliste</H2>
+					<H2 align="left">Photographe, vidéaste et monteuse</H2>
 					<P className="hidden lg:mt-2 lg:block">
 						Réalisons les contenus qui feront parler de toi
 					</P>

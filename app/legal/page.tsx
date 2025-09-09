@@ -9,7 +9,7 @@ import cn from "helpers/cn";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Floé Gaubert - Monteuse & Expérimentaliste | Mentions legales",
+	title: "Floé Gaubert - Photographe, vidéaste et monteuse | Mentions legales",
 	description: "Mentions légales du site vitrine",
 };
 
@@ -36,9 +36,9 @@ const Legal = () => (
 		<H2>Identité de l&apos;entreprise</H2>
 		<div className="flex flex-col gap-6">
 			<P>
-				Floé Gaubert exerce son activité de Monteuse & Expérimentaliste sous le
-				statut d&apos;Entrepreneur individuel, immatriculée au numéro Siren
-				919788596.
+				Floé Gaubert exerce son activité de Photographe, vidéaste et monteuse
+				vidéo sous le statut d&apos;Entrepreneur individuel, immatriculée au
+				numéro Siren 919788596.
 				<br />
 				Son siège social est situé au 436 Chemin du Chambost, 69470, Ranchal,
 				FRANCE.

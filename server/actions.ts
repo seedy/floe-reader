@@ -1,11 +1,11 @@
 "use server";
 
+import { render } from "@react-email/render";
+import Share from "emails/Share";
 import { env } from "env.mjs";
-import { z } from "zod";
 import { createTransport } from "nodemailer";
 import SMTPTransport from "nodemailer/lib/smtp-transport";
-import Share from "emails/Share";
-import { render } from "@react-email/render";
+import { z } from "zod";
 
 const TRANSPORT: SMTPTransport.Options = {
 	host: env.MAILER_HOST,
@@ -43,19 +43,27 @@ export const unlock = async (_prevState: any, formData: FormData) => {
 
 const SHARE_INPUT_SCHEMA = z.object({
 	email: z.string().email(),
+	extra: z.string().optional(),
 });
 
 export const share = async (_prevState: any, formData: FormData) => {
 	try {
-		const { email } = SHARE_INPUT_SCHEMA.parse({
+		const { email, extra } = SHARE_INPUT_SCHEMA.parse({
 			email: formData.get("email"),
+			extra: formData.get("extra"),
 		});
 		const transporter = await createTransport(TRANSPORT);
-		const info = await transporter.sendMail({
-			from: "\"C' ben Correc'\" <cbencorrec@gmail.com>",
+		await transporter.sendMail({
+			from: env.MAILER_USER,
 			to: email,
 			subject: "Suite à notre rencontre",
 			html: ShareHtml,
+		});
+		await transporter.sendMail({
+			from: env.MAILER_USER,
+			to: env.MAILER_USER,
+			subject: "Carte de visite envoyée !",
+			text: `${email}\n${extra}`,
 		});
 	} catch (e) {
 		return {

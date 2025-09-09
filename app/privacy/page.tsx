@@ -8,7 +8,7 @@ import cn from "helpers/cn";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Floé Gaubert - Monteuse & Expérimentaliste | Confidentialité",
+	title: "Floé Gaubert - Photographe, vidéaste et monteuse | Confidentialité",
 	description: "Confidentialité du site vitrine",
 };
 
@@ -166,7 +166,7 @@ const Privacy = () => (
 		<div className="flex flex-col gap-6">
 			<P>
 				<span className="font-bold">Aucune donnée à caractère personnel</span>{" "}
-				n&apos;est collectée dans le cadre de la navigtion sur le site.
+				n&apos;est collectée dans le cadre de la navigation sur le site.
 				<br />
 				Spécifiquement,{" "}
 				<span className="font-bold">
