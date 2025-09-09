@@ -43,20 +43,27 @@ export const unlock = async (_prevState: any, formData: FormData) => {
 
 const SHARE_INPUT_SCHEMA = z.object({
 	email: z.string().email(),
+	extra: z.string().optional(),
 });
 
 export const share = async (_prevState: any, formData: FormData) => {
 	try {
-		const { email } = SHARE_INPUT_SCHEMA.parse({
+		const { email, extra } = SHARE_INPUT_SCHEMA.parse({
 			email: formData.get("email"),
+			extra: formData.get("extra"),
 		});
 		const transporter = await createTransport(TRANSPORT);
-		const info = await transporter.sendMail({
+		await transporter.sendMail({
 			from: env.MAILER_USER,
 			to: email,
-			bcc: env.MAILER_USER,
 			subject: "Suite à notre rencontre",
 			html: ShareHtml,
+		});
+		await transporter.sendMail({
+			from: env.MAILER_USER,
+			to: env.MAILER_USER,
+			subject: "Carte de visite envoyée !",
+			text: `${email}\n${extra}`,
 		});
 	} catch (e) {
 		return {

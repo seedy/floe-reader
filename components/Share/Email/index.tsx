@@ -49,8 +49,9 @@ const ShareEmail = ({
 					</H3>
 				</Description>
 				<form action={formAction}>
-					<div className="flex gap-4">
+					<div className="flex flex-col items-center gap-4">
 						<Input label="Mail du destinataire" name="email" />
+						<Input label="Informations supplémentaires" name="extra" />
 						<SlotSubmit>
 							<IconButton size="small" type="submit">
 								<EnterIcon />

@@ -20,7 +20,7 @@ const DialogQRCode = ({ open, onOpenChange }: DialogQRCodeProps) => {
 	return (
 		<Root open={open} onOpenChange={onOpenChange}>
 			<Overlay />
-			<Content className="absolute inset-0 flex flex-col items-center bg-background p-5">
+			<Content className="absolute inset-0 z-1 flex flex-col items-center bg-background p-5">
 				<Title asChild>
 					<H2>QR Code</H2>
 				</Title>
