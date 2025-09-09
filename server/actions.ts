@@ -1,11 +1,11 @@
 "use server";
 
+import { render } from "@react-email/render";
+import Share from "emails/Share";
 import { env } from "env.mjs";
-import { z } from "zod";
 import { createTransport } from "nodemailer";
 import SMTPTransport from "nodemailer/lib/smtp-transport";
-import Share from "emails/Share";
-import { render } from "@react-email/render";
+import { z } from "zod";
 
 const TRANSPORT: SMTPTransport.Options = {
 	host: env.MAILER_HOST,
@@ -52,8 +52,9 @@ export const share = async (_prevState: any, formData: FormData) => {
 		});
 		const transporter = await createTransport(TRANSPORT);
 		const info = await transporter.sendMail({
-			from: "\"C' ben Correc'\" <cbencorrec@gmail.com>",
+			from: env.MAILER_USER,
 			to: email,
+			bcc: env.MAILER_USER,
 			subject: "Suite à notre rencontre",
 			html: ShareHtml,
 		});
