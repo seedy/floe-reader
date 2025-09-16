@@ -145,9 +145,7 @@ const icon = {
 	margin: "auto",
 };
 
-const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-	? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-	: "/static";
+const baseUrl = "https://floegaubert.com";
 
 const Share = () => (
 	<Html>
