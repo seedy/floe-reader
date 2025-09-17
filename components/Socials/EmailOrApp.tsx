@@ -4,7 +4,7 @@ import Socials from "components/Socials";
 import { useSearchParams } from "next/navigation";
 import { ComponentProps } from "react";
 
-interface SocialsEmailOrApp extends ComponentProps<typeof Socials> {}
+interface SocialsEmailOrAppProps extends ComponentProps<typeof Socials> {}
 const SocialsEmailOrApp = ({
 	sources = {
 		instagram: true,
@@ -14,7 +14,7 @@ const SocialsEmailOrApp = ({
 		email: false,
 		tel: false,
 	},
-}: SocialsEmailOrApp) => {
+}: SocialsEmailOrAppProps) => {
 	const searchParams = useSearchParams();
 	const source = searchParams.get("source");
 

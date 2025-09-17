@@ -20,6 +20,7 @@ import landing3 from "public/landing-3.webp";
 import landing4 from "public/landing-4.webp";
 import landing5 from "public/landing-5.webp";
 import logoSide from "public/logo-side.svg";
+import { Suspense } from "react";
 
 const hintClassName = "animate-appear opacity-0 animation-delay-[2000ms]";
 
@@ -35,7 +36,9 @@ const ScreenLanding = () => {
 						<H2 color="secondary">
 							Réalisons les contenus qui feront parler de toi
 						</H2>
-						<SocialsEmailOrApp />
+						<Suspense fallback={null}>
+							<SocialsEmailOrApp />
+						</Suspense>
 					</div>
 				}
 			>
@@ -105,7 +108,9 @@ const ScreenLanding = () => {
 			<BannerTags className="lg:hidden" tags={TAGS} />
 
 			<div className={cn("mx-4 my-0 flex flex-col items-center", "lg:hidden")}>
-				<SocialsEmailOrApp />
+				<Suspense fallback={null}>
+					<SocialsEmailOrApp />
+				</Suspense>
 				<SlotTrack name="click landing cta first">
 					<ButtonLink
 						variant="contained"
