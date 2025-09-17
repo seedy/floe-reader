@@ -36,11 +36,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
 		<html lang="fr" className={cn(lora.variable, urbanist.variable)}>
-			<body className="bg-background">
+			<body className="flex min-h-svh flex-col bg-background">
 				<ToastProvider>
 					<Navbar />
 					<LazyMotion features={domAnimation}>
-						<main id={MAIN_CONTENT.replace("#", "")} className="mb-32 lg:mt-16">
+						<main
+							id={MAIN_CONTENT.replace("#", "")}
+							className="mb-32 flex grow flex-col lg:mt-16"
+						>
 							{children}
 						</main>
 					</LazyMotion>

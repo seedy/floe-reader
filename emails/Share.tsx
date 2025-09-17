@@ -204,6 +204,14 @@ const Share = () => (
 		<Preview>[Floé Gaubert] Ma carte de visite</Preview>
 		<Body style={{ backgroundColor: colors.background, color: colors.text }}>
 			<Container style={{ width: 360, margin: "auto" }}>
+				<Section style={{ marginBottom: "1rem" }}>
+					<Link
+						style={{ ...button.link, height: "auto" }}
+						href="https://floegaubert.com?source=email"
+					>
+						Ce message ne s&apos;affiche pas correctement ? Clique ici
+					</Link>
+				</Section>
 				<Section
 					style={{
 						width: 360,
@@ -286,7 +294,7 @@ const Share = () => (
 							</Button>
 						</Column>
 						<Column>
-							<Button aria-label="Email" style={iconButton} href={EMAIL}>
+							<Button aria-label="E-mail" style={iconButton} href={EMAIL}>
 								<Section style={iconWrapper}>
 									<Row>
 										<Img
