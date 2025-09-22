@@ -39,7 +39,7 @@ const radii = {
 const fontSizes = {
 	1: "1.75rem",
 	2: "1.25rem",
-	body: "1.125rem",
+	body: "0.875rem",
 	button: "1rem",
 };
 
@@ -330,6 +330,31 @@ const Share = () => (
 					<Row>
 						<Link style={button.contained} href={ZCAL_FIRST}>
 							Je prends rendez-vous
+						</Link>
+					</Row>
+				</Section>
+				<Section
+					style={{
+						textAlign: "center",
+						marginBottom: "1.25rem",
+						paddingTop: "1.25rem",
+						borderTop: "1px solid",
+						borderTopColor: colors.blackAlpha26,
+					}}
+				>
+					<Row>
+						<Text style={headings.body}>
+							Chaque jour est différent, faites-en ce que vous voulez. 🌳
+						</Text>
+					</Row>
+					<Row>
+						<Text style={{ ...headings.body, fontWeight: 700 }}>
+							Floé Gaubert
+						</Text>
+					</Row>
+					<Row>
+						<Link style={button.link} href={TEL}>
+							{TEL.replace("tel:", "")}
 						</Link>
 					</Row>
 				</Section>
