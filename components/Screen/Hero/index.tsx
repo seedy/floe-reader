@@ -105,58 +105,6 @@ const ScreenHero = () => {
 					</SlotTrack>
 					<P className="text-whiteHint">Mon calendrier t&apos;est ouvert !</P>
 				</div>
-				{/* <div
-					className={cn(
-						"mx-5 mb-5 mt-6 flex grow flex-col gap-20",
-						"lg:items-center",
-					)}
-				>
-					<div className={cn("flex flex-col gap-16", "lg:gap-[7.5rem]")}>
-						<div className={cn("flex flex-col gap-10", "lg:gap-20")}>
-							<H2 variant="h1">Et si on commençait par se rencontrer ?</H2>
-							<div>
-								<P>
-									Toutes les grandes histoires commencent par une rencontre.
-								</P>
-								<P>Quelle est la tienne ?</P>
-								<P className="lg:mt-6">
-									Prenons le temps de parler de ton projet !
-								</P>
-							</div>
-						</div>
-						<div
-							className={cn("flex flex-col items-center", "gap-10 lg:gap-20")}
-						>
-							<H3>Ils m&apos;ont confié leur communication</H3>
-							<div
-								className={cn(
-									"flex flex-col gap-5",
-									"lg:flex-row lg:gap-10 lg:px-5",
-								)}
-							>
-								<div className="flex items-center gap-4">
-									<Logo height={40} src={eidLabLogo} alt="Eid Lab" />
-									<P className="font-bold">Eid Lab</P>
-								</div>
-								<Logo height={40} src={kinobaLogo} alt="Kinoba" />
-								<Logo
-									height={40}
-									src={savoieProcessLogo}
-									alt="Savoie Process"
-								/>
-							</div>
-						</div>
-					</div>
-					<div className="flex flex-col items-center gap-5">
-					<SlotTrack name="click hero partners cta first">
-						<ButtonLink variant="contained" href={ZCAL_FIRST}>
-							Je prends rendez-vous
-						</ButtonLink>
-					</SlotTrack>
-						<P className="text-textHint">Mon calendrier t&apos;est ouvert !</P>
-					</div>
-				</div>
-				*/}
 			</Screen>
 			<Screen className="lg:pb-8" id={SERVICES.replace("#", "")}>
 				<QuoteHero />

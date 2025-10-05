@@ -3,54 +3,70 @@ import Quote from "components/Quote";
 import cn from "helpers/cn";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import { Children, ReactNode, useLayoutEffect, useRef, useState } from "react";
+import {
+	Children,
+	ComponentProps,
+	useLayoutEffect,
+	useRef,
+	useState,
+} from "react";
 
-const getWidthOverflow = (element: Element) =>
-	element.scrollWidth > element.clientWidth;
+// HELPERS
+const getWidthOverflow = (element: HTMLElement) => {
+	return element.scrollWidth > element.offsetWidth;
+};
 
-interface QuoteSliderProps {
-	children: ReactNode;
-}
+interface QuoteSliderProps extends ComponentProps<typeof Quote> {}
 
-const QuoteSlider = ({ children }: QuoteSliderProps) => {
+const QuoteSlider = ({ children, className }: QuoteSliderProps) => {
 	const [loaded, setLoaded] = useState(false);
+	const [isOverflowing, setOverflowing] = useState(false);
+
 	const ref = useRef<HTMLDivElement | null>();
 	const [ksRef] = useKeenSlider({
-		mode: "free",
+		mode: "free" as const,
+		breakpoints: {
+			"(width >= 64rem)": {
+				disabled: true,
+			},
+		},
 		slides: {
-			number: Children.count(children),
 			spacing: 16,
-			perView: "auto",
+			number: Children.count(children),
+			perView: "auto" as const,
 		},
 		created() {
 			setLoaded(true);
 		},
 	});
-	const [isOverflowing, setOverflowing] = useState(false);
 
 	useLayoutEffect(() => {
-		if (ref.current) {
-			const observer = new ResizeObserver((entries) => {
-				const isSomeEntryOverflowing = entries.some((entry) => {
-					return getWidthOverflow(entry.target);
-				});
-				setOverflowing(isSomeEntryOverflowing);
+		if (!ref.current) return;
+		const observer = new ResizeObserver((entries) => {
+			const isSomeEntryOverflowing = entries.some((entry) => {
+				return getWidthOverflow(entry.target as HTMLElement);
 			});
-			observer.observe(ref.current);
-			return () => {
-				observer.disconnect();
-			};
-		}
+			setOverflowing(isSomeEntryOverflowing);
+		});
+		observer.observe(ref.current);
+		return () => {
+			observer.disconnect();
+		};
 	}, []);
 
 	return (
 		<SliderOverflowingContextProvider value={loaded && isOverflowing}>
 			<Quote
 				ref={(node) => {
+					if (!node) return;
 					ksRef(node);
 					ref.current = node;
 				}}
-				className={cn("keen-slider", { "gap-4": !loaded })}
+				className={cn(
+					"keen-slider overflow-hidden",
+					!loaded && "gap-4",
+					className,
+				)}
 			>
 				{children}
 			</Quote>
