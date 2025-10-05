@@ -66,7 +66,7 @@ const QuoteHero = () => (
 					<QuoteSlide>
 						<QuoteItem
 							title={
-								<QuoteBadge title="Populaire">
+								<QuoteBadge className="lg:hidden" title="Populaire">
 									<H3>Vidéo institutionnelle</H3>
 								</QuoteBadge>
 							}

@@ -8,7 +8,7 @@ interface QuoteBadgeProps {
 	className?: string;
 }
 const QuoteBadge = ({ children, title, className }: QuoteBadgeProps) => (
-	<div className={cn("relative", className)}>
+	<div className="relative">
 		{children}
 		<div
 			className={cn(
@@ -16,6 +16,7 @@ const QuoteBadge = ({ children, title, className }: QuoteBadgeProps) => (
 				"left-1/2 lg:left-0",
 				"-translate-x-1/2 lg:translate-x-0",
 				"translate-y-[-150%] lg:-translate-y-full",
+				className,
 			)}
 		>
 			<P className="text-center" color="white">
