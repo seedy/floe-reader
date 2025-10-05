@@ -146,7 +146,7 @@ const ScreenLanding = () => {
 						</ButtonLink>
 					</SlotTrack>
 				</div>
-				<Image placeholder="empty" height={393} src={floeDetouree} alt="" />
+				<Image placeholder="empty" height={427} src={floeDetouree} alt="" />
 			</div>
 		</Screen>
 	);
