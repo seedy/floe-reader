@@ -14,9 +14,9 @@ import SpanUnderline from "components/Typography/SpanUnderline";
 import {
 	PORTFOLIO,
 	ZCAL_FIRST,
-	ZCAL_INTERVIEW,
 	ZCAL_MONTAGE,
 	ZCAL_PHOTO,
+	ZCAL_VIDEO,
 } from "constants/links";
 import cn from "helpers/cn";
 import logoSide from "public/logo-side.svg";
@@ -30,7 +30,7 @@ const QuoteHero = () => (
 		)}
 	>
 		<H2 className="relative">
-			Mes <SpanUnderline variant="secondary">prestations</SpanUnderline>
+			Mes <SpanUnderline variant="secondary">prestations phares</SpanUnderline>
 			<Logo
 				className="absolute left-full top-0 h-sideLogo w-auto -rotate-90 -scale-x-100"
 				alt=""
@@ -72,7 +72,7 @@ const QuoteHero = () => (
 									title={<H3>Interview / Reportage</H3>}
 									cta={
 										<SlotTrack name="click quote button interview">
-											<ButtonLink variant="outlined" href={ZCAL_INTERVIEW}>
+											<ButtonLink variant="outlined" href={ZCAL_VIDEO}>
 												Je prends
 												<br />
 												rendez-vous

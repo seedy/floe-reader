@@ -7,9 +7,9 @@ import SwipeHint from "components/SwipeHint";
 import H3 from "components/Typography/H3";
 import {
 	PORTFOLIO,
-	ZCAL_INTERVIEW,
 	ZCAL_MONTAGE,
 	ZCAL_PHOTO,
+	ZCAL_VIDEO,
 } from "constants/links";
 import React from "react";
 
@@ -50,7 +50,7 @@ const Template: StoryFn<typeof Quote> = (args) => (
 				<QuoteItem
 					title={<H3>Interview / Reportage</H3>}
 					cta={
-						<ButtonLink variant="outlined" href={ZCAL_INTERVIEW}>
+						<ButtonLink variant="outlined" href={ZCAL_VIDEO}>
 							Je prends RDV
 							<br />
 							Interview
