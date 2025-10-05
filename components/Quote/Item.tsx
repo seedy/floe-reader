@@ -1,32 +1,39 @@
-import P from "components/Typography/P";
 import cn from "helpers/cn";
 import { ReactNode } from "react";
 
 interface QuoteItemProps {
 	title: ReactNode;
-	perks: (string | ReactNode)[];
+	description: ReactNode;
 	cta: ReactNode;
 	children?: ReactNode;
 	className?: string;
 }
 const QuoteItem = ({
 	title,
-	perks,
+	description,
 	cta,
 	children,
 	className,
 }: QuoteItemProps) => (
-	<div className={cn("flex flex-col justify-end gap-3", className)}>
-		<div className="flex min-h-[30rem] shrink-0 flex-col items-center gap-10 rounded-quote border border-primary bg-transparent px-3 py-8">
-			<div className="flex grow flex-col items-center gap-12">
+	<div className={cn("flex grow flex-col justify-end gap-3", className)}>
+		<div
+			className={cn(
+				"flex shrink-0 items-center gap-10 border-primary bg-transparent px-3 py-8",
+				"flex-col lg:flex-row",
+				"rounded-quote lg:rounded-none",
+				"border lg:border-0 lg:border-b",
+				"min-h-[30rem] lg:min-h-0",
+				"max-w-xs lg:max-w-none",
+			)}
+		>
+			<div
+				className={cn(
+					"flex grow flex-col gap-12",
+					"items-center lg:items-start",
+				)}
+			>
 				{title}
-				<ul className="list-inside list-checkmark whitespace-nowrap">
-					{perks.map((perk, index) => (
-						<li key={index}>
-							<P inline>{perk}</P>
-						</li>
-					))}
-				</ul>
+				{description}
 			</div>
 			{cta}
 		</div>

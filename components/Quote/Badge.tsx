@@ -8,9 +8,16 @@ interface QuoteBadgeProps {
 	className?: string;
 }
 const QuoteBadge = ({ children, title, className }: QuoteBadgeProps) => (
-	<div className={cn("relative w-fit", className)}>
+	<div className={cn("relative", className)}>
 		{children}
-		<div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 self-center rounded-pill bg-secondaryBackground px-5 py-2">
+		<div
+			className={cn(
+				"absolute top-0 self-center rounded-pill bg-secondaryBackground px-5 py-2",
+				"left-1/2 lg:left-0",
+				"-translate-x-1/2 lg:translate-x-0",
+				"translate-y-[-150%] lg:-translate-y-full",
+			)}
+		>
 			<P className="text-center" color="white">
 				{title}
 			</P>

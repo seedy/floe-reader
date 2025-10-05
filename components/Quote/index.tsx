@@ -12,7 +12,8 @@ const Quote = forwardRef<HTMLDivElement, QuoteProps>(
 			ref={forwardedRef}
 			className={cn(
 				"flex grow items-start pt-6",
-				"justify-start md:justify-center",
+				"justify-start",
+				"flex-row lg:w-full lg:flex-col",
 				className,
 			)}
 		>

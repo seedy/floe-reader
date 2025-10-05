@@ -12,10 +12,9 @@ import H3 from "components/Typography/H3";
 import P from "components/Typography/P";
 import SpanUnderline from "components/Typography/SpanUnderline";
 import {
-	PORTFOLIO,
 	ZCAL_FIRST,
-	ZCAL_MONTAGE,
 	ZCAL_PHOTO,
+	ZCAL_SHORTS,
 	ZCAL_VIDEO,
 } from "constants/links";
 import cn from "helpers/cn";
@@ -38,102 +37,114 @@ const QuoteHero = () => (
 			/>
 		</H2>
 		<div className="flex w-full flex-col items-center gap-10">
-			<div className="flex w-full flex-col items-center">
-				<div className="flex w-full justify-start overflow-auto px-5">
-					<QuoteSlider>
-						<QuoteSlide>
-							<QuoteItem
-								title={<H3>Montage vidéo</H3>}
-								cta={
-									<SlotTrack name="click quote button montage">
-										<ButtonLink variant="outlined" href={ZCAL_MONTAGE}>
-											Je prends
-											<br />
-											rendez-vous
-										</ButtonLink>
-									</SlotTrack>
-								}
-								perks={[
-									"Solo ou renfort d'équipe",
-									"Bibliothèque FX / SFX",
-									"Sous-titrage",
-									"Colorimétrie",
-									"Allers-retours illimités",
-									"Télétravail total",
-									"Mobilité France, Europe",
-								]}
-							>
-								<SwipeHintSlider />
-							</QuoteItem>
-						</QuoteSlide>
-						<QuoteSlide>
-							<QuoteBadge title="Populaire">
-								<QuoteItem
-									title={<H3>Interview / Reportage</H3>}
-									cta={
-										<SlotTrack name="click quote button interview">
-											<ButtonLink variant="outlined" href={ZCAL_VIDEO}>
-												Je prends
-												<br />
-												rendez-vous
-											</ButtonLink>
-										</SlotTrack>
-									}
-									perks={[
-										"Organisation du tournage",
-										"Réalisation sur place",
-										"Captation 9:16, 16:9",
-										"Prises de vue aériennes",
-										"Montage complet",
-										"Allers-retours illimités",
-										"Mobilité France, Europe",
-									]}
-								/>
-							</QuoteBadge>
-						</QuoteSlide>
-						<QuoteSlide>
-							<QuoteItem
-								title={<H3>Photo</H3>}
-								cta={
-									<SlotTrack name="click quote button photo">
-										<ButtonLink variant="outlined" href={ZCAL_PHOTO}>
-											Je prends
-											<br />
-											rendez-vous
-										</ButtonLink>
-									</SlotTrack>
-								}
-								perks={[
-									"Analyse du besoin",
-									"Shooting inté / exté",
-									"Portrait, paysage, voyage",
-									"Prises de vue aériennes",
-									"Retouche",
-									"Mobilité France, Europe",
-									<SlotTrack
-										key="sell photo"
-										name="click quote link sell photo"
-									>
-										<ButtonLink href={PORTFOLIO}>
-											Vente d&apos;images
-										</ButtonLink>
-									</SlotTrack>,
-								]}
-							/>
-						</QuoteSlide>
-					</QuoteSlider>
-				</div>
-				<div className="flex flex-col items-center gap-8">
-					<P className="text-center">
-						Pour une prestation sur-mesure, je t&apos;invite à prendre
-						rendez-vous avec moi !
-					</P>
-					<SlotTrack name="click quote button first">
-						<ButtonLink variant="contained" href={ZCAL_FIRST}>
-							Je prends rendez-vous
-						</ButtonLink>
-					</SlotTrack>
-				</div>
+			<div className="flex w-full justify-start overflow-auto">
+				<QuoteSlider>
+					<QuoteSlide>
+						<QuoteItem
+							title={<H3>Package de shorts</H3>}
+							cta={
+								<SlotTrack name="click quote button shorts">
+									<ButtonLink variant="outlined" href={ZCAL_SHORTS}>
+										Je prends RDV
+										<br />
+										shorts
+									</ButtonLink>
+								</SlotTrack>
+							}
+							description={
+								<P>
+									Des vidéos courtes et intemporelles pour les réseaux.
+									<br />
+									Nous travaillerons ensemble sur des contenus durables et
+									réutilisables à l&apos;infini
+								</P>
+							}
+						>
+							<SwipeHintSlider />
+						</QuoteItem>
+					</QuoteSlide>
+					<QuoteSlide>
+						<QuoteItem
+							title={
+								<QuoteBadge title="Populaire">
+									<H3>Vidéo institutionnelle</H3>
+								</QuoteBadge>
+							}
+							cta={
+								<SlotTrack name="click quote button video">
+									<ButtonLink variant="outlined" href={ZCAL_VIDEO}>
+										Je prends RDV
+										<br />
+										vidéo
+									</ButtonLink>
+								</SlotTrack>
+							}
+							description={
+								<P>
+									Vidéo de 1 à 3 minutes pour présenter ton activité.
+									<br />À destination d&apos;un site internet ou d&apos;une
+									campagne vidéo.
+								</P>
+							}
+						/>
+					</QuoteSlide>
+					<QuoteSlide>
+						<QuoteItem
+							title={<H3>Reportage photo / Shooting</H3>}
+							cta={
+								<SlotTrack name="click quote button photo">
+									<ButtonLink variant="outlined" href={ZCAL_PHOTO}>
+										Je prends RDV
+										<br />
+										photo
+									</ButtonLink>
+								</SlotTrack>
+							}
+							description={
+								<P>
+									Un reportage entièrement dédié à ton activité pour mettre en
+									valeur ton savoir-faire et ton expertise.
+									<br />
+									Un shooting pour construire ton personal branding avec des
+									photos pro qui te ressemblent.
+								</P>
+							}
+						/>
+					</QuoteSlide>
+					<QuoteSlide>
+						<QuoteItem
+							title={<H3>Sur-mesure</H3>}
+							cta={
+								<SlotTrack name="click quote button first">
+									<ButtonLink variant="outlined" href={ZCAL_FIRST}>
+										Je prends RDV
+										<br />
+										sur-mesure
+									</ButtonLink>
+								</SlotTrack>
+							}
+							description={
+								<P>
+									Ton besoin est différent ou englobe plusieurs prestations ?
+									<br />
+									Pour une prestation sur-mesure, je t&apos;invite à prendre
+									rendez-vous avec moi !
+								</P>
+							}
+						/>
+					</QuoteSlide>
+				</QuoteSlider>
+			</div>
+			<div className="flex flex-col items-center gap-8 lg:hidden">
+				<P className="text-center">
+					Pour une prestation sur-mesure, je t&apos;invite à prendre rendez-vous
+					avec moi !
+				</P>
+				<SlotTrack name="click quote button first">
+					<ButtonLink variant="contained" href={ZCAL_FIRST}>
+						Je prends rendez-vous
+					</ButtonLink>
+				</SlotTrack>
 			</div>
 		</div>
 	</div>
