@@ -18,7 +18,9 @@ const nextConfig = {
 			dir: __dirname,
 		}),
 	reactStrictMode: true,
-	swcMinify: true,
+	images: {
+		qualities: [100],
+	},
 	productionBrowserSourceMaps: true,
 	rewrites: async () => ({
 		afterFiles: [
@@ -72,9 +74,6 @@ const sentryConfig = withSentryConfig(withBundleAnalyzer(nextConfig), {
 /** @type {import('next').NextConfig} */
 const finalConfig = {
 	...sentryConfig,
-	experimental: {
-		instrumentationHook: process.env.NODE_ENV === "production",
-	},
 };
 
 export default finalConfig;
