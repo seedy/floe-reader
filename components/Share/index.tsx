@@ -93,6 +93,7 @@ const Share = () => {
 
 	const onCopyLink = async () => {
 		await navigator.clipboard.writeText(getBaseUrl());
+		addToast({ variant: "success", title: "Lien copié !", children: null });
 	};
 
 	if (locked) {
