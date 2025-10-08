@@ -45,9 +45,7 @@ const QuoteHero = () => (
 							cta={
 								<SlotTrack name="click quote button shorts">
 									<ButtonLink variant="outlined" href={ZCAL_SHORTS}>
-										Je prends RDV
-										<br />
-										shorts
+										Je prends rendez-vous
 									</ButtonLink>
 								</SlotTrack>
 							}
@@ -73,9 +71,7 @@ const QuoteHero = () => (
 							cta={
 								<SlotTrack name="click quote button video">
 									<ButtonLink variant="outlined" href={ZCAL_VIDEO}>
-										Je prends RDV
-										<br />
-										vidéo
+										Je prends rendez-vous
 									</ButtonLink>
 								</SlotTrack>
 							}
@@ -94,9 +90,7 @@ const QuoteHero = () => (
 							cta={
 								<SlotTrack name="click quote button photo">
 									<ButtonLink variant="outlined" href={ZCAL_PHOTO}>
-										Je prends RDV
-										<br />
-										photo
+										Je prends rendez-vous
 									</ButtonLink>
 								</SlotTrack>
 							}
@@ -117,9 +111,7 @@ const QuoteHero = () => (
 							cta={
 								<SlotTrack name="click quote button first">
 									<ButtonLink variant="outlined" href={ZCAL_FIRST}>
-										Je prends RDV
-										<br />
-										sur-mesure
+										Je prends rendez-vous
 									</ButtonLink>
 								</SlotTrack>
 							}
