@@ -1,21 +1,47 @@
 import Image from "components/Image";
 import cn from "helpers/cn";
-import { ComponentProps, MouseEventHandler, ReactNode, useRef } from "react";
+import {
+	ComponentProps,
+	MouseEventHandler,
+	ReactNode,
+	Ref,
+	useImperativeHandle,
+	useRef,
+	useState,
+} from "react";
+
+interface HoverLinkContextValues {}
 
 interface HoverLinkRootProps {
 	children: ReactNode;
 	className?: string;
+	ref?: Ref<HTMLAnchorElement>;
 }
 export const HoverLinkRoot = ({
 	children,
 	className,
+	ref,
 	...props
 }: HoverLinkRootProps) => {
 	const anchorRef = useRef<HTMLAnchorElement>(null);
 
+	useImperativeHandle(ref, () => anchorRef.current!, []);
+
+	const [imageTranslate, setImageTranslate] = useState({ x: 0, y: 0 });
+
 	const onMouseMove: MouseEventHandler<HTMLAnchorElement> = (e) => {
 		const { clientX, clientY } = e;
 		const anchorRect = anchorRef.current?.getBoundingClientRect();
+		if (!anchorRect) return;
+		const { width, height, left, top } = anchorRect;
+
+		const mouseX = clientX - left;
+		const mouseY = clientY - top;
+
+		const xPercentage = mouseX / width;
+		const yPercentage = mouseY / height;
+
+		setImageTranslate({ x: xPercentage, y: yPercentage });
 	};
 
 	return (
