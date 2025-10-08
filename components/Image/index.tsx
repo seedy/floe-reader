@@ -5,7 +5,8 @@ import type { ComponentProps } from "react";
 // CONSTANTS
 
 // COMPONENTS
-export interface ImageProps extends ComponentProps<typeof NextImage> {}
+export interface ImageProps
+	extends Omit<ComponentProps<typeof NextImage>, "quality" | "placeholder"> {}
 
 const Image = ({ src, alt, className, ...props }: ImageProps) => (
 	<NextImage

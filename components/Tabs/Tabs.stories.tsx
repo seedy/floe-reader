@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/nextjs";
 import React, { useState } from "react";
 
 import Content from "components/Tabs/Content";

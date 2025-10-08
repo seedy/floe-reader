@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/nextjs";
 import React from "react";
 
 import djirs3 from "public/dji-rs3.webp";

@@ -1,5 +1,5 @@
 import React, { SyntheticEvent } from "react";
-import { StoryFn, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/nextjs";
 
 import ToastProvider, { useToast } from ".";
 import Button from "components/Button";

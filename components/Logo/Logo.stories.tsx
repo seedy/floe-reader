@@ -1,5 +1,5 @@
 import React from "react";
-import { StoryFn, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/nextjs";
 import cbcLogo from "public/CBC_LOGO.svg";
 
 import Logo from ".";

@@ -17,3 +17,4 @@ export const decorators = [
 		</Root>
 	),
 ];
+export const tags = ["autodocs"];
