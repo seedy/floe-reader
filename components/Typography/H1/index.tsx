@@ -1,7 +1,7 @@
 import { VariantProps } from "class-variance-authority";
 import { headingVariants } from "components/Typography/variants";
 import { joinCn } from "helpers/cn";
-import { ComponentProps, ElementRef, ReactNode, forwardRef } from "react";
+import { ComponentProps, ReactNode } from "react";
 
 interface H1Props
 	extends VariantProps<typeof headingVariants>,
@@ -10,29 +10,29 @@ interface H1Props
 	className?: string;
 }
 
-const H1 = forwardRef<ElementRef<"h1">, H1Props>(
-	(
-		{ children, className, color, align, variant = "h1", ...props },
-		forwardedRef,
-	) => {
-		const headingVariantClassName = headingVariants({
-			variant,
-			color,
-			align,
-		});
+const H1 = ({
+	children,
+	className,
+	color,
+	align,
+	variant = "h1",
+	ref: forwardedRef,
+	...props
+}: H1Props) => {
+	const headingVariantClassName = headingVariants({
+		variant,
+		color,
+		align,
+	});
 
-		return (
-			<h1
-				ref={forwardedRef}
-				className={joinCn(headingVariantClassName, className)}
-				{...props}
-			>
-				{children}
-			</h1>
-		);
-	},
-);
-
-H1.displayName = "H1";
-
+	return (
+		<h1
+			ref={forwardedRef}
+			className={joinCn(headingVariantClassName, className)}
+			{...props}
+		>
+			{children}
+		</h1>
+	);
+};
 export default H1;

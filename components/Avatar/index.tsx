@@ -1,7 +1,7 @@
 import { VariantProps, cva } from "class-variance-authority";
 import cn from "helpers/cn";
 import Image from "next/image";
-import { ComponentProps, ElementRef, forwardRef } from "react";
+import { ComponentProps } from "react";
 
 // VARIANTS
 const avatarVariants = cva(
@@ -23,23 +23,25 @@ export interface AvatarProps
 	extends VariantProps<typeof avatarVariants>,
 		ComponentProps<typeof Image> {}
 
-const Avatar = forwardRef<ElementRef<typeof Image>, AvatarProps>(
-	({ src, alt, className, ...props }, forwardedRef) => {
-		const variantsClassName = avatarVariants(props);
-		return (
-			<Image
-				className={cn(variantsClassName, className)}
-				src={src}
-				alt={alt}
-				quality={100}
-				placeholder="blur"
-				ref={forwardedRef}
-				{...props}
-			/>
-		);
-	},
-);
-
-Avatar.displayName = "Avatar";
+const Avatar = ({
+	src,
+	alt,
+	className,
+	ref: forwardedRef,
+	...props
+}: AvatarProps) => {
+	const variantsClassName = avatarVariants(props);
+	return (
+		<Image
+			className={cn(variantsClassName, className)}
+			src={src}
+			alt={alt}
+			quality={100}
+			placeholder="blur"
+			ref={forwardedRef}
+			{...props}
+		/>
+	);
+};
 
 export default Avatar;
