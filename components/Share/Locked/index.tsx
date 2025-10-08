@@ -11,9 +11,8 @@ import {
 } from "components/Share/Dialog";
 import SlotSubmit from "components/Slot/Submit";
 import H3 from "components/Typography/H3";
-import { ReactNode, useEffect, useRef } from "react";
+import { ReactNode, useActionState, useEffect, useRef } from "react";
 // @ts-ignore
-import { useFormState } from "react-dom";
 import { unlock } from "server/actions";
 
 interface ShareLockedProps {
@@ -30,7 +29,7 @@ const ShareLocked = ({
 	onError,
 	children,
 }: ShareLockedProps) => {
-	const [state, formAction] = useFormState(unlock, undefined);
+	const [state, formAction] = useActionState(unlock, undefined);
 	const onUnlockedRef = useRef(onUnlocked);
 	const onErrorRef = useRef(onError);
 

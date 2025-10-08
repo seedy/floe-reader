@@ -11,9 +11,8 @@ import {
 } from "components/Share/Dialog";
 import SlotSubmit from "components/Slot/Submit";
 import H3 from "components/Typography/H3";
-import { useEffect, useRef } from "react";
+import { useActionState, useEffect, useRef } from "react";
 // @ts-ignore
-import { useFormState } from "react-dom";
 import { share } from "server/actions";
 
 interface ShareEmailProps {
@@ -28,7 +27,7 @@ const ShareEmail = ({
 	onSent,
 	onError,
 }: ShareEmailProps) => {
-	const [state, formAction] = useFormState(share, undefined);
+	const [state, formAction] = useActionState(share, undefined);
 	const onSentRef = useRef(onSent);
 	const onErrorRef = useRef(onError);
 
