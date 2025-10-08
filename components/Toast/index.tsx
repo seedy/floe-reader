@@ -40,9 +40,17 @@ const Toast = ({
 		>
 			<div className="flex flex-col gap-4 overflow-hidden">
 				<Title className="text-body font-medium text-text">{title}</Title>
-				<Description className="m-0 truncate text-text">{children}</Description>
+				{children && (
+					<Description className="m-0 truncate text-text">
+						{children}
+					</Description>
+				)}
 			</div>
-			<Close className="absolute right-2.5 top-2.5" asChild aria-label="Fermer">
+			<Close
+				className="absolute right-2.5 self-center"
+				asChild
+				aria-label="Fermer"
+			>
 				<IconButton size="small" type="button">
 					<Cross2Icon />
 				</IconButton>
