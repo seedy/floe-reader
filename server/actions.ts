@@ -17,8 +17,6 @@ const TRANSPORT: SMTPTransport.Options = {
 	},
 };
 
-const ShareHtml = render(Share());
-
 const UNLOCK_INPUT_SCHEMA = z.object({
 	password: z.string().min(1),
 });
@@ -31,7 +29,7 @@ export const unlock = async (_prevState: any, formData: FormData) => {
 		if (password !== env.SHARE_PASSWORD) {
 			throw new Error();
 		}
-	} catch (e) {
+	} catch {
 		return {
 			error: "Mot de passe incorrect",
 		};
@@ -48,6 +46,7 @@ const SHARE_INPUT_SCHEMA = z.object({
 
 export const share = async (_prevState: any, formData: FormData) => {
 	try {
+		const ShareHtml = await render(Share());
 		const { email, extra } = SHARE_INPUT_SCHEMA.parse({
 			email: formData.get("email"),
 			extra: formData.get("extra"),

@@ -21,6 +21,7 @@ const nextConfig = {
 	images: {
 		qualities: [100],
 	},
+	outputFileTracingRoot: "/Users/cedricdupuis/Workspace",
 	productionBrowserSourceMaps: true,
 	rewrites: async () => ({
 		afterFiles: [
