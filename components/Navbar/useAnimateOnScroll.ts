@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useRef } from "react";
+import { RefObject, useEffect, useRef } from "react";
 
 // CONSTANTS
 const THRESHOLD = 64; // 4rem
@@ -22,19 +22,19 @@ const show = (node: HTMLElement | null | undefined) => {
 };
 
 const trigger = (
-	store: MutableRefObject<number | undefined>,
+	store: RefObject<number | null>,
 	target: HTMLElement | null | undefined,
-	cumulatedScrollUp: MutableRefObject<number>,
+	cumulatedScrollUp: RefObject<number>,
 ) => {
 	const previous = store.current;
 	if (WINDOW) {
 		store.current = WINDOW.scrollY;
 	}
 	const current = store.current;
-	if (current === undefined) {
+	if (current === null) {
 		return;
 	}
-	if (previous === undefined) {
+	if (previous === null) {
 		return show(target);
 	}
 	const isGoingUp = current < previous;
@@ -45,10 +45,8 @@ const trigger = (
 };
 
 // HOOKS
-const useAnimateOnScroll = (
-	targetRef: MutableRefObject<HTMLElement | null>,
-) => {
-	const scrollStore = useRef<number | undefined>();
+const useAnimateOnScroll = (targetRef: RefObject<HTMLElement | null>) => {
+	const scrollStore = useRef<number | null>(null);
 	const cumulatedScrollUp = useRef(0);
 	useEffect(() => {
 		const handleScroll = () =>

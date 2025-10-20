@@ -22,7 +22,7 @@ const QuoteSlider = ({ children, className }: QuoteSliderProps) => {
 	const [loaded, setLoaded] = useState(false);
 	const [isOverflowing, setOverflowing] = useState(false);
 
-	const ref = useRef<HTMLDivElement | null>();
+	const ref = useRef<HTMLDivElement | null>(null);
 	const [ksRef] = useKeenSlider({
 		mode: "free" as const,
 		breakpoints: {

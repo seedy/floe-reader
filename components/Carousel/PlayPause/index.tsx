@@ -27,7 +27,7 @@ const PlayPause = ({ playing, onClick, delay = 1000 }: PlayPauseProps) => {
 
 	const childVariantClassName = childVariants({ visible });
 
-	const timeoutRef = useRef<NodeJS.Timeout>();
+	const timeoutRef = useRef<NodeJS.Timeout>(null);
 
 	const onTogglePlayPause = (e: MouseEvent) => {
 		if (!onClick) {
@@ -40,9 +40,9 @@ const PlayPause = ({ playing, onClick, delay = 1000 }: PlayPauseProps) => {
 		startTransition(() => {
 			setVisible(true);
 		});
-		if (timeoutRef.current !== undefined) {
+		if (timeoutRef.current !== null) {
 			clearTimeout(timeoutRef.current);
-			timeoutRef.current = undefined;
+			timeoutRef.current = null;
 		}
 		timeoutRef.current = setTimeout(() => {
 			startTransition(() => {

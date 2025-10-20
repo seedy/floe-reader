@@ -2,6 +2,7 @@ import { Meta, StoryObj } from "@storybook/nextjs";
 import React from "react";
 
 import {
+	HoverLinkButton,
 	HoverLinkContent,
 	HoverLinkImage,
 	HoverLinkRoot,
@@ -33,14 +34,16 @@ export const Default: Story = {
 	args: {
 		children: (
 			<>
-				<HoverLinkContent>
+				<HoverLinkContent className="flex grow">
 					<div className="flex flex-col gap-4">
 						<h1 className="font-bold">About</h1>
 						<h2 className="font-semibold">Learn what we do here</h2>
 					</div>
 				</HoverLinkContent>
-				<HoverLinkImage src={image} alt="Image" />
+				<HoverLinkImage src={image} alt="Image" height={150} width={150} />
+				<HoverLinkButton>Je prends rendez-vous</HoverLinkButton>
 			</>
 		),
+		href: "/",
 	},
 };

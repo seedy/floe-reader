@@ -1,3 +1,4 @@
+import Button from "components/Button";
 import Image from "components/Image";
 import cn from "helpers/cn";
 import {
@@ -11,7 +12,9 @@ import {
 	useState,
 } from "react";
 
-interface HoverLinkRootProps {
+interface HoverLinkRootProps
+	extends Omit<ComponentProps<"a">, "href">,
+		Required<Pick<ComponentProps<"a">, "href">> {
 	children: ReactNode;
 	className?: string;
 	ref?: Ref<HTMLAnchorElement>;
@@ -43,8 +46,8 @@ export const HoverLinkRoot = ({
 		const xOfWidth = mouseX / width;
 		const yOfHeight = mouseY / height;
 
-		const xPercentage = Math.min(100, Math.max(xOfWidth * 100, 0));
-		const yPercentage = Math.min(100, Math.max(yOfHeight * 100, 0));
+		const xPercentage = Math.min(100, Math.max(100 - xOfWidth * 100, 0)) - 50;
+		const yPercentage = Math.min(100, Math.max(100 - yOfHeight * 100, 0)) - 100;
 
 		setImageTranslatePercentage({ x: xPercentage, y: yPercentage });
 	};
@@ -52,12 +55,12 @@ export const HoverLinkRoot = ({
 	return (
 		<a
 			ref={anchorRef}
-			className={cn("group relative flex", className)}
+			className={cn("group relative flex grow", className)}
 			onMouseMove={onMouseMove}
 			style={
 				{
-					"--hover-link-translate-x": imageTranslatePercentage.x,
-					"--hover-link-translate-y": imageTranslatePercentage.y,
+					"--hover-link-x": `${imageTranslatePercentage.x}%`,
+					"--hover-link-y": `${imageTranslatePercentage.y}%`,
 				} as CSSProperties
 			}
 			{...props}
@@ -88,8 +91,11 @@ export const HoverLinkImage = ({
 	return (
 		<Image
 			className={cn(
-				"absolute left-1/2 top-1/2",
-				"translate-x-(--hover-link-translate-x)",
+				"absolute left-1/2 top-1/2 transition-[opacity,rotate] duration-500",
+				"group-hover:animate-spring",
+				"opacity-0 group-hover:opacity-100",
+				"-rotate-12 group-hover:rotate-12",
+				"translate-x-(--hover-link-x) translate-y-(--hover-link-y)",
 				className,
 			)}
 			src={src}
@@ -98,3 +104,21 @@ export const HoverLinkImage = ({
 		/>
 	);
 };
+
+export const HoverLinkButton = ({
+	className,
+	children,
+	...props
+}: ComponentProps<typeof Button>) => (
+	<Button
+		className={cn(
+			"transition-[opacity,translate] duration-500",
+			"lg:opacity-0 lg:group-hover:opacity-100",
+			"lg:-translate-x-1/4 lg:group-hover:translate-x-0",
+			className,
+		)}
+		{...props}
+	>
+		{children}
+	</Button>
+);

@@ -6,7 +6,7 @@ import {
 	FocusEvent,
 	KeyboardEvent,
 	MouseEvent,
-	MutableRefObject,
+	RefObject,
 	useRef,
 } from "react";
 
@@ -14,7 +14,7 @@ interface CarouselIndicatorsProps {
 	className?: string;
 	keys: number[];
 	currentSlide: number;
-	instanceRef: MutableRefObject<KeenSliderInstance<
+	instanceRef: RefObject<KeenSliderInstance<
 		{},
 		{},
 		CustomKeenSliderHooks

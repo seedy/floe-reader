@@ -1,5 +1,11 @@
 "use client";
 import ButtonLink from "components/Button/Link";
+import {
+	HoverLinkButton,
+	HoverLinkContent,
+	HoverLinkImage,
+	HoverLinkRoot,
+} from "components/HoverLink";
 import Logo from "components/Logo";
 import QuoteBadge from "components/Quote/Badge";
 import QuoteItem from "components/Quote/Item";
@@ -18,6 +24,7 @@ import {
 	ZCAL_VIDEO,
 } from "constants/links";
 import cn from "helpers/cn";
+import image from "public/CBC_QR_CODE.png";
 import logoSide from "public/logo-side.svg";
 
 const QuoteHero = () => (
@@ -40,90 +47,125 @@ const QuoteHero = () => (
 			<div className="flex w-full justify-start overflow-auto">
 				<QuoteSlider>
 					<QuoteSlide>
-						<QuoteItem
-							title={<H3>Package de shorts</H3>}
-							cta={
-								<SlotTrack name="click quote button shorts">
-									<ButtonLink variant="outlined" href={ZCAL_SHORTS}>
-										Je prends rendez-vous
-									</ButtonLink>
-								</SlotTrack>
-							}
-							description={
-								<P>
-									Des vidéos courtes et intemporelles pour les réseaux.
-									<br />
-									Nous travaillerons ensemble sur des contenus durables et
-									réutilisables à l&apos;infini
-								</P>
-							}
-						>
-							<SwipeHintSlider />
-						</QuoteItem>
+						<HoverLinkRoot href={ZCAL_SHORTS}>
+							<QuoteItem
+								title={
+									<HoverLinkContent>
+										<H3>Package de shorts</H3>
+									</HoverLinkContent>
+								}
+								cta={
+									<SlotTrack name="click quote button shorts">
+										<HoverLinkButton variant="outlined">
+											Je prends rendez-vous
+										</HoverLinkButton>
+									</SlotTrack>
+								}
+								description={
+									<HoverLinkContent>
+										<P>
+											Des vidéos courtes et intemporelles pour les réseaux.
+											<br />
+											Nous travaillerons ensemble sur des contenus durables et
+											réutilisables à l&apos;infini
+										</P>
+									</HoverLinkContent>
+								}
+							>
+								<SwipeHintSlider />
+							</QuoteItem>
+							<HoverLinkImage alt="test" src={image} width={150} height={150} />
+						</HoverLinkRoot>
 					</QuoteSlide>
 					<QuoteSlide>
-						<QuoteItem
-							title={
-								<QuoteBadge title="Populaire">
-									<H3>Vidéo institutionnelle</H3>
-								</QuoteBadge>
-							}
-							cta={
-								<SlotTrack name="click quote button video">
-									<ButtonLink variant="outlined" href={ZCAL_VIDEO}>
-										Je prends rendez-vous
-									</ButtonLink>
-								</SlotTrack>
-							}
-							description={
-								<P>
-									Vidéo de 1 à 3 minutes pour présenter ton activité.
-									<br />À destination d&apos;un site internet ou d&apos;une
-									campagne vidéo.
-								</P>
-							}
-						/>
+						<HoverLinkRoot href={ZCAL_VIDEO}>
+							<QuoteItem
+								title={
+									<HoverLinkContent>
+										<QuoteBadge title="Populaire">
+											<H3>Vidéo institutionnelle</H3>
+										</QuoteBadge>
+									</HoverLinkContent>
+								}
+								cta={
+									<SlotTrack name="click quote button video">
+										<HoverLinkButton variant="outlined">
+											Je prends rendez-vous
+										</HoverLinkButton>
+									</SlotTrack>
+								}
+								description={
+									<HoverLinkContent>
+										<P>
+											Vidéo de 1 à 3 minutes pour présenter ton activité.
+											<br />À destination d&apos;un site internet ou d&apos;une
+											campagne vidéo.
+										</P>
+									</HoverLinkContent>
+								}
+							/>
+							<HoverLinkImage alt="test" src={image} width={150} height={150} />
+						</HoverLinkRoot>
 					</QuoteSlide>
 					<QuoteSlide>
-						<QuoteItem
-							title={<H3>Reportage photo / Shooting</H3>}
-							cta={
-								<SlotTrack name="click quote button photo">
-									<ButtonLink variant="outlined" href={ZCAL_PHOTO}>
-										Je prends rendez-vous
-									</ButtonLink>
-								</SlotTrack>
-							}
-							description={
-								<P>
-									Un reportage entièrement dédié à ton activité pour mettre en
-									valeur ton savoir-faire et ton expertise.
-									<br />
-									Un shooting pour construire ton personal branding avec des
-									photos pro qui te ressemblent.
-								</P>
-							}
-						/>
+						<HoverLinkRoot href={ZCAL_PHOTO}>
+							<QuoteItem
+								title={
+									<HoverLinkContent>
+										<H3>Reportage photo / Shooting</H3>
+									</HoverLinkContent>
+								}
+								cta={
+									<SlotTrack name="click quote button photo">
+										<HoverLinkButton variant="outlined">
+											Je prends rendez-vous
+										</HoverLinkButton>
+									</SlotTrack>
+								}
+								description={
+									<HoverLinkContent>
+										<P>
+											Un reportage entièrement dédié à ton activité pour mettre
+											en valeur ton savoir-faire et ton expertise.
+											<br />
+											Un shooting pour construire ton personal branding avec des
+											photos pro qui te ressemblent.
+										</P>
+									</HoverLinkContent>
+								}
+							/>
+							<HoverLinkImage alt="test" src={image} width={150} height={150} />
+						</HoverLinkRoot>
 					</QuoteSlide>
 					<QuoteSlide>
-						<QuoteItem
-							title={<H3>Sur-mesure</H3>}
-							cta={
-								<SlotTrack name="click quote button first">
-									<ButtonLink variant="outlined" href={ZCAL_FIRST}>
-										Je prends rendez-vous
-									</ButtonLink>
-								</SlotTrack>
-							}
-							description={
-								<P>
-									Ton besoin est différent ou englobe plusieurs prestations ?
-									<br />
-									Pour une prestation sur-mesure, je t&apos;invite à prendre
-									rendez-vous avec moi !
-								</P>
-							}
-						/>
+						<HoverLinkRoot href={ZCAL_FIRST}>
+							<QuoteItem
+								title={
+									<HoverLinkContent>
+										<H3>Sur-mesure</H3>
+									</HoverLinkContent>
+								}
+								cta={
+									<SlotTrack name="click quote button first">
+										<HoverLinkButton variant="outlined">
+											Je prends rendez-vous
+										</HoverLinkButton>
+									</SlotTrack>
+								}
+								description={
+									<HoverLinkContent>
+										<P>
+											Ton besoin est différent ou englobe plusieurs prestations
+											?
+											<br />
+											Pour une prestation sur-mesure, je t&apos;invite à prendre
+											rendez-vous avec moi !
+										</P>
+									</HoverLinkContent>
+								}
+							/>
+							<HoverLinkImage alt="test" src={image} width={150} height={150} />
+						</HoverLinkRoot>
 					</QuoteSlide>
 				</QuoteSlider>
 			</div>

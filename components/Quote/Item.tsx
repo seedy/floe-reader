@@ -18,10 +18,11 @@ const QuoteItem = ({
 	<div className={cn("flex grow flex-col justify-end gap-3", className)}>
 		<div
 			className={cn(
-				"flex shrink-0 items-center gap-10 border-primary bg-transparent px-3 py-8",
+				"flex shrink-0 items-center gap-10 bg-transparent px-3 py-8",
+				"border-primary/40 hover:border-primary active:border-primary",
 				"flex-col lg:flex-row",
 				"rounded-quote lg:rounded-none",
-				"border lg:border-0 lg:border-b",
+				"border-2 lg:border-0 lg:border-b-2",
 				"min-h-120 lg:min-h-0",
 				"max-w-xs lg:max-w-none",
 			)}
