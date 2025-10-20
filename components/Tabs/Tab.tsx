@@ -12,10 +12,10 @@ const Tab = ({ children, className, value }: TabProps) => (
 	<Trigger value={value} asChild>
 		<button
 			className={cn(
-				"flex items-center justify-center border-[0.125rem] border-solid border-transparent bg-background px-6 py-1 text-center font-body text-button font-bold uppercase text-text outline-none",
-				"data-[state=active]:bg-outlineSecondary",
+				"flex items-center justify-center border-[0.125rem] border-solid border-transparent bg-background px-6 py-1 text-center font-body text-button font-bold uppercase text-text outline-hidden",
+				"data-[state=active]:bg-outline-secondary",
 				"first:rounded-l last:rounded-r",
-				"focus-visible:border-y-secondaryBackground focus-visible:shadow-focusLarge first:focus-visible:border-l-secondaryBackground last:focus-visible:border-r-secondaryBackground",
+				"focus-visible:border-y-secondary-background focus-visible:shadow-focus-large first:focus-visible:border-l-secondary-background last:focus-visible:border-r-secondary-background",
 				className,
 			)}
 		>

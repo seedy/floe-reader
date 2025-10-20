@@ -31,7 +31,7 @@ const QuoteHero = () => (
 		<H2 className="relative">
 			Mes <SpanUnderline variant="secondary">prestations phares</SpanUnderline>
 			<Logo
-				className="absolute left-full top-0 h-sideLogo w-auto -rotate-90 -scale-x-100"
+				className="absolute left-full top-0 h-[clamp(5rem,16vw,10rem)] w-auto -rotate-90 -scale-x-100"
 				alt=""
 				src={logoSide}
 			/>

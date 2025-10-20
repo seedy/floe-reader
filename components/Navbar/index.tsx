@@ -41,13 +41,13 @@ const Navbar = ({ className, ref: forwardedRef, ...props }: NavbarProps) => {
 		<nav
 			ref={innerRef}
 			className={cn(
-				"pointer-events-auto fixed z-navbar h-0 max-h-navbar overflow-hidden bg-background transition-[height] duration-200 ease-out",
+				"pointer-events-auto fixed z-9999 h-0 max-h-16 overflow-hidden bg-background transition-[height] duration-200 ease-out",
 				"inset-x-0 bottom-0 lg:bottom-auto lg:top-0",
 				className,
 			)}
 			{...props}
 		>
-			<div className="flex size-full items-center justify-between bg-navbar px-5 py-0">
+			<div className="flex size-full items-center justify-between bg-tertiary/20 px-5 py-0">
 				<SkipLink />
 				<Link href="/" aria-label="Accueil">
 					<LogoFull />

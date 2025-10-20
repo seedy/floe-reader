@@ -68,7 +68,7 @@ const ScreenHero = () => {
 									Je prends rendez-vous
 								</ButtonLink>
 							</SlotTrack>
-							<P className="text-whiteHint">
+							<P className="text-white/80">
 								Mon calendrier t&apos;est ouvert !
 							</P>
 						</div>
@@ -76,7 +76,7 @@ const ScreenHero = () => {
 					<div
 						className={cn(
 							"flex rounded-avatar bg-transparent",
-							"lg:grow lg:rounded-r-none lg:bg-blackAlpha7",
+							"lg:grow lg:rounded-r-none lg:bg-black/7",
 						)}
 					>
 						<Avatar
@@ -84,7 +84,7 @@ const ScreenHero = () => {
 							alt=""
 							className={cn(
 								"aspect-social",
-								"w-80 lg:h-[32rem] lg:w-auto",
+								"w-80 lg:h-128 lg:w-auto",
 								"lg:rounded-r-none",
 							)}
 						/>
@@ -103,7 +103,7 @@ const ScreenHero = () => {
 							Je prends rendez-vous
 						</ButtonLink>
 					</SlotTrack>
-					<P className="text-whiteHint">Mon calendrier t&apos;est ouvert !</P>
+					<P className="text-white/80">Mon calendrier t&apos;est ouvert !</P>
 				</div>
 			</Screen>
 			<Screen className="lg:pb-8" id={SERVICES.replace("#", "")}>

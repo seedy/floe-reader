@@ -7,8 +7,8 @@ interface QuoteSlideProps {
 const QuoteSlide = ({ children }: QuoteSlideProps) => (
 	<div
 		className={cn(
-			"keen-slider__slide flex !min-h-0 min-w-fit !overflow-visible",
-			"!w-auto lg:!w-full",
+			"keen-slider__slide flex min-h-0! min-w-fit overflow-visible!",
+			"w-auto! lg:w-full!",
 		)}
 	>
 		{children}

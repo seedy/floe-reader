@@ -7,12 +7,12 @@ import cn from "helpers/cn";
 import { ComponentProps, type ReactNode } from "react";
 
 const toastVariants = cva(
-	"relative flex items-center justify-between gap-x-4 overflow-hidden rounded bg-background p-4 outline outline-[0.125rem]",
+	"relative flex items-center justify-between gap-x-4 overflow-hidden rounded-mdbg-background p-4 outline-solid outline-[0.125rem]",
 	{
 		variants: {
 			variant: {
 				error: ["outline-error"],
-				success: ["outline-secondaryBackground"],
+				success: ["outline-secondary-background"],
 			},
 		},
 	},

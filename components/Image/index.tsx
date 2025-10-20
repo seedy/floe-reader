@@ -6,14 +6,20 @@ import type { ComponentProps } from "react";
 
 // COMPONENTS
 export interface ImageProps
-	extends Omit<ComponentProps<typeof NextImage>, "quality" | "placeholder"> {}
+	extends Omit<ComponentProps<typeof NextImage>, "quality"> {}
 
-const Image = ({ src, alt, className, ...props }: ImageProps) => (
+const Image = ({
+	src,
+	alt,
+	className,
+	placeholder = "blur",
+	...props
+}: ImageProps) => (
 	<NextImage
 		className={cn("block rounded-none object-cover", className)}
 		src={src}
 		alt={alt}
-		placeholder="blur"
+		placeholder={placeholder}
 		quality={100}
 		{...props}
 	/>

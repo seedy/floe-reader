@@ -12,7 +12,7 @@ const QuoteBadge = ({ children, title, className }: QuoteBadgeProps) => (
 		{children}
 		<div
 			className={cn(
-				"absolute top-0 self-center rounded-pill bg-secondaryBackground px-5 py-2",
+				"absolute top-0 self-center rounded-pill bg-secondary-background px-5 py-2",
 				"left-1/2 lg:left-0",
 				"-translate-x-1/2 lg:translate-x-0",
 				"translate-y-[-150%] lg:-translate-y-full",

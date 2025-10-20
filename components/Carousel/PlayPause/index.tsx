@@ -11,7 +11,7 @@ interface PlayPauseProps {
 }
 
 const childVariants = cva(
-	"rounded-round bg-blackAlpha7 p-6 text-secondaryBackground opacity-0 transition",
+	"rounded-round bg-black/7 p-6 text-secondary-background opacity-0 transition",
 	{
 		variants: {
 			visible: {
@@ -57,7 +57,7 @@ const PlayPause = ({ playing, onClick, delay = 1000 }: PlayPauseProps) => {
 		>
 			<button
 				aria-label={playing ? "Mettre en pause" : "Reprendre"}
-				className="absolute inset-0 z-1 m-0 inline-flex items-center justify-center border-none bg-none p-0 text-secondaryBackground focus-visible:bg-blackAlpha7 focus-visible:outline-none"
+				className="absolute inset-0 z-1 m-0 inline-flex items-center justify-center border-none bg-none p-0 text-secondary-background focus-visible:bg-black/7 focus-visible:outline-hidden"
 				onClick={onTogglePlayPause}
 			>
 				<div className={childVariantClassName}>

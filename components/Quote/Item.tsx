@@ -22,7 +22,7 @@ const QuoteItem = ({
 				"flex-col lg:flex-row",
 				"rounded-quote lg:rounded-none",
 				"border lg:border-0 lg:border-b",
-				"min-h-[30rem] lg:min-h-0",
+				"min-h-120 lg:min-h-0",
 				"max-w-xs lg:max-w-none",
 			)}
 		>

@@ -22,7 +22,7 @@ import landing5 from "public/landing-5.webp";
 import logoSide from "public/logo-side.svg";
 import { Suspense } from "react";
 
-const hintClassName = "animate-appear opacity-0 animation-delay-[2000ms]";
+const hintClassName = "animate-appear opacity-0 animation-delay-2000";
 
 const TAGS = ["Montage", "Interview", "Podcast", "Photo", "Vidéo"];
 
@@ -89,7 +89,7 @@ const ScreenLanding = () => {
 					"lg:pb-3 lg:pl-10 lg:pt-8",
 				)}
 			>
-				<div className="flex flex-col gap-authorBlock">
+				<div className="flex flex-col gap-[clamp(1rem,2vw,1.25rem)]">
 					<H2 align="left">Floé Gaubert</H2>
 					<H2 align="left">Photographe, vidéaste et monteuse</H2>
 				</div>
@@ -103,7 +103,12 @@ const ScreenLanding = () => {
 						<ScrollHint className={hintClassName} href={CTA_PORTFOLIO} />
 					</ParallaxLeave>
 				</div>
-				<Logo className="h-sideLogo w-auto" alt="" priority src={logoSide} />
+				<Logo
+					className="h-[clamp(5rem,16vw,10rem)] w-auto"
+					alt=""
+					priority
+					src={logoSide}
+				/>
 			</div>
 			<BannerTags className="lg:hidden" tags={TAGS} />
 
@@ -131,7 +136,7 @@ const ScreenLanding = () => {
 					"relative flex items-center justify-center gap-10",
 					"mt-10 lg:-mt-4",
 					"flex-col lg:flex-row",
-					"bg-navbar from-navbar lg:bg-transparent lg:bg-gradient-to-t",
+					"bg-tertiary/20 from-tertiary/20 lg:bg-transparent lg:bg-linear-to-t",
 					"pt-5 lg:pt-0",
 					"lg:mx-10 lg:rounded-quote",
 				)}

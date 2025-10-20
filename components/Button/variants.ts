@@ -1,23 +1,23 @@
 import { cva } from "class-variance-authority";
 
 export const buttonVariants = cva(
-	"m-0 inline-flex min-h-[2.125rem] min-w-20 max-w-80 justify-center items-center rounded border-none bg-none px-6 py-1 text-center font-body text-button font-bold uppercase outline outline-[0.125rem] outline-transparent focus-visible:outline-[0.375rem] lg:w-auto lg:max-w-none lg:grow-0 whitespace-nowrap",
+	"m-0 inline-flex min-h-8.5 min-w-20 max-w-80 justify-center items-center rounded-md border-none bg-none px-6 py-1 text-center font-body text-button font-bold uppercase outline-solid outline-[0.125rem] outline-transparent focus-visible:outline-[0.375rem] lg:w-auto lg:max-w-none lg:grow-0 whitespace-nowrap",
 	{
 		variants: {
 			variant: {
 				contained: [
-					"text-background hover:text-white focus:text-white focus:shadow-focusLarge focus-visible:shadow-focusLarge active:text-white active:shadow-activeLarge",
+					"text-background hover:text-white focus:text-white focus:shadow-focus-large focus-visible:shadow-focus-large active:text-white active:shadow-active-large",
 				],
 				outlined: [
-					"outline outline-[0.125rem] outline-transparent hover:bg-white focus:bg-white focus:shadow-focusLarge focus-visible:shadow-focusLarge active:bg-white active:shadow-activeLarge",
+					"outline-solid outline-[0.125rem] outline-transparent hover:bg-white focus:bg-white focus:shadow-focus-large focus-visible:shadow-focus-large active:bg-white active:shadow-active-large",
 				],
 				link: [
 					"gap-2 normal-case focus:underline focus-visible:underline active:text-opacity-70 active:underline px-0",
 				],
 			},
 			color: {
-				primary: ["outline-outlinePrimary"],
-				secondary: ["outline-outlineSecondary"],
+				primary: ["outline-outline-primary"],
+				secondary: ["outline-outline-secondary"],
 				white: ["outline-white"],
 			},
 			full: {
@@ -36,7 +36,7 @@ export const buttonVariants = cva(
 			{
 				variant: "contained",
 				color: "secondary",
-				className: "bg-secondaryBackground outline-transparent",
+				className: "bg-secondary-background outline-transparent",
 			},
 			{
 				variant: "contained",
@@ -51,7 +51,7 @@ export const buttonVariants = cva(
 			{
 				variant: "outlined",
 				color: "secondary",
-				className: "text-secondaryBackground",
+				className: "text-secondary-background",
 			},
 			{
 				variant: "outlined",
@@ -66,7 +66,7 @@ export const buttonVariants = cva(
 			{
 				variant: "link",
 				color: "secondary",
-				className: "text-secondaryBackground outline-transparent",
+				className: "text-secondary-background outline-transparent",
 			},
 			{
 				variant: "link",

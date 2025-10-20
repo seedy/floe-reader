@@ -3,11 +3,11 @@ import cn from "helpers/cn";
 import { ComponentProps } from "react";
 
 const indicatorVariants = cva(
-	"aspect-square h-auto w-indicator text-secondaryBackground",
+	"aspect-square h-auto w-[clamp(1rem,4vw,2.5rem)] text-secondary-background",
 	{
 		variants: {
 			active: {
-				true: ["fill-secondaryBackground"],
+				true: ["fill-secondary-background"],
 			},
 		},
 	},
@@ -26,7 +26,7 @@ const CarouselIndicator = ({
 		<button
 			ref={forwardedRef}
 			className={cn(
-				"m-0 inline-flex items-center justify-center rounded-round border-none text-secondaryBackground focus-visible:outline-outlineSecondary",
+				"m-0 inline-flex items-center justify-center rounded-round border-none text-secondary-background focus-visible:outline-outline-secondary",
 				"hover:cursor-pointer",
 				"p-2 sm:p-3 md:p-4 lg:p-3 xl:p-5 2xl:p-7",
 			)}

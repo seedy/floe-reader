@@ -15,8 +15,8 @@ const CarouselMask = ({
 	return (
 		<div
 			className={cn(
-				"h-[22.5rem] w-full",
-				"lg:h-[34.75rem]",
+				"h-90 w-full",
+				"lg:h-139",
 				"sm:h-[40vh] xl:h-[70vh]",
 				styles.root,
 				className,
