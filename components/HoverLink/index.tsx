@@ -1,6 +1,7 @@
 import Image from "components/Image";
 import cn from "helpers/cn";
 import {
+	CSSProperties,
 	ComponentProps,
 	MouseEventHandler,
 	ReactNode,
@@ -9,8 +10,6 @@ import {
 	useRef,
 	useState,
 } from "react";
-
-interface HoverLinkContextValues {}
 
 interface HoverLinkRootProps {
 	children: ReactNode;
@@ -27,7 +26,10 @@ export const HoverLinkRoot = ({
 
 	useImperativeHandle(ref, () => anchorRef.current!, []);
 
-	const [imageTranslate, setImageTranslate] = useState({ x: 0, y: 0 });
+	const [imageTranslatePercentage, setImageTranslatePercentage] = useState({
+		x: 0,
+		y: 0,
+	});
 
 	const onMouseMove: MouseEventHandler<HTMLAnchorElement> = (e) => {
 		const { clientX, clientY } = e;
@@ -38,10 +40,13 @@ export const HoverLinkRoot = ({
 		const mouseX = clientX - left;
 		const mouseY = clientY - top;
 
-		const xPercentage = mouseX / width;
-		const yPercentage = mouseY / height;
+		const xOfWidth = mouseX / width;
+		const yOfHeight = mouseY / height;
 
-		setImageTranslate({ x: xPercentage, y: yPercentage });
+		const xPercentage = Math.min(100, Math.max(xOfWidth * 100, 0));
+		const yPercentage = Math.min(100, Math.max(yOfHeight * 100, 0));
+
+		setImageTranslatePercentage({ x: xPercentage, y: yPercentage });
 	};
 
 	return (
@@ -49,6 +54,12 @@ export const HoverLinkRoot = ({
 			ref={anchorRef}
 			className={cn("group relative flex", className)}
 			onMouseMove={onMouseMove}
+			style={
+				{
+					"--hover-link-translate-x": imageTranslatePercentage.x,
+					"--hover-link-translate-y": imageTranslatePercentage.y,
+				} as CSSProperties
+			}
 			{...props}
 		>
 			{children}
@@ -77,7 +88,8 @@ export const HoverLinkImage = ({
 	return (
 		<Image
 			className={cn(
-				"absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
+				"absolute left-1/2 top-1/2",
+				"translate-x-(--hover-link-translate-x)",
 				className,
 			)}
 			src={src}

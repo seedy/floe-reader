@@ -18,7 +18,7 @@ interface RootProps extends ComponentProps<"div"> {
 const Root = ({ children, className, ...props }: RootProps) => (
 	<div
 		className={cn(
-			"absolute inset-0 size-full bg-background p-4",
+			"size-full min-h-svh bg-background p-4",
 			lora.variable,
 			urbanist.variable,
 			className,

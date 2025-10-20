@@ -1,12 +1,12 @@
 const path = require("path");
 module.exports = {
-    stories: [
+	stories: [
 		"../stories/**/*.mdx",
 		"../components/**/*.mdx",
 		"../components/**/*.stories.@(js|jsx|ts|tsx)",
 	],
 
-    framework: {
+	framework: {
 		name: "@storybook/nextjs",
 		options: {
 			nextConfigPath: path.resolve(__dirname, "../next.config.js"),
@@ -14,5 +14,5 @@ module.exports = {
 		},
 	},
 
-    addons: ["@storybook/addon-docs"]
+	addons: ["@storybook/addon-docs"],
 };
