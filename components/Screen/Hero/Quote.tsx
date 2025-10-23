@@ -7,7 +7,6 @@ import {
 	HoverLinkRoot,
 } from "components/HoverLink";
 import Logo from "components/Logo";
-import QuoteBadge from "components/Quote/Badge";
 import QuoteItem from "components/Quote/Item";
 import QuoteSlide from "components/Quote/Slide";
 import QuoteSlider from "components/Quote/Slider";
@@ -97,9 +96,7 @@ const QuoteHero = () => (
 							<QuoteItem
 								title={
 									<HoverLinkContent>
-										<QuoteBadge title="Populaire">
-											<H3>Vidéo institutionnelle</H3>
-										</QuoteBadge>
+										<H3>Vidéo institutionnelle</H3>
 									</HoverLinkContent>
 								}
 								cta={
