@@ -7,7 +7,7 @@ import cn from "helpers/cn";
 import { ComponentProps, type ReactNode } from "react";
 
 const toastVariants = cva(
-	"relative flex items-center justify-between gap-x-4 overflow-hidden rounded-mdbg-background p-4 outline-solid outline-[0.125rem]",
+	"relative flex items-center justify-between gap-x-4 overflow-hidden rounded-mdbg-background p-4 outline-solid outline-2",
 	{
 		variants: {
 			variant: {

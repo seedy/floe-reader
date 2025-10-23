@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 interface QuoteItemProps {
 	title: ReactNode;
 	description: ReactNode;
+	image: ReactNode;
 	cta: ReactNode;
 	children?: ReactNode;
 	className?: string;
@@ -11,6 +12,7 @@ interface QuoteItemProps {
 const QuoteItem = ({
 	title,
 	description,
+	image,
 	cta,
 	children,
 	className,
@@ -23,7 +25,7 @@ const QuoteItem = ({
 				"flex-col lg:flex-row",
 				"rounded-quote lg:rounded-none",
 				"border-2 lg:border-0 lg:border-b-2",
-				"min-h-120 lg:min-h-0",
+				"min-h-136 lg:min-h-80",
 				"max-w-xs lg:max-w-none",
 			)}
 		>
@@ -36,6 +38,7 @@ const QuoteItem = ({
 				{title}
 				{description}
 			</div>
+			{image}
 			{cta}
 		</div>
 		{children}

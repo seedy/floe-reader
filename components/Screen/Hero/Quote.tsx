@@ -24,8 +24,10 @@ import {
 	ZCAL_VIDEO,
 } from "constants/links";
 import cn from "helpers/cn";
-import image from "public/CBC_QR_CODE.png";
 import logoSide from "public/logo-side.svg";
+import quoteFirstPro from "public/quote-first-pro.webp";
+import quotePhotoPro from "public/quote-photo-pro.webp";
+import quoteVideoPro from "public/quote-video-pro.webp";
 
 const QuoteHero = () => (
 	<div
@@ -44,7 +46,12 @@ const QuoteHero = () => (
 			/>
 		</H2>
 		<div className="flex w-full flex-col items-center gap-10">
-			<div className="flex w-full justify-start overflow-auto">
+			<div
+				className={cn(
+					"flex w-full justify-start overflow-auto",
+					"lg:overflow-visible",
+				)}
+			>
 				<QuoteSlider>
 					<QuoteSlide>
 						<HoverLinkRoot href={ZCAL_SHORTS}>
@@ -71,10 +78,18 @@ const QuoteHero = () => (
 										</P>
 									</HoverLinkContent>
 								}
+								image={
+									<HoverLinkImage
+										alt="test"
+										src={quoteFirstPro}
+										width={450}
+										height={300}
+										className="h-[150px] w-[225px]"
+									/>
+								}
 							>
 								<SwipeHintSlider />
 							</QuoteItem>
-							<HoverLinkImage alt="test" src={image} width={150} height={150} />
 						</HoverLinkRoot>
 					</QuoteSlide>
 					<QuoteSlide>
@@ -103,8 +118,16 @@ const QuoteHero = () => (
 										</P>
 									</HoverLinkContent>
 								}
+								image={
+									<HoverLinkImage
+										alt="test"
+										src={quoteVideoPro}
+										height={300}
+										width={533}
+										className="h-[150px] w-[266px]"
+									/>
+								}
 							/>
-							<HoverLinkImage alt="test" src={image} width={150} height={150} />
 						</HoverLinkRoot>
 					</QuoteSlide>
 					<QuoteSlide>
@@ -133,8 +156,16 @@ const QuoteHero = () => (
 										</P>
 									</HoverLinkContent>
 								}
+								image={
+									<HoverLinkImage
+										alt="test"
+										src={quotePhotoPro}
+										height={450}
+										width={300}
+										className="h-[225px] w-[150px]"
+									/>
+								}
 							/>
-							<HoverLinkImage alt="test" src={image} width={150} height={150} />
 						</HoverLinkRoot>
 					</QuoteSlide>
 					<QuoteSlide>
@@ -163,8 +194,16 @@ const QuoteHero = () => (
 										</P>
 									</HoverLinkContent>
 								}
+								image={
+									<HoverLinkImage
+										alt="test"
+										src={quoteFirstPro}
+										height={300}
+										width={450}
+										className="h-[150px] w-[225px]"
+									/>
+								}
 							/>
-							<HoverLinkImage alt="test" src={image} width={150} height={150} />
 						</HoverLinkRoot>
 					</QuoteSlide>
 				</QuoteSlider>

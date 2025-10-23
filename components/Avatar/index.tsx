@@ -9,7 +9,7 @@ const avatarVariants = cva(
 	{
 		variants: {
 			selected: {
-				true: ["shadow-selected outline-solid outline-[0.25rem] outline-fern-green"],
+				true: ["shadow-selected outline-solid outline-4 outline-fern-green"],
 			},
 		},
 		defaultVariants: {

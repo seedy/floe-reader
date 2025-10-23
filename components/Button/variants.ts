@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const buttonVariants = cva(
-	"m-0 inline-flex min-h-8.5 min-w-20 max-w-80 justify-center items-center rounded-md border-none bg-none px-6 py-1 text-center font-body text-button font-bold uppercase outline-solid outline-[0.125rem] outline-transparent focus-visible:outline-[0.375rem] lg:w-auto lg:max-w-none lg:grow-0 whitespace-nowrap",
+	"m-0 inline-flex min-h-8.5 min-w-20 max-w-80 justify-center items-center rounded-md border-none bg-none px-6 py-1 text-center font-body text-button font-bold uppercase outline-solid outline-2 outline-transparent focus-visible:outline-[6px] lg:w-auto lg:max-w-none lg:grow-0 whitespace-nowrap",
 	{
 		variants: {
 			variant: {
@@ -9,7 +9,7 @@ export const buttonVariants = cva(
 					"text-background hover:text-white focus:text-white focus:shadow-focus-large focus-visible:shadow-focus-large active:text-white active:shadow-active-large",
 				],
 				outlined: [
-					"outline-solid outline-[0.125rem] outline-transparent hover:bg-white focus:bg-white focus:shadow-focus-large focus-visible:shadow-focus-large active:bg-white active:shadow-active-large",
+					"outline-solid outline-2 outline-transparent hover:bg-white focus:bg-white focus:shadow-focus-large focus-visible:shadow-focus-large active:bg-white active:shadow-active-large",
 				],
 				link: [
 					"gap-2 normal-case focus:underline focus-visible:underline active:text-opacity-70 active:underline px-0",

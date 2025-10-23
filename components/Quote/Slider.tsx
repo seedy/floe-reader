@@ -64,6 +64,7 @@ const QuoteSlider = ({ children, className }: QuoteSliderProps) => {
 				}}
 				className={cn(
 					"keen-slider overflow-hidden",
+					"lg:overflow-visible",
 					!loaded && "gap-4",
 					className,
 				)}

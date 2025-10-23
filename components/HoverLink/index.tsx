@@ -78,7 +78,9 @@ export const HoverLinkContent = ({
 	children,
 	className,
 }: HoverLinkContentProps) => {
-	return <div className={cn("z-1", className)}>{children}</div>;
+	return (
+		<div className={cn("lg:max-w-1/2 text-justify", className)}>{children}</div>
+	);
 };
 
 interface HoverLinkImageProps extends ComponentProps<typeof Image> {}
@@ -91,12 +93,13 @@ export const HoverLinkImage = ({
 	return (
 		<Image
 			className={cn(
-				"absolute left-1/2 top-1/2 transition-[opacity,rotate, scale] duration-500",
-				"scale-0 group-hover:scale-100",
-				"opacity-0 group-hover:opacity-100",
-				"-rotate-12 group-hover:rotate-12",
-				"translate-x-(--hover-link-x) translate-y-(--hover-link-y)",
-				"hover:scale-200 hover:rotate-0",
+				"rounded-md",
+				"lg:absolute lg:z-1 left-1/2 top-1/2 transition-[opacity,rotate, scale] duration-500",
+				"lg:motion-safe:scale-0 lg:group-hover:scale-100",
+				"lg:opacity-0 lg:group-hover:opacity-100",
+				"lg:motion-safe:-rotate-12 lg:motion-safe:group-hover:rotate-12",
+				"lg:translate-x-(--hover-link-x) lg:translate-y-(--hover-link-y)",
+				"lg:hover:scale-200 lg:motion-safe:group-hover:hover:rotate-0",
 				className,
 			)}
 			src={src}
@@ -115,7 +118,8 @@ export const HoverLinkButton = ({
 		className={cn(
 			"transition-[opacity,translate] duration-500",
 			"lg:opacity-0 lg:group-hover:opacity-100",
-			"lg:-translate-x-1/4 lg:group-hover:translate-x-0",
+			"lg:motion-safe:-translate-x-1/4 lg:group-hover:translate-x-0",
+			"hover:cursor-pointer",
 			className,
 		)}
 		{...props}

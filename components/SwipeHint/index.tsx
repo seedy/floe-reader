@@ -6,7 +6,7 @@ import cn from "helpers/cn";
 
 // VARIANTS
 const swipeHintVariants = cva(
-	"relative inline-flex h-8 w-20 items-center rounded-pill outline-solid outline-[0.125rem]",
+	"relative inline-flex h-8 w-20 items-center rounded-pill outline-solid outline-2",
 	{
 		variants: {
 			color: {
