@@ -91,11 +91,12 @@ export const HoverLinkImage = ({
 	return (
 		<Image
 			className={cn(
-				"absolute left-1/2 top-1/2 transition-[opacity,rotate] duration-500",
-				"group-hover:animate-spring",
+				"absolute left-1/2 top-1/2 transition-[opacity,rotate, scale] duration-500",
+				"scale-0 group-hover:scale-100",
 				"opacity-0 group-hover:opacity-100",
 				"-rotate-12 group-hover:rotate-12",
 				"translate-x-(--hover-link-x) translate-y-(--hover-link-y)",
+				"hover:scale-200 hover:rotate-0",
 				className,
 			)}
 			src={src}
