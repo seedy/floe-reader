@@ -117,6 +117,7 @@ export const HoverLinkButton = ({
 	<Button
 		className={cn(
 			"transition-[opacity,translate] duration-500",
+			"lg:invisible lg:group-hover:visible",
 			"lg:opacity-0 lg:group-hover:opacity-100",
 			"lg:motion-safe:-translate-x-1/4 lg:group-hover:translate-x-0",
 			"hover:cursor-pointer",
