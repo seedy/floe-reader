@@ -13,9 +13,3 @@
     animation-range: exit-crossing 0% exit 100%;
   }
 }
-
-@media (prefers-reduced-motion) {
-  .root {
-    animation: none;
-  }
-}
