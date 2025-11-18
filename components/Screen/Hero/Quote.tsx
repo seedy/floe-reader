@@ -26,6 +26,7 @@ import cn from "helpers/cn";
 import logoSide from "public/logo-side.svg";
 import quoteFirstPro from "public/quote-first-pro.webp";
 import quotePhotoPro from "public/quote-photo-pro.webp";
+import quoteShortsPro from "public/quote-shorts-pro.webp";
 import quoteVideoPro from "public/quote-video-pro.webp";
 
 const QuoteHero = () => (
@@ -80,10 +81,10 @@ const QuoteHero = () => (
 								image={
 									<HoverLinkImage
 										alt="test"
-										src={quoteFirstPro}
-										width={450}
-										height={300}
-										className="h-[150px] w-[225px]"
+										src={quoteShortsPro}
+										width={300}
+										height={450}
+										className="h-[225px] w-[150px]"
 									/>
 								}
 							>
