@@ -83,11 +83,11 @@ export const HoverLinkContent = ({
 	);
 };
 
-interface HoverLinkImageProps extends ComponentProps<typeof Image> {}
+interface HoverLinkImageProps
+	extends Omit<ComponentProps<typeof Image>, "alt"> {}
 export const HoverLinkImage = ({
 	className,
 	src,
-	alt,
 	...props
 }: HoverLinkImageProps) => {
 	return (
@@ -103,7 +103,7 @@ export const HoverLinkImage = ({
 				className,
 			)}
 			src={src}
-			alt={alt}
+			alt=""
 			{...props}
 		/>
 	);

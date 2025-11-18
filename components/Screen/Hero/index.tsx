@@ -1,5 +1,7 @@
 import Avatar from "components/Avatar";
 import ButtonLink from "components/Button/Link";
+import Image from "components/Image";
+import BgParallax from "components/Quote/BgParallax";
 import Screen from "components/Screen";
 import QuoteHero from "components/Screen/Hero/Quote";
 import SlotTrack from "components/Slot/Track";
@@ -8,10 +10,11 @@ import P from "components/Typography/P";
 import { SERVICES, ZCAL_FIRST } from "constants/links";
 import cn from "helpers/cn";
 import hero from "public/hero.webp";
+import quoteBgParallax from "public/quote-bg-parallax.webp";
 
 const ScreenHero = () => {
 	return (
-		<>
+		<div className="flex flex-col">
 			<Screen
 				className={cn(
 					"flex flex-col bg-primary",
@@ -106,10 +109,16 @@ const ScreenHero = () => {
 					<P className="text-white/80">Mon calendrier t&apos;est ouvert !</P>
 				</div>
 			</Screen>
-			<Screen className="lg:pb-8" id={SERVICES.replace("#", "")}>
+			<Screen
+				className="lg:pb-8 flex flex-col gap-48"
+				id={SERVICES.replace("#", "")}
+			>
+				<BgParallax className="h-svh">
+					<Image src={quoteBgParallax} fill alt="" />
+				</BgParallax>
 				<QuoteHero />
 			</Screen>
-		</>
+		</div>
 	);
 };
 

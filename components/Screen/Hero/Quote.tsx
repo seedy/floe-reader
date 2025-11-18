@@ -80,7 +80,6 @@ const QuoteHero = () => (
 								}
 								image={
 									<HoverLinkImage
-										alt="test"
 										src={quoteShortsPro}
 										width={300}
 										height={450}
@@ -118,7 +117,6 @@ const QuoteHero = () => (
 								}
 								image={
 									<HoverLinkImage
-										alt="test"
 										src={quoteVideoPro}
 										height={300}
 										width={533}
@@ -156,7 +154,6 @@ const QuoteHero = () => (
 								}
 								image={
 									<HoverLinkImage
-										alt="test"
 										src={quotePhotoPro}
 										height={450}
 										width={300}
@@ -194,7 +191,6 @@ const QuoteHero = () => (
 								}
 								image={
 									<HoverLinkImage
-										alt="test"
 										src={quoteFirstPro}
 										height={300}
 										width={450}
