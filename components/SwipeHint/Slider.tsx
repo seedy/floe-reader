@@ -5,10 +5,12 @@ import cn from "helpers/cn";
 const SwipeHintSlider = () => {
 	const overflowing = useSliderOverflowingContext();
 
+	if (!overflowing) return null;
+
 	return (
 		<SwipeHint
-			className={cn("h-0 opacity-0 transition-all duration-1000", {
-				"h-auto mb-10 opacity-100": overflowing,
+			className={cn("starting:opacity-0 transition-opacity", {
+				"mb-10 opacity-100": overflowing,
 			})}
 		/>
 	);
