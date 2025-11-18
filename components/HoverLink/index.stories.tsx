@@ -40,7 +40,7 @@ export const Default: Story = {
 						<h2 className="font-semibold">Learn what we do here</h2>
 					</div>
 				</HoverLinkContent>
-				<HoverLinkImage src={image} alt="Image" height={150} width={150} />
+				<HoverLinkImage src={image} height={150} width={150} />
 				<HoverLinkButton>Je prends rendez-vous</HoverLinkButton>
 			</>
 		),
