@@ -1,4 +1,7 @@
 {
+	"editor.insertSpaces": true,
+	"editor.indentSize": "tabSize",
+	"editor.tabSize": 2,
 	"emmet.showExpandedAbbreviation": "never",
 	"typescript.tsdk": "node_modules/typescript/lib",
 	"editor.defaultFormatter": "biomejs.biome",

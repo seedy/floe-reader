@@ -8,6 +8,7 @@ export const parameters = {
 			date: /Date$/,
 		},
 	},
+	layout: "fullscreen",
 };
 
 export const decorators = [
@@ -17,3 +18,4 @@ export const decorators = [
 		</Root>
 	),
 ];
+export const tags = ["autodocs"];

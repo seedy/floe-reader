@@ -3,7 +3,7 @@ import { cva } from "class-variance-authority";
 const COLOR_VARIANTS = {
 	default: ["text-text"],
 	primary: ["text-primary"],
-	secondary: ["text-secondaryBackground"],
+	secondary: ["text-secondary-background"],
 	white: ["text-white"],
 };
 

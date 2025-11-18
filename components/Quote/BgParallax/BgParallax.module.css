@@ -1,0 +1,15 @@
+@keyframes bgParallax {
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .root {
+    animation: bgParallax linear forwards;
+    animation-timeline: view();
+    /* framer-motion eq : start start, end start */
+    animation-range: exit-crossing 0% exit 100%;
+  }
+}

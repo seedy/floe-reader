@@ -31,14 +31,14 @@ const Sidebar = ({ children, onOpenAutoFocus }: SidebarProps) => {
 			<Portal>
 				<Overlay
 					className={cn(
-						"fixed inset-x-0 bottom-navbar top-0 z-navbar bg-background",
+						"fixed inset-x-0 bottom-16 top-0 z-9999 bg-background",
 						"origin-bottom data-[state=closed]:animate-fold data-[state=open]:animate-unfold",
 					)}
 				/>
 				<Content
 					onOpenAutoFocus={onOpenAutoFocus}
 					className={cn(
-						"group fixed inset-x-0 bottom-navbar top-0 z-navbar flex shrink-0 origin-bottom flex-col bg-navbar",
+						"group fixed inset-x-0 bottom-16 top-0 z-9999 flex shrink-0 origin-bottom flex-col bg-tertiary/20",
 						"data-[state=closed]:animate-fold data-[state=open]:animate-unfold",
 					)}
 				>

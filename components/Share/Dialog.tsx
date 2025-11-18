@@ -3,28 +3,27 @@ import { Cross2Icon } from "@radix-ui/react-icons";
 import IconButton from "components/IconButton";
 import H2 from "components/Typography/H2";
 import cn from "helpers/cn";
-import { ElementRef, ReactNode, forwardRef } from "react";
+import { ComponentProps, ReactNode } from "react";
 
-interface DialogContentProps {
+interface DialogContentProps extends ComponentProps<typeof Content> {
 	className?: string;
 	children?: ReactNode;
 }
-export const DialogContent = forwardRef<
-	ElementRef<typeof Content>,
-	DialogContentProps
->(({ className, children }, forwardedRef) => (
+export const DialogContent = ({
+	className,
+	children,
+	...props
+}: DialogContentProps) => (
 	<Content
-		ref={forwardedRef}
 		className={cn(
-			"fixed left-1/2 top-1/2 m-0 flex max-h-[85vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 flex-col items-start gap-8 rounded border-[0.125rem] border-solid border-secondaryBackground bg-background p-4",
+			"fixed left-1/2 top-1/2 m-0 flex max-h-[85vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 flex-col items-start gap-8 rounded-mdborder-[0.125rem] border-solid border-secondary-background bg-background p-4",
 			className,
 		)}
+		{...props}
 	>
 		{children}
 	</Content>
-));
-
-DialogContent.displayName = "DialogContent";
+);
 
 interface DialogTitleProps {
 	className?: string;

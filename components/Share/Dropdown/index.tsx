@@ -34,7 +34,7 @@ const ShareDropdown = ({
 	<Root open={open} onOpenChange={onOpenChange}>
 		<Trigger asChild>{trigger}</Trigger>
 		<Content
-			className="m-0 flex flex-col items-start gap-8 rounded border-[0.125rem] border-solid border-secondaryBackground bg-background p-4"
+			className="m-0 flex flex-col items-start gap-8 rounded-mdborder-[0.125rem] border-solid border-secondary-background bg-background p-4"
 			collisionPadding={{ top: 20, right: 20 }}
 		>
 			<Label asChild>

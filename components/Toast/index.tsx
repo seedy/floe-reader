@@ -4,53 +4,59 @@ import { VariantProps, cva } from "class-variance-authority";
 import IconButton from "components/IconButton";
 import styles from "components/Toast/Toast.module.scss";
 import cn from "helpers/cn";
-import { type ElementRef, type ReactNode, forwardRef } from "react";
+import { ComponentProps, type ReactNode } from "react";
 
 const toastVariants = cva(
-	"relative flex items-center justify-between gap-x-4 overflow-hidden rounded bg-background p-4 outline outline-[0.125rem]",
+	"relative flex items-center justify-between gap-x-4 overflow-hidden rounded-mdbg-background p-4 outline-solid outline-2",
 	{
 		variants: {
 			variant: {
 				error: ["outline-error"],
-				success: ["outline-secondaryBackground"],
+				success: ["outline-secondary-background"],
 			},
 		},
 	},
 );
 
-interface ToastProps extends VariantProps<typeof toastVariants> {
+interface ToastProps
+	extends VariantProps<typeof toastVariants>,
+		ComponentProps<typeof Root> {
 	title: string;
 	children?: ReactNode;
 }
-const Toast = forwardRef<ElementRef<typeof Root>, ToastProps>(
-	({ title, children, ...props }, forwardedRef) => {
-		const variantsClassName = toastVariants(props);
-		return (
-			<Root
-				className={cn(styles.root, variantsClassName)}
-				ref={forwardedRef}
-				{...props}
-			>
-				<div className="flex flex-col gap-4 overflow-hidden">
-					<Title className="text-body font-medium text-text">{title}</Title>
+const Toast = ({
+	title,
+	children,
+	ref: forwardedRef,
+	variant,
+	...props
+}: ToastProps) => {
+	const variantsClassName = toastVariants({ variant });
+	return (
+		<Root
+			className={cn(styles.root, variantsClassName)}
+			ref={forwardedRef}
+			{...props}
+		>
+			<div className="flex flex-col gap-4 overflow-hidden">
+				<Title className="text-body font-medium text-text">{title}</Title>
+				{children && (
 					<Description className="m-0 truncate text-text">
 						{children}
 					</Description>
-				</div>
-				<Close
-					className="absolute right-2.5 top-2.5"
-					asChild
-					aria-label="Fermer"
-				>
-					<IconButton size="small" type="button">
-						<Cross2Icon />
-					</IconButton>
-				</Close>
-			</Root>
-		);
-	},
-);
-
-Toast.displayName = "Toast";
+				)}
+			</div>
+			<Close
+				className="absolute right-2.5 self-center"
+				asChild
+				aria-label="Fermer"
+			>
+				<IconButton size="small" type="button">
+					<Cross2Icon />
+				</IconButton>
+			</Close>
+		</Root>
+	);
+};
 
 export default Toast;

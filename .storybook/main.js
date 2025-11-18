@@ -5,6 +5,7 @@ module.exports = {
 		"../components/**/*.mdx",
 		"../components/**/*.stories.@(js|jsx|ts|tsx)",
 	],
+
 	framework: {
 		name: "@storybook/nextjs",
 		options: {
@@ -12,8 +13,6 @@ module.exports = {
 			builder: {},
 		},
 	},
-	addons: ["@storybook/addon-essentials"],
-	docs: {
-		autodocs: true,
-	},
+
+	addons: ["@storybook/addon-docs"],
 };

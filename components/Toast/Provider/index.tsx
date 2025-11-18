@@ -40,7 +40,7 @@ const ToastProvider = ({ children }: ToastProviderProps) => {
 					{children}
 				</Toast>
 			))}
-			<Viewport className="fixed right-0 top-0 z-[12000] m-0 flex w-viewport list-none flex-col gap-2.5 p-5 outline-none" />
+			<Viewport className="fixed right-0 top-0 z-12000 m-0 flex w-[clamp(12rem,33vw,24rem)] list-none flex-col gap-2.5 p-5 outline-hidden" />
 		</Provider>
 	);
 };

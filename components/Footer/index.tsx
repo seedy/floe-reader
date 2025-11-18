@@ -8,7 +8,7 @@ import cn from "helpers/cn";
 const Footer = () => (
 	<footer
 		className={cn(
-			"flex gap-4 bg-navbar p-5",
+			"flex gap-4 bg-tertiary/20 p-5",
 			"items-start",
 			"flex-col lg:flex-row",
 			"lg:justify-between",

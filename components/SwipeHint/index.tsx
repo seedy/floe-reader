@@ -6,7 +6,7 @@ import cn from "helpers/cn";
 
 // VARIANTS
 const swipeHintVariants = cva(
-	"relative inline-flex h-8 w-20 items-center rounded-pill outline outline-[0.125rem]",
+	"relative inline-flex h-8 w-20 items-center rounded-pill outline-solid outline-2",
 	{
 		variants: {
 			color: {
@@ -34,7 +34,7 @@ const SwipeHint = ({ className, color = "primary" }: SwipeHintProps) => {
 			<div className={variantsClassName}>
 				<SwipeWheel
 					className={cn(
-						"absolute right-[0.6875rem] text-secondaryBackground",
+						"absolute right-2.75 text-secondary-background",
 						styles.wheel,
 					)}
 				/>

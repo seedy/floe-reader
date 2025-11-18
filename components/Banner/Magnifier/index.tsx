@@ -20,7 +20,7 @@ const BannerMagnifier = ({ items }: BannerMagnifierProps) => {
 		<div className="flex w-full flex-col gap-10">
 			<div
 				className={cn(
-					"m-0 flex w-full items-center bg-navbar lg:justify-center",
+					"m-0 flex w-full items-center bg-tertiary/20 lg:justify-center",
 					"py-5 lg:p-10",
 					"overflow-hidden lg:overflow-visible",
 					"motion-reduce:overflow-auto motion-reduce:px-5",

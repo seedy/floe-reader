@@ -59,7 +59,7 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
 						}
 						cta={
 							<div className="flex flex-col items-center gap-4">
-								<P className="text-textHint">
+								<P className="text-text-hint">
 									Parlons de ton projet audiovisuel !
 								</P>
 								<SlotTrack name="click presentation cta interview">
@@ -152,7 +152,7 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
 						src={presentationMontage}
 						cta={
 							<div className="flex flex-col items-center gap-4">
-								<P className="text-textHint">
+								<P className="text-text-hint">
 									Parlons de tes besoins en montage !
 								</P>
 								<SlotTrack name="click presentation cta montage">
@@ -232,7 +232,7 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
 						title="Tu prendras bien un shot de photo ?"
 						cta={
 							<div className="flex flex-col items-center gap-4">
-								<P className="text-textHint">Parlons de ton projet photo !</P>
+								<P className="text-text-hint">Parlons de ton projet photo !</P>
 								<SlotTrack name="click presentation cta photo">
 									<ButtonLink
 										variant="contained"
