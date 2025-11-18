@@ -130,7 +130,7 @@ const ScreenLanding = () => {
 				</ParallaxLeave>
 			</div>
 			{/* Banner Tags + Image */}
-			<BannerTags className="hidden lg:mt-10 lg:flex" tags={TAGS} />
+			<BannerTags className="hidden lg:my-10 lg:flex" tags={TAGS} />
 			<div
 				className={cn(
 					"relative flex items-center justify-center gap-10",
