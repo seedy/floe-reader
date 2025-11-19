@@ -72,9 +72,4 @@ const sentryConfig = withSentryConfig(withBundleAnalyzer(nextConfig), {
 	automaticVercelMonitors: true,
 });
 
-/** @type {import('next').NextConfig} */
-const finalConfig = {
-	...sentryConfig,
-};
-
-export default finalConfig;
+export default sentryConfig;
