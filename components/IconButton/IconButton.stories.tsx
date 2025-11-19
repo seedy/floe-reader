@@ -26,3 +26,9 @@ Small.args = {
 	size: "small",
 	children: <CheckIcon />,
 };
+
+export const Large = Template.bind({});
+Large.args = {
+	size: "large",
+	children: <CheckIcon />,
+};

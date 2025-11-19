@@ -104,7 +104,12 @@ const Share = () => {
 				onUnlocked={onUnlocked}
 				onError={onPwError}
 			>
-				<IconButton disabled={triggerDisabled} className={iconButtonClassName}>
+				<IconButton
+					size="large"
+					aria-label="Déverrouiller"
+					disabled={triggerDisabled}
+					className={iconButtonClassName}
+				>
 					<Share1Icon />
 					<LockClosedIcon className={iconClassName} />
 				</IconButton>
@@ -115,9 +120,12 @@ const Share = () => {
 	return (
 		<ShareDropdown
 			trigger={
-				<IconButton className={iconButtonClassName}>
+				<IconButton
+					aria-label="Partager"
+					size="large"
+					className={iconButtonClassName}
+				>
 					<Share1Icon />
-					{locked && <LockClosedIcon className={iconClassName} />}
 				</IconButton>
 			}
 			open={dropdownOpen}

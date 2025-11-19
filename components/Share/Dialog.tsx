@@ -16,7 +16,7 @@ export const DialogContent = ({
 }: DialogContentProps) => (
 	<Content
 		className={cn(
-			"fixed left-1/2 top-1/2 m-0 flex max-h-[85vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 flex-col items-start gap-8 rounded-mdborder-[0.125rem] border-solid border-secondary-background bg-background p-4",
+			"fixed left-1/2 top-1/2 m-0 flex max-h-[85vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 flex-col items-start gap-8 rounded-md border-2 border-solid border-secondary-background bg-background p-4",
 			className,
 		)}
 		{...props}
@@ -38,8 +38,13 @@ export const DialogTitle = ({ children, className }: DialogTitleProps) => (
 );
 
 export const DialogClose = () => (
-	<Close asChild aria-label="Fermer">
-		<IconButton className="absolute right-0 top-0" size="small" type="button">
+	<Close asChild>
+		<IconButton
+			aria-label="Fermer"
+			className="absolute right-0 top-0"
+			size="small"
+			type="button"
+		>
 			<Cross2Icon />
 		</IconButton>
 	</Close>
