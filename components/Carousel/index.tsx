@@ -47,8 +47,8 @@ const Carousel = ({
 
 	const [sliderRef, instanceRef] = useKeenSlider<
 		HTMLDivElement,
-		{},
-		{},
+		unknown,
+		unknown,
 		CustomKeenSliderHooks
 	>(
 		{
@@ -98,7 +98,7 @@ const Carousel = ({
 			aria-roledescription="carousel"
 			className={cn("relative flex flex-col items-center", className)}
 		>
-			{loaded && instanceRef.current && (
+			{loaded && (
 				<CarouselIndicators
 					className={cn(
 						"absolute bottom-4 left-0 z-10 flex pl-5",

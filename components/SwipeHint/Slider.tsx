@@ -1,4 +1,4 @@
-import { useSliderOverflowingContext } from "components/Context/Slider/Overflowing";
+import { useSliderOverflowingContext } from "components/Quote/Slider";
 import SwipeHint from "components/SwipeHint";
 import cn from "helpers/cn";
 

@@ -1,7 +1,7 @@
-import Image, { type ImageProps } from "components/Image";
+import Image from "components/Image";
 import H1 from "components/Typography/H1";
 import cn from "helpers/cn";
-import { type ReactNode, useId } from "react";
+import { ComponentProps, type ReactNode, useId } from "react";
 
 type SlideHeadings =
 	| {
@@ -19,7 +19,7 @@ type SlideHeadings =
 			headingBottom?: never;
 	  };
 
-type SlideProps = Omit<ImageProps, "fill" | "sizes"> & SlideHeadings;
+type SlideProps = Omit<ComponentProps<typeof Image>, "fill" | "sizes"> & SlideHeadings;
 
 const Slide = ({ headingTop, headingBottom, alt, ...rest }: SlideProps) => {
 	const headingId = useId();

@@ -3,7 +3,7 @@ import BannerScrollAnimation from "components/Banner/ScrollAnimation";
 import styles from "components/Banner/Tags/Tags.module.scss";
 import P from "components/Typography/P";
 import cn from "helpers/cn";
-import useSupportsViewTimeline from "hooks/useSupportsViewTimeline";
+import { getSupportsViewTimeline } from "helpers/getSupportsViewTimeline";
 import dynamic from "next/dynamic";
 
 const BannerTagsMotionViewTimeline = dynamic(
@@ -21,7 +21,7 @@ const liAfterClassName =
 const liMotionReduceClassName = "motion-reduce:hidden";
 
 const BannerTags = ({ tags, className }: BannerTagsProps) => {
-	const supportsViewTimeline = useSupportsViewTimeline();
+	const supportsViewTimeline = getSupportsViewTimeline();
 	if (supportsViewTimeline) {
 		return (
 			<div

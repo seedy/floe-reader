@@ -15,8 +15,8 @@ interface CarouselIndicatorsProps {
 	keys: number[];
 	currentSlide: number;
 	instanceRef: RefObject<KeenSliderInstance<
-		{},
-		{},
+		unknown,
+		unknown,
 		CustomKeenSliderHooks
 	> | null>;
 	onPause?: (e: MouseEvent | KeyboardEvent | FocusEvent) => void;

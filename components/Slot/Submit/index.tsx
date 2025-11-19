@@ -1,6 +1,5 @@
 import { Slot, SlotProps } from "@radix-ui/react-slot";
 import { ForwardRefExoticComponent, ReactNode, RefAttributes } from "react";
-// @ts-ignore
 import { useFormStatus } from "react-dom";
 
 interface SlotSubmitProps {

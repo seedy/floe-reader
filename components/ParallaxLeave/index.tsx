@@ -1,7 +1,7 @@
 "use client";
 import { cx } from "class-variance-authority";
 import styles from "components/ParallaxLeave/ParallaxLeave.module.css";
-import useSupportsViewTimeline from "hooks/useSupportsViewTimeline";
+import { getSupportsViewTimeline } from "helpers/getSupportsViewTimeline";
 import dynamic from "next/dynamic";
 
 const ParallaxLeaveMotionViewTimeline = dynamic(
@@ -13,7 +13,7 @@ interface ParallaxLeaveProps {
 }
 
 const ParallaxLeave = ({ children, className }: ParallaxLeaveProps) => {
-	const supportsViewTimeline = useSupportsViewTimeline();
+	const supportsViewTimeline = getSupportsViewTimeline();
 	if (supportsViewTimeline) {
 		return <div className={cx(styles.root, className)}>{children}</div>;
 	}

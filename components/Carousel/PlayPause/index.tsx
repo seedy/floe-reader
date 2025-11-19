@@ -2,7 +2,13 @@
 import { PauseIcon, PlayIcon } from "@radix-ui/react-icons";
 import { cva } from "class-variance-authority";
 import SlotTrack from "components/Slot/Track";
-import { MouseEvent, useEffect, useRef, useState, useTransition } from "react";
+import {
+	MouseEvent,
+	startTransition,
+	useEffect,
+	useRef,
+	useState,
+} from "react";
 
 interface PlayPauseProps {
 	playing?: boolean;
@@ -29,7 +35,6 @@ const PlayPause = ({
 	onTogglePlaying,
 	delay = 1000,
 }: PlayPauseProps) => {
-	const [_isPending, startTransition] = useTransition();
 	const [visible, setVisible] = useState(false);
 
 	const childVariantClassName = childVariants({ visible });

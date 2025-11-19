@@ -2,7 +2,7 @@
 import Avatar from "components/Avatar";
 import styles from "components/Avatar/Parallax/AvatarParallax.module.css";
 import cn from "helpers/cn";
-import useSupportsViewTimeline from "hooks/useSupportsViewTimeline";
+import { getSupportsViewTimeline } from "helpers/getSupportsViewTimeline";
 import dynamic from "next/dynamic";
 import { ComponentProps } from "react";
 
@@ -10,9 +10,11 @@ const AvatarParallaxMotionViewTimeline = dynamic(
 	() => import("components/Avatar/Parallax/MotionViewTimeline"),
 );
 
-interface ParallaxAvatarProps extends ComponentProps<typeof Avatar> {}
-const ParallaxAvatar = ({ className, ...props }: ParallaxAvatarProps) => {
-	const supportsViewTimeline = useSupportsViewTimeline();
+const ParallaxAvatar = ({
+	className,
+	...props
+}: ComponentProps<typeof Avatar>) => {
+	const supportsViewTimeline = getSupportsViewTimeline();
 	if (supportsViewTimeline) {
 		return (
 			<Avatar
