@@ -1,4 +1,5 @@
 import {
+	Action,
 	Cancel,
 	Content,
 	Description,
@@ -9,9 +10,12 @@ import {
 	Trigger,
 } from "@radix-ui/react-alert-dialog";
 import Button from "components/Button";
+import ButtonLink from "components/Button/Link";
 import Image from "components/Image";
 import H2 from "components/Typography/H2";
 import H3 from "components/Typography/H3";
+import { ZCAL_FIRST } from "constants/links";
+import cn from "helpers/cn";
 import announcementPro from "public/announcement-pro.webp";
 import { ReactNode } from "react";
 
@@ -40,10 +44,24 @@ const DialogAnnouncement = ({ children }: DialogAnnouncementProps) => {
 								alt="Offre de lancement"
 							/>
 						</div>
-						<div className="flex flex-col items-center justify-center">
+						<div
+							className={cn(
+								"flex items-center justify-between",
+								"lg:justify-center lg:gap-16",
+							)}
+						>
 							<Cancel asChild>
 								<Button>Fermer</Button>
 							</Cancel>
+							<Action asChild>
+								<ButtonLink
+									variant="contained"
+									color="secondary"
+									href={ZCAL_FIRST}
+								>
+									J&apos;en profite
+								</ButtonLink>
+							</Action>
 						</div>
 					</div>
 				</Content>
