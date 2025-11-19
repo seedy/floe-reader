@@ -6,12 +6,15 @@ import { MouseEvent, useEffect, useRef, useState, useTransition } from "react";
 
 interface PlayPauseProps {
 	playing?: boolean;
+	onTogglePlaying?: (
+		e: MouseEvent<HTMLButtonElement>,
+		nextPlaying: boolean,
+	) => void;
 	delay?: number;
-	onClick?: (e: MouseEvent) => void;
 }
 
 const childVariants = cva(
-	"rounded-round bg-black/7 p-6 text-secondary-background opacity-0 transition",
+	"rounded-round bg-black/70 p-6 text-secondary-background opacity-0 transition",
 	{
 		variants: {
 			visible: {
@@ -21,7 +24,11 @@ const childVariants = cva(
 	},
 );
 
-const PlayPause = ({ playing, onClick, delay = 1000 }: PlayPauseProps) => {
+const PlayPause = ({
+	playing,
+	onTogglePlaying,
+	delay = 1000,
+}: PlayPauseProps) => {
 	const [_isPending, startTransition] = useTransition();
 	const [visible, setVisible] = useState(false);
 
@@ -29,11 +36,8 @@ const PlayPause = ({ playing, onClick, delay = 1000 }: PlayPauseProps) => {
 
 	const timeoutRef = useRef<NodeJS.Timeout>(null);
 
-	const onTogglePlayPause = (e: MouseEvent) => {
-		if (!onClick) {
-			return;
-		}
-		onClick(e);
+	const onTogglePlayPause = (e: MouseEvent<HTMLButtonElement>) => {
+		onTogglePlaying?.(e, !playing);
 	};
 
 	useEffect(() => {

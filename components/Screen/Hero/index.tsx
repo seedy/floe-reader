@@ -79,7 +79,7 @@ const ScreenHero = () => {
 					<div
 						className={cn(
 							"flex rounded-avatar bg-transparent",
-							"lg:grow lg:rounded-r-none lg:bg-black/7",
+							"lg:grow lg:rounded-r-none lg:bg-black/70",
 						)}
 					>
 						<Avatar

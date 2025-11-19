@@ -61,10 +61,6 @@ const Carousel = ({
 			slideChanged(slider) {
 				setCurrentSlide(slider.track.details.rel);
 			},
-			dragStarted(slider) {
-				setPlaying(false);
-				slider.emit("stopped");
-			},
 			detailsChanged(s) {
 				const nextOpacities = s.track.details.slides.map(
 					(slide) => slide.portion,
@@ -87,11 +83,11 @@ const Carousel = ({
 		[instanceRef],
 	);
 
-	const onResume = useCallback(
-		(e: MouseEvent) => {
+	const onTogglePlaying = useCallback(
+		(e: MouseEvent<HTMLButtonElement>, nextPlaying: boolean) => {
 			e.stopPropagation();
-			setPlaying(true);
-			instanceRef.current?.emit("resumed");
+			setPlaying(nextPlaying);
+			instanceRef.current?.emit(nextPlaying ? "resumed" : "stopped");
 		},
 		[instanceRef],
 	);
@@ -121,7 +117,7 @@ const Carousel = ({
 			>
 				<CarouselPlayPause
 					playing={playing}
-					onClick={playing ? onPause : onResume}
+					onTogglePlaying={onTogglePlaying}
 				/>
 				{Children.map(children, (child, index) => (
 					<div
