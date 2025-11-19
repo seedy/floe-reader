@@ -16,6 +16,7 @@ import {
 	type MouseEvent,
 	type ReactNode,
 	useCallback,
+	useEffect,
 	useMemo,
 	useState,
 } from "react";
@@ -59,6 +60,7 @@ const Carousel = ({
 				easing: easeInOutQuint,
 			},
 			slideChanged(slider) {
+				document.title = slider.track.details.rel.toString();
 				setCurrentSlide(slider.track.details.rel);
 			},
 			detailsChanged(s) {
@@ -91,6 +93,20 @@ const Carousel = ({
 		},
 		[instanceRef],
 	);
+
+	useEffect(() => {
+		const onVisibilityChange = () => {
+			if (document.visibilityState === "hidden") {
+				instanceRef.current?.emit("stopped");
+				return;
+			}
+			instanceRef.current?.emit("resumed")
+		};
+		document.addEventListener("visibilitychange", onVisibilityChange);
+		return () => {
+			document.removeEventListener("visibilitychange", onVisibilityChange)
+		}
+	}, [instanceRef])
 
 	return (
 		<section
