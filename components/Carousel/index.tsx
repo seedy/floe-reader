@@ -60,7 +60,6 @@ const Carousel = ({
 				easing: easeInOutQuint,
 			},
 			slideChanged(slider) {
-				document.title = slider.track.details.rel.toString();
 				setCurrentSlide(slider.track.details.rel);
 			},
 			detailsChanged(s) {
