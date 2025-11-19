@@ -46,12 +46,13 @@ const Toast = ({
 					</Description>
 				)}
 			</div>
-			<Close
-				className="absolute right-2.5 self-center"
-				asChild
-				aria-label="Fermer"
-			>
-				<IconButton size="small" type="button">
+			<Close asChild>
+				<IconButton
+					className="absolute right-2.5 self-center"
+					aria-label="Fermer"
+					size="small"
+					type="button"
+				>
 					<Cross2Icon />
 				</IconButton>
 			</Close>

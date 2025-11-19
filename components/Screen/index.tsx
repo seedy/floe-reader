@@ -1,7 +1,7 @@
 import cn from "helpers/cn";
 import type { ComponentProps } from "react";
 
-interface ScreenProps extends ComponentProps<"div"> {}
+interface ScreenProps extends ComponentProps<"section"> {}
 
 const Screen = ({ className, children, ...props }: ScreenProps) => {
 	return (

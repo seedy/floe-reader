@@ -5,9 +5,13 @@ export const iconButtonVariants = cva(
 	{
 		variants: {
 			size: {
-				small: ["p-4 *:size-4 active:shadow-active"],
-				medium: ["p-6 *:size-8 active:shadow-active"],
-				large: ["p-10 *:size-16 active:shadow-active-large"],
+				small: ["lg:p-2.5 lg:*:size-5", "p-2 *:size-4", "active:shadow-active"],
+				medium: [
+					"lg:p-4 lg:*:size-6",
+					"p-2.5 *:size-5",
+					"active:shadow-active",
+				],
+				large: ["lg:p-5 lg:*:size-10", "p-4 *:size-8", "active:shadow-active"],
 			},
 		},
 	},

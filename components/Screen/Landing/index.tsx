@@ -5,6 +5,7 @@ import Image from "components/Image";
 import Logo from "components/Logo";
 import ParallaxLeave from "components/ParallaxLeave";
 import Screen from "components/Screen";
+import IconButtonFloatingDiv from "components/Screen/Landing/IconButtonFloatingDiv";
 import ScrollHint from "components/ScrollHint";
 import Slide from "components/Slide";
 import SlotTrack from "components/Slot/Track";
@@ -29,60 +30,64 @@ const TAGS = ["Montage", "Interview", "Podcast", "Photo", "Vidéo"];
 const ScreenLanding = () => {
 	return (
 		<Screen className="lg:pt-6">
-			<Carousel
-				className="lg:mx-10"
-				headingDesktop={
-					<div className="flex grow flex-col items-center gap-2.5 text-center">
-						<H2 color="secondary">
-							Réalisons les contenus qui feront parler de toi
-						</H2>
-						<Suspense fallback={null}>
-							<SocialsEmailOrApp />
-						</Suspense>
-					</div>
-				}
-			>
-				<Slide
-					headingTop={{
-						desktop: "Tes vidéos sur-mesure",
-						mobile: "Réalisons les contenus qui feront parler de toi",
-					}}
-					src={landing1}
-					priority
-					alt=""
-				/>
-				<Slide
-					headingBottom={<H1 color="white">Une expérience visuelle soignée</H1>}
-					headingTop={{ mobile: "Une expérience visuelle soignée" }}
-					src={landing2}
-					priority
-					alt=""
-				/>
-				<Slide
-					headingTop={{
-						desktop: "Tes contenus au fil de mes voyages",
-						mobile: "Tes contenus au fil de mes voyages",
-					}}
-					src={landing3}
-					alt=""
-				/>
-				<Slide
-					headingBottom={
-						<H1 color="white">Des clichés originaux à ta demande</H1>
+			<IconButtonFloatingDiv>
+				<Carousel
+					className="lg:mx-10"
+					headingDesktop={
+						<div className="flex grow flex-col items-center gap-2.5 text-center">
+							<H2 color="secondary">
+								Réalisons les contenus qui feront parler de toi
+							</H2>
+							<Suspense fallback={null}>
+								<SocialsEmailOrApp />
+							</Suspense>
+						</div>
 					}
-					headingTop={{ mobile: "Des clichés originaux à ta demande" }}
-					src={landing4}
-					alt=""
-				/>
-				<Slide
-					headingTop={{
-						desktop: "Tes instants sublimés en photo",
-						mobile: "Tes instants sublimés en photo",
-					}}
-					src={landing5}
-					alt=""
-				/>
-			</Carousel>
+				>
+					<Slide
+						headingTop={{
+							desktop: "Tes vidéos sur-mesure",
+							mobile: "Réalisons les contenus qui feront parler de toi",
+						}}
+						src={landing1}
+						priority
+						alt=""
+					/>
+					<Slide
+						headingBottom={
+							<H1 color="white">Une expérience visuelle soignée</H1>
+						}
+						headingTop={{ mobile: "Une expérience visuelle soignée" }}
+						src={landing2}
+						priority
+						alt=""
+					/>
+					<Slide
+						headingTop={{
+							desktop: "Tes contenus au fil de mes voyages",
+							mobile: "Tes contenus au fil de mes voyages",
+						}}
+						src={landing3}
+						alt=""
+					/>
+					<Slide
+						headingBottom={
+							<H1 color="white">Des clichés originaux à ta demande</H1>
+						}
+						headingTop={{ mobile: "Des clichés originaux à ta demande" }}
+						src={landing4}
+						alt=""
+					/>
+					<Slide
+						headingTop={{
+							desktop: "Tes instants sublimés en photo",
+							mobile: "Tes instants sublimés en photo",
+						}}
+						src={landing5}
+						alt=""
+					/>
+				</Carousel>
+			</IconButtonFloatingDiv>
 			<div
 				className={cn(
 					"relative flex w-full flex-row justify-between py-5 pl-5 pr-0",

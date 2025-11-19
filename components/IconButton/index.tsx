@@ -5,6 +5,7 @@ import { ComponentProps, ReactNode } from "react";
 interface IconButtonProps extends ComponentProps<"button"> {
 	children?: ReactNode;
 	size?: "small" | "medium" | "large";
+	"aria-label": string;
 }
 const IconButton = ({
 	children,

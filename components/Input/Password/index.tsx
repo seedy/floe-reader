@@ -23,6 +23,7 @@ const InputPassword = (props: InputPasswordProps) => {
 				onClick={onToggleShow}
 				className="absolute right-4"
 				size="small"
+				aria-label="Afficher / Masquer le mot de passe"
 			>
 				{show ? <EyeOpenIcon /> : <EyeClosedIcon />}
 			</IconButton>

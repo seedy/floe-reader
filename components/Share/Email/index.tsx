@@ -52,7 +52,7 @@ const ShareEmail = ({
 						<Input label="Mail du destinataire" name="email" />
 						<Input label="Informations supplémentaires" name="extra" />
 						<SlotSubmit>
-							<IconButton size="small" type="submit">
+							<IconButton aria-label="Envoyer" size="small" type="submit">
 								<EnterIcon />
 							</IconButton>
 						</SlotSubmit>

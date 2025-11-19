@@ -52,7 +52,7 @@ const ShareLocked = ({
 					<div className="flex gap-4">
 						<InputPassword label="Mot de passe admin" name="password" />
 						<SlotSubmit>
-							<IconButton size="small" type="submit">
+							<IconButton aria-label="Soumettre" size="small" type="submit">
 								<EnterIcon />
 							</IconButton>
 						</SlotSubmit>
