@@ -32,7 +32,7 @@ const Slide = ({ headingTop, headingBottom, alt, ...rest }: SlideProps) => {
 			{headingTop.mobile && (
 				<div
 					className={cn(
-						"absolute inset-x-0 top-0 z-1 bg-linear-to-b from-black/7 px-5 py-2 lg:hidden",
+						"absolute inset-x-0 top-0 z-1 bg-linear-to-b from-black/70 px-5 py-2 lg:hidden",
 					)}
 				>
 					<div className="w-full lg:max-w-[60%]">
@@ -45,7 +45,7 @@ const Slide = ({ headingTop, headingBottom, alt, ...rest }: SlideProps) => {
 			{headingTop.desktop && (
 				<div
 					className={cn(
-						"absolute inset-x-0 top-0 z-1 hidden bg-linear-to-b from-black/7 px-5 py-2 lg:block",
+						"absolute inset-x-0 top-0 z-1 hidden bg-linear-to-b from-black/70 px-5 py-2 lg:block",
 					)}
 				>
 					<div className="w-full lg:max-w-[60%]">
@@ -58,7 +58,7 @@ const Slide = ({ headingTop, headingBottom, alt, ...rest }: SlideProps) => {
 			{headingBottom && (
 				<div
 					className={cn(
-						"absolute inset-x-0 bottom-0 z-1 hidden justify-end bg-linear-to-t from-black/7 px-5 py-2 lg:flex",
+						"absolute inset-x-0 bottom-0 z-1 hidden justify-end bg-linear-to-t from-black/70 px-5 py-2 lg:flex",
 					)}
 				>
 					<div className="max-w-[34%]">{headingBottom}</div>
