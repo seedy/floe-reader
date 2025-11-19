@@ -113,7 +113,7 @@ const ScreenHero = () => {
 				className="lg:pb-8 flex flex-col gap-48"
 				id={SERVICES.replace("#", "")}
 			>
-				<BgParallax className="h-svh">
+				<BgParallax className="h-svh relative">
 					<Image src={quoteBgParallax} fill alt="" />
 				</BgParallax>
 				<QuoteHero />

@@ -38,7 +38,7 @@ const Footer = () => (
 				<ButtonLinkNext href="/privacy" variant="link">
 					Confidentialité
 				</ButtonLinkNext>
-				<ButtonLinkNext href="/sitemap.xml" variant="link">
+				<ButtonLinkNext prefetch={false} href="/sitemap.xml" variant="link">
 					Plan du site
 				</ButtonLinkNext>
 			</div>

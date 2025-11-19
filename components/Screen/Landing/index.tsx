@@ -50,7 +50,7 @@ const ScreenLanding = () => {
 							mobile: "Réalisons les contenus qui feront parler de toi",
 						}}
 						src={landing1}
-						priority
+						loading="eager"
 						alt=""
 					/>
 					<Slide
@@ -59,7 +59,7 @@ const ScreenLanding = () => {
 						}
 						headingTop={{ mobile: "Une expérience visuelle soignée" }}
 						src={landing2}
-						priority
+						loading="eager"
 						alt=""
 					/>
 					<Slide
@@ -111,7 +111,7 @@ const ScreenLanding = () => {
 				<Logo
 					className="h-[clamp(5rem,16vw,10rem)] w-auto"
 					alt=""
-					priority
+					loading="eager"
 					src={logoSide}
 				/>
 			</div>

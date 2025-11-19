@@ -1,7 +1,7 @@
 "use client";
 import { cx } from "class-variance-authority";
 import styles from "components/Quote/BgParallax/BgParallax.module.css";
-import { getSupportsViewTimeline } from "helpers/getSupportsViewTimeline";
+import useSupportsViewTimeline from "hooks/useSupportsViewTimeline";
 import dynamic from "next/dynamic";
 
 const BgParallaxMotionViewTimeline = dynamic(
@@ -13,7 +13,7 @@ interface BgParallaxProps {
 }
 
 const BgParallax = ({ children, className }: BgParallaxProps) => {
-	const supportsViewTimeline = getSupportsViewTimeline();
+	const supportsViewTimeline = useSupportsViewTimeline();
 	if (supportsViewTimeline) {
 		return <div className={cx(styles.root, className)}>{children}</div>;
 	}

@@ -5,7 +5,7 @@ import styles from "components/Screen/Presentation/Content/Content.module.scss";
 import H2 from "components/Typography/H2";
 import Subtitle from "components/Typography/Subtitle";
 import cn from "helpers/cn";
-import { getSupportsViewTimeline } from "helpers/getSupportsViewTimeline";
+import useSupportsViewTimeline from "hooks/useSupportsViewTimeline";
 import dynamic from "next/dynamic";
 import { Children, ComponentProps, ReactNode } from "react";
 
@@ -30,7 +30,7 @@ const Content = ({
 	src,
 	alt,
 }: ContentProps) => {
-	const supportsViewTimeline = getSupportsViewTimeline();
+	const supportsViewTimeline = useSupportsViewTimeline();
 	if (supportsViewTimeline) {
 		return (
 			<>
