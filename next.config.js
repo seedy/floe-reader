@@ -17,6 +17,7 @@ const nextConfig = {
     nextBuildId({
       dir: __dirname,
     }),
+  distDir: ".next",
   reactStrictMode: true,
   images: {
     qualities: [100],
