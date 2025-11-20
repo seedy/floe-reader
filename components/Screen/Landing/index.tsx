@@ -143,6 +143,7 @@ const ScreenLanding = () => {
 					"flex-col lg:flex-row",
 					"bg-tertiary/20 from-tertiary/20 lg:bg-transparent lg:bg-linear-to-t",
 					"pt-5 lg:pt-0",
+					"lg:px-4",
 					"lg:mx-10 lg:rounded-quote",
 				)}
 			>
