@@ -18,11 +18,14 @@ const nextConfig = {
       dir: __dirname,
     }),
   distDir: ".next",
+  turbopack: {
+    root: __dirname,
+  },
   reactStrictMode: true,
   images: {
     qualities: [100],
   },
-  outputFileTracingRoot: "/Users/cedricdupuis/Workspace",
+  outputFileTracingRoot: __dirname,
   productionBrowserSourceMaps: true,
   rewrites: async () => ({
     afterFiles: [
