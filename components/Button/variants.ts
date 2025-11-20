@@ -6,18 +6,18 @@ export const buttonVariants = cva(
 		variants: {
 			variant: {
 				contained: [
-					"text-background hover:text-white focus:text-white focus:shadow-focus-large focus-visible:shadow-focus-large active:text-white active:shadow-active-large",
+					"text-background hover:text-white focus:text-white focus:shadow-focus-large focus-visible:shadow-focus-large active:text-white active:inset-shadow-active-large",
 				],
 				outlined: [
-					"outline-solid outline-2 outline-transparent hover:bg-white focus:bg-white focus:shadow-focus-large focus-visible:shadow-focus-large active:bg-white active:shadow-active-large",
+					"outline-solid outline-2 outline-transparent hover:bg-white focus:bg-white focus:shadow-focus-large focus-visible:shadow-focus-large active:bg-white active:inset-shadow-active-large",
 				],
 				link: [
 					"gap-2 normal-case focus:underline focus-visible:underline active:text-opacity-70 active:underline px-0",
 				],
 			},
 			color: {
-				primary: ["outline-outline-primary"],
-				secondary: ["outline-outline-secondary"],
+				primary: ["outline-primary"],
+				secondary: ["outline-secondary-background"],
 				white: ["outline-white"],
 			},
 			full: {

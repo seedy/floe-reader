@@ -3,15 +3,15 @@ import cn from "helpers/cn";
 import type { ReactNode } from "react";
 
 const spanUnderlineVariants = cva(
-	"relative after:absolute after:bottom-0 after:left-1/2 after:h-2 after:w-[90%] after:-translate-x-1/2 after:rounded-mdafter:bg-size-[100%_100%] after:bg-no-repeat",
+	"relative after:absolute after:bottom-0 after:left-1/2 after:h-2 after:w-[90%] after:-translate-x-1/2 after:rounded-mdafter:bg-size-[100%_100%] after:bg-no-repeat after:rounded-full",
 	{
 		variants: {
 			variant: {
 				primary: [
-					"after:bg-linear-to-r after:from-fern-green-underline after:to-fern-green-underline",
+					"after:bg-linear-to-r after:from-fern-green/30 after:to-fern-green/70",
 				],
 				secondary: [
-					"after:bg-linear-to-r after:from-outline-secondary after:to-outline-secondary",
+					"after:bg-linear-to-r after:from-secondary-background/30 after:to-secondary-background/70",
 				],
 			},
 		},

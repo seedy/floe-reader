@@ -26,7 +26,7 @@ const CarouselIndicator = ({
 		<button
 			ref={forwardedRef}
 			className={cn(
-				"m-0 inline-flex items-center justify-center rounded-round border-none text-secondary-background focus-visible:outline-outline-secondary",
+				"m-0 inline-flex items-center justify-center rounded-round border-none text-secondary-background focus-visible:outline-secondary-background",
 				"hover:cursor-pointer",
 				"p-2 sm:p-3 md:p-4 lg:p-3 xl:p-5 2xl:p-7",
 			)}
