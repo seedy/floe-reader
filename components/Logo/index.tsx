@@ -3,9 +3,7 @@ import Image from "next/image";
 import type { ComponentProps } from "react";
 
 // COMPONENTS
-export interface LogoProps extends ComponentProps<typeof Image> {}
-
-const Logo = ({ src, alt, className, ...props }: LogoProps) => (
+const Logo = ({ src, alt, className, ...props }: ComponentProps<typeof Image>) => (
 	<Image
 		className={cn("object-cover", className)}
 		src={src}

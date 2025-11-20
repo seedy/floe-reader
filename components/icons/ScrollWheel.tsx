@@ -1,8 +1,6 @@
 import { ComponentProps } from "react";
 
-type ScrollWheelIconProps = ComponentProps<"svg">;
-
-const ScrollWheelIcon = (props: ScrollWheelIconProps) => (
+const ScrollWheelIcon = (props: ComponentProps<"svg">) => (
 	<svg
 		{...props}
 		xmlns="http://www.w3.org/2000/svg"

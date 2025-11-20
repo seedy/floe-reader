@@ -21,7 +21,7 @@ const UNLOCK_INPUT_SCHEMA = z.object({
 	password: z.string().min(1),
 });
 
-export const unlock = async (_prevState: any, formData: FormData) => {
+export const unlock = async (_prevState: unknown, formData: FormData) => {
 	try {
 		const { password } = UNLOCK_INPUT_SCHEMA.parse({
 			password: formData.get("password"),
@@ -44,7 +44,7 @@ const SHARE_INPUT_SCHEMA = z.object({
 	extra: z.string().optional(),
 });
 
-export const share = async (_prevState: any, formData: FormData) => {
+export const share = async (_prevState: unknown, formData: FormData) => {
 	try {
 		const ShareHtml = await render(Share());
 		const { email, extra } = SHARE_INPUT_SCHEMA.parse({

@@ -26,15 +26,15 @@ interface NavbarProps extends ComponentProps<"nav"> {
 }
 const Navbar = ({ className, ref: forwardedRef, ...props }: NavbarProps) => {
 	const innerRef = useRef<ComponentRef<"nav"> | null>(null);
+	// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
 	useImperativeHandle(forwardedRef, () => innerRef?.current!, [innerRef]);
 
 	useAnimateOnScroll(innerRef);
 
 	const onOpenAutoFocus = () => {
-		if (innerRef.current) {
-			innerRef.current.removeAttribute("aria-hidden");
-			innerRef.current.removeAttribute("data-aria-hidden");
-		}
+		if (!innerRef.current) return;
+		innerRef.current.removeAttribute("aria-hidden");
+		innerRef.current.removeAttribute("data-aria-hidden");
 	};
 
 	return (

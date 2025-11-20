@@ -1,4 +1,3 @@
-import SliderOverflowingContextProvider from "components/Context/Slider/Overflowing";
 import Quote from "components/Quote";
 import cn from "helpers/cn";
 import "keen-slider/keen-slider.min.css";
@@ -6,6 +5,8 @@ import { useKeenSlider } from "keen-slider/react";
 import {
 	Children,
 	ComponentProps,
+	createContext,
+	useContext,
 	useLayoutEffect,
 	useRef,
 	useState,
@@ -16,9 +17,23 @@ const getWidthOverflow = (element: HTMLElement) => {
 	return element.scrollWidth > element.offsetWidth;
 };
 
-interface QuoteSliderProps extends ComponentProps<typeof Quote> {}
+// CONTEXT
+const SliderOverflowingContext = createContext<boolean | null>(null);
 
-const QuoteSlider = ({ children, className }: QuoteSliderProps) => {
+// HOOKS
+export const useSliderOverflowingContext = () => {
+	const context = useContext(SliderOverflowingContext);
+
+	if (context === null) {
+		throw new Error(
+			"useSliderOverflowingContext must be used within a SliderOverflowingContextProvider",
+		);
+	}
+	return context;
+};
+
+// COMPONENTS
+const QuoteSlider = ({ children, className }: ComponentProps<typeof Quote>) => {
 	const [loaded, setLoaded] = useState(false);
 	const [isOverflowing, setOverflowing] = useState(false);
 
@@ -55,7 +70,7 @@ const QuoteSlider = ({ children, className }: QuoteSliderProps) => {
 	}, []);
 
 	return (
-		<SliderOverflowingContextProvider value={loaded && isOverflowing}>
+		<SliderOverflowingContext.Provider value={loaded && isOverflowing}>
 			<Quote
 				ref={(node) => {
 					if (!node) return;
@@ -71,7 +86,7 @@ const QuoteSlider = ({ children, className }: QuoteSliderProps) => {
 			>
 				{children}
 			</Quote>
-		</SliderOverflowingContextProvider>
+		</SliderOverflowingContext.Provider>
 	);
 };
 

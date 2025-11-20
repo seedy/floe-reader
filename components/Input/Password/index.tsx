@@ -5,8 +5,7 @@ import IconButton from "components/IconButton";
 import Input from "components/Input";
 import { ComponentProps, useState } from "react";
 
-interface InputPasswordProps extends ComponentProps<typeof Input> {}
-const InputPassword = (props: InputPasswordProps) => {
+const InputPassword = (props: ComponentProps<typeof Input>) => {
 	const [show, setShow] = useState(false);
 
 	const onToggleShow = () => {

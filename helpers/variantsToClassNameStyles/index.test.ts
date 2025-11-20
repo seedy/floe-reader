@@ -1,3 +1,5 @@
+import { describe, expect, it } from "vitest";
+
 import variantsToClassNameStyles from "helpers/variantsToClassNameStyles";
 
 const styles = {

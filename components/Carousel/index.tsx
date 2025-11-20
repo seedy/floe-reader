@@ -16,6 +16,7 @@ import {
 	type MouseEvent,
 	type ReactNode,
 	useCallback,
+	useEffect,
 	useMemo,
 	useState,
 } from "react";
@@ -47,8 +48,8 @@ const Carousel = ({
 
 	const [sliderRef, instanceRef] = useKeenSlider<
 		HTMLDivElement,
-		{},
-		{},
+		unknown,
+		unknown,
 		CustomKeenSliderHooks
 	>(
 		{
@@ -92,13 +93,27 @@ const Carousel = ({
 		[instanceRef],
 	);
 
+	useEffect(() => {
+		const onVisibilityChange = () => {
+			if (document.visibilityState === "hidden") {
+				instanceRef.current?.emit("stopped");
+				return;
+			}
+			instanceRef.current?.emit("resumed")
+		};
+		document.addEventListener("visibilitychange", onVisibilityChange);
+		return () => {
+			document.removeEventListener("visibilitychange", onVisibilityChange)
+		}
+	}, [instanceRef])
+
 	return (
 		<section
 			aria-label="Photos de couverture"
 			aria-roledescription="carousel"
 			className={cn("relative flex flex-col items-center", className)}
 		>
-			{loaded && instanceRef.current && (
+			{loaded && (
 				<CarouselIndicators
 					className={cn(
 						"absolute bottom-4 left-0 z-10 flex pl-5",

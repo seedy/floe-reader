@@ -10,8 +10,10 @@ const AvatarParallaxMotionViewTimeline = dynamic(
 	() => import("components/Avatar/Parallax/MotionViewTimeline"),
 );
 
-interface ParallaxAvatarProps extends ComponentProps<typeof Avatar> {}
-const ParallaxAvatar = ({ className, ...props }: ParallaxAvatarProps) => {
+const ParallaxAvatar = ({
+	className,
+	...props
+}: ComponentProps<typeof Avatar>) => {
 	const supportsViewTimeline = useSupportsViewTimeline();
 	if (supportsViewTimeline) {
 		return (

@@ -9,17 +9,18 @@ export type CustomKeenSliderHooks =
 
 const keenSliderCarousel =
 	(delay: number) =>
-	(slider: KeenSliderInstance<{}, {}, CustomKeenSliderHooks>) => {
+	(slider: KeenSliderInstance<unknown, unknown, CustomKeenSliderHooks>) => {
 		let timeout: ReturnType<typeof setTimeout>;
 		let busy = false;
 
-		const observer = new IntersectionObserver((entries) => {
-			const entry = entries[0];
-			if (entry.isIntersecting) {
-				return slider.emit("in");
-			}
-			slider.emit("out");
-		});
+		let observer: IntersectionObserver | null = null; 
+
+		const initTimeout = () => {
+			clearTimeout(timeout);
+			timeout = setTimeout(() => {
+				slider.next();
+			}, delay);
+		}
 
 		const clearNextTimeout = () => {
 			clearTimeout(timeout);
@@ -54,6 +55,13 @@ const keenSliderCarousel =
 		};
 
 		const onCreated = (instance: KeenSliderInstance) => {
+			observer = new IntersectionObserver((entries) => {
+			const entry = entries[0];
+			if (entry.isIntersecting) {
+				return slider.emit("in");
+			}
+			slider.emit("out");
+		});
 			observer.observe(instance.container);
 		};
 
@@ -63,7 +71,7 @@ const keenSliderCarousel =
 			instance.container.addEventListener("mouseover", onMouseOver);
 			instance.container.addEventListener("mouseout", onMouseOut);
 			instance.on("animationEnded", nextTimeout);
-			nextTimeout();
+			initTimeout();
 		};
 
 		const onOut = (instance: KeenSliderInstance) => {
@@ -77,16 +85,21 @@ const keenSliderCarousel =
 
 		const onResume = (instance: KeenSliderInstance) => {
 			onIn(instance);
-			observer.observe(instance.container);
+			observer?.observe(instance.container);
 		};
 
 		const onStop = (instance: KeenSliderInstance) => {
 			onOut(instance);
-			observer.unobserve(slider.container);
+			observer?.unobserve(instance.container);
 		};
 
+		const onDestroyed = (instance: KeenSliderInstance) => {
+			onOut(instance);
+			observer?.disconnect();
+		}
+
 		slider.on("created", onCreated);
-		slider.on("destroyed", onStop);
+		slider.on("destroyed", onDestroyed);
 		slider.on("in", onIn);
 		slider.on("out", onOut);
 		slider.on("stopped", onStop);
