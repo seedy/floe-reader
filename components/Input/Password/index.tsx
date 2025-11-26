@@ -6,28 +6,29 @@ import Input from "components/Input";
 import { ComponentProps, useState } from "react";
 
 const InputPassword = (props: ComponentProps<typeof Input>) => {
-	const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
-	const onToggleShow = () => {
-		setShow((prev) => !prev);
-	};
+  const onToggleShow = () => {
+    setShow((prev) => !prev);
+  };
 
-	return (
-		<Input
-			autoComplete="current-password"
-			type={show ? "text" : "password"}
-			{...props}
-		>
-			<IconButton
-				onClick={onToggleShow}
-				className="absolute right-4"
-				size="small"
-				aria-label="Afficher / Masquer le mot de passe"
-			>
-				{show ? <EyeOpenIcon /> : <EyeClosedIcon />}
-			</IconButton>
-		</Input>
-	);
+  return (
+    <Input
+      autoComplete="current-password"
+      type={show ? "text" : "password"}
+      {...props}
+    >
+      <IconButton
+        onClick={onToggleShow}
+        className="absolute right-4"
+        size="small"
+        tooltip="Afficher / Masquer le mot de passe"
+        tooltipVariant="radix"
+      >
+        {show ? <EyeOpenIcon /> : <EyeClosedIcon />}
+      </IconButton>
+    </Input>
+  );
 };
 
 export default InputPassword;

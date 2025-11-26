@@ -41,14 +41,14 @@
       transform: scaleY(100%);
     }
   }
-  --animate-fly: fly 1s infinite;
+  --animate-fly: fly 1s forwards infinite;
   @keyframes fly {
     0%,
     100% {
-      transform: translateX(-25%);
+      transform: translate(0);
     }
     50% {
-      transform: translateY(25%);
+      transform: translate(25%, 25%);
     }
   }
 

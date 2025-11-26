@@ -6,25 +6,26 @@ import IconButtonFloating from "components/IconButton/Floating";
 import { ReactNode, useRef } from "react";
 
 interface IconButtonFloatingDivProps {
-	children: ReactNode;
+  children: ReactNode;
 }
 const IconButtonFloatingDiv = ({ children }: IconButtonFloatingDivProps) => {
-	const container = useRef<HTMLDivElement>(null);
+  const container = useRef<HTMLDivElement>(null);
 
-	return (
-		<>
-			<DialogAnnouncement>
-				<IconButtonFloating
-					aria-label="Voir l'annonce"
-					className="z-1"
-					container={container}
-				>
-					<RocketIcon />
-				</IconButtonFloating>
-			</DialogAnnouncement>
-			<div ref={container}>{children}</div>
-		</>
-	);
+  return (
+    <>
+      <DialogAnnouncement>
+        <IconButtonFloating
+          tooltip="Voir l'annonce"
+          tooltipVariant="radix"
+          className="z-1"
+          container={container}
+        >
+          <RocketIcon />
+        </IconButtonFloating>
+      </DialogAnnouncement>
+      <div ref={container}>{children}</div>
+    </>
+  );
 };
 
 export default IconButtonFloatingDiv;
