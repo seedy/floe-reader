@@ -13,136 +13,130 @@ import { useState } from "react";
 // CONSTANTS
 const LOCKED_KEY = "locked";
 
-const iconButtonClassName = "relative";
-const iconClassName = "absolute bottom-4 right-3 size-4 text-primary";
-
 // HELPERS
 const getLocked = () => {
-	if (typeof window !== "undefined") {
-		return localStorage.getItem(LOCKED_KEY);
-	}
+  if (typeof window !== "undefined") {
+    return localStorage.getItem(LOCKED_KEY);
+  }
 };
 const unlock = () => localStorage.setItem(LOCKED_KEY, "true");
 
 // COMPONENTS
 const Share = () => {
-	const addToast = useToast();
-	const [dialogOpen, setDialogOpen] = useState(false);
-	const [dropdownOpen, setDropdownOpen] = useState(false);
-	const [locked, setLocked] = useState(!getLocked());
-	const [emailOpen, setEmailOpen] = useState(false);
-	const [pwErrorCount, setPwErrorCount] = useState(0);
-	const [qrCodeOpen, setqrCodeOpen] = useState(false);
+  const addToast = useToast();
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [locked, setLocked] = useState(!getLocked());
+  const [emailOpen, setEmailOpen] = useState(false);
+  const [pwErrorCount, setPwErrorCount] = useState(0);
+  const [qrCodeOpen, setqrCodeOpen] = useState(false);
 
-	const onUnlocked = () => {
-		unlock();
-		setLocked(!getLocked());
-		addToast({
-			variant: "success",
-			title: "Déverrouillé",
-			children: "Bienvenue Floé",
-		});
-	};
+  const onUnlocked = () => {
+    unlock();
+    setLocked(!getLocked());
+    addToast({
+      variant: "success",
+      title: "Déverrouillé",
+      children: "Bienvenue Floé",
+    });
+  };
 
-	const onPwError = () => {
-		if (pwErrorCount >= 2) {
-			addToast({
-				variant: "error",
-				title: "Mot de passe incorrect",
-				children: "Verrouillage.",
-			});
-		} else {
-			addToast({
-				variant: "error",
-				title: "Mot de passe incorrect",
-				children: "Êtes-vous admin ?",
-			});
-		}
-		setPwErrorCount((prev) => {
-			if (prev === 2) {
-				setDropdownOpen(false);
-				setDialogOpen(false);
-			}
-			return prev + 1;
-		});
-	};
-	const triggerDisabled = pwErrorCount === 3;
+  const onPwError = () => {
+    if (pwErrorCount >= 2) {
+      addToast({
+        variant: "error",
+        title: "Mot de passe incorrect",
+        children: "Verrouillage.",
+      });
+    } else {
+      addToast({
+        variant: "error",
+        title: "Mot de passe incorrect",
+        children: "Êtes-vous admin ?",
+      });
+    }
+    setPwErrorCount((prev) => {
+      if (prev === 2) {
+        setDropdownOpen(false);
+        setDialogOpen(false);
+      }
+      return prev + 1;
+    });
+  };
+  const triggerDisabled = pwErrorCount === 3;
 
-	const onQrCodeOpen = (e: Event) => {
-		e.preventDefault();
-		setqrCodeOpen(true);
-	};
+  const onQrCodeOpen = (e: Event) => {
+    e.preventDefault();
+    setqrCodeOpen(true);
+  };
 
-	const onShareMail = (e: Event) => {
-		e.preventDefault();
-		setEmailOpen(true);
-	};
+  const onShareMail = (e: Event) => {
+    e.preventDefault();
+    setEmailOpen(true);
+  };
 
-	const onSent = () => {
-		addToast({ variant: "success", title: "Email envoyé", children: null });
-		setEmailOpen(false);
-	};
+  const onSent = () => {
+    addToast({ variant: "success", title: "Email envoyé", children: null });
+    setEmailOpen(false);
+  };
 
-	const onEmailError = () => {
-		addToast({
-			variant: "error",
-			title: "Email non envoyé",
-			children: "Une erreur est survenue",
-		});
-	};
+  const onEmailError = () => {
+    addToast({
+      variant: "error",
+      title: "Email non envoyé",
+      children: "Une erreur est survenue",
+    });
+  };
 
-	const onCopyLink = async () => {
-		await navigator.clipboard.writeText(getBaseUrl());
-		addToast({ variant: "success", title: "Lien copié !", children: null });
-	};
+  const onCopyLink = async () => {
+    await navigator.clipboard.writeText(getBaseUrl());
+    addToast({ variant: "success", title: "Lien copié !", children: null });
+  };
 
-	if (locked) {
-		return (
-			<ShareLocked
-				open={dialogOpen}
-				onOpenChange={setDialogOpen}
-				onUnlocked={onUnlocked}
-				onError={onPwError}
-			>
-				<IconButton
-					size="large"
-					aria-label="Déverrouiller"
-					disabled={triggerDisabled}
-					className={iconButtonClassName}
-				>
-					<Share1Icon />
-					<LockClosedIcon className={iconClassName} />
-				</IconButton>
-			</ShareLocked>
-		);
-	}
+  if (locked) {
+    return (
+      <ShareLocked
+        open={dialogOpen}
+        onOpenChange={setDialogOpen}
+        onUnlocked={onUnlocked}
+        onError={onPwError}
+      >
+        <IconButton
+          size="large"
+          tooltip="Déverrouiller"
+          tooltipVariant="radix"
+          disabled={triggerDisabled}
+          className="relative"
+        >
+          <Share1Icon />
+          <LockClosedIcon className="absolute bottom-0 right-0 size-6! text-primary z-1" />
+        </IconButton>
+      </ShareLocked>
+    );
+  }
 
-	return (
-		<ShareDropdown
-			trigger={
-				<IconButton
-					aria-label="Partager"
-					size="large"
-					className={iconButtonClassName}
-				>
-					<Share1Icon />
-				</IconButton>
-			}
-			open={dropdownOpen}
-			onOpenChange={setDropdownOpen}
-			onQrCodeOpen={onQrCodeOpen}
-			onShareMail={onShareMail}
-			onCopyLink={onCopyLink}
-		>
-			<DialogQRCode open={qrCodeOpen} onOpenChange={setqrCodeOpen} />
-			<ShareEmail
-				open={emailOpen}
-				onOpenChange={setEmailOpen}
-				onSent={onSent}
-				onError={onEmailError}
-			/>
-		</ShareDropdown>
-	);
+  return (
+    <ShareDropdown
+      trigger={
+        <IconButton tooltip="Partager" tooltipVariant="radix" size="large">
+          <Share1Icon />
+        </IconButton>
+      }
+      open={dropdownOpen}
+      onOpenChange={setDropdownOpen}
+      onQrCodeOpen={onQrCodeOpen}
+      onShareMail={onShareMail}
+      onCopyLink={onCopyLink}
+    >
+      <DialogQRCode open={qrCodeOpen} onOpenChange={setqrCodeOpen} />
+      <ShareEmail
+        open={emailOpen}
+        onOpenChange={setEmailOpen}
+        onSent={onSent}
+        onError={onEmailError}
+      />
+    </ShareDropdown>
+  );
 };
 
 export default Share;
