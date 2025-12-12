@@ -60,7 +60,7 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-email": "^4.3.0",
-    "tailwind-merge": "^2.2.2",
+    "tailwind-merge": "^3.4.0",
     "vitest": "4.0.10",
     "zod": "^4.1.12"
   },
@@ -71,7 +71,7 @@
     "@next/bundle-analyzer": "16.0.3",
     "@storybook/addon-docs": "^10.0.8",
     "@storybook/nextjs": "^10.0.8",
-    "@tailwindcss/postcss": "^4.1.15",
+    "@tailwindcss/postcss": "^4.1.18",
     "@types/jest": "^29.4.0",
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.9",
@@ -95,7 +95,7 @@
     "sass-loader": "^13.2.0",
     "storybook": "^10.0.8",
     "style-loader": "^3.3.1",
-    "tailwindcss": "^4.1.15",
+    "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3",
     "vite-tsconfig-paths": "^5.1.4"
   },
