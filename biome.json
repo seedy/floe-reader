@@ -1,13 +1,35 @@
 {
+	"$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
 	"formatter": {
 		"enabled": true,
 		"formatWithErrors": false,
-		"indentStyle": "tab",
+		"indentStyle": "space",
 		"indentWidth": 2,
 		"lineWidth": 80,
-		"ignore": []
+		"includes": ["**"]
 	},
 	"linter": {
-		"enabled": false
+		"enabled": true,
+		"domains": {
+			"project": "recommended",
+			"next": "recommended",
+			"react": "recommended",
+			"test": "recommended"
+		}
+	},
+	  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+	"assist": {
+		"enabled": true,
+		"actions": {
+			"source": {
+				"recommended": true,
+				"useSortedKeys": "on",
+				"organizeImports": "on"
+			}
+		}
 	}
 }
