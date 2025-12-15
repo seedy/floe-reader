@@ -7,55 +7,54 @@ import Navbar from "components/Navbar";
 import ToastProvider from "components/Toast/Provider";
 import { MAIN_CONTENT } from "constants/links";
 import { env } from "env.mjs";
-import { LazyMotion, domAnimation } from "framer-motion";
 import cn from "helpers/cn";
-import { Lora } from "next/font/google";
-import { Urbanist } from "next/font/google";
+import { domAnimation, LazyMotion } from "motion/react";
+import { Lora, Urbanist } from "next/font/google";
 import Script from "next/script";
 
 const lora = Lora({
-	subsets: ["latin"],
-	style: ["normal"],
-	variable: "--font-lora",
+  style: ["normal"],
+  subsets: ["latin"],
+  variable: "--font-lora",
 });
 const urbanist = Urbanist({
-	subsets: ["latin"],
-	style: ["normal"],
-	variable: "--font-urbanist",
+  style: ["normal"],
+  subsets: ["latin"],
+  variable: "--font-urbanist",
 });
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://floegaubert.com"),
-	title: "Floé Gaubert - Photographe, vidéaste et monteuse",
-	description: "Site vitrine",
-	openGraph: {
-		images: "/opengraph-image.jpg",
-	},
+  description: "Site vitrine",
+  metadataBase: new URL("https://floegaubert.com"),
+  openGraph: {
+    images: "/opengraph-image.jpg",
+  },
+  title: "Floé Gaubert - Photographe, vidéaste et monteuse",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-	return (
-		<html lang="fr" className={cn(lora.variable, urbanist.variable)}>
-			<body className="flex min-h-svh flex-col bg-background">
-				<ToastProvider>
-					<Navbar />
-					<LazyMotion features={domAnimation}>
-						<main
-							id={MAIN_CONTENT.replace("#", "")}
-							className="mb-32 flex grow flex-col lg:mt-16"
-						>
-							{children}
-						</main>
-					</LazyMotion>
-					<Footer />
-				</ToastProvider>
-				<SpeedInsights />
-			</body>
-			<Script
-				defer
-				src="/analytics/script.js"
-				data-website-id={env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
-			/>
-		</html>
-	);
+  return (
+    <html lang="fr" className={cn(lora.variable, urbanist.variable)}>
+      <body className="flex min-h-svh flex-col bg-background">
+        <ToastProvider>
+          <Navbar />
+          <LazyMotion features={domAnimation}>
+            <main
+              id={MAIN_CONTENT.replace("#", "")}
+              className="mb-32 flex grow flex-col lg:mt-16"
+            >
+              {children}
+            </main>
+          </LazyMotion>
+          <Footer />
+        </ToastProvider>
+        <SpeedInsights />
+      </body>
+      <Script
+        defer
+        src="/analytics/script.js"
+        data-website-id={env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+      />
+    </html>
+  );
 }

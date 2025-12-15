@@ -3,7 +3,7 @@
 import { EyeClosedIcon, EyeOpenIcon } from "@radix-ui/react-icons";
 import IconButton from "components/IconButton";
 import Input from "components/Input";
-import { ComponentProps, useState } from "react";
+import { type ComponentProps, useState } from "react";
 
 const InputPassword = (props: ComponentProps<typeof Input>) => {
   const [show, setShow] = useState(false);

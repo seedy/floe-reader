@@ -1,15 +1,13 @@
-import { Meta, StoryFn } from "@storybook/nextjs";
-import React from "react";
-
 import { CheckIcon } from "@radix-ui/react-icons";
+import type { Meta, StoryFn } from "@storybook/nextjs";
 import IconButton from ".";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/IconButton",
-  component: IconButton,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
+  component: IconButton,
+  title: "Components/IconButton",
 } as Meta<typeof IconButton>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
@@ -24,14 +22,14 @@ Default.args = {
 
 export const Small = Template.bind({});
 Small.args = {
-  size: "small",
   children: <CheckIcon />,
+  size: "small",
   tooltip: "Check",
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  size: "large",
   children: <CheckIcon />,
+  size: "large",
   tooltip: "Check",
 };

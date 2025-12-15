@@ -1,22 +1,5 @@
 {
-  "name": "floe-reader",
-  "version": "0.1.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint .",
-    "lint:tsc": "tsc --noEmit",
-    "storybook": "storybook dev -p 6006",
-    "emails": "email dev",
-    "build-storybook": "storybook build",
-    "test": "vitest"
-  },
   "dependencies": {
-    "@eslint/eslintrc": "^3.3.1",
     "@floating-ui/react": "^0.27.16",
     "@radix-ui/react-accessible-icon": "^1.1.8",
     "@radix-ui/react-alert-dialog": "^1.1.15",
@@ -52,8 +35,8 @@
     "@testing-library/react": "^16.3.0",
     "@vercel/speed-insights": "^1.2.0",
     "class-variance-authority": "^0.7.0",
-    "framer-motion": "^11.5.2",
     "keen-slider": "^6.8.5",
+    "motion": "^12.23.26",
     "next": "16.0.10",
     "next-build-id": "^3.0.0",
     "nodemailer": "^6.9.1",
@@ -66,8 +49,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
-    "@biomejs/biome": "^1.4.1",
-    "@eslint/js": "^9.37.0",
+    "@biomejs/biome": "2.3.8",
     "@next/bundle-analyzer": "16.0.3",
     "@storybook/addon-docs": "^10.0.8",
     "@storybook/nextjs": "^10.0.8",
@@ -78,16 +60,9 @@
     "@types/react": "19.2.6",
     "@types/react-dom": "19.2.3",
     "@types/umami": "^2.10.0",
-    "@typescript-eslint/eslint-plugin": "^8.46.0",
-    "@typescript-eslint/parser": "^8.46.0",
     "@vitejs/plugin-react": "^5.1.1",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.3",
-    "eslint": "^9",
-    "eslint-config-next": "16.0.3",
-    "eslint-plugin-simple-import-sort": "^12.1.1",
-    "eslint-plugin-storybook": "^10.0.8",
-    "eslint-plugin-unused-imports": "^4.2.0",
     "postcss": "^8.4.31",
     "postcss-loader": "^7.0.2",
     "resolve-url-loader": "^5.0.0",
@@ -100,18 +75,34 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "engines": {
-    "pnpm": ">= 9.0",
     "node": ">= 24.0",
     "npm": "please-use-pnpm",
+    "pnpm": ">= 9.0",
     "yarn": "please-use-pnpm"
   },
+  "name": "floe-reader",
   "pnpm": {
+    "onlyBuiltDependencies": [
+      "@sentry/cli"
+    ],
     "overrides": {
       "@types/react": "19.2.6",
       "@types/react-dom": "19.2.3"
-    },
-    "onlyBuiltDependencies": [
-      "@sentry/cli"
-    ]
-  }
+    }
+  },
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "build-storybook": "storybook build",
+    "dev": "next dev",
+    "emails": "email dev",
+    "lint:biome": "biome check --write",
+    "lint:tsc": "tsc --noEmit",
+    "preinstall": "npx only-allow pnpm",
+    "start": "next start",
+    "storybook": "storybook dev -p 6006",
+    "test": "vitest"
+  },
+  "type": "module",
+  "version": "0.1.0"
 }

@@ -35,24 +35,24 @@ const Share = () => {
     unlock();
     setLocked(!getLocked());
     addToast({
-      variant: "success",
-      title: "Déverrouillé",
       children: "Bienvenue Floé",
+      title: "Déverrouillé",
+      variant: "success",
     });
   };
 
   const onPwError = () => {
     if (pwErrorCount >= 2) {
       addToast({
-        variant: "error",
-        title: "Mot de passe incorrect",
         children: "Verrouillage.",
+        title: "Mot de passe incorrect",
+        variant: "error",
       });
     } else {
       addToast({
-        variant: "error",
-        title: "Mot de passe incorrect",
         children: "Êtes-vous admin ?",
+        title: "Mot de passe incorrect",
+        variant: "error",
       });
     }
     setPwErrorCount((prev) => {
@@ -76,21 +76,21 @@ const Share = () => {
   };
 
   const onSent = () => {
-    addToast({ variant: "success", title: "Email envoyé", children: null });
+    addToast({ children: null, title: "Email envoyé", variant: "success" });
     setEmailOpen(false);
   };
 
   const onEmailError = () => {
     addToast({
-      variant: "error",
-      title: "Email non envoyé",
       children: "Une erreur est survenue",
+      title: "Email non envoyé",
+      variant: "error",
     });
   };
 
   const onCopyLink = async () => {
     await navigator.clipboard.writeText(getBaseUrl());
-    addToast({ variant: "success", title: "Lien copié !", children: null });
+    addToast({ children: null, title: "Lien copié !", variant: "success" });
   };
 
   if (locked) {

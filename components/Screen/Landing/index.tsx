@@ -91,7 +91,7 @@ const ScreenLanding = () => {
       <div
         className={cn(
           "relative flex w-full flex-row justify-between py-5 pl-5 pr-0",
-          "lg:pb-3 lg:pl-10 lg:pt-8"
+          "lg:pb-3 lg:pl-10 lg:pt-8",
         )}
       >
         <div className="flex flex-col gap-[clamp(1rem,2vw,1.25rem)]">
@@ -101,7 +101,7 @@ const ScreenLanding = () => {
         <div
           className={cn(
             "hidden lg:inline-flex",
-            "left-1/2 -translate-x-1/2 lg:absolute"
+            "left-1/2 -translate-x-1/2 lg:absolute",
           )}
         >
           <ParallaxLeave className="w-full">
@@ -144,7 +144,7 @@ const ScreenLanding = () => {
           "bg-tertiary/20 from-tertiary/20 lg:bg-transparent lg:bg-linear-to-t",
           "pt-5 lg:pt-0",
           "lg:px-4",
-          "lg:mx-10 lg:rounded-quote"
+          "lg:mx-10 lg:rounded-quote",
         )}
       >
         <div className="flex flex-col gap-8">

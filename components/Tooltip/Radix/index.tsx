@@ -1,12 +1,12 @@
 "use client";
 
-import * as React from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import {
   TOOLTIP_COLLISION_PADDING,
   TOOLTIP_DELAY,
   TOOLTIP_OFFSET,
 } from "constants/tooltip";
+import type * as React from "react";
 
 function TooltipProvider({
   ...props

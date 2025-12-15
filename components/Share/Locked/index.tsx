@@ -11,7 +11,7 @@ import {
 } from "components/Share/Dialog";
 import SlotSubmit from "components/Slot/Submit";
 import H3 from "components/Typography/H3";
-import { ReactNode, useActionState, useEffect, useRef } from "react";
+import { type ReactNode, useActionState, useEffect, useRef } from "react";
 import { unlock } from "server/actions";
 
 interface ShareLockedProps {

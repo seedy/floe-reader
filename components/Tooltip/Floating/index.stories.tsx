@@ -1,13 +1,11 @@
-import { Meta, StoryObj } from "@storybook/nextjs";
-import React from "react";
-
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import Tooltip from "components/Tooltip/Floating";
 import TooltipGroup from "components/Tooltip/Floating/Group";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: "Components/Tooltip/Floating",
   component: Tooltip,
+  title: "Components/Tooltip/Floating",
 } satisfies Meta<typeof Tooltip>;
 
 export default meta;
@@ -22,12 +20,16 @@ const Template: Pick<Story, "render"> = {
 export const Default: Story = {
   ...Template,
   args: {
-    children: <button>Hover me</button>,
+    children: <button type="button">Hover me</button>,
     title: "Tooltip",
   },
 };
 
 export const Grouped: Story = {
+  args: {
+    children: <button type="button">Hover me</button>,
+    title: "Tooltip",
+  },
   render: (args) => (
     <TooltipGroup>
       <div className="flex gap-4">
@@ -37,8 +39,4 @@ export const Grouped: Story = {
       </div>
     </TooltipGroup>
   ),
-  args: {
-    children: <button>Hover me</button>,
-    title: "Tooltip",
-  },
 };

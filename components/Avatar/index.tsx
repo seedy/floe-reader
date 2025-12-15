@@ -1,47 +1,47 @@
-import { VariantProps, cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 import cn from "helpers/cn";
 import Image from "next/image";
-import { ComponentProps } from "react";
+import type { ComponentProps } from "react";
 
 // VARIANTS
 const avatarVariants = cva(
-	"inline-flex aspect-auto h-auto w-full rounded-avatar object-cover",
-	{
-		variants: {
-			selected: {
-				true: ["shadow-selected outline-solid outline-4 outline-fern-green"],
-			},
-		},
-		defaultVariants: {
-			selected: false,
-		},
-	},
+  "inline-flex aspect-auto h-auto w-full rounded-avatar object-cover",
+  {
+    defaultVariants: {
+      selected: false,
+    },
+    variants: {
+      selected: {
+        true: ["shadow-selected outline-solid outline-4 outline-fern-green"],
+      },
+    },
+  },
 );
 
 // COMPONENTS
 export interface AvatarProps
-	extends VariantProps<typeof avatarVariants>,
-		ComponentProps<typeof Image> {}
+  extends VariantProps<typeof avatarVariants>,
+    ComponentProps<typeof Image> {}
 
 const Avatar = ({
-	src,
-	alt,
-	className,
-	ref: forwardedRef,
-	...props
+  src,
+  alt,
+  className,
+  ref: forwardedRef,
+  ...props
 }: AvatarProps) => {
-	const variantsClassName = avatarVariants(props);
-	return (
-		<Image
-			className={cn(variantsClassName, className)}
-			src={src}
-			alt={alt}
-			quality={100}
-			placeholder="blur"
-			ref={forwardedRef}
-			{...props}
-		/>
-	);
+  const variantsClassName = avatarVariants(props);
+  return (
+    <Image
+      className={cn(variantsClassName, className)}
+      src={src}
+      alt={alt}
+      quality={100}
+      placeholder="blur"
+      ref={forwardedRef}
+      {...props}
+    />
+  );
 };
 
 export default Avatar;

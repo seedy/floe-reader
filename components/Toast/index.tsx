@@ -1,10 +1,10 @@
 import { Cross2Icon } from "@radix-ui/react-icons";
 import { Close, Description, Root, Title } from "@radix-ui/react-toast";
-import { VariantProps, cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 import IconButton from "components/IconButton";
 import styles from "components/Toast/Toast.module.scss";
 import cn from "helpers/cn";
-import { ComponentProps, type ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 
 const toastVariants = cva(
   "relative flex items-center justify-between gap-x-4 overflow-hidden rounded-mdbg-background p-4 outline-solid outline-2",
@@ -15,7 +15,7 @@ const toastVariants = cva(
         success: ["outline-secondary-background"],
       },
     },
-  }
+  },
 );
 
 interface ToastProps

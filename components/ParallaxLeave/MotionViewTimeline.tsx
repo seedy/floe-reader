@@ -1,31 +1,30 @@
 "use client";
 import SlotMotion from "components/Slot/Motion";
-import { useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { ReactNode, useRef } from "react";
+import { useReducedMotion, useScroll, useTransform } from "motion/react";
+import { type ReactNode, useRef } from "react";
 
 interface ParallaxLeaveMotionViewTimelineProps {
-	children: ReactNode;
+  children: ReactNode;
 }
 const ParallaxLeaveMotionViewTimeline = ({
-	children,
+  children,
 }: ParallaxLeaveMotionViewTimelineProps) => {
-	const prefersReducedMotion = useReducedMotion();
-	const scrollTarget = useRef(null);
-	const { scrollYProgress } = useScroll({
-		target: scrollTarget,
-		offset: ["end end", "start start"],
-		layoutEffect: false,
-	});
-	const translateY = useTransform(scrollYProgress, [0, 1], ["0px", "100px"]);
-	const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const prefersReducedMotion = useReducedMotion();
+  const scrollTarget = useRef(null);
+  const { scrollYProgress } = useScroll({
+    offset: ["end end", "start start"],
+    target: scrollTarget,
+  });
+  const translateY = useTransform(scrollYProgress, [0, 1], ["0px", "100px"]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
-	const style = prefersReducedMotion ? {} : { translateY, opacity };
+  const style = prefersReducedMotion ? {} : { opacity, translateY };
 
-	return (
-		<SlotMotion style={style} ref={scrollTarget}>
-			{children}
-		</SlotMotion>
-	);
+  return (
+    <SlotMotion style={style} ref={scrollTarget}>
+      {children}
+    </SlotMotion>
+  );
 };
 
 export default ParallaxLeaveMotionViewTimeline;

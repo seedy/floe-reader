@@ -1,7 +1,7 @@
-import { TooltipVariant } from "components/Tooltip";
-import RadixTooltipGroup from "components/Tooltip/Radix/Group";
+import type { TooltipVariant } from "components/Tooltip";
 import FloatingTooltipGroup from "components/Tooltip/Floating/Group";
-import { ReactNode } from "react";
+import RadixTooltipGroup from "components/Tooltip/Radix/Group";
+import type { ReactNode } from "react";
 
 interface TooltipGroupProps {
   variant?: TooltipVariant;

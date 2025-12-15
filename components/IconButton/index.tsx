@@ -1,8 +1,8 @@
-import { VariantProps } from "class-variance-authority";
+import type { VariantProps } from "class-variance-authority";
 import { iconButtonVariants } from "components/IconButton/variants";
 import Tooltip, { type TooltipVariant } from "components/Tooltip";
 import cn from "helpers/cn";
-import { ComponentProps, ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 
 interface IconButtonProps
   extends ComponentProps<"button">,

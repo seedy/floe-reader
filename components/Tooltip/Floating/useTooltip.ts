@@ -27,9 +27,6 @@ export const useTooltip = ({ initialOpen }: TooltipOptions) => {
   const [open, setOpen] = useState(initialOpen);
 
   const data = useFloating({
-    open,
-    onOpenChange: setOpen,
-    whileElementsMounted: autoUpdate,
     middleware: [
       offset(TOOLTIP_OFFSET),
       flip({
@@ -38,6 +35,9 @@ export const useTooltip = ({ initialOpen }: TooltipOptions) => {
       }),
       shift({ padding: TOOLTIP_COLLISION_PADDING }),
     ],
+    onOpenChange: setOpen,
+    open,
+    whileElementsMounted: autoUpdate,
   });
 
   const context = data.context;
@@ -46,10 +46,10 @@ export const useTooltip = ({ initialOpen }: TooltipOptions) => {
   });
 
   const hover = useHover(context, {
-    move: false,
-    enabled: true,
     delay: groupDelay ?? TOOLTIP_DELAY,
+    enabled: true,
     handleClose: safePolygon(),
+    move: false,
   });
 
   const focus = useFocus(context, {
@@ -64,6 +64,6 @@ export const useTooltip = ({ initialOpen }: TooltipOptions) => {
 
   return useMemo(
     () => ({ open, setOpen, ...interactions, ...data }),
-    [open, setOpen, interactions, data]
+    [open, interactions, data],
   );
 };

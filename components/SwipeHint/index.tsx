@@ -1,52 +1,52 @@
-import { VariantProps, cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
+import SwipeWheel from "components/icons/SwipeWheel";
 import styles from "components/SwipeHint/SwipeHint.module.scss";
 import P from "components/Typography/P";
-import SwipeWheel from "components/icons/SwipeWheel";
 import cn from "helpers/cn";
 
 // VARIANTS
 const swipeHintVariants = cva(
-	"relative inline-flex h-8 w-20 items-center rounded-pill outline-solid outline-2",
-	{
-		variants: {
-			color: {
-				primary: ["outline-primary"],
-				white: ["outline-white"],
-			},
-		},
-	},
+  "relative inline-flex h-8 w-20 items-center rounded-pill outline-solid outline-2",
+  {
+    variants: {
+      color: {
+        primary: ["outline-primary"],
+        white: ["outline-white"],
+      },
+    },
+  },
 );
 
 // COMPONENTS
 interface SwipeHintProps extends VariantProps<typeof swipeHintVariants> {
-	className?: string;
+  className?: string;
 }
 const SwipeHint = ({ className, color = "primary" }: SwipeHintProps) => {
-	const variantsClassName = swipeHintVariants({ color });
-	return (
-		<div
-			className={cn(
-				"inline-flex flex-col items-center px-0 py-0.5",
-				styles.root,
-				className,
-			)}
-		>
-			<div className={variantsClassName}>
-				<SwipeWheel
-					className={cn(
-						"absolute right-2.75 text-secondary-background",
-						styles.wheel,
-					)}
-				/>
-			</div>
-			<P
-				className="px-4 py-1 text-center font-body text-button font-bold"
-				color={color}
-			>
-				Glisser pour défiler
-			</P>
-		</div>
-	);
+  const variantsClassName = swipeHintVariants({ color });
+  return (
+    <div
+      className={cn(
+        "inline-flex flex-col items-center px-0 py-0.5",
+        styles.root,
+        className,
+      )}
+    >
+      <div className={variantsClassName}>
+        <SwipeWheel
+          className={cn(
+            "absolute right-2.75 text-secondary-background",
+            styles.wheel,
+          )}
+        />
+      </div>
+      <P
+        className="px-4 py-1 text-center font-body text-button font-bold"
+        color={color}
+      >
+        Glisser pour défiler
+      </P>
+    </div>
+  );
 };
 
 export default SwipeHint;
