@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@eslint/eslintrc": "^3.3.1",
     "@floating-ui/react": "^0.27.16",
     "@radix-ui/react-accessible-icon": "^1.1.8",
     "@radix-ui/react-alert-dialog": "^1.1.15",

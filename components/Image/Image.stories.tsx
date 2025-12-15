@@ -13,7 +13,7 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Image> = (args) => (
-  <Image placeholder="empty" {...args} /> // eslint-disable-line jsx-a11y/alt-text
+  <Image placeholder="empty" {...args} />
 );
 
 export const Default = Template.bind({});
