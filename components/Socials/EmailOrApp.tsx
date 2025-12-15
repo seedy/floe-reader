@@ -2,26 +2,26 @@
 
 import Socials from "components/Socials";
 import { useSearchParams } from "next/navigation";
-import { ComponentProps } from "react";
+import type { ComponentProps } from "react";
 
 const SocialsEmailOrApp = ({
-	sources = {
-		instagram: true,
-		linkedin: true,
-		portfolio: true,
-		youtube: true,
-		email: false,
-		tel: false,
-	},
+  sources = {
+    email: false,
+    instagram: true,
+    linkedin: true,
+    portfolio: true,
+    tel: false,
+    youtube: true,
+  },
 }: ComponentProps<typeof Socials>) => {
-	const searchParams = useSearchParams();
-	const source = searchParams.get("source");
+  const searchParams = useSearchParams();
+  const source = searchParams.get("source");
 
-	if (source === "email") {
-		return <Socials sources={{ ...sources, email: true, tel: true }} />;
-	}
+  if (source === "email") {
+    return <Socials sources={{ ...sources, email: true, tel: true }} />;
+  }
 
-	return <Socials sources={sources} />;
+  return <Socials sources={sources} />;
 };
 
 export default SocialsEmailOrApp;

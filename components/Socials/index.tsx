@@ -34,12 +34,12 @@ interface SocialsProps {
 const Socials = ({
   className,
   sources = {
+    email: false,
     instagram: true,
     linkedin: true,
     portfolio: true,
-    youtube: true,
-    email: false,
     tel: false,
+    youtube: true,
   },
 }: SocialsProps) => {
   if (Object.keys(sources).length === 0) {
@@ -49,7 +49,7 @@ const Socials = ({
     <div
       className={cn(
         "flex flex-wrap items-center justify-center gap-4 p-2",
-        className
+        className,
       )}
     >
       <TooltipGroup variant="radix">

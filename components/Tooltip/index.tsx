@@ -1,6 +1,6 @@
 import FloatingTooltip from "components/Tooltip/Floating";
 import RadixTooltip from "components/Tooltip/Radix";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 export type TooltipVariant = "radix" | "floating";
 

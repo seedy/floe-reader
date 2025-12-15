@@ -1,15 +1,14 @@
-import { Meta, StoryFn } from "@storybook/nextjs";
-import React, { useRef } from "react";
-
 import { CheckIcon } from "@radix-ui/react-icons";
+import type { Meta, StoryFn } from "@storybook/nextjs";
+import { useRef } from "react";
 import IconButtonFloating from ".";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/IconButton/Floating",
-  component: IconButtonFloating,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
+  component: IconButtonFloating,
+  title: "Components/IconButton/Floating",
 } as Meta<typeof IconButtonFloating>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

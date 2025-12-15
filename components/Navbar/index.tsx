@@ -14,9 +14,9 @@ import { PORTFOLIO, SERVICES, ZCAL_FIRST } from "constants/links";
 import cn from "helpers/cn";
 import Link from "next/link";
 import {
-  ComponentProps,
-  ComponentRef,
-  Ref,
+  type ComponentProps,
+  type ComponentRef,
+  type Ref,
   useImperativeHandle,
   useRef,
 } from "react";
@@ -26,8 +26,8 @@ interface NavbarProps extends ComponentProps<"nav"> {
 }
 const Navbar = ({ className, ref: forwardedRef, ...props }: NavbarProps) => {
   const innerRef = useRef<ComponentRef<"nav"> | null>(null);
-  // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-  useImperativeHandle(forwardedRef, () => innerRef?.current!, [innerRef]);
+  // biome-ignore lint/style/noNonNullAssertion: bind forwardedRef to innerRef
+  useImperativeHandle(forwardedRef, () => innerRef.current!, []);
 
   useAnimateOnScroll(innerRef);
 
@@ -43,7 +43,7 @@ const Navbar = ({ className, ref: forwardedRef, ...props }: NavbarProps) => {
       className={cn(
         "pointer-events-auto fixed z-9999 h-0 max-h-16 overflow-hidden bg-background transition-[height] duration-200 ease-out",
         "inset-x-0 bottom-0 lg:bottom-auto lg:top-0",
-        className
+        className,
       )}
       {...props}
     >
@@ -56,8 +56,8 @@ const Navbar = ({ className, ref: forwardedRef, ...props }: NavbarProps) => {
           <SlotTrack name="click navbar link prestations">
             <ButtonLinkNext
               href={{
-                pathname: "/",
                 hash: SERVICES,
+                pathname: "/",
               }}
               variant="link"
             >

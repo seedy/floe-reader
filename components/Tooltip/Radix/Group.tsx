@@ -1,6 +1,6 @@
 import { Provider } from "@radix-ui/react-tooltip";
 import { TOOLTIP_DELAY } from "constants/tooltip";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 interface TooltipGroupProps {
   delay?: number;

@@ -3,7 +3,7 @@ import { Cross2Icon } from "@radix-ui/react-icons";
 import IconButton from "components/IconButton";
 import H2 from "components/Typography/H2";
 import cn from "helpers/cn";
-import { ComponentProps, ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 
 interface DialogContentProps extends ComponentProps<typeof Content> {
   className?: string;
@@ -17,7 +17,7 @@ export const DialogContent = ({
   <Content
     className={cn(
       "fixed left-1/2 top-1/2 m-0 flex max-h-[85vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 flex-col items-start gap-8 rounded-md border-2 border-solid border-secondary-background bg-background p-4",
-      className
+      className,
     )}
     {...props}
   >

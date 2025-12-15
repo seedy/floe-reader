@@ -3,7 +3,7 @@
 import { RocketIcon } from "@radix-ui/react-icons";
 import DialogAnnouncement from "components/Dialog/Announcement";
 import IconButtonFloating from "components/IconButton/Floating";
-import { ReactNode, useRef } from "react";
+import { type ReactNode, useRef } from "react";
 
 interface IconButtonFloatingDivProps {
   children: ReactNode;

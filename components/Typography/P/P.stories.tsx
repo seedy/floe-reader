@@ -1,15 +1,13 @@
-import { Meta, StoryFn } from "@storybook/nextjs";
-import React from "react";
-
+import type { Meta, StoryFn } from "@storybook/nextjs";
 import P from "components/Typography/P";
 import { LOREM } from "constants/lorem";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-	title: "Components/Typography/P",
-	component: P,
-	// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-	argTypes: {},
+  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  argTypes: {},
+  component: P,
+  title: "Components/Typography/P",
 } as Meta<typeof P>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
@@ -18,5 +16,5 @@ const Template: StoryFn<typeof P> = (args) => <P {...args} />;
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
-	children: LOREM.slice(0, 60),
+  children: LOREM.slice(0, 60),
 };

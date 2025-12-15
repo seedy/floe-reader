@@ -1,30 +1,29 @@
 "use client";
 import SlotMotion from "components/Slot/Motion";
-import { useScroll, useTransform } from "framer-motion";
-import { ReactNode, useRef } from "react";
+import { useScroll, useTransform } from "motion/react";
+import { type ReactNode, useRef } from "react";
 
 interface BgParallaxMotionViewTimelineProps {
-	children: ReactNode;
+  children: ReactNode;
 }
 const BgParallaxMotionViewTimeline = ({
-	children,
+  children,
 }: BgParallaxMotionViewTimelineProps) => {
-	const scrollTarget = useRef(null);
-	const { scrollYProgress } = useScroll({
-		target: scrollTarget,
-		offset: ["start start", "end start"],
-		layoutEffect: false,
-	});
-	const translateY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-	const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const scrollTarget = useRef(null);
+  const { scrollYProgress } = useScroll({
+    offset: ["start start", "end start"],
+    target: scrollTarget,
+  });
+  const translateY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
-	const style = { opacity, translateY };
+  const style = { opacity, translateY };
 
-	return (
-		<SlotMotion style={style} ref={scrollTarget}>
-			{children}
-		</SlotMotion>
-	);
+  return (
+    <SlotMotion style={style} ref={scrollTarget}>
+      {children}
+    </SlotMotion>
+  );
 };
 
 export default BgParallaxMotionViewTimeline;

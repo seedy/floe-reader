@@ -1,17 +1,16 @@
-import React, { SyntheticEvent } from "react";
-import { StoryFn, Meta } from "@storybook/nextjs";
-
-import ToastProvider, { useToast } from ".";
+import type { Meta, StoryFn } from "@storybook/nextjs";
 import Button from "components/Button";
 import Toast from "components/Toast";
+import type { SyntheticEvent } from "react";
+import ToastProvider, { useToast } from ".";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/ToastProvider",
-  component: ToastProvider,
-  subcomponents: { Toast },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
+  component: ToastProvider,
+  subcomponents: { Toast },
+  title: "Components/ToastProvider",
 } as Meta<typeof ToastProvider>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
@@ -30,20 +29,18 @@ const Consumer = () => {
       email: { value: string };
     };
     const email = target?.email?.value;
-    addToast({ variant: 'success', title: "Succès", children: email });
-  }
+    addToast({ children: email, title: "Succès", variant: "success" });
+  };
 
   return (
     <form onSubmit={onSubmit}>
       <input type="text" name="email" />
       <Button type="submit">Prendre contact</Button>
     </form>
-  )
-}
+  );
+};
 
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
-  children: (
-    <Consumer />
-  ),
+  children: <Consumer />,
 };

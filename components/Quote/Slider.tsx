@@ -4,7 +4,7 @@ import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import {
   Children,
-  ComponentProps,
+  type ComponentProps,
   createContext,
   useContext,
   useLayoutEffect,
@@ -44,13 +44,13 @@ const QuoteSlider = ({ children, className }: ComponentProps<typeof Quote>) => {
         disabled: true,
       },
     },
-    slides: {
-      spacing: 16,
-      number: Children.count(children),
-      perView: "auto" as const,
-    },
     created() {
       setLoaded(true);
+    },
+    slides: {
+      number: Children.count(children),
+      perView: "auto" as const,
+      spacing: 16,
     },
   });
 

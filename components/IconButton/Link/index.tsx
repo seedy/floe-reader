@@ -1,9 +1,9 @@
-import { VariantProps } from "class-variance-authority";
-import IconButton from "components/IconButton";
+import type { VariantProps } from "class-variance-authority";
+import type IconButton from "components/IconButton";
 import { iconButtonVariants } from "components/IconButton/variants";
 import Tooltip from "components/Tooltip";
 import cn from "helpers/cn";
-import { ComponentProps, ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 
 interface IconButtonLinkProps
   extends ComponentProps<"a">,
@@ -23,6 +23,7 @@ const IconButtonLink = ({
   "aria-label": ariaLabel,
   tooltip,
   tooltipVariant,
+  href,
   ...props
 }: IconButtonLinkProps) => {
   const iconButtonVariantsClassName = iconButtonVariants({ size, variant });
@@ -33,6 +34,7 @@ const IconButtonLink = ({
         ref={ref}
         className={cn(iconButtonVariantsClassName, className)}
         aria-label={ariaLabel ?? tooltip}
+        href={href}
         {...props}
       >
         {children}

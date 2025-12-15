@@ -5,23 +5,23 @@ import useSupportsViewTimeline from "hooks/useSupportsViewTimeline";
 import dynamic from "next/dynamic";
 
 const ParallaxLeaveMotionViewTimeline = dynamic(
-	() => import("components/ParallaxLeave/MotionViewTimeline"),
+  () => import("components/ParallaxLeave/MotionViewTimeline"),
 );
 interface ParallaxLeaveProps {
-	className?: string;
-	children: React.ReactNode;
+  className?: string;
+  children: React.ReactNode;
 }
 
 const ParallaxLeave = ({ children, className }: ParallaxLeaveProps) => {
-	const supportsViewTimeline = useSupportsViewTimeline();
-	if (supportsViewTimeline) {
-		return <div className={cx(styles.root, className)}>{children}</div>;
-	}
-	return (
-		<ParallaxLeaveMotionViewTimeline>
-			<div className={cx(styles.root, className)}>{children}</div>
-		</ParallaxLeaveMotionViewTimeline>
-	);
+  const supportsViewTimeline = useSupportsViewTimeline();
+  if (supportsViewTimeline) {
+    return <div className={cx(styles.root, className)}>{children}</div>;
+  }
+  return (
+    <ParallaxLeaveMotionViewTimeline>
+      <div className={cx(styles.root, className)}>{children}</div>
+    </ParallaxLeaveMotionViewTimeline>
+  );
 };
 
 export default ParallaxLeave;

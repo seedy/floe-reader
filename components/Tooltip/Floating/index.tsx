@@ -7,18 +7,17 @@ import {
 } from "@floating-ui/react";
 import { Slot } from "@radix-ui/react-slot";
 import {
-  TooltipOptions,
+  type TooltipOptions,
   useTooltip,
 } from "components/Tooltip/Floating/useTooltip";
 import { isValidElementWithRef } from "helpers/isValidElementWithRef";
 import {
   Children,
-  ComponentProps,
+  type ComponentProps,
   createContext,
-  HTMLProps,
-  ReactNode,
+  type HTMLProps,
+  type ReactNode,
   useContext,
-  useMemo,
 } from "react";
 
 // CONSTANTS
@@ -65,18 +64,14 @@ const TooltipTrigger = ({ children, ref, ...props }: TooltipTriggerProps) => {
 
   if (!childrenValid) throw new Error("Invalid children for TooltipTrigger");
 
-  const referenceProps = useMemo(
-    () => ({
-      ...getReferenceProps({
-        ref: mergedRef,
-        ...props,
-        ...child.props,
-      }),
-      "data-tooltip": open ? "open" : "closed",
+  const referenceProps = {
+    ...getReferenceProps({
+      ref: mergedRef,
+      ...props,
+      ...child.props,
     }),
-    [getReferenceProps, mergedRef, props, child.props, open]
-  );
-
+    "data-tooltip": open ? "open" : "closed",
+  };
   return <Slot {...referenceProps}>{child}</Slot>;
 };
 
@@ -99,8 +94,8 @@ const TooltipContent = ({
   const { isMounted, styles } = useTransitionStyles(context, {
     duration: isInstantPhase
       ? {
-          open: INSTANT_DURATION,
           close: isCurrentTooltip ? DEFAULT_DURATION : INSTANT_DURATION,
+          open: INSTANT_DURATION,
         }
       : DEFAULT_DURATION,
     initial: {

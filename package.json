@@ -1,20 +1,4 @@
 {
-  "name": "floe-reader",
-  "version": "0.1.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint:tsc": "tsc --noEmit",
-    "lint:biome": "biome check --write",
-    "storybook": "storybook dev -p 6006",
-    "emails": "email dev",
-    "build-storybook": "storybook build",
-    "test": "vitest"
-  },
   "dependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@floating-ui/react": "^0.27.16",
@@ -52,8 +36,8 @@
     "@testing-library/react": "^16.3.0",
     "@vercel/speed-insights": "^1.2.0",
     "class-variance-authority": "^0.7.0",
-    "framer-motion": "^11.5.2",
     "keen-slider": "^6.8.5",
+    "motion": "^12.23.26",
     "next": "16.0.10",
     "next-build-id": "^3.0.0",
     "nodemailer": "^6.9.1",
@@ -92,18 +76,34 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "engines": {
-    "pnpm": ">= 9.0",
     "node": ">= 24.0",
     "npm": "please-use-pnpm",
+    "pnpm": ">= 9.0",
     "yarn": "please-use-pnpm"
   },
+  "name": "floe-reader",
   "pnpm": {
+    "onlyBuiltDependencies": [
+      "@sentry/cli"
+    ],
     "overrides": {
       "@types/react": "19.2.6",
       "@types/react-dom": "19.2.3"
-    },
-    "onlyBuiltDependencies": [
-      "@sentry/cli"
-    ]
-  }
+    }
+  },
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "build-storybook": "storybook build",
+    "dev": "next dev",
+    "emails": "email dev",
+    "lint:biome": "biome check --write",
+    "lint:tsc": "tsc --noEmit",
+    "preinstall": "npx only-allow pnpm",
+    "start": "next start",
+    "storybook": "storybook dev -p 6006",
+    "test": "vitest"
+  },
+  "type": "module",
+  "version": "0.1.0"
 }

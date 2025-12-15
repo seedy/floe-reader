@@ -1,14 +1,13 @@
-import React from "react";
-import { StoryFn, Meta } from "@storybook/nextjs";
+import type { Meta, StoryFn } from "@storybook/nextjs";
 
 import Input from ".";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Input",
-  component: Input,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
+  component: Input,
+  title: "Components/Input",
 } as Meta<typeof Input>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
