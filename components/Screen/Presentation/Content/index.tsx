@@ -102,9 +102,11 @@ const Content = ({
             <Subtitle>{catcher}</Subtitle>
           </PresentationContentMotionViewTimeline>
         </div>
-        <PresentationContentMotionViewTimeline>
-          {cta}
-        </PresentationContentMotionViewTimeline>
+        {cta && (
+          <PresentationContentMotionViewTimeline>
+            {cta}
+          </PresentationContentMotionViewTimeline>
+        )}
       </div>
     </>
   );
