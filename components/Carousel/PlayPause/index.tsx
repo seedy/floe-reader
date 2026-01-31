@@ -45,6 +45,14 @@ const PlayPause = ({
     onTogglePlaying?.(e, !playing);
   };
 
+  const onFocus = () => {
+    setVisible(true);
+  };
+
+  const onBlur = () => {
+    setVisible(false);
+  };
+
   useEffect(() => {
     if (playing === undefined) return;
     startTransition(() => {
@@ -70,6 +78,8 @@ const PlayPause = ({
         aria-label={playing ? "Mettre en pause" : "Reprendre"}
         className="absolute inset-0 z-1 m-0 inline-flex items-center justify-center border-none bg-none p-0 text-secondary-background focus-visible:bg-black/7 focus-visible:outline-hidden"
         onClick={onTogglePlayPause}
+        onFocus={onFocus}
+        onBlur={onBlur}
       >
         <div className={childVariantClassName}>
           {playing ? (
