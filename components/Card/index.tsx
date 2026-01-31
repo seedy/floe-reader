@@ -1,24 +1,23 @@
-import { ChevronDownIcon } from "@radix-ui/react-icons";
-import IconButton from "components/IconButton";
 import Image from "components/Image";
+import Tooltip from "components/Tooltip";
+import P from "components/Typography/P";
 import cn from "helpers/cn";
 import {
   type ComponentProps,
   createContext,
-  type Dispatch,
   type ReactNode,
   type Ref,
-  type SetStateAction,
   useContext,
   useId,
   useMemo,
   useState,
 } from "react";
+import { TbHandClick } from "react-icons/tb";
 
 interface CardContextValues {
   id: string;
-  expanded: boolean;
-  setExpanded: Dispatch<SetStateAction<boolean>>;
+  flipped: boolean;
+  toggleFlipped: () => void;
 }
 const CardContext = createContext<CardContextValues | null>(null);
 const useCardContext = () => {
@@ -40,36 +39,32 @@ interface CardRootProps {
 export const CardRoot = ({ id, ref, className, children }: CardRootProps) => {
   const internalId = useId();
   const finalId = id ?? internalId;
-  const [expanded, setExpanded] = useState(false);
+  const [flipped, setFlipped] = useState(false);
 
   const contextValue = useMemo(
     () => ({
-      expanded,
+      flipped,
       id: finalId,
-      setExpanded,
+      toggleFlipped: () => {
+        setFlipped(!flipped);
+      },
     }),
-    [finalId, expanded],
+    [finalId, flipped],
   );
-
-  const onMouseEnter = () => {
-    setExpanded(true);
-  };
-
-  const onMouseLeave = () => {
-    setExpanded(false);
-  };
 
   return (
     <CardContext.Provider value={contextValue}>
-      {/** biome-ignore lint/a11y/noStaticElementInteractions: wanted */}
       <div
         ref={ref}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
         className={cn(
           "group/card",
-          "flex flex-col gap-4",
-          "rounded-xl pb-4 max-w-sm",
+          "flex flex-col gap-4 items-center justify-center",
+          "rounded-xl w-80 aspect-social",
+          "outline-solid outline-4 outline-fern-green",
+          "transition-transform",
+          "overflow-hidden",
+          flipped && "rotate-y-180",
+          "relative",
           className,
         )}
       >
@@ -79,19 +74,23 @@ export const CardRoot = ({ id, ref, className, children }: CardRootProps) => {
   );
 };
 
-interface CardImageProps extends ComponentProps<typeof Image> {
+interface CardImageProps
+  extends Omit<ComponentProps<typeof Image>, "width" | "height"> {
   children: ReactNode;
 }
 export const CardImage = ({
   children,
   className,
   ...props
-}: CardImageProps) => (
-  <div className={cn("relative", className)}>
-    <Image {...props} />
-    {children}
-  </div>
-);
+}: CardImageProps) => {
+  const { flipped } = useCardContext();
+  return (
+    <div className={cn("relative size-full", flipped && "hidden", className)}>
+      <Image width={320} height={569} {...props} />
+      {children}
+    </div>
+  );
+};
 
 interface CardHeaderProps {
   className?: string;
@@ -100,7 +99,7 @@ interface CardHeaderProps {
 export const CardHeader = ({ className, children }: CardHeaderProps) => (
   <div
     className={cn(
-      "absolute bottom-0 left-0 bg-black/70 text-white flex flex-col gap-1",
+      "absolute bottom-0 left-0 bg-linear-to-b from-black/40 to-black/70 text-white flex flex-col gap-1 w-full p-5",
       className,
     )}
   >
@@ -108,55 +107,44 @@ export const CardHeader = ({ className, children }: CardHeaderProps) => (
   </div>
 );
 
-interface CardFooterProps {
+interface CardFlipSideProps {
   className?: string;
   children: ReactNode;
 }
-export const CardFooter = ({ className, children }: CardFooterProps) => (
-  <div className={cn("p-4 bg-white", className)}>{children}</div>
-);
-
-interface CardContentProps {
-  className?: string;
-  children: ReactNode;
-}
-export const CardContent = ({ className, children }: CardContentProps) => {
-  const { id, expanded } = useCardContext();
+export const CardFlipSide = ({ className, children }: CardFlipSideProps) => {
+  const { id, flipped } = useCardContext();
 
   return (
-    <div id={id} className={cn("bg-white", className)}>
-      <p
-        className={cn(
-          "line-clamp-3 m-4 transition-discrete transition-[display]",
-          expanded && "line-clamp-none",
-        )}
-      >
-        {children}
-      </p>
+    <div
+      id={id}
+      className={cn(
+        "rotate-y-180 transition-opacity starting:opacity-0",
+        !flipped && "hidden",
+        className,
+      )}
+    >
+      <P className="p-5">{children}</P>
     </div>
   );
 };
 
-export const CardExpand = () => {
-  const { expanded, id, setExpanded } = useCardContext();
+export const CardFlip = () => {
+  const { flipped, id, toggleFlipped } = useCardContext();
 
-  const onClick = () => {
-    setExpanded((prev) => !prev);
-  };
-
-  const tooltip = expanded ? "Masquer l'avis" : "Voir l'avis";
+  const tooltip = flipped ? "Masquer l'avis" : "Voir l'avis";
 
   return (
-    <IconButton
-      aria-expanded={expanded}
-      aria-controls={id}
-      onClick={onClick}
-      tooltip={tooltip}
-      size="small"
-    >
-      <ChevronDownIcon
-        className={cn("transition-transform", expanded && "rotate-180")}
-      />
-    </IconButton>
+    <Tooltip title={tooltip}>
+      <button
+        type="button"
+        className={cn(
+          "absolute z-1 m-0 inline-flex items-center justify-center border-none bg-none text-secondary-background focus-visible:outline-hidden hover:cursor-pointer rounded-round bg-black/70 p-6",
+        )}
+        aria-controls={id}
+        onClick={toggleFlipped}
+      >
+        <TbHandClick className="size-15" />
+      </button>
+    </Tooltip>
   );
 };
