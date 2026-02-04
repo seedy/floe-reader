@@ -10,7 +10,7 @@ const Image = ({
   ...props
 }: Omit<ComponentProps<typeof NextImage>, "quality">) => (
   <NextImage
-    className={cn("block rounded-none object-cover", className)}
+    className={cn("block rounded-none object-cover max-w-none", className)}
     src={src}
     alt={alt}
     placeholder={placeholder}

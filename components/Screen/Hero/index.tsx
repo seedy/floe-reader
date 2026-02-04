@@ -4,6 +4,7 @@ import Image from "components/Image";
 import BgParallax from "components/Quote/BgParallax";
 import Screen from "components/Screen";
 import QuoteHero from "components/Screen/Hero/Quote";
+import ReviewsHero from "components/Screen/Hero/Reviews";
 import SlotTrack from "components/Slot/Track";
 import H2 from "components/Typography/H2";
 import P from "components/Typography/P";
@@ -19,7 +20,6 @@ const ScreenHero = () => {
         className={cn(
           "flex flex-col bg-primary",
           "pt-6 lg:pt-32",
-          "px-5 lg:px-0",
           "items-center lg:items-start",
           "gap-10 lg:gap-32",
         )}
@@ -27,6 +27,7 @@ const ScreenHero = () => {
         <div
           className={cn(
             "flex",
+            "px-5 lg:px-0",
             "gap-10 lg:gap-32",
             "flex-col lg:flex-row",
             "items-center",
@@ -94,7 +95,11 @@ const ScreenHero = () => {
           </div>
         </div>
         <div
-          className={cn("mb-10 flex flex-col items-center gap-8", "lg:hidden")}
+          className={cn(
+            "px-5 lg:px-0",
+            "mb-10 flex flex-col items-center gap-8",
+            "lg:hidden",
+          )}
         >
           <SlotTrack name="click hero cta first">
             <ButtonLink
@@ -108,6 +113,7 @@ const ScreenHero = () => {
           </SlotTrack>
           <P className="text-white/80">Mon calendrier t&apos;est ouvert !</P>
         </div>
+        <ReviewsHero />
       </Screen>
       <Screen
         className="lg:pb-8 flex flex-col gap-48"

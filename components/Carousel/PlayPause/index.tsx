@@ -1,6 +1,6 @@
 "use client";
 import { PauseIcon, PlayIcon } from "@radix-ui/react-icons";
-import { cva } from "class-variance-authority";
+import { playPauseIconVariants } from "components/Carousel/PlayPause/variants";
 import SlotTrack from "components/Slot/Track";
 import {
   type MouseEvent,
@@ -19,17 +19,6 @@ interface PlayPauseProps {
   delay?: number;
 }
 
-const childVariants = cva(
-  "rounded-round bg-black/70 p-6 text-secondary-background opacity-0 transition",
-  {
-    variants: {
-      visible: {
-        true: ["opacity-100 scale-150"],
-      },
-    },
-  },
-);
-
 const PlayPause = ({
   playing,
   onTogglePlaying,
@@ -37,7 +26,9 @@ const PlayPause = ({
 }: PlayPauseProps) => {
   const [visible, setVisible] = useState(false);
 
-  const childVariantClassName = childVariants({ visible });
+  const focusedRef = useRef(false);
+
+  const playPauseIconVariantsClassName = playPauseIconVariants({ visible });
 
   const timeoutRef = useRef<NodeJS.Timeout>(null);
 
@@ -45,20 +36,32 @@ const PlayPause = ({
     onTogglePlaying?.(e, !playing);
   };
 
+  const onFocus = () => {
+    focusedRef.current = true;
+    setVisible(true);
+  };
+
+  const onBlur = () => {
+    focusedRef.current = false;
+    setVisible(false);
+  };
+
   useEffect(() => {
     if (playing === undefined) return;
     startTransition(() => {
       setVisible(true);
     });
-    if (timeoutRef.current !== null) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
     timeoutRef.current = setTimeout(() => {
       startTransition(() => {
+        if (focusedRef.current) return;
         setVisible(false);
       });
     }, delay);
+    return () => {
+      if (timeoutRef.current === null) return;
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    };
   }, [delay, playing]);
 
   return (
@@ -68,10 +71,12 @@ const PlayPause = ({
       <button
         type="button"
         aria-label={playing ? "Mettre en pause" : "Reprendre"}
-        className="absolute inset-0 z-1 m-0 inline-flex items-center justify-center border-none bg-none p-0 text-secondary-background focus-visible:bg-black/7 focus-visible:outline-hidden"
+        className="absolute inset-0 z-1 m-0 inline-flex items-center justify-center border-none bg-none p-0 text-secondary-background focus-visible:outline-hidden"
         onClick={onTogglePlayPause}
+        onFocus={onFocus}
+        onBlur={onBlur}
       >
-        <div className={childVariantClassName}>
+        <div className={playPauseIconVariantsClassName}>
           {playing ? (
             <PlayIcon width={40} height={40} />
           ) : (
