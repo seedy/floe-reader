@@ -39,14 +39,14 @@ export const Default: Story = {
         <CardFlipSide>
           J&apos;ai choisi de faire une séance photo avec Floé pour mon contenu
           professionnel, et je vous la recommande sans hésiter !<br />
-          Je n'aime pas trop être photographiée, mais l&apos;ambiance était
+          Je n&apos;aime pas trop être photographiée, mais l&apos;ambiance était
           détendue et naturelle, ce qui m&apos;a permis de me sentir à
           l&apos;aise devant l&apos;objectif. Floé a de très bonnes idées, et
           sait s&apos;adapter au fur et à mesure de la séance, ce qui a rendu ce
           moment fluide et agréable.
           <br />
-          Je suis ravie car j'ai plein de photos que j'aime beaucoup et qui
-          reflètent bien l&apos;image que je voulais pour mon projet
+          Je suis ravie car j&apos;ai plein de photos que j&apos;aime beaucoup
+          et qui reflètent bien l&apos;image que je voulais pour mon projet
           professionnel.
           <br />
           Merci Floé pour ton talent, ta créativité et ta bienveillance !

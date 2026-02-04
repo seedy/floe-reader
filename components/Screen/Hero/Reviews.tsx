@@ -56,8 +56,8 @@ const ReviewsHero = () => {
                   apprécier sa disponibilité et sa force de proposition sur ce
                   volet.
                   <br />
-                  Nous connaissions l'appétence de Floé pour se développer dans
-                  la création de contenu vidéo et pour la photo. Nous
+                  Nous connaissions l&apos;appétence de Floé pour se développer
+                  dans la création de contenu vidéo et pour la photo. Nous
                   l&apos;avons tout naturellement sollicitée pour enrichir notre
                   base de données visuelles avec des photos, des shorts vidéo et
                   notre vidéo institutionnelle pour nos supports commerciaux,
@@ -91,15 +91,16 @@ const ReviewsHero = () => {
                   J&apos;ai choisi de faire une séance photo avec Floé pour mon
                   contenu professionnel, et je vous la recommande sans hésiter !
                   <br />
-                  Je n'aime pas trop être photographiée, mais l&apos;ambiance
-                  était détendue et naturelle, ce qui m&apos;a permis de me
-                  sentir à l&apos;aise devant l&apos;objectif. Floé a de très
-                  bonnes idées, et sait s&apos;adapter au fur et à mesure de la
-                  séance, ce qui a rendu ce moment fluide et agréable.
+                  Je n&apos;aime pas trop être photographiée, mais
+                  l&apos;ambiance était détendue et naturelle, ce qui m&apos;a
+                  permis de me sentir à l&apos;aise devant l&apos;objectif. Floé
+                  a de très bonnes idées, et sait s&apos;adapter au fur et à
+                  mesure de la séance, ce qui a rendu ce moment fluide et
+                  agréable.
                   <br />
-                  Je suis ravie car j'ai plein de photos que j'aime beaucoup et
-                  qui reflètent bien l&apos;image que je voulais pour mon projet
-                  professionnel.
+                  Je suis ravie car j&apos;ai plein de photos que j&apos;aime
+                  beaucoup et qui reflètent bien l&apos;image que je voulais
+                  pour mon projet professionnel.
                   <br />
                   Merci Floé pour ton talent, ta créativité et ta bienveillance
                   !

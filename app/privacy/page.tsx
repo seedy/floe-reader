@@ -419,7 +419,7 @@ const Privacy = () => (
       <P>Agréable, n&apos;est-ce pas ?</P>
     </div>
     <H2>Avis sur le site</H2>
-    <div className="flex-col gap-6">
+    <div className="flex flex-col gap-6">
       <P>
         Les avis publiés sur Le Site ont été collectés avec l&apos;accord
         préalable écrit de leurs auteurs, après leur avoir expressément présenté
@@ -427,6 +427,9 @@ const Privacy = () => (
         <br />
         Ils ont été collectés par échange de mails, dans le cadre des
         prestations réalisées par Floé Gaubert.
+        <br />
+        Leur traitement est donc indépendant des données à caractère personnel
+        traitées par Le Site.
       </P>
       <P>
         Pour toute demande relative aux avis collectés, merci de contacter le

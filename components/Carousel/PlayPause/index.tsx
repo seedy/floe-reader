@@ -26,6 +26,8 @@ const PlayPause = ({
 }: PlayPauseProps) => {
   const [visible, setVisible] = useState(false);
 
+  const focusedRef = useRef(false);
+
   const playPauseIconVariantsClassName = playPauseIconVariants({ visible });
 
   const timeoutRef = useRef<NodeJS.Timeout>(null);
@@ -35,10 +37,12 @@ const PlayPause = ({
   };
 
   const onFocus = () => {
+    focusedRef.current = true;
     setVisible(true);
   };
 
   const onBlur = () => {
+    focusedRef.current = false;
     setVisible(false);
   };
 
@@ -49,6 +53,7 @@ const PlayPause = ({
     });
     timeoutRef.current = setTimeout(() => {
       startTransition(() => {
+        if (focusedRef.current) return;
         setVisible(false);
       });
     }, delay);
