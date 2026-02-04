@@ -83,7 +83,7 @@ const QuoteHero = () => (
                     src={quoteShortsPro}
                     width={300}
                     height={450}
-                    className="h-[225px] w-[150px]"
+                    className="h-56.25 w-37.5"
                   />
                 }
               >
@@ -120,7 +120,7 @@ const QuoteHero = () => (
                     src={quoteVideoPro}
                     height={300}
                     width={533}
-                    className="h-[150px] w-[266px]"
+                    className="h-37.5 w-66.5"
                   />
                 }
               />
@@ -157,7 +157,7 @@ const QuoteHero = () => (
                     src={quotePhotoPro}
                     height={450}
                     width={300}
-                    className="h-[225px] w-[150px]"
+                    className="h-56.25 w-37.5"
                   />
                 }
               />
@@ -194,7 +194,7 @@ const QuoteHero = () => (
                     src={quoteFirstPro}
                     height={300}
                     width={450}
-                    className="h-[150px] w-[225px]"
+                    className="h-37.5 w-56.25"
                   />
                 }
               />

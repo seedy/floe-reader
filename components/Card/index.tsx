@@ -1,3 +1,4 @@
+"use client";
 import Image from "components/Image";
 import Tooltip from "components/Tooltip";
 import P from "components/Typography/P";
@@ -8,6 +9,7 @@ import {
   type ReactNode,
   type Ref,
   useContext,
+  useEffect,
   useId,
   useMemo,
   useState,
@@ -52,16 +54,29 @@ export const CardRoot = ({ id, ref, className, children }: CardRootProps) => {
     [finalId, flipped],
   );
 
+  useEffect(() => {
+    const cancelFlippedOnResize = () => {
+      setFlipped(false);
+    };
+    window.addEventListener("resize", cancelFlippedOnResize);
+    return () => {
+      window.removeEventListener("resize", cancelFlippedOnResize);
+    };
+  }, []);
+
   return (
     <CardContext.Provider value={contextValue}>
       <div
         ref={ref}
         className={cn(
-          "group/card",
-          "flex flex-col gap-4 items-center justify-center",
-          "rounded-xl w-80 aspect-social",
-          "outline-solid outline-4 outline-fern-green",
-          "transition-transform",
+          "bg-white",
+          "flex gap-4 items-center justify-center",
+          "flex-col lg:flex-row",
+          "rounded-xl",
+          "w-80 lg:w-200",
+          "border-solid border-4 border-fern-green",
+          "focus-within:border-secondary-background",
+          "transition-transform transition-discrete",
           "overflow-hidden",
           flipped && "rotate-y-180",
           "relative",
@@ -85,7 +100,7 @@ export const CardImage = ({
 }: CardImageProps) => {
   const { flipped } = useCardContext();
   return (
-    <div className={cn("relative size-full", flipped && "hidden", className)}>
+    <div className={cn("relative", flipped && "hidden", className)}>
       <Image width={320} height={569} {...props} />
       {children}
     </div>
@@ -118,8 +133,9 @@ export const CardFlipSide = ({ className, children }: CardFlipSideProps) => {
     <div
       id={id}
       className={cn(
-        "rotate-y-180 transition-opacity starting:opacity-0",
-        !flipped && "hidden",
+        "transition-opacity starting:opacity-0",
+        "rotate-y-180 lg:rotate-y-0",
+        !flipped && "hidden lg:block",
         className,
       )}
     >
@@ -138,7 +154,13 @@ export const CardFlip = () => {
       <button
         type="button"
         className={cn(
-          "absolute z-1 m-0 inline-flex items-center justify-center border-none bg-none text-secondary-background focus-visible:outline-hidden hover:cursor-pointer rounded-round bg-black/70 p-6",
+          "absolute z-1 m-0 inline-flex items-center justify-center",
+          "border-none bg-none text-secondary-background",
+          "rounded-round bg-black/70 p-6",
+          "focus-visible:outline-hidden hover:cursor-pointer",
+          "lg:hidden",
+          "transition-opacity",
+          flipped ? "opacity-40" : "animate-pulse",
         )}
         aria-controls={id}
         onClick={toggleFlipped}

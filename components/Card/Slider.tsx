@@ -1,14 +1,12 @@
 "use client";
-import Quote from "components/Quote";
 import cn from "helpers/cn";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import {
   Children,
-  type ComponentProps,
   createContext,
+  type ReactNode,
   useContext,
-  useImperativeHandle,
   useLayoutEffect,
   useRef,
   useState,
@@ -35,26 +33,16 @@ export const useSliderOverflowingContext = () => {
 };
 
 // COMPONENTS
-const QuoteSlider = ({
-  children,
-  className,
-  ref: forwardedRef,
-  ...props
-}: ComponentProps<typeof Quote>) => {
+interface CardSliderProps {
+  children: ReactNode;
+  className?: string;
+}
+const CardSlider = ({ children, className }: CardSliderProps) => {
   const [loaded, setLoaded] = useState(false);
   const [isOverflowing, setOverflowing] = useState(false);
 
   const ref = useRef<HTMLDivElement | null>(null);
-
-  // biome-ignore lint/style/noNonNullAssertion: bind forwardedRef to ref
-  useImperativeHandle(forwardedRef, () => ref.current!, []);
-
   const [ksRef] = useKeenSlider({
-    breakpoints: {
-      "(width >= 64rem)": {
-        disabled: true,
-      },
-    },
     created() {
       setLoaded(true);
     },
@@ -81,7 +69,7 @@ const QuoteSlider = ({
 
   return (
     <SliderOverflowingContext.Provider value={loaded && isOverflowing}>
-      <Quote
+      <div
         ref={(node) => {
           if (!node) return;
           ksRef(node);
@@ -91,14 +79,16 @@ const QuoteSlider = ({
           "keen-slider overflow-hidden",
           "lg:overflow-visible",
           !loaded && "gap-4",
+          "flex grow items-start",
+          "justify-start",
+          "flex-row lg:w-full",
           className,
         )}
-        {...props}
       >
         {children}
-      </Quote>
+      </div>
     </SliderOverflowingContext.Provider>
   );
 };
 
-export default QuoteSlider;
+export default CardSlider;
