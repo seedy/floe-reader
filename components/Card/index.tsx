@@ -169,6 +169,8 @@ export const CardFlip = () => {
           flipped ? "opacity-40" : "animate-pulse",
         )}
         aria-controls={id}
+        aria-label={tooltip}
+        aria-expanded={flipped}
         onClick={toggleFlipped}
       >
         <TbHandClick className="size-15" />

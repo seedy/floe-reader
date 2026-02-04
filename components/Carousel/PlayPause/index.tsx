@@ -47,15 +47,16 @@ const PlayPause = ({
     startTransition(() => {
       setVisible(true);
     });
-    if (timeoutRef.current !== null) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
     timeoutRef.current = setTimeout(() => {
       startTransition(() => {
         setVisible(false);
       });
     }, delay);
+    return () => {
+      if (timeoutRef.current === null) return;
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    };
   }, [delay, playing]);
 
   return (

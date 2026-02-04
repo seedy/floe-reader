@@ -10,9 +10,9 @@ import CardSlider from "components/Card/Slider";
 import H3 from "components/Typography/H3";
 import P from "components/Typography/P";
 import cn from "helpers/cn";
-import fabriceCattelin from "public/FabriceCattelin.webp";
-import laureDeschamps from "public/LaureDeschamps.webp";
-import roxaneHumbert from "public/RoxaneHumbert.webp";
+import fabriceCattelin from "public/fabrice-cattelin.webp";
+import laureDeschamps from "public/laure-deschamps.webp";
+import roxaneHumbert from "public/roxane-humbert.webp";
 
 const ReviewsHero = () => {
   return (
@@ -37,7 +37,7 @@ const ReviewsHero = () => {
           <CardSlider>
             <CardSlide>
               <CardRoot>
-                <CardImage alt="Roxane Humbert" src={fabriceCattelin}>
+                <CardImage alt="Fabrice Cattelin" src={fabriceCattelin}>
                   <CardHeader>
                     <P className="font-bold" color="white">
                       Fabrice Cattelin
@@ -109,7 +109,7 @@ const ReviewsHero = () => {
             </CardSlide>
             <CardSlide>
               <CardRoot>
-                <CardImage alt="Roxane Humbert" src={laureDeschamps}>
+                <CardImage alt="Laure Deschamps" src={laureDeschamps}>
                   <CardHeader>
                     <P className="font-bold" color="white">
                       Laure Deschamps
