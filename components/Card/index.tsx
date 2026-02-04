@@ -76,7 +76,7 @@ export const CardRoot = ({ id, ref, className, children }: CardRootProps) => {
           "w-80 lg:w-200",
           "border-solid border-4 border-fern-green",
           "focus-within:border-secondary-background",
-          "transition-transform transition-discrete",
+          "transition-transform duration-300",
           "overflow-hidden",
           flipped && "rotate-y-180",
           "relative",
@@ -100,7 +100,13 @@ export const CardImage = ({
 }: CardImageProps) => {
   const { flipped } = useCardContext();
   return (
-    <div className={cn("relative", flipped && "hidden", className)}>
+    <div
+      className={cn(
+        "relative starting:opacity-0 transition-opacity duration-300",
+        flipped && "hidden",
+        className,
+      )}
+    >
       <Image width={320} height={569} {...props} />
       {children}
     </div>
