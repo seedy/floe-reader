@@ -10,6 +10,7 @@ import CardSlider from "components/Card/Slider";
 import H3 from "components/Typography/H3";
 import P from "components/Typography/P";
 import cn from "helpers/cn";
+import elodiePerrin from "public/elodie-perrin.webp";
 import fabriceCattelin from "public/fabrice-cattelin.webp";
 import laureDeschamps from "public/laure-deschamps.webp";
 import roxaneHumbert from "public/roxane-humbert.webp";
@@ -135,6 +136,43 @@ const ReviewsHero = () => {
                   image.
                   <br />
                   Je recommande 😊
+                </CardFlipSide>
+                <CardFlip />
+              </CardRoot>
+            </CardSlide>
+            <CardSlide>
+              <CardRoot>
+                <CardImage alt="Elodie Perrin" src={elodiePerrin}>
+                  <CardHeader>
+                    <P className="font-bold" color="white">
+                      Elodie Perrin
+                    </P>
+                    <P color="white">Maman radieuse</P>
+                  </CardHeader>
+                </CardImage>
+                <CardFlipSide>
+                  J&apos;ai eu la chance de réaliser mon shooting grossesse avec
+                  mon amie d&apos;enfance, et je ne pouvais pas rêver mieux.
+                  <br />
+                  Dès le début, elle a su me mettre à l&apos;aise grâce à sa
+                  bienveillance, sa douceur et son professionnalisme. Elle a
+                  parfaitement su capturer cette période si spéciale de ma vie
+                  avec beaucoup de sensibilité et de talent.
+                  <br />
+                  Les photos sont magnifiques, naturelles et pleines
+                  d&apos;émotion. Chaque cliché reflète parfaitement
+                  l&apos;amour, la joie et l&apos;attente que nous ressentions à
+                  ce moment-là. Son regard artistique, son attention aux détails
+                  et sa capacité à créer une atmosphère détendue ont rendu cette
+                  expérience inoubliable.
+                  <br />
+                  Je suis absolument ravie du résultat et je garderai ces
+                  souvenirs précieux. Un immense merci pour ton travail
+                  exceptionnel, ton écoute et ton investissement.
+                  <br />
+                  Je recommande les yeux fermés à toutes les futures mamans qui
+                  souhaitent immortaliser leur grossesse avec des photos
+                  sublimes et authentiques !
                 </CardFlipSide>
                 <CardFlip />
               </CardRoot>
