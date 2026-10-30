@@ -60,7 +60,7 @@
     "@types/nodemailer": "^6.4.9",
     "@types/react": "19.2.6",
     "@types/react-dom": "19.2.3",
-    "@types/umami": "^2.10.0",
+    "@types/umami-browser": "^2.18.1",
     "@vitejs/plugin-react": "^5.1.1",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.3",
