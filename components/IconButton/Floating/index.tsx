@@ -20,7 +20,6 @@ const IconButtonFloating = ({
   if (!isIntersecting) return null;
 
   return (
-    <Tooltip title={tooltip}>
       <div
         className={cn(
           "group",
@@ -37,13 +36,12 @@ const IconButtonFloating = ({
           )}
           size="medium"
           variant="contained"
-          tooltip=""
+          tooltip={tooltip}
           {...props}
         >
           {children}
         </IconButton>
       </div>
-    </Tooltip>
   );
 };
 
