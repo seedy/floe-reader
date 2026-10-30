@@ -41,7 +41,6 @@ export const DialogClose = () => (
   <Close asChild>
     <IconButton
       tooltip="Fermer"
-      tooltipVariant="radix"
       className="absolute right-0 top-0"
       size="small"
       type="button"

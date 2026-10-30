@@ -23,7 +23,6 @@ const InputPassword = (props: ComponentProps<typeof Input>) => {
         className="absolute right-4"
         size="small"
         tooltip="Afficher / Masquer le mot de passe"
-        tooltipVariant="radix"
       >
         {show ? <EyeOpenIcon /> : <EyeClosedIcon />}
       </IconButton>

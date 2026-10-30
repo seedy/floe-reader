@@ -1,3 +1,4 @@
+"use client";
 import type { VariantProps } from "class-variance-authority";
 import type IconButton from "components/IconButton";
 import { iconButtonVariants } from "components/IconButton/variants";
@@ -8,10 +9,7 @@ import type { ComponentProps, ReactNode } from "react";
 interface IconButtonLinkProps
   extends ComponentProps<"a">,
     VariantProps<typeof iconButtonVariants>,
-    Pick<
-      ComponentProps<typeof IconButton>,
-      "tooltip" | "tooltipVariant" | "aria-label"
-    > {
+    Pick<ComponentProps<typeof IconButton>, "tooltip" | "aria-label"> {
   children?: ReactNode;
 }
 const IconButtonLink = ({
@@ -22,14 +20,13 @@ const IconButtonLink = ({
   ref,
   "aria-label": ariaLabel,
   tooltip,
-  tooltipVariant,
   href,
   ...props
 }: IconButtonLinkProps) => {
   const iconButtonVariantsClassName = iconButtonVariants({ size, variant });
 
   return (
-    <Tooltip title={tooltip} variant={tooltipVariant}>
+    <Tooltip title={tooltip}>
       <a
         ref={ref}
         className={cn(iconButtonVariantsClassName, className)}

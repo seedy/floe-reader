@@ -1,4 +1,7 @@
 import BannerMagnifier from "components/Banner/Magnifier";
+import BannerMagnifierPlayPauseIconButton from "components/Banner/Magnifier/PlayPause/IconButton";
+import BannerMagnifierPlayPauseProvider from "components/Banner/Magnifier/PlayPause/Provider";
+import SlotPlaying from "components/Banner/Magnifier/PlayPause/SlotPlaying";
 import ButtonLink from "components/Button/Link";
 import Screen from "components/Screen";
 import Content from "components/Screen/Presentation/Content";
@@ -20,6 +23,14 @@ import presentationPhoto from "public/presentation-photo.webp";
 import presentationTournage from "public/presentation-tournage.webp";
 import zoomh5 from "public/zoom-h5.webp";
 import type { ReactNode } from "react";
+
+// CONSTANTS
+const PRESENTATION_SOCIAL_SOURCES = {
+  instagram: true,
+  linkedin: false,
+  portfolio: true,
+  youtube: false,
+};
 
 interface ScreenPresentationProps {
   children: ReactNode;
@@ -325,14 +336,7 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
               ou mon portfolio !
             </P>
             <div className="flex w-full justify-center">
-              <Socials
-                sources={{
-                  instagram: true,
-                  linkedin: false,
-                  portfolio: true,
-                  youtube: false,
-                }}
-              />
+              <Socials sources={PRESENTATION_SOCIAL_SOURCES} />
             </div>
             <P>
               Certaines de mes images te font de l&apos;oeil ?
@@ -514,31 +518,38 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
           </Content>
         </div>
         <div className="flex flex-col items-center gap-8">
-          <H2>Mon matériel</H2>
-          <BannerMagnifier
-            items={[
-              {
-                href: "https://fujifilm-x.com/fr-fr/products/cameras/x-s10/",
-                label: "Fujifilm XS-10",
-                src: fujixs10,
-              },
-              {
-                href: "https://www.zoom-europe.com/en/handy-recorders/zoom-h5",
-                label: "Zoom H5",
-                src: zoomh5,
-              },
-              {
-                href: "https://www.dji.com/fr/rs-3",
-                label: "DJI RS-3",
-                src: djirs3,
-              },
-              {
-                href: "https://www.dji.com/fr/mini-4-pro",
-                label: "DJI mini 4 pro",
-                src: djimini4pro,
-              },
-            ]}
-          />
+          <BannerMagnifierPlayPauseProvider defaultValue={true}>
+            <div className="flex gap-4">
+              <H2>Mon matériel</H2>
+              <BannerMagnifierPlayPauseIconButton />
+            </div>
+            <SlotPlaying>
+              <BannerMagnifier
+                items={[
+                  {
+                    href: "https://fujifilm-x.com/fr-fr/products/cameras/x-s10/",
+                    label: "Fujifilm XS-10",
+                    src: fujixs10,
+                  },
+                  {
+                    href: "https://www.zoom-europe.com/en/handy-recorders/zoom-h5",
+                    label: "Zoom H5",
+                    src: zoomh5,
+                  },
+                  {
+                    href: "https://www.dji.com/fr/rs-3",
+                    label: "DJI RS-3",
+                    src: djirs3,
+                  },
+                  {
+                    href: "https://www.dji.com/fr/mini-4-pro",
+                    label: "DJI mini 4 pro",
+                    src: djimini4pro,
+                  },
+                ]}
+              />
+            </SlotPlaying>
+          </BannerMagnifierPlayPauseProvider>
         </div>
         <div className="flex grow flex-col items-center gap-2.5 text-center">
           <H2>Rejoins mes réseaux pour suivre mes actualités</H2>

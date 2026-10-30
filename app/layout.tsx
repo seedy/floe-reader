@@ -6,7 +6,7 @@ import Footer from "components/Footer";
 import Navbar from "components/Navbar";
 import ToastProvider from "components/Toast/Provider";
 import { MAIN_CONTENT } from "constants/links";
-import { env } from "env.mjs";
+import { env } from "env/index";
 import cn from "helpers/cn";
 import { domAnimation, LazyMotion } from "motion/react";
 import { Lora, Urbanist } from "next/font/google";

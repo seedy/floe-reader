@@ -1,3 +1,4 @@
+"use client";
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
 import styles from "components/Banner/Magnifier/Magnifier.module.scss";
 import Image from "components/Image";
@@ -13,9 +14,10 @@ interface BannerMagnifierProps {
     label: string;
     href: string;
   }[];
+  playing?: boolean;
 }
 
-const BannerMagnifier = ({ items }: BannerMagnifierProps) => {
+const BannerMagnifier = ({ items, playing }: BannerMagnifierProps) => {
   return (
     <div className="flex w-full flex-col gap-10">
       <div
@@ -26,7 +28,7 @@ const BannerMagnifier = ({ items }: BannerMagnifierProps) => {
           "motion-reduce:overflow-auto motion-reduce:px-5",
         )}
       >
-        <ul className={cn("m-0 flex", styles.root)}>
+        <ul className={cn("m-0 flex", styles.root, !playing && styles.paused)}>
           {items.map(({ src, label, href }) => (
             <li className="lg:has-[:hover]:px-16" key={label}>
               <SlotTrack name="click magnifier link">

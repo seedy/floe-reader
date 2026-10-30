@@ -13,7 +13,6 @@ const IconButtonFloating = ({
   children,
   container,
   tooltip,
-  tooltipVariant,
   ...props
 }: IconButtonFloatingProps) => {
   const isIntersecting = useContainerIntersecting({ container });
@@ -21,14 +20,14 @@ const IconButtonFloating = ({
   if (!isIntersecting) return null;
 
   return (
-    <Tooltip title={tooltip} variant={tooltipVariant}>
+    <Tooltip title={tooltip}>
       <div
         className={cn(
           "group",
           "fixed",
           "lg:bottom-6 lg:right-24",
           "bottom-24 right-6",
-          "w-[70px] h-[70px]",
+          "size-17.5",
           className,
         )}
       >

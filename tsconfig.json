@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "baseUrl": ".",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
@@ -11,6 +10,17 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "noEmit": true,
+    "paths": {
+      "@typedef/*": ["./@typedef/*"],
+      "components/*": ["./components/*"],
+      "constants/*": ["./constants/*"],
+      "emails/*": ["./emails/*"],
+      "env/*": ["./env/*"],
+      "helpers/*": ["./helpers/*"],
+      "hooks/*": ["./hooks/*"],
+      "public/*": ["./public/*"],
+      "server/*": ["./server/*"]
+    },
     "plugins": [
       {
         "name": "next"
@@ -19,7 +29,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "es5"
+    "target": "es6"
   },
   "exclude": ["node_modules"],
   "include": [

@@ -50,7 +50,6 @@ const Toast = ({
         <IconButton
           className="absolute right-2.5 self-center"
           tooltip="Fermer"
-          tooltipVariant="radix"
           size="small"
           type="button"
         >

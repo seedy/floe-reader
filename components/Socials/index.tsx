@@ -52,12 +52,11 @@ const Socials = ({
         className,
       )}
     >
-      <TooltipGroup variant="radix">
+      <TooltipGroup>
         {sources.instagram && (
           <SlotTrack name="click socials instagram">
             <IconButtonLink
               tooltip="Voir mon Instagram"
-              tooltipVariant="radix"
               href={INSTAGRAM}
               target="_blank"
               size="small"
@@ -70,7 +69,6 @@ const Socials = ({
           <SlotTrack name="click socials linkedin">
             <IconButtonLink
               tooltip="Voir mon LinkedIn"
-              tooltipVariant="radix"
               href={LINKEDIN}
               target="_blank"
               size="small"
@@ -83,7 +81,6 @@ const Socials = ({
           <SlotTrack name="click socials portfolio">
             <IconButtonLink
               tooltip="Voir mon portfolio"
-              tooltipVariant="radix"
               href={PORTFOLIO}
               target="_blank"
               size="small"
@@ -96,7 +93,6 @@ const Socials = ({
           <SlotTrack name="click socials youtube">
             <IconButtonLink
               tooltip="Voir mon YouTube"
-              tooltipVariant="radix"
               href={YOUTUBE}
               target="_blank"
               size="small"
@@ -111,7 +107,6 @@ const Socials = ({
               <SlotTrack name="click socials email">
                 <IconButtonLink
                   tooltip="E-mail"
-                  tooltipVariant="radix"
                   href={EMAIL}
                   target="_blank"
                   size="small"
@@ -124,7 +119,6 @@ const Socials = ({
               <SlotTrack name="click socials tel">
                 <IconButtonLink
                   tooltip="Téléphone"
-                  tooltipVariant="radix"
                   href={TEL}
                   target="_blank"
                   size="small"
