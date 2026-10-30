@@ -1,8 +1,7 @@
-import { Slot, type SlotProps } from "@radix-ui/react-slot";
+"use client";
+import { createSlot, type SlotProps } from "@radix-ui/react-slot";
 import type {
-  ForwardRefExoticComponent,
   ReactNode,
-  RefAttributes,
 } from "react";
 import { useFormStatus } from "react-dom";
 
@@ -14,9 +13,7 @@ interface SlotDisablableProps extends SlotProps {
   disabled?: boolean;
 }
 
-const SlotDisablable = Slot as ForwardRefExoticComponent<
-  SlotDisablableProps & RefAttributes<HTMLElement>
->;
+const SlotDisablable = createSlot<HTMLButtonElement, SlotDisablableProps>("Disablable.Slot");
 
 const SlotSubmit = ({ children }: SlotSubmitProps) => {
   const { pending } = useFormStatus();

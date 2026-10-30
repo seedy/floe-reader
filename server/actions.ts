@@ -2,7 +2,7 @@
 
 import { render } from "@react-email/render";
 import Share from "emails/Share";
-import { env } from "env.mjs";
+import { env } from "env/index";
 import { createTransport } from "nodemailer";
 import type SMTPTransport from "nodemailer/lib/smtp-transport";
 import { z } from "zod";

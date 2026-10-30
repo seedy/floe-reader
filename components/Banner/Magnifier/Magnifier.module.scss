@@ -9,7 +9,9 @@
     }
   }
   gap: var(--content-gap);
-  animation: banner 6s linear infinite both;
+  &.playing {
+    animation: banner 6s linear infinite both;
+  }
 }
 
 @media (min-width: 1024px) {

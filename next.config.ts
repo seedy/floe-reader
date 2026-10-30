@@ -1,27 +1,16 @@
-import { dirname } from "node:path";
-import { fileURLToPath } from "node:url";
 import NextBundleAnalyzer from "@next/bundle-analyzer";
 import { withSentryConfig } from "@sentry/nextjs";
-import nextBuildId from "next-build-id";
-import "./env.mjs";
 
 const withBundleAnalyzer = NextBundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 });
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   distDir: ".next",
-  generateBuildId: () =>
-    nextBuildId({
-      dir: __dirname,
-    }),
   images: {
     qualities: [100],
   },
-  outputFileTracingRoot: __dirname,
+  outputFileTracingRoot: import.meta.dirname,
   productionBrowserSourceMaps: true,
   reactStrictMode: true,
   rewrites: async () => ({
@@ -33,7 +22,7 @@ const nextConfig = {
     ],
   }),
   turbopack: {
-    root: __dirname,
+    root: import.meta.dirname,
   },
 };
 const sentryConfig = withSentryConfig(withBundleAnalyzer(nextConfig), {
@@ -46,8 +35,6 @@ const sentryConfig = withSentryConfig(withBundleAnalyzer(nextConfig), {
   // Automatically tree-shake Sentry logger statements to reduce bundle size
   disableLogger: true,
 
-  // Hides source maps from generated client bundles
-  hideSourceMaps: true,
   // For all available options, see:
   // https://github.com/getsentry/sentry-webpack-plugin#options
 
@@ -57,6 +44,9 @@ const sentryConfig = withSentryConfig(withBundleAnalyzer(nextConfig), {
   // Automatically annotate React components to show their full name in breadcrumbs and session replay
   reactComponentAnnotation: {
     enabled: true,
+  },
+  release: {
+    name: process.env.GIT_HASH,
   },
 
   // Only print logs for uploading source maps in CI

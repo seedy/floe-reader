@@ -1,3 +1,4 @@
+"use client"
 import type { VariantProps } from "class-variance-authority";
 import type IconButton from "components/IconButton";
 import { iconButtonVariants } from "components/IconButton/variants";

@@ -16,7 +16,7 @@ import Share from "components/Share";
 import SlotTrack from "components/Slot/Track";
 import Socials from "components/Socials";
 import { PORTFOLIO, SERVICES } from "constants/links";
-import { env } from "env.mjs";
+import { env } from "env/index";
 import cn from "helpers/cn";
 import type { ComponentProps, ReactNode } from "react";
 
