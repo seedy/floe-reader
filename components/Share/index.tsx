@@ -104,7 +104,6 @@ const Share = () => {
         <IconButton
           size="large"
           tooltip="Déverrouiller"
-          tooltipVariant="radix"
           disabled={triggerDisabled}
           className="relative"
         >
@@ -118,7 +117,7 @@ const Share = () => {
   return (
     <ShareDropdown
       trigger={
-        <IconButton tooltip="Partager" tooltipVariant="radix" size="large">
+        <IconButton tooltip="Partager" size="large">
           <Share1Icon />
         </IconButton>
       }

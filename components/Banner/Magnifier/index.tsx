@@ -28,7 +28,7 @@ const BannerMagnifier = ({ items, playing }: BannerMagnifierProps) => {
           "motion-reduce:overflow-auto motion-reduce:px-5",
         )}
       >
-        <ul className={cn("m-0 flex", styles.root, playing && styles.playing)}>
+        <ul className={cn("m-0 flex", styles.root, !playing && styles.paused)}>
           {items.map(({ src, label, href }) => (
             <li className="lg:has-[:hover]:px-16" key={label}>
               <SlotTrack name="click magnifier link">

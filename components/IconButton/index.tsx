@@ -1,6 +1,6 @@
 import type { VariantProps } from "class-variance-authority";
 import { iconButtonVariants } from "components/IconButton/variants";
-import Tooltip, { type TooltipVariant } from "components/Tooltip";
+import Tooltip from "components/Tooltip";
 import cn from "helpers/cn";
 import type { ComponentProps, ReactNode } from "react";
 
@@ -10,7 +10,6 @@ interface IconButtonProps
   children?: ReactNode;
   "aria-label"?: string;
   tooltip: string;
-  tooltipVariant?: TooltipVariant;
 }
 const IconButton = ({
   children,
@@ -20,18 +19,19 @@ const IconButton = ({
   ref: forwardedRef,
   "aria-label": ariaLabel,
   tooltip,
-  tooltipVariant,
+  onClick,
   ...props
 }: IconButtonProps) => {
   const iconButtonVariantsClassName = iconButtonVariants({ size, variant });
 
   return (
-    <Tooltip title={tooltip} variant={tooltipVariant}>
+    <Tooltip title={tooltip}>
       <button
         type="button"
         ref={forwardedRef}
         className={cn(iconButtonVariantsClassName, className)}
         aria-label={ariaLabel ?? tooltip}
+        onClick={onClick}
         {...props}
       >
         {children}

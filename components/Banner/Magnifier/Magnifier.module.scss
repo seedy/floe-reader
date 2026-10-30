@@ -9,8 +9,9 @@
     }
   }
   gap: var(--content-gap);
-  &.playing {
-    animation: banner 6s linear infinite both;
+  animation: banner 6s linear infinite both;
+  &.paused {
+    animation-play-state: paused;
   }
 }
 

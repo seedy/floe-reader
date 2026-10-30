@@ -51,12 +51,7 @@ const ShareEmail = ({
             <Input label="Mail du destinataire" name="email" />
             <Input label="Informations supplémentaires" name="extra" />
             <SlotSubmit>
-              <IconButton
-                tooltip="Envoyer"
-                tooltipVariant="radix"
-                size="small"
-                type="submit"
-              >
+              <IconButton tooltip="Envoyer" size="small" type="submit">
                 <EnterIcon />
               </IconButton>
             </SlotSubmit>

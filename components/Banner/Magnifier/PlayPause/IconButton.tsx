@@ -13,6 +13,7 @@ const BannerMagnifierPlayPauseIconButton = () => {
 
   return (
     <IconButton
+      className="lg:hidden motion-reduce:hidden"
       tooltip={playing ? "Mettre en pause" : "Reprendre"}
       size="small"
       onClick={onTogglePlaying}

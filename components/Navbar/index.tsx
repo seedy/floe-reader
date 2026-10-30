@@ -86,7 +86,6 @@ const Navbar = ({ className, ref: forwardedRef, ...props }: NavbarProps) => {
           <SlotTrack name="click navbar icon first">
             <IconButtonLink
               tooltip="Prendre rendez-vous"
-              tooltipVariant="radix"
               size="small"
               href={ZCAL_FIRST}
             >
@@ -94,11 +93,7 @@ const Navbar = ({ className, ref: forwardedRef, ...props }: NavbarProps) => {
             </IconButtonLink>
           </SlotTrack>
           <Sidebar onOpenAutoFocus={onOpenAutoFocus}>
-            <IconButtonHamburgerMenu
-              tooltip="Menu"
-              tooltipVariant="radix"
-              size="small"
-            />
+            <IconButtonHamburgerMenu tooltip="Menu" size="small" />
           </Sidebar>
         </div>
       </div>
