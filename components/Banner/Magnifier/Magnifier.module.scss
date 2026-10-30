@@ -10,9 +10,6 @@
   }
   gap: var(--content-gap);
   animation: banner 6s linear infinite both;
-  &.direction-backward {
-    animation-direction: reverse;
-  }
 }
 
 @media (min-width: 1024px) {
