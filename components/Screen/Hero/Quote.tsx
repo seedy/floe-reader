@@ -17,6 +17,7 @@ import H3 from "components/Typography/H3";
 import P from "components/Typography/P";
 import SpanUnderline from "components/Typography/SpanUnderline";
 import {
+  SERVICES,
   ZCAL_FIRST,
   ZCAL_PHOTO,
   ZCAL_SHORTS,
@@ -37,7 +38,7 @@ const QuoteHero = () => (
       "gap-16 md:gap-24 lg:gap-24",
     )}
   >
-    <H2 className="relative">
+    <H2 id={SERVICES.replace("#", "")} className="relative">
       Mes <SpanUnderline variant="secondary">prestations phares</SpanUnderline>
       <Logo
         className="absolute left-full top-0 h-[clamp(5rem,16vw,10rem)] w-auto -rotate-90 -scale-x-100"
