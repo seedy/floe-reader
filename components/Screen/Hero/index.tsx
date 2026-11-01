@@ -8,7 +8,7 @@ import ReviewsHero from "components/Screen/Hero/Reviews";
 import SlotTrack from "components/Slot/Track";
 import H2 from "components/Typography/H2";
 import P from "components/Typography/P";
-import { SERVICES, ZCAL_FIRST } from "constants/links";
+import { ZCAL_FIRST } from "constants/links";
 import cn from "helpers/cn";
 import hero from "public/hero.webp";
 import quoteBgParallax from "public/quote-bg-parallax.webp";
@@ -31,7 +31,7 @@ const ScreenHero = () => {
             "gap-10 lg:gap-32",
             "flex-col lg:flex-row",
             "items-center",
-            "lg:relative lg:mb-32 lg:w-full lg:justify-center lg:pl-10",
+            "lg:relative lg:w-full lg:justify-center lg:pl-10",
           )}
         >
           <H2
