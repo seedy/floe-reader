@@ -3,6 +3,7 @@ import BannerMagnifierPlayPauseIconButton from "components/Banner/Magnifier/Play
 import BannerMagnifierPlayPauseProvider from "components/Banner/Magnifier/PlayPause/Provider";
 import SlotPlaying from "components/Banner/Magnifier/PlayPause/SlotPlaying";
 import ButtonLink from "components/Button/Link";
+import Logo from "components/Logo";
 import Screen from "components/Screen";
 import Content from "components/Screen/Presentation/Content";
 import SlotTrack from "components/Slot/Track";
@@ -22,6 +23,10 @@ import presentationMontage from "public/presentation-montage.webp";
 import presentationPhoto from "public/presentation-photo.webp";
 import presentationTournage from "public/presentation-tournage.webp";
 import zoomh5 from "public/zoom-h5.webp";
+import logoShapeGreen from "public/logo-shape-green.svg";
+import logoShapeLightGreen from "public/logo-shape-light-green.svg";
+import logoShapeOrange from "public/logo-shape-orange.svg";
+import logoShapeTeal from "public/logo-shape-teal.svg";
 import type { ReactNode } from "react";
 
 // CONSTANTS
@@ -48,31 +53,37 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
           )}
         >
           <Content
-            title="Un tournage sur-mesure pour les spots vidéo de ton entreprise"
+            title={<span className="relative">
+              Un tournage sur-mesure pour les spots vidéo de ton entreprise
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeGreen} className="absolute top-0 left-0 translate-y-full pointer-events-none select-none"/>
+              </span>}
             summary={[
-              <P key={1}>
+              <P key={1} className="relative">
                 Je crée de A à Z différents formats audiovisuels et des
                 reportages.
                 <br />
                 Nous rédigeons ensemble le script. Je réalise le tournage puis
                 le montage et enfin, l&apos;étalonnage pour plus
                 d&apos;authenticité et de réalisme.
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeTeal} className="absolute bottom-0 right-0 translate-y-full pointer-events-none select-none"/>
               </P>,
             ]}
             catcher={
-              <>
+              <div className="relative">
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeLightGreen} className="absolute top-0 left-0 -translate-y-full rotate-180 pointer-events-none select-none"/>
                 Retranscrire les émotions, partager les expériences,{" "}
                 <SpanUnderline variant="secondary">
                   capturer l&apos;instant
                 </SpanUnderline>{" "}
                 !
-              </>
+              </div>
             }
             cta={
-              <div className="flex flex-col items-center gap-4">
+              <div className="flex flex-col items-center self-center gap-4 relative">
                 <P className="text-text-hint">
                   Parlons de ton projet audiovisuel !
                 </P>
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeOrange} className="absolute right-0 top-0 translate-x-full pointer-events-none select-none"/>
                 <SlotTrack name="click presentation cta interview">
                   <ButtonLink
                     variant="contained"
@@ -101,24 +112,26 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
               Vue de la terre ou vue du ciel, grâce à mon drone, je fais de la
               nature un cadre idyllique pour tes contenus.
             </P>
-            <P>
+            <P className="relative">
               Je crée de A à Z différents formats audiovisuels et des
               reportages.
               <br />
               Nous rédigeons ensemble le script. Je réalise le tournage puis le
               montage et enfin, l&apos;étalonnage pour plus d&apos;authenticité
               et de réalisme.
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeLightGreen} className="absolute bottom-0 right-0 translate-y-full pointer-events-none select-none"/>
             </P>
             <H3 className="mb-2 mt-6">
               Raconter <SpanUnderline>ton histoire</SpanUnderline> pour faire
               vibrer ton audience
             </H3>
-            <P>
+            <P className="relative">
               Je saisis l&apos;instant pour mettre en avant ton activité avec
               des images qui reflètent ta personnalité et tes ambitions.
               <br />
               Ton vécu et ton parcours en vidéo pour toucher l&apos;audience qui
               sera sensible à ton travail et tes centres d&apos;intérêt.
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeTeal} className="absolute bottom-0 left-0 translate-y-full pointer-events-none select-none"/>
             </P>
             <H3 className="mb-2 mt-6">
               Partager <SpanUnderline>tes valeurs</SpanUnderline>
@@ -137,13 +150,17 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
             </P>
           </Content>
           <Content
-            title="En solo ou en renfort d'équipe ! Je monte et transforme tes rushs en vidéos pour les réseaux !"
+            title={<span className="relative">
+              En solo ou en renfort d&apos;équipe ! Je monte et transforme tes rushs en vidéos pour les réseaux !
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeLightGreen} className="absolute bottom-0 right-0 translate-y-full rotate-135 pointer-events-none select-none"/>
+              </span>}
             catcher={
-              <>
+              <div className="relative">
                 Je porte une attention particulière{" "}
                 <SpanUnderline variant="secondary">aux couleurs</SpanUnderline>{" "}
                 et ambiances que dégagent mes réalisations.
-              </>
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeTeal} className="absolute top-0 right-0 -translate-y-full pointer-events-none select-none"/>
+              </div>
             }
             summary={[
               <P key={1}>
@@ -151,9 +168,10 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
                 sais orchestrer le tempo qui convient à ton besoin et au style
                 de tes contenus.
               </P>,
-              <P key={2}>
+              <P key={2} className="relative">
                 Besoin d&apos;une aide temporaire pour assurer tes délais de
                 livraisons ? Je suis celle qu&apos;il te faut !
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeOrange} className="absolute top-0 left-0 -translate-y-full pointer-events-none select-none"/>
               </P>,
               <P key={3}>
                 Réactive et proactive, j&apos;aime relever des défis et
@@ -163,8 +181,9 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
             src={presentationMontage}
             cta={
               <div className="flex flex-col items-center gap-4">
-                <P className="text-text-hint">
+                <P className="text-text-hint relative">
                   Parlons de tes besoins en montage !
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeGreen} className="absolute top-0 left-0 -translate-x-full rotate-90 pointer-events-none select-none"/>
                 </P>
                 <SlotTrack name="click presentation cta montage">
                   <ButtonLink
@@ -199,11 +218,14 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
               <span className="italic">Log</span> ou des images capturées en{" "}
               <span className="italic">RAW</span> !
             </P>
-            <H3 className="mb-2 mt-6">Je prête main-forte à ton équipe</H3>
-            <P>
+            <H3 className="mb-2 mt-6">
+              Je prête main-forte à ton équipe
+            </H3>
+            <P className="relative">
               Sur les routes une partie du temps, je propose mes services de
               monteuse vidéo freelance pour renforcer ton équipe technique en
               place.
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeTeal} className="absolute top-0 left-0 -translate-x-full pointer-events-none select-none"/>
             </P>
             <P>
               Besoin d&apos;une aide temporaire pour assurer tes délais de
@@ -216,8 +238,9 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
               <br />À l&apos;écoute et force de proposition, je participe à ton
               brainstorming pour un travail efficace et au rendu professionnel.
             </P>
-            <H3 className="mb-2 mt-6">
+            <H3 className="mb-2 mt-6 relative flex self-center">
               Je monte tes vidéos pour les réseaux sociaux
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeOrange} className="absolute top-0 right-0 translate-y-full translate-x-full pointer-events-none select-none"/>
             </H3>
             <P>
               Tu es YouTubeur ou YouTubeuse et tu cherches des mains expertes
@@ -240,10 +263,19 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
             </P>
           </Content>
           <Content
-            title="Tu prendras bien un shot de photo ?"
+            title={<span className="relative">
+              Tu prendras bien un shot de photo ?
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeTeal} className="absolute top-0 left-0 -translate-y-full pointer-events-none select-none"/>
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeLightGreen} className="absolute top-0 right-0 -translate-y-full rotate-90 pointer-events-none select-none"/>
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeOrange} className="absolute bottom-0 left-0 translate-y-full rotate-270 pointer-events-none select-none"/>
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeGreen} className="absolute bottom-0 right-0 translate-y-full rotate-180 pointer-events-none select-none"/>
+              </span>}
             cta={
               <div className="flex flex-col items-center gap-4">
-                <P className="text-text-hint">Parlons de ton projet photo !</P>
+                <P className="text-text-hint relative">
+                  Parlons de ton projet photo !
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeGreen} className="absolute top-0 right-0 translate-x-full -translate-y-full rotate-180 pointer-events-none select-none"/>
+                  </P>
                 <SlotTrack name="click presentation cta photo">
                   <ButtonLink
                     variant="contained"
@@ -269,19 +301,21 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
                 que digital nomade, je suis en mesure de prendre tes clichés sur
                 la route !
               </P>,
-              <P key={4}>
+              <P key={4} className="relative">
                 Mes images sont aussi disponibles à l&apos;achat individuel ou
                 groupé.
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeOrange} className="absolute bottom-0 right-0 translate-y-full rotate-225 pointer-events-none select-none"/>
               </P>,
             ]}
             catcher={
-              <>
+              <div className="relative">
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeTeal} className="absolute bottom-0 left-0 translate-y-full rotate-180 pointer-events-none select-none"/>
                 Des photos de qualité qui te ressemblent, afin de mettre en
                 avant{" "}
                 <SpanUnderline variant="secondary">
                   ta personnalité
                 </SpanUnderline>
-              </>
+              </div>
             }
             src={presentationPhoto}
             alt="Des photos de qualité qui te ressemblent, afin de mettre en avant ta personnalité"
@@ -311,8 +345,9 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
               Je t&apos;accompagne et couvre tes évènements, sur toute la France
               et l&apos;Europe.
             </P>
-            <H3 className="mb-2 mt-6">
-              Des images <SpanUnderline>à ta demande</SpanUnderline>
+            <H3 className="mb-2 mt-6 relative inline-flex self-center">
+              Des images&nbsp;<SpanUnderline>à ta demande</SpanUnderline>
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeLightGreen} className="absolute bottom-0 left-0 -translate-x-full translate-y-full rotate-180 pointer-events-none select-none"/>
             </H3>
             <P>
               Tu as un besoin spécifique et tu aimerais acquérir des photos
@@ -323,7 +358,10 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
               !
             </P>
 
-            <H3 className="mb-2 mt-6">Mes images à la revente</H3>
+            <H3 className="mb-2 mt-6 relative flex self-center">
+              Mes images à la revente
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeOrange} className="absolute top-0 right-0 translate-x-full -translate-y-full rotate-90 pointer-events-none select-none"/>
+              </H3>
             <P>
               À l&apos;affût du moindre recoin de nature, j&apos;aime
               photographier la plénitude et l&apos;immensité des paysages.
@@ -331,9 +369,10 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
               Grâce à mon boîtier, qui ne me quitte jamais et mon drone, je
               prends plaisir à documenter mes voyages et mes passions.
             </P>
-            <P>
+            <P className="relative">
               Tu peux d&apos;ores et déjà retrouver mes photos sur mes réseaux
               ou mon portfolio !
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeTeal} className="absolute bottom-0 left-0 translate-y-full rotate-90 pointer-events-none select-none"/>
             </P>
             <div className="flex w-full justify-center">
               <Socials sources={PRESENTATION_SOCIAL_SOURCES} />
@@ -362,20 +401,27 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
           )}
         >
           <Content
-            title={"À propos de moi"}
+            title={<span className="relative">
+              À propos de moi
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeTeal} className="absolute top-0 right-0 -translate-y-full pointer-events-none select-none"/>
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeOrange} className="absolute bottom-0 left-0 translate-y-full rotate-180 pointer-events-none select-none"/>
+            </span>}
             src={presentationMoi}
             catcher={
-              <>
+              <div className="relative">
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeGreen} className="absolute top-0 left-0 -translate-y-full pointer-events-none select-none"/>
                 À la suite de plusieurs podcasts, j&apos;ai pris conscience de
                 mon envie de{" "}
                 <SpanUnderline variant="secondary">
                   réaliser des interviews
                 </SpanUnderline>
-              </>
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeOrange} className="absolute bottom-0 right-0 -translate-x-full translate-y-full pointer-events-none select-none"/>
+              </div>
             }
             summary={[
-              <H3 key={1} className="mb-2 mt-6">
-                Il était une fois : voyage initiatique et reconversion
+              <H3 key={1} className="mb-2 mt-6 relative">
+                Il était une fois : voyage initiatique et <SpanUnderline>reconversion</SpanUnderline>
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeTeal} className="absolute bottom-0 left-0 translate-y-full rotate-90 pointer-events-none select-none"/>
               </H3>,
               <P key={2}>
                 Après 2 ans en tant qu&apos;attachée commerciale, j&apos;ai
@@ -385,18 +431,20 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
                 De retour en France, j&apos;ai besoin d&apos;un nouveau départ,
                 j&apos;entame ma reconversion.
               </P>,
-              <P key={4}>
+              <P key={4} className="relative">
                 J&apos;ai commencé par enregistrer mon tout premier podcast avec
                 une amie.
                 <br />
                 Elle me raconte sa première expérience à bord d&apos;un voilier
                 en partance pour l&apos;Antarctique.
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeLightGreen} className="absolute bottom-0 right-0 translate-y-full pointer-events-none select-none"/>
               </P>,
             ]}
             alt="À la suite de plusieurs podcasts, j'ai pris conscience de mon envie de réaliser des interviews"
           >
-            <H3 className="mb-2 mt-6">
-              Il était une fois : voyage initiatique et reconversion
+            <H3 className="mb-2 mt-6 relative">
+              Il était une fois : voyage initiatique et <SpanUnderline>reconversion</SpanUnderline>
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeTeal} className="absolute bottom-0 left-0 translate-y-full rotate-90 pointer-events-none select-none"/>
             </H3>
             <P>
               Après 2 ans en tant qu&apos;attachée commerciale dans
@@ -423,7 +471,11 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
               <br />
               J&apos;ai toujours adoré les photos qui suscitent l&apos;émotion !
             </P>
-            <H3 className="mb-2 mt-6">Du podcast à l&apos;audiovisuel !</H3>
+            <H3 className="mb-2 mt-6 flex self-center relative">
+              Du podcast à l&apos;audiovisuel !
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeGreen} className="absolute top-0 right-0 -translate-y-full pointer-events-none select-none"/>
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeOrange} className="absolute bottom-0 left-0 translate-y-full pointer-events-none select-none"/>
+              </H3>
             <P>
               Avec mes projets de podcast, j&apos;ai rapidement eu besoin de
               m&apos;équiper pour la prise de son.
@@ -437,9 +489,10 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
               l&apos;Antarctique.
             </P>
             <P>
-              <span className="font-bold">
+              <span className="font-bold relative">
                 À la suite de plusieurs podcasts, j&apos;ai pris conscience de
                 mon envie de réaliser des interviews.
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeLightGreen} className="absolute top-0 right-0 translate-x-full rotate-90 pointer-events-none select-none"/>
               </span>
               <br />
               J&apos;ai alors opté pour associer un micro à mon appareil
@@ -447,16 +500,25 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
             </P>
           </Content>
           <Content
-            title={<>Aujourd&apos;hui : digital nomade</>}
+            title={<span className="relative">
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeTeal} className="absolute top-0 left-0 -translate-y-full rotate-270 pointer-events-none select-none"/>
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeGreen} className="absolute top-0 right-0 -translate-y-full rotate-180 pointer-events-none select-none"/>
+              Aujourd&apos;hui : digital nomade
+              </span>}
             summary={[
-              <P key={1}>Je suis monteuse vidéo et photographe.</P>,
+              <P key={1} className="relative">
+                Je suis monteuse vidéo et photographe.
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeLightGreen} className="absolute top-0 right-0 -translate-y-full rotate-270 pointer-events-none select-none"/>
+                </P>,
               <P key={2}>
                 Ma curiosité me pousse à travailler sur des projets divers et
                 variés et vient challenger ma créativité afin de répondre à tes
                 besoins.
               </P>,
-              <H3 key={3} className="mb-2 mt-6">
+              <H3 key={3} className="mb-2 mt-6 relative flex self-center">
                 Mon terrain de jeu : la France et l&apos;Europe
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeGreen} className="absolute bottom-0 left-0 translate-y-full rotate-180 pointer-events-none select-none"/>
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeLightGreen} className="absolute bottom-0 right-0 translate-y-full rotate-180 pointer-events-none select-none"/>
               </H3>,
               <P key={4}>
                 Je parcours la France et l&apos;Europe avec{" "}
@@ -466,17 +528,19 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
               </P>,
             ]}
             catcher={
-              <>
+              <div className="relative">
                 Passionnée par{" "}
                 <SpanUnderline variant="secondary">le voyage</SpanUnderline> et
                 les belles images, j&apos;ai à coeur de créer des vidéos de
                 qualité
-              </>
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeOrange} className="absolute bottom-0 left-0 translate-y-full pointer-events-none select-none"/>
+              </div>
             }
             src={presentationAudiovisuel}
             alt="Passionnée par le voyage et les belles images, j'ai à coeur de créer des vidéos de qualité"
           >
-            <P>
+            <P className="relative">
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeLightGreen} className="absolute top-0 left-0 -translate-y-full rotate-135 pointer-events-none select-none"/>
               Je suis monteuse vidéo et photographe.
               <br />
               J&apos;habite dans la région lyonnaise, mais j&apos;ai la chance
@@ -496,8 +560,10 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
               Grâce à ma capacité d&apos;écoute, je serai en mesure de répondre
               à tes attentes et de mettre en lumière ce qui fait ta singularité.
             </P>
-            <H3 className="mb-2 mt-6">
+            <H3 className="mb-2 mt-6 flex self-center relative">
               Mon terrain de jeu : la France et l&apos;Europe
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeGreen} className="absolute top-0 left-0 -translate-y-full rotate-90 pointer-events-none select-none"/>
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeLightGreen} className="absolute bottom-0 right-0 translate-x-full rotate-270 pointer-events-none select-none"/>
             </H3>
             <P>
               Je parcours la France et l&apos;Europe avec{" "}
@@ -514,7 +580,10 @@ const ScreenPresentation = ({ children }: ScreenPresentationProps) => {
               artisan·e·s d&apos;aujourd&apos;hui, qui feront de demain un monde
               plus respectueux des humains et de la nature.
             </P>
-            <P>Peut-être en fais-tu partie ?</P>
+            <P className="relative">
+              Peut-être en fais-tu partie ?
+                <Logo alt="" aria-hidden placeholder="empty" src={logoShapeOrange} className="absolute bottom-0 left-0 translate-y-full pointer-events-none select-none"/>
+            </P>
           </Content>
         </div>
         <div className="flex flex-col items-center gap-8">
