@@ -1,6 +1,6 @@
 import CarouselIndicator from "components/Carousel/Indicator";
 import SlotTrack from "components/Slot/Track";
-import type { CustomKeenSliderHooks } from "helpers/keenSlider/plugins/carousel";
+import type { CustomKeenSliderHooks } from "helpers/keenSlider/plugins/carouselPauseHover";
 import type { KeenSliderInstance } from "keen-slider/react";
 import {
   type FocusEvent,

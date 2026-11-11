@@ -3,9 +3,9 @@ import CarouselIndicators from "components/Carousel/Indicators";
 import CarouselMask from "components/Carousel/Mask";
 import CarouselPlayPause from "components/Carousel/PlayPause";
 import cn from "helpers/cn";
-import keenSliderCarousel, {
+import carouselPauseHover, {
   type CustomKeenSliderHooks,
-} from "helpers/keenSlider/plugins/carousel";
+} from "helpers/keenSlider/plugins/carouselPauseHover";
 // STYLES
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
@@ -72,7 +72,7 @@ const Carousel = ({
       },
       slides,
     },
-    [keenSliderCarousel(delay)],
+    [carouselPauseHover(delay)],
   );
 
   const onPause = useCallback(
