@@ -15,7 +15,7 @@ const IconButtonFloatingDiv = ({ children }: IconButtonFloatingDivProps) => {
     <>
       <DialogAnnouncement>
         <IconButtonFloating
-          tooltip="Voir l'annonce"
+          tooltip="Voir mes actus"
           className="z-1"
           container={container}
         >

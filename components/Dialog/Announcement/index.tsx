@@ -1,5 +1,4 @@
 import {
-  Action,
   Cancel,
   Content,
   Description,
@@ -10,13 +9,14 @@ import {
   Trigger,
 } from "@radix-ui/react-alert-dialog";
 import Button from "components/Button";
-import ButtonLink from "components/Button/Link";
+import CarouselTranslateRotate from "components/Carousel/TranslateRotate";
 import Image from "components/Image";
 import H2 from "components/Typography/H2";
 import H3 from "components/Typography/H3";
-import { ZCAL_FIRST } from "constants/links";
 import cn from "helpers/cn";
-import announcementPro from "public/announcement-pro.webp";
+import expoBlue from "public/expo-blue.webp";
+import expoGreen from "public/expo-green.webp";
+import expoOrange from "public/expo-orange.webp";
 import type { ReactNode } from "react";
 
 interface DialogAnnouncementProps {
@@ -28,40 +28,37 @@ const DialogAnnouncement = ({ children }: DialogAnnouncementProps) => {
       <Trigger asChild>{children}</Trigger>
       <Portal>
         <Overlay />
-        <Content className="fixed h-svh w-svw z-10000 flex flex-col bg-background p-5">
+        <Content className="fixed h-svh w-svw z-10000 flex flex-col bg-background py-5">
           <Title asChild>
-            <H2>Offre de lancement</H2>
+            <H2>Mes actus</H2>
           </Title>
           <Description asChild>
-            <H3>Prix attractif</H3>
+            <H3>En ce moment</H3>
           </Description>
           <div className="flex grow flex-col gap-4">
-            <div className="flex grow flex-col relative">
-              <Image
-                fill
-                className="object-contain"
-                src={announcementPro}
-                alt="Offre de lancement"
-              />
+            <div className="flex grow flex-col">
+              <CarouselTranslateRotate>
+                <Image
+                  className="h-full w-auto max-w-full object-contain"
+                  src={expoGreen}
+                  alt="Expo photo"
+                />
+                <Image
+                  className="h-full w-auto max-w-full object-contain"
+                  src={expoBlue}
+                  alt="Expo photo"
+                />
+                <Image
+                  className="h-full w-auto max-w-full object-contain"
+                  src={expoOrange}
+                  alt="Expo photo"
+                />
+              </CarouselTranslateRotate>
             </div>
-            <div
-              className={cn(
-                "flex items-center justify-between",
-                "lg:justify-center lg:gap-16",
-              )}
-            >
+            <div className={cn("flex items-center justify-center")}>
               <Cancel asChild>
                 <Button>Fermer</Button>
               </Cancel>
-              <Action asChild>
-                <ButtonLink
-                  variant="contained"
-                  color="secondary"
-                  href={ZCAL_FIRST}
-                >
-                  J&apos;en profite
-                </ButtonLink>
-              </Action>
             </div>
           </div>
         </Content>
