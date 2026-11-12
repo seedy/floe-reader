@@ -1,6 +1,5 @@
 import IconButton from "components/IconButton";
 import { useContainerIntersecting } from "components/IconButton/Floating/useContainerIntersecting";
-import Tooltip from "components/Tooltip";
 import cn from "helpers/cn";
 import type { ComponentProps, RefObject } from "react";
 
@@ -20,28 +19,28 @@ const IconButtonFloating = ({
   if (!isIntersecting) return null;
 
   return (
-      <div
+    <div
+      className={cn(
+        "group",
+        "fixed",
+        "lg:bottom-6 lg:right-24",
+        "bottom-24 right-6",
+        "size-17.5",
+        className,
+      )}
+    >
+      <IconButton
         className={cn(
-          "group",
-          "fixed",
-          "lg:bottom-6 lg:right-24",
-          "bottom-24 right-6",
-          "size-17.5",
-          className,
+          "animate-fly group-hover:[animation-iteration-count:1] group-focus-within:[animation-iteration-count:1]",
         )}
+        size="medium"
+        variant="contained"
+        tooltip={tooltip}
+        {...props}
       >
-        <IconButton
-          className={cn(
-            "animate-fly group-hover:[animation-iteration-count:1] group-focus-within:[animation-iteration-count:1]",
-          )}
-          size="medium"
-          variant="contained"
-          tooltip={tooltip}
-          {...props}
-        >
-          {children}
-        </IconButton>
-      </div>
+        {children}
+      </IconButton>
+    </div>
   );
 };
 
