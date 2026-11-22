@@ -74,6 +74,11 @@ const Navbar = ({ className, ref: forwardedRef, ...props }: NavbarProps) => {
               Portfolio
             </ButtonLink>
           </SlotTrack>
+          <SlotTrack name="click navbar link therapy">
+            <ButtonLink variant="link" href="/therapy">
+              Photo-thérapie
+            </ButtonLink>
+          </SlotTrack>
         </div>
         <div className="hidden lg:flex">
           <SlotTrack name="click navbar cta first">

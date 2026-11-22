@@ -31,7 +31,7 @@ const ScreenHero = () => {
             "gap-10 lg:gap-32",
             "flex-col lg:flex-row",
             "items-center",
-            "lg:relative lg:mb-32 lg:w-full lg:justify-center lg:pl-10",
+            "lg:relative lg:w-full lg:justify-center lg:pl-10",
           )}
         >
           <H2
