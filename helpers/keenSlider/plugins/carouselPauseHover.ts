@@ -7,7 +7,7 @@ export type CustomKeenSliderHooks =
   | "stopped"
   | "resumed";
 
-const keenSliderCarousel =
+const carouselPauseHover =
   (delay: number) =>
   (slider: KeenSliderInstance<unknown, unknown, CustomKeenSliderHooks>) => {
     let timeout: ReturnType<typeof setTimeout>;
@@ -106,4 +106,4 @@ const keenSliderCarousel =
     slider.on("resumed", onResume);
   };
 
-export default keenSliderCarousel;
+export default carouselPauseHover;

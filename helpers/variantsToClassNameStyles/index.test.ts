@@ -11,7 +11,7 @@ describe("variantsToClassNameStyles", () => {
   it("should return cn", () => {
     expect(
       variantsToClassNameStyles({ align: "start", direction: "row" }, styles),
-    ).toBe("direction-row align-start");
+    ).toBe("align-start direction-row");
   });
   it("should return empty string", () => {
     expect(

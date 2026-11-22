@@ -31,35 +31,6 @@ const Content = ({
   alt,
 }: ContentProps) => {
   const supportsViewTimeline = useSupportsViewTimeline();
-  if (supportsViewTimeline) {
-    return (
-      <>
-        <ParallaxAvatar src={src} alt={alt} />
-        <div
-          className={cn(
-            "flex flex-col gap-10",
-            "[--parallax-factor:0.625rem] motion-reduce:[--parallax-factor:0]",
-            styles.root,
-          )}
-        >
-          <div className="flex flex-col gap-10 lg:gap-16">
-            <H2>{title}</H2>
-            {summary && (
-              <div className="flex flex-col gap-6 lg:hidden">{summary}</div>
-            )}
-            <div className={cn("hidden lg:flex", "flex-col gap-6")}>
-              {children}
-            </div>
-          </div>
-          <div className="flex flex-col items-center gap-10 lg:hidden">
-            <Avatar src={src} alt={alt} className="aspect-social w-80" />
-            <Subtitle>{catcher}</Subtitle>
-          </div>
-          {cta}
-        </div>
-      </>
-    );
-  }
   return (
     <>
       <ParallaxAvatar src={src} alt={alt} />
@@ -71,42 +42,63 @@ const Content = ({
         )}
       >
         <div className="flex flex-col gap-10 lg:gap-16">
-          <PresentationContentMotionViewTimeline>
+          {supportsViewTimeline ? (
             <H2>{title}</H2>
-          </PresentationContentMotionViewTimeline>
-          {summary && (
+          ) : (
             <PresentationContentMotionViewTimeline>
-              <div className="flex flex-col gap-6 lg:hidden">
-                {summary.map((node, index) => (
-                  // biome-ignore lint/suspicious/noArrayIndexKey: no reorder
-                  <PresentationContentMotionViewTimeline key={index}>
-                    {node}
-                  </PresentationContentMotionViewTimeline>
-                ))}
-              </div>
+              <H2>{title}</H2>
             </PresentationContentMotionViewTimeline>
           )}
-          <div className={cn("hidden lg:flex", "flex-col gap-6")}>
-            {Children.map(children, (child) => (
+          {summary &&
+            (supportsViewTimeline ? (
+              <div className="flex flex-col gap-6 lg:hidden">{summary}</div>
+            ) : (
               <PresentationContentMotionViewTimeline>
-                {child}
+                <div className="flex flex-col gap-6 lg:hidden">
+                  {summary.map((node, index) => (
+                    // biome-ignore lint/suspicious/noArrayIndexKey: no reorder
+                    <PresentationContentMotionViewTimeline key={index}>
+                      {node}
+                    </PresentationContentMotionViewTimeline>
+                  ))}
+                </div>
               </PresentationContentMotionViewTimeline>
             ))}
+          <div className={cn("hidden lg:flex", "flex-col gap-6")}>
+            {supportsViewTimeline
+              ? children
+              : Children.map(children, (child) => (
+                  <PresentationContentMotionViewTimeline>
+                    {child}
+                  </PresentationContentMotionViewTimeline>
+                ))}
           </div>
         </div>
         <div className="flex flex-col items-center gap-10 lg:hidden">
-          <PresentationContentMotionViewTimeline>
-            <Avatar src={src} alt={alt} className="aspect-social w-80" />
-          </PresentationContentMotionViewTimeline>
-          <PresentationContentMotionViewTimeline>
-            <Subtitle>{catcher}</Subtitle>
-          </PresentationContentMotionViewTimeline>
+          {supportsViewTimeline ? (
+            <>
+              <Avatar src={src} alt={alt} className="aspect-social w-80" />
+              <Subtitle>{catcher}</Subtitle>
+            </>
+          ) : (
+            <>
+              <PresentationContentMotionViewTimeline>
+                <Avatar src={src} alt={alt} className="aspect-social w-80" />
+              </PresentationContentMotionViewTimeline>
+              <PresentationContentMotionViewTimeline>
+                <Subtitle>{catcher}</Subtitle>
+              </PresentationContentMotionViewTimeline>
+            </>
+          )}
         </div>
-        {cta && (
-          <PresentationContentMotionViewTimeline>
-            {cta}
-          </PresentationContentMotionViewTimeline>
-        )}
+        {cta &&
+          (supportsViewTimeline ? (
+            cta
+          ) : (
+            <PresentationContentMotionViewTimeline>
+              {cta}
+            </PresentationContentMotionViewTimeline>
+          ))}
       </div>
     </>
   );

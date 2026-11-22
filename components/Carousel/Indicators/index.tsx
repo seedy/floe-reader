@@ -1,7 +1,7 @@
 import CarouselIndicator from "components/Carousel/Indicator";
 import SlotTrack from "components/Slot/Track";
-import type { CustomKeenSliderHooks } from "helpers/keenSlider/plugins/carousel";
-import type { KeenSliderInstance } from "keen-slider/react";
+import type { CustomKeenSliderHooks } from "helpers/keenSlider/plugins/carouselPauseHover";
+import type { KeenSliderHooks, KeenSliderInstance } from "keen-slider/react";
 import {
   type FocusEvent,
   type KeyboardEvent,
@@ -14,11 +14,11 @@ interface CarouselIndicatorsProps {
   className?: string;
   keys: number[];
   currentSlide: number;
-  instanceRef: RefObject<KeenSliderInstance<
-    unknown,
-    unknown,
-    CustomKeenSliderHooks
-  > | null>;
+  instanceRef: RefObject<
+    | KeenSliderInstance<unknown, unknown, CustomKeenSliderHooks>
+    | KeenSliderInstance<unknown, unknown, KeenSliderHooks>
+    | null
+  >;
   onPause?: (e: MouseEvent | KeyboardEvent | FocusEvent) => void;
 }
 const CarouselIndicators = ({

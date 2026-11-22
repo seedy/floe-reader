@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="flex flex-col gap-32">
       <ScreenLanding />
-      <ScreenPresentationPersona/>
+      <ScreenPresentationPersona />
       <ScreenHero />
       <ScreenPresentationMe />
     </div>

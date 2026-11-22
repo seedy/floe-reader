@@ -6,7 +6,7 @@ import P from "components/Typography/P";
 import cn from "helpers/cn";
 
 const FooterTherapy = () => (
-    <footer
+  <footer
     className={cn(
       "flex gap-4 bg-tertiary/20 p-5",
       "items-start",
@@ -48,6 +48,6 @@ const FooterTherapy = () => (
       <P>Chaque jour est différent, fais-en ce que tu veux !</P>
     </div>
   </footer>
-)
+);
 
 export default FooterTherapy;
