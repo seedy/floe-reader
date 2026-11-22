@@ -3,6 +3,7 @@ export const ZCAL_VIDEO = "https://zcal.co/floe-gaubert/video";
 export const ZCAL_MONTAGE = "https://zcal.co/floe-gaubert/montage";
 export const ZCAL_PHOTO = "https://zcal.co/floe-gaubert/photo";
 export const ZCAL_SHORTS = "https://zcal.co/floe-gaubert/shorts";
+export const ZCAL_THERAPY = "https://zcal.co/floe-gaubert/therapy";
 
 export const INSTAGRAM = "https://www.instagram.com/floe.gaubert/";
 export const LINKEDIN = "https://www.linkedin.com/in/floé-gaubert/";
